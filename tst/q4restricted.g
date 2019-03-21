@@ -4,7 +4,7 @@ if not IsBound(q) then q:=4; fi;
 
 Y:=HermitianIndeterminates(GF(q^2),"Y1","Y2");
 Hq:=Hermitian_Curve(Y[1]);
-P_infty:=1PointHermitian_Divisor(Hq,[infinity]); 
+P_infty:=Hermitian_Place(Hq,[infinity]); 
 
 for s in [1..q^3] do
     hcode:=Hermitian_FunctionalCode(s*P_infty);
@@ -17,7 +17,7 @@ od;
 ###
 
 pt:=RandomPlaceOfGivenDegreeOfHermitian_Curve(Hq,3);
-a:=1PointHermitian_Divisor(Hq,pt);
+a:=Hermitian_Place(Hq,pt);
 fr:=FrobeniusAutomorphismOfHermitian_Curve(Hq);
 d:=Sum(AC_FrobeniusAutomorphismOrbit(fr,a));
 IsRationalHermitian_Divisor(d);

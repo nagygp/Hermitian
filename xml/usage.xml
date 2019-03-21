@@ -57,7 +57,7 @@ The following functions are available:
 
 <#Include Label="Hermitian_Divisor">
 
-<#Include Label="1PointHermitian_Divisor">
+<#Include Label="Hermitian_Place">
 
 <#Include Label="ZeroHermitian_Divisor">
 
@@ -80,9 +80,9 @@ The following functions are available:
 <#Include Label="NegativePartOfHermitian_Divisor">
 
 <Example>
-gap&gt; p1:=1PointHermitian_Divisor(C,infinity);
+gap&gt; p1:=Hermitian_Place(C,infinity);
 &lt;GZ divisor with support of length 1 over indeterminate Y&gt;
-gap&gt; p2:=1PointHermitian_Divisor(C,Z(3));
+gap&gt; p2:=Hermitian_Place(C,Z(3));
 &lt;GZ divisor with support of length 1 over indeterminate Y&gt;
 gap&gt; d:=3*p1-4*p2;
 &lt;GZ divisor with support of length 2 over indeterminate Y&gt;

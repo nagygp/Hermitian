@@ -99,13 +99,11 @@ end);
 
 InstallMethod( Hermitian_FunctionalCode, "for one Hermitian divisor", true, [IsHermitian_Divisor], 0, 
 function(G)
-	local pts,D;
+	local D;
 	if not (IsRationalHermitian_Divisor(G)) then
 		Error("wrong input\n");
 	fi;
-	pts:=Difference(AllRationalPlacesOfHermitian_Curve(G!.curve),[[infinity]]);
-	pts:=Difference(pts,Support(G));
-	D:=Sum(pts,x->1PointHermitian_Divisor(G!.curve,x));
+	D := Sum( AllRationalAffinePlacesOfHermitian_Curve(G!.curve) ); 
 	return Hermitian_FunctionalCode(G,D);
 end);
 
@@ -142,13 +140,11 @@ end);
 
 InstallMethod( Hermitian_DifferentialCode, "for one Hermitian divisor", true, [IsHermitian_Divisor], 0, 
 function(G)
-	local pts,D;
+	local D;
 	if not (IsRationalHermitian_Divisor(G)) then
 		Error("wrong input\n");
 	fi;
-	pts:=Difference(AllRationalPlacesOfHermitian_Curve(G!.curve),[[infinity]]);
-	pts:=Difference(pts,Support(G));
-	D:=Sum(pts,x->1PointHermitian_Divisor(G!.curve,x));
+	D := Sum( AllRationalAffinePlacesOfHermitian_Curve(G!.curve) ); 
 	return Hermitian_DifferentialCode(G,D);
 end);
 
@@ -202,7 +198,7 @@ InstallMethod( Hermitian_DECODER_DATA, "for a Hermitian AG code", true, [ IsHerm
 function(agcode)
 	local t,F,pls,mat1,mat2;
 	t:=Int((DesignedMinimumDistance(agcode)-1-Genus(agcode!.curve))/2);
-	F:=(t+Genus(agcode!.curve))*1PointHermitian_Divisor(agcode!.curve,[infinity]);
+	F:=(t+Genus(agcode!.curve))*Hermitian_Place(agcode!.curve,[infinity]);
 	pls:=Support(agcode!.gendivs[2]);;
 	if IsHermitian_DifferentialCode(agcode) then
 		mat1:=GeneratorMatrixOfFunctionalHermitian_CodeNC(agcode!.gendivs[1]-F,pls);

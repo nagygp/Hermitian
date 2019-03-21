@@ -151,27 +151,26 @@ DeclareAttribute( "FrobeniusAutomorphismOfHermitian_Curve", IsHermitian_Curve );
 
 #############################################################################
 ##
-#F  IsPointOnHermitian_Curve(<Hq>,<pt>)
+#F  AllRationalAffinePlacesOfHermitian_Curve(Hq)
 ##
-##  <#GAPDoc Label="IsPointOnHermitian_Curve">
+##  <#GAPDoc Label="AllRationalAffinePlacesOfHermitian_Curve">
 ##  <ManSection>
-##  <Oper Name="IsPointOnHermitian_Curve" Arg='Hq,pt'/>
+##  <Oper Name="AllRationalAffinePlacesOfHermitian_Curve" Arg='Hq'/>
 ##
 ##  <Description>
-##  returns <C>true</C> if <A>pt</A> is either the infinite point <C>[ infinity ]</C> of
-##  the of the Hermitian curve <A>Hq</A>, or, if is an affine point satisfying 
-##  <M>X^{q+1}=Y^q+Y</M>.
+##  returns all rational affine places of the Hermitian curve <A>Hq</A>. 
+##  The number of rational affine places of  <M>H(q)</M> is <M>q^3</M>.
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-#DeclareOperation( "IsPointOnHermitian_Curve", [ IsHermitian_Curve, IsList ] );
+DeclareOperation( "AllRationalAffinePlacesOfHermitian_Curve", [ IsHermitian_Curve ] );
 
 #############################################################################
 ##
 #F  AllRationalPlacesOfHermitian_Curve(Hq)
 ##
-##  <#GAPDoc Label="RandomPlaceOfHermitian_Curve">
+##  <#GAPDoc Label="AllRationalPlacesOfHermitian_Curve">
 ##  <ManSection>
 ##  <Oper Name="AllRationalPlacesOfHermitian_Curve" Arg='Hq'/>
 ##
@@ -185,24 +184,6 @@ DeclareAttribute( "FrobeniusAutomorphismOfHermitian_Curve", IsHermitian_Curve );
 ##  <#/GAPDoc>
 ##
 DeclareOperation( "AllRationalPlacesOfHermitian_Curve", [ IsHermitian_Curve ] );
-
-#############################################################################
-##
-#F  AllPlacesOfGivenDegreeOfHermitian_Curve(Hq,d)
-##
-##  <#GAPDoc Label="AllPlacesOfGivenDegreeOfHermitian_Curve">
-##  <ManSection>
-##  <Oper Name="AllPlacesOfGivenDegreeOfHermitian_Curve" Arg='Hq,d'/>
-##
-##  <Description>
-##  returns all places of degree <A>d</A> of the Hermitian curve <A>Hq</A>,
-##  that is, all places defined over the field <M>GF(q^{2d})</M>. The number of
-##  places of degree <M>d</M> of <M>H(q)</M> is <M>q^{2d}+1+(-q)^{d+1}(q-1)</M>.
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
-##
-#DeclareOperation( "AllPlacesOfGivenDegreeOfHermitian_Curve", [ IsHermitian_Curve, IsPosInt] );
 
 #############################################################################
 ##

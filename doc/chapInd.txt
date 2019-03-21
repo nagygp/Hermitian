@@ -2,7 +2,6 @@
   
   [1XIndex[101X
   
-  [2X1PointHermitian_Divisor[102X 3.2-4  3.2-4 
   [2XAutomorphismGroup[102X 3.1-9 
   [2XDesignedMinimumDistance[102X 3.4-7 
   [2XFrobeniusAutomorphismOfHermitian_Curve[102X 3.1-6 
@@ -16,6 +15,7 @@
   [2XHermitian_Divisor[102X 3.2-3  3.2-3 
   [2XHermitian_DivisorConstruct[102X 3.2-2 
   [2XHermitian_FunctionalCode[102X 3.4-3  3.4-3 
+  [2XHermitian_Place[102X 3.2-4 
   [2XHermitian_RiemannRochSpaceBasis[102X 3.3-1 
   [2XIndeterminatesOfHermitian_Curve[102X 3.1-3 
   [2XInfimumHermitian_Divisor[102X 3.2-12 

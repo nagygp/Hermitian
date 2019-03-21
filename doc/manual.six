@@ -50,8 +50,7 @@ entries :=
   [ "\033[2XHermitian_DivisorConstruct\033[102X", "3.2-2", [ 3, 2, 2 ], 119, 9, "hermitian_divisorconstruct", "X7C25E6A77FC66456" 
      ], [ "\033[2XHermitian_Divisor\033[102X", "3.2-3", [ 3, 2, 3 ], 126, 9, "hermitian_divisor", "X8522DFC37BA9FE9B" ], 
   [ "\033[2XHermitian_Divisor\033[102X", "3.2-3", [ 3, 2, 3 ], 126, 9, "hermitian_divisor", "X8522DFC37BA9FE9B" ], 
-  [ "\033[2X1PointHermitian_Divisor\033[102X", "3.2-4", [ 3, 2, 4 ], 136, 9, "1pointhermitian_divisor", "X7CF40438792D9564" ], 
-  [ "\033[2X1PointHermitian_Divisor\033[102X", "3.2-4", [ 3, 2, 4 ], 136, 9, "1pointhermitian_divisor", "X7CF40438792D9564" ], 
+  [ "\033[2XHermitian_Place\033[102X", "3.2-4", [ 3, 2, 4 ], 136, 9, "hermitian_place", "X874B79D17AF7FD28" ], 
   [ "\033[2XZeroHermitian_Divisor\033[102X", "3.2-5", [ 3, 2, 5 ], 143, 9, "zerohermitian_divisor", "X7D106EB28504FFDD" ], 
   [ "\033[2XIsRationalHermitian_Divisor\033[102X", "3.2-6", [ 3, 2, 6 ], 149, 10, "isrationalhermitian_divisor", 
       "X8634CC3B79155E29" ], [ "\033[2XUnderlyingField\033[102X", "3.2-7", [ 3, 2, 7 ], 156, 10, "underlyingfield", 

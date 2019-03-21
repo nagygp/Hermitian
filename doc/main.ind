@@ -1,10 +1,5 @@
 \begin{theindex}
 
-  \item \texttt  {1Point}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Divisor}, 
-		\hyperpage{9}
-
-  \indexspace
-
   \item \texttt  {AutomorphismGroup}, \hyperpage{9}
 
   \indexspace
@@ -38,6 +33,7 @@
 		\hyperpage{9}
   \item \texttt  {Hermitian{\textunderscore }}\-\texttt  {Functional}\-\texttt  {Code}, 
 		\hyperpage{13}
+  \item \texttt  {Hermitian{\textunderscore }Place}, \hyperpage{9}
   \item \texttt  {Hermitian{\textunderscore }}\-\texttt  {Riemann}\-\texttt  {Roch}\-\texttt  {Space}\-\texttt  {Basis}, 
 		\hyperpage{12}
 

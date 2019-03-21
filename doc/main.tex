@@ -427,18 +427,15 @@ Hermitian curve $H(q):X^{q+1}=Y^q+Y$. Hermitian divisors form an additive commut
 
  
 
-\subsection{\textcolor{Chapter }{1PointHermitian{\textunderscore}Divisor}}
+\subsection{\textcolor{Chapter }{Hermitian{\textunderscore}Place}}
 \logpage{[ 3, 2, 4 ]}\nobreak
-\hyperdef{L}{X7CF40438792D9564}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{1PointHermitian{\textunderscore}Divisor({\mdseries\slshape Hq, pt})\index{1PointHermitianuScoreDivisor@\texttt{1Point}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Divisor}}
-\label{1PointHermitianuScoreDivisor}
-}\hfill{\scriptsize (operation)}}\\
-\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{1PointHermitian{\textunderscore}Divisor({\mdseries\slshape Hq, pt, m})\index{1PointHermitianuScoreDivisor@\texttt{1Point}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Divisor}}
-\label{1PointHermitianuScoreDivisor}
+\hyperdef{L}{X874B79D17AF7FD28}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{Hermitian{\textunderscore}Place({\mdseries\slshape Hq, pt})\index{HermitianuScorePlace@\texttt{Hermitian{\textunderscore}Place}}
+\label{HermitianuScorePlace}
 }\hfill{\scriptsize (operation)}}\\
 
 
- returns the one-point divisor over the Hermitian curve \mbox{\texttt{\mdseries\slshape Hq}}. }
+ returns the corresponding place of the Hermitian curve \mbox{\texttt{\mdseries\slshape Hq}}, where \mbox{\texttt{\mdseries\slshape pt}} is either an affine point \mbox{\texttt{\mdseries\slshape Hq}}, or the infinite point is \texttt{[ infinity ]}. }
 
  
 
@@ -500,7 +497,7 @@ the corresponding Hermitian curve. }
 }\hfill{\scriptsize (operation)}}\\
 
 
- The valuation of a Hermitian divisor \mbox{\texttt{\mdseries\slshape D}} at the point \mbox{\texttt{\mdseries\slshape pt}} is its corresponding order. }
+ The valuation of a Hermitian divisor \mbox{\texttt{\mdseries\slshape D}} at the point or place \mbox{\texttt{\mdseries\slshape pt}} is its corresponding order. }
 
  
 
@@ -564,9 +561,9 @@ the corresponding Hermitian curve. }
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@p1:=1PointHermitian_Divisor(C,infinity);|
+  !gapprompt@gap>| !gapinput@p1:=Hermitian_Place(C,infinity);|
   <GZ divisor with support of length 1 over indeterminate Y>
-  !gapprompt@gap>| !gapinput@p2:=1PointHermitian_Divisor(C,Z(3));|
+  !gapprompt@gap>| !gapinput@p2:=Hermitian_Place(C,Z(3));|
   <GZ divisor with support of length 1 over indeterminate Y>
   !gapprompt@gap>| !gapinput@d:=3*p1-4*p2;|
   <GZ divisor with support of length 2 over indeterminate Y>

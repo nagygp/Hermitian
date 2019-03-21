@@ -22,9 +22,8 @@ Z(q)*[0,0] in Hq;
 AllRationalPlacesOfHermitian_Curve(Hq);
 
 ### divisors
-p1:=1PointHermitian_Divisor(Hq,[infinity]);
-p2:=1PointHermitian_Divisor(Hq,p);  
-d:=3*p1-4*p2;
+p1:=Hermitian_Place(Hq,[infinity]);
+d:=3*p1-4*p;
 Support(d);
 UnderlyingField(d);
 Zero(d);
@@ -38,6 +37,7 @@ d^fr;
 Support(d^fr);
 Support(d);
 
+### HERM_hermitianIntersection for private usage
 s1:=HERM_hermitianIntersection(Hq,Y[1],-1);
 s2:=HERM_hermitianIntersection(Hq,Y[2],-1);
 List(s1,pt->[pt,HERM_isectmultAtHpt_exact(Hq,pt,Y[1])]);
@@ -50,8 +50,7 @@ Print(d);
 Degree(d);
 
 ### RR spaces
-pt:=RandomPlaceOfGivenDegreeOfHermitian_Curve(Hq,3);
-a:=1PointHermitian_Divisor(Hq,pt);
+a:=RandomPlaceOfGivenDegreeOfHermitian_Curve(Hq,3);
 fr:=FrobeniusAutomorphismOfHermitian_Curve(Hq);
 d:=Sum(AC_FrobeniusAutomorphismOrbit(fr,a));
 IsRationalHermitian_Divisor(d);
@@ -63,7 +62,7 @@ ForAll(bb,x->PrincipalHermitian_Divisor(Hq,x)>=-5*d);
 
 ### AG codes
 Hermitian_FunctionalCode(5*d);
-a:=Sum(Difference(AllRationalPlacesOfHermitian_Curve(Hq),[[infinity]]),p->1PointHermitian_Divisor(Hq,p));
+a:=Sum(AllRationalAffinePlacesOfHermitian_Curve(Hq));
 code:=Hermitian_FunctionalCode(8*d,a);
 Print(code);
 DesignedMinimumDistance(code);
@@ -75,20 +74,20 @@ q:=4;
 # construct the curve and the divisors
 Y:=HermitianIndeterminates(GF(q^2),"Y1","Y2");
 Hq:=Hermitian_Curve(Y[1]);
-P_infty:=1PointHermitian_Divisor(Hq,[infinity]); 
+P_infty:=Hermitian_Place(Hq,[infinity]); 
 
 fr:=FrobeniusAutomorphismOfHermitian_Curve(Hq);
 P4:=RandomPlaceOfGivenDegreeOfHermitian_Curve(Hq,5);
-P4:=1PointHermitian_Divisor(Hq,P4);
 P4:=Sum(AC_FrobeniusAutomorphismOrbit(fr,P4));
 G:=5*P4+7*P_infty;
 Degree(G);
 
 len:=50;
-affpts:=Difference( AllRationalPlacesOfHermitian_Curve(Hq), [[infinity]]);;
-D:=Sum([1..len],i->1PointHermitian_Divisor(Hq,affpts[i]));
+affpts:=AllRationalAffinePlacesOfHermitian_Curve(Hq);;
+D:=Sum(affpts{[1..len]});
 
 # construct the AG differential code
+Hermitian_DifferentialCode(G);
 agcode:=Hermitian_DifferentialCode(G,D);
 DesignedMinimumDistance(agcode);
 Length(agcode)-Degree(G)-1;

@@ -45,7 +45,7 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7DC2715183F59DFB">3.2-1 IsHermitian_Divisor</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7C25E6A77FC66456">3.2-2 Hermitian_DivisorConstruct</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X8522DFC37BA9FE9B">3.2-3 Hermitian_Divisor</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7CF40438792D9564">3.2-4 1PointHermitian_Divisor</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X874B79D17AF7FD28">3.2-4 Hermitian_Place</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7D106EB28504FFDD">3.2-5 ZeroHermitian_Divisor</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X8634CC3B79155E29">3.2-6 IsRationalHermitian_Divisor</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X790470C48340E8F7">3.2-7 UnderlyingField</a></span>
@@ -201,13 +201,12 @@ Hermitian_CurveAut([ [ Z(3)^0, Z(3^2)^3 ], [ Z(3^2)^5, Z(3) ] ])
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Hermitian_Divisor</code>( <var class="Arg">Hq</var>, <var class="Arg">pairs</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>returns the corresponding Hermitian divisor over the Hermitian curve <var class="Arg">Hq</var>. The list <var class="Arg">pts</var> must be points of <var class="Arg">Hq</var>; the infinite point is <code class="code">[ infinity ]</code>. The list <var class="Arg">ords</var> contains the respective orders. The elements of the list <var class="Arg">pairs</var> are the point-order pairs.</p>
 
-<p><a id="X7CF40438792D9564" name="X7CF40438792D9564"></a></p>
+<p><a id="X874B79D17AF7FD28" name="X874B79D17AF7FD28"></a></p>
 
-<h5>3.2-4 1PointHermitian_Divisor</h5>
+<h5>3.2-4 Hermitian_Place</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; 1PointHermitian_Divisor</code>( <var class="Arg">Hq</var>, <var class="Arg">pt</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; 1PointHermitian_Divisor</code>( <var class="Arg">Hq</var>, <var class="Arg">pt</var>, <var class="Arg">m</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
-<p>returns the one-point divisor over the Hermitian curve <var class="Arg">Hq</var>.</p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Hermitian_Place</code>( <var class="Arg">Hq</var>, <var class="Arg">pt</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>returns the corresponding place of the Hermitian curve <var class="Arg">Hq</var>, where <var class="Arg">pt</var> is either an affine point <var class="Arg">Hq</var>, or the infinite point is <code class="code">[ infinity ]</code>.</p>
 
 <p><a id="X7D106EB28504FFDD" name="X7D106EB28504FFDD"></a></p>
 
@@ -242,7 +241,7 @@ Hermitian_CurveAut([ [ Z(3)^0, Z(3^2)^3 ], [ Z(3^2)^5, Z(3) ] ])
 <h5>3.2-9 Valuation</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Valuation</code>( <var class="Arg">D</var>, <var class="Arg">pt</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
-<p>The valuation of a Hermitian divisor <var class="Arg">D</var> at the point <var class="Arg">pt</var> is its corresponding order.</p>
+<p>The valuation of a Hermitian divisor <var class="Arg">D</var> at the point or place <var class="Arg">pt</var> is its corresponding order.</p>
 
 <p><a id="X7DBEBF4283238ABF" name="X7DBEBF4283238ABF"></a></p>
 
@@ -281,9 +280,9 @@ Hermitian_CurveAut([ [ Z(3)^0, Z(3^2)^3 ], [ Z(3^2)^5, Z(3) ] ])
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">p1:=1PointHermitian_Divisor(C,infinity);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">p1:=Hermitian_Place(C,infinity);</span>
 &lt;GZ divisor with support of length 1 over indeterminate Y&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">p2:=1PointHermitian_Divisor(C,Z(3));</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">p2:=Hermitian_Place(C,Z(3));</span>
 &lt;GZ divisor with support of length 1 over indeterminate Y&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">d:=3*p1-4*p2;</span>
 &lt;GZ divisor with support of length 2 over indeterminate Y&gt;

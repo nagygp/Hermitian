@@ -19,7 +19,7 @@
 \contentsline {subsection}{\numberline {3.2.1}\leavevmode {\color {Chapter }IsHermitian{\textunderscore }Divisor}}{9}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}\leavevmode {\color {Chapter }Hermitian{\textunderscore }DivisorConstruct}}{9}{subsection.3.2.2}
 \contentsline {subsection}{\numberline {3.2.3}\leavevmode {\color {Chapter }Hermitian{\textunderscore }Divisor}}{9}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}\leavevmode {\color {Chapter }1PointHermitian{\textunderscore }Divisor}}{9}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.4}\leavevmode {\color {Chapter }Hermitian{\textunderscore }Place}}{9}{subsection.3.2.4}
 \contentsline {subsection}{\numberline {3.2.5}\leavevmode {\color {Chapter }ZeroHermitian{\textunderscore }Divisor}}{9}{subsection.3.2.5}
 \contentsline {subsection}{\numberline {3.2.6}\leavevmode {\color {Chapter }IsRationalHermitian{\textunderscore }Divisor}}{10}{subsection.3.2.6}
 \contentsline {subsection}{\numberline {3.2.7}\leavevmode {\color {Chapter }UnderlyingField}}{10}{subsection.3.2.7}

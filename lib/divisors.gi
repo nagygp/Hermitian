@@ -56,6 +56,9 @@ InstallGlobalFunction( Hermitian_DivisorConstruct, function(curve,pts,ords)
 			NewType(Hermitian_DivisorFamily, IsHermitian_Divisor and IsHermitian_DivisorRep),
 			rec(points:=pts,orders:=ords,curve:=curve)
 		);
+	if ords = [ 1 ] then
+		SetFilterObj( ret, IsHermitian_Place );
+	fi;
 	return ret;
 end);
 
@@ -85,6 +88,15 @@ function(curve,pairs)
 	return Hermitian_DivisorConstruct(curve,pts,ords);
 end);
 
+#############################################################################
+##
+#F  Hermitian_Place(curve,pt)
+##
+InstallMethod( Hermitian_Place, "for curve and a point", true, [IsHermitian_Curve,IsList], 0,
+function(curve,pt)
+	return Hermitian_DivisorConstruct(curve,[pt],[1]);
+end);
+
 
 #############################################################################
 ##
@@ -102,27 +114,29 @@ function( D )
 end );
 
 #############################################################################
-##
-#F  1PointHermitian_Divisor(curve,pt)
-#F  1PointHermitian_Divisor(curve,pt,n)
-##
-InstallMethod( 1PointHermitian_Divisor, "for curve and constant", true, [IsHermitian_Curve,IsList], 0,
-function(curve,pt)
-	return Hermitian_Divisor(curve,[pt],[1]);
-end);
-
-#############################################################################
 ##  DISPLAYING AND COMPARING ELEMENTS
 ##  -------------------------------------------------------------------------
 
+InstallMethod( ViewObj, "for a Hermitian place",
+	[ IsHermitian_Place ], 100, 
+function( D )
+	Print( "<Hermitian place ", D!.points[1], " over indeterminates ", IndeterminatesOfHermitian_Divisor(D), ">" );
+end );
+
+InstallMethod( Display, "for a Hermitian place",
+	[ IsHermitian_Place ], 100, 
+function( D )
+	Print( "<Hermitian place ", D!.points[1], " over indeterminates ", IndeterminatesOfHermitian_Divisor(D), ">" );
+end );
+
 InstallMethod( ViewObj, "for a Hermitian divisor",
-	[ IsHermitian_Divisor ],
+	[ IsHermitian_Divisor ], 0,
 function( D )
 	Print( "<Hermitian divisor with support of length ", Size(D!.points), " over indeterminates ", IndeterminatesOfHermitian_Divisor(D), ">" );
 end );
 
 InstallMethod( Display, "for a Hermitian divisor",
-	[ IsHermitian_Divisor ],
+	[ IsHermitian_Divisor ], 0,
 function( D )
 	Print( "<Hermitian divisor with support of length ", Size(D!.points), " over indeterminates ", IndeterminatesOfHermitian_Divisor(D), ">" );
 end );
@@ -248,6 +262,12 @@ function( D, pt )
 	fi;
 end );
 
+InstallMethod( Valuation, "for a Hermitian divisor and a place",
+	[ IsHermitian_Divisor, IsHermitian_Place ],
+function( D, pt )
+	return Valuation( D, pt!.points[1] );
+end );
+
 #############################################################################
 #############################################################################
 
@@ -315,8 +335,15 @@ function( Hq,f )
 		List( HERM_hermitianIntersection(Hq,u,-1), pt->[pt,HERM_isectmultAtHpt_exact(Hq,pt,u)] )
 	);
 	S := List( S, s -> Hermitian_Divisor( Hq, s ) );
-	D := List( D, d -> HERM_totalDegreeOfPolynomial(d)*(q+1)*1PointHermitian_Divisor(Hq,[infinity]) );
+	D := List( D, d -> HERM_totalDegreeOfPolynomial(d)*(q+1)*Hermitian_Place(Hq,[infinity]) );
 	return S[1]-S[2]-(D[1]-D[2]);
+end );
+
+InstallMethod( IsInfiniteHermitian_Place,
+	"for a Hermitian place",
+	[ IsHermitian_Place ],
+function( pt )
+	return pt!.points[1] = [ infinity ];
 end );
 
 #############################################################################
@@ -385,5 +412,6 @@ HERM_linearCodeDivisorFromDifferentialCodeHermitianDivisor:=function( D )
 		Error("argument must be a rational Hermitian divisor\n"); 
 	fi;
 	q:=Sqrt(Size(UnderlyingField(D)));
-	return (q^3+q^2-q-2)*1PointHermitian_Divisor(q^2,[infinity]) - D;
+	return (q^3+q^2-q-2)*Hermitian_Place(q^2,[infinity]) - D;
 end;
+

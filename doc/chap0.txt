@@ -69,7 +69,7 @@
       3.2-1 IsHermitian_Divisor
       3.2-2 Hermitian_DivisorConstruct
       3.2-3 Hermitian_Divisor
-      3.2-4 1PointHermitian_Divisor
+      3.2-4 Hermitian_Place
       3.2-5 ZeroHermitian_Divisor
       3.2-6 IsRationalHermitian_Divisor
       3.2-7 UnderlyingField

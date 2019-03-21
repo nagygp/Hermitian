@@ -157,6 +157,13 @@ function( pt, Hq )
 	return pt[1]^(q+1)=pt[2]+pt[2]^q;
 end );
 
+InstallOtherMethod( \in, 
+        "for a place and a Hermitian curve",
+        [ IsHermitian_Place, IsHermitian_Curve ],
+function( pt, Hq )
+	return pt!.points[1] in Hq;
+end );
+
 InstallMethod( RandomPlaceOfGivenDegreeOfHermitian_Curve,
         "for a Hermitian curve",
         [ IsHermitian_Curve, IsPosInt ],
@@ -166,7 +173,7 @@ function( Hq, d )
 	q := Sqrt(qq);
 	a := Random( [ 0..qq^d ] );
 	if a=0 then 
-		return [ infinity ]; 
+		return Hermitian_Place( Hq, [ infinity ] ); 
 	fi;
 	while true do
 		a := Random( GF(qq^d) );
@@ -175,7 +182,7 @@ function( Hq, d )
 		if IsZero( c ) then break; fi;
 	od;
 	b := HER_traceMapSolution( q, 2*d, a^(q+1) );
-	return [ a, b ];
+	return Hermitian_Place( Hq, [ a, b ] );
 end );
 
 InstallMethod( RandomRationalPlaceOfHermitian_Curve,
@@ -185,14 +192,14 @@ function( Hq )
 	return RandomPlaceOfGivenDegreeOfHermitian_Curve(Hq,1);
 end );
 
-InstallMethod( AllRationalPlacesOfHermitian_Curve,
+InstallMethod( AllRationalAffinePlacesOfHermitian_Curve,
         "for a Hermitian curve",
         [ IsHermitian_Curve ],
 function( Hq )
 	local qq, q, a, b, c, li, i;
 	qq := Hq!.fieldsize;
 	q := Sqrt(qq);
-	li := [ [ infinity ] ];
+	li := [ ];
 	for a in GF(qq) do
 		b := HER_traceMapSolution( q, 2, a^(q+1) );
 		Add( li, [ a, b ] );
@@ -206,7 +213,16 @@ function( Hq )
 			od;
 		fi;
 	od;
-	return Set( li );
+	li := Set( li );
+	return List( li, u -> Hermitian_Place( Hq, u ) );
 end );
 
-
+InstallMethod( AllRationalPlacesOfHermitian_Curve,
+        "for a Hermitian curve",
+        [ IsHermitian_Curve ],
+function( Hq )
+	return Concatenation( 
+		[ Hermitian_Place( Hq, [ infinity ] ) ],
+		AllRationalAffinePlacesOfHermitian_Curve( Hq )
+	);
+end );

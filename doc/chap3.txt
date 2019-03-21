@@ -133,12 +133,12 @@
   [3Xords[103X  contains the respective orders. The elements of the list [3Xpairs[103X are the
   point-order pairs.[133X
   
-  [1X3.2-4 1PointHermitian_Divisor[101X
+  [1X3.2-4 Hermitian_Place[101X
   
-  [33X[1;0Y[29X[2X1PointHermitian_Divisor[102X( [3XHq[103X, [3Xpt[103X ) [32X operation[133X
-  [33X[1;0Y[29X[2X1PointHermitian_Divisor[102X( [3XHq[103X, [3Xpt[103X, [3Xm[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XHermitian_Place[102X( [3XHq[103X, [3Xpt[103X ) [32X operation[133X
   
-  [33X[0;0Yreturns the one-point divisor over the Hermitian curve [3XHq[103X.[133X
+  [33X[0;0Yreturns  the  corresponding  place  of  the  Hermitian curve [3XHq[103X, where [3Xpt[103X is
+  either an affine point [3XHq[103X, or the infinite point is [10X[ infinity ][110X.[133X
   
   [1X3.2-5 ZeroHermitian_Divisor[101X
   
@@ -170,8 +170,8 @@
   
   [33X[1;0Y[29X[2XValuation[102X( [3XD[103X, [3Xpt[103X ) [32X operation[133X
   
-  [33X[0;0YThe  valuation of a Hermitian divisor [3XD[103X at the point [3Xpt[103X is its corresponding
-  order.[133X
+  [33X[0;0YThe  valuation  of  a  Hermitian  divisor  [3XD[103X at the point or place [3Xpt[103X is its
+  corresponding order.[133X
   
   [1X3.2-10 PrincipalHermitian_Divisor[101X
   
@@ -205,9 +205,9 @@
   [33X[0;0Yreturns the negative part of the divisor [3XD[103X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xp1:=1PointHermitian_Divisor(C,infinity);[127X[104X
+    [4X[25Xgap>[125X [27Xp1:=Hermitian_Place(C,infinity);[127X[104X
     [4X[28X<GZ divisor with support of length 1 over indeterminate Y>[128X[104X
-    [4X[25Xgap>[125X [27Xp2:=1PointHermitian_Divisor(C,Z(3));[127X[104X
+    [4X[25Xgap>[125X [27Xp2:=Hermitian_Place(C,Z(3));[127X[104X
     [4X[28X<GZ divisor with support of length 1 over indeterminate Y>[128X[104X
     [4X[25Xgap>[125X [27Xd:=3*p1-4*p2;[127X[104X
     [4X[28X<GZ divisor with support of length 2 over indeterminate Y>[128X[104X

@@ -26,6 +26,22 @@ DeclareCategory( "IsHermitian_Divisor", IsAdditiveElementWithInverse and IsExtLE
 
 #############################################################################
 ##
+#C  IsHermitian_Place(<obj>)
+##
+##  <#GAPDoc Label="IsHermitian_Place">
+##  <ManSection>
+##  <Filt Name="IsHermitian_Place" Arg='obj'/>
+##
+##  <Description>
+##  In this implmementation, a Hermitian place is a Hermitian divisor degree and support length one.
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
+##
+DeclareFilter( "IsHermitian_Place" );
+
+#############################################################################
+##
 #R  IsHermitian_DivisorRep
 ##
 ##  <ManSection>
@@ -99,6 +115,24 @@ DeclareOperation( "Hermitian_Divisor", [IsHermitian_Curve,IsList,IsList] );
 
 #############################################################################
 ##
+#F  Hermitian_Place(<Hq>,<pt>)
+##
+##  <#GAPDoc Label="Hermitian_Place">
+##  <ManSection>
+##  <Oper Name="Hermitian_Place" Arg='Hq,pt'/>
+##
+##  <Description>
+##  returns the corresponding place of the Hermitian curve <A>Hq</A>, where
+##  <A>pt</A> is either an affine point <A>Hq</A>, or the infinite
+##  point is <C>[ infinity ]</C>. 
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
+##
+DeclareOperation( "Hermitian_Place", [IsHermitian_Curve,IsList] );
+
+#############################################################################
+##
 #F  ZeroHermitian_Divisor(<Hq>)
 ##
 ##  <#GAPDoc Label="ZeroHermitian_Divisor">
@@ -112,24 +146,6 @@ DeclareOperation( "Hermitian_Divisor", [IsHermitian_Curve,IsList,IsList] );
 ##  <#/GAPDoc>
 ##
 DeclareOperation( "ZeroHermitian_Divisor", [IsHermitian_Curve] );
-
-#############################################################################
-##
-#F  1PointHermitian_Divisor(<Hq>, <pt>)
-#F  1PointHermitian_Divisor(<Hq>, <pt>, <m>)
-##
-##  <#GAPDoc Label="1PointHermitian_Divisor">
-##  <ManSection>
-##  <Oper Name="1PointHermitian_Divisor" Arg='Hq,pt'/>
-##  <Oper Name="1PointHermitian_Divisor" Arg='Hq,pt,m'/>
-##
-##  <Description>
-##  returns the one-point divisor over the Hermitian curve <A>Hq</A>.
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
-##
-DeclareOperation( "1PointHermitian_Divisor", [IsHermitian_Curve,IsList] );
 
 #############################################################################
 #############################################################################
@@ -245,13 +261,14 @@ DeclareAttribute( "Support", IsHermitian_Divisor );
 ##  <Oper Name="Valuation" Arg='D,pt'/>
 ##
 ##  <Description>
-##  The valuation of a Hermitian divisor <A>D</A> at the point <A>pt</A> is
+##  The valuation of a Hermitian divisor <A>D</A> at the point or place <A>pt</A> is
 ##  its corresponding order. 
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
 DeclareOperation( "Valuation", [IsHermitian_Divisor,IsList] );
+DeclareOperation( "Valuation", [IsHermitian_Divisor,IsHermitian_Place] );
 
 #############################################################################
 ##
@@ -289,17 +306,16 @@ DeclareOperation( "PrincipalHermitian_Divisor", [ IsHermitian_Curve, IsRationalF
 
 #############################################################################
 ##
-#F  MultiplicityOfRoot_NotNeeded(<pol>,<t>)
+#A  IsInfiniteHermitian_Place(p)
 ##
-##  Returns the multiplicity of the root <t> in the polynomial <pol>.
+##  <#GAPDoc Label="IsInfiniteHermitian_Place">
+##  <ManSection>
+##  <Attr Name="IsInfiniteHermitian_Place" Arg='p'/>
 ##
-#DeclareGlobalFunction( "MultiplicityOfRoot_NotNeeded" );
-
-#############################################################################
+##  <Description>
+##  Returns <C>true</C> if <A>p</A> is a Hermitian place at the infinite line.
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 ##
-#F  ValuationAtPlace_NotNeeded(<t>,<ratfun>)
-##
-##  Returns the valuation of the rational function <ratfun> at the place <t>.
-##  Taking no care of the indeterminate and other arguments.
-##
-#DeclareGlobalFunction( "ValuationAtPlace_NotNeeded" );
+DeclareAttribute( "IsInfiniteHermitian_Place", IsHermitian_Place );
