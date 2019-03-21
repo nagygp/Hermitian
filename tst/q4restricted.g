@@ -8,9 +8,13 @@ P_infty:=1PointHermitian_Divisor(Hq,[infinity]);
 
 for s in [1..q^3] do
     hcode:=Hermitian_FunctionalCode(s*P_infty);
-    rcode:=RestrictVectorSpace(hcode,GF(2));
-    Print(s,"\t",Dimension(hcode),"\t",Dimension(rcode),"\t", DesignedMinimumDistance(hcode),"\n");
+    rcode:=RestrictVectorSpace(hcode,PrimeField(GF(q)));
+    m:=Length(FactorsInt(q));
+    dd:=q^3-2*m*(q^3-Dimension(hcode));
+    Print(s,"\t",Dimension(hcode),"\t",Dimension(rcode),"\t",dd,"\t", DesignedMinimumDistance(hcode),"\n");
 od;
+
+###
 
 pt:=RandomPlaceOfGivenDegreeOfHermitian_Curve(Hq,3);
 a:=1PointHermitian_Divisor(Hq,pt);
