@@ -1,9 +1,0 @@
-                             The HERmitian package
-
-This is the README file for the GAP package "HERmitian".
-
-Start GAP and type
-
-	LoadPackage("HERmitian");
-
-  Contact: nagyg at math.u-szeged.hu
