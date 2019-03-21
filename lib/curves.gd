@@ -43,7 +43,11 @@ DeclareCategory( "IsHermitian_Curve", IsObject );
 ##  </Description>
 ##  </ManSection>
 ##  
-DeclareRepresentation( "IsHermitian_CurveRep", IsComponentObjectRep, [ "fieldsize", "char", "X", "Y" ] );
+DeclareRepresentation( 
+    "IsHermitian_CurveRep", 
+    IsComponentObjectRep and IsAttributeStoringRep, 
+    [ "fieldsize", "char", "X", "Y" ] 
+);
 BindGlobal( "Hermitian_CurveFamily", NewFamily( "Hermitian_CurveFam" ) );
 
 #############################################################################

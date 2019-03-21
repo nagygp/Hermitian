@@ -35,7 +35,11 @@ DeclareCategory( "IsHermitian_Divisor", IsAdditiveElementWithInverse and IsExtLE
 ##  </Description>
 ##  </ManSection>
 ##
-DeclareRepresentation( "IsHermitian_DivisorRep", IsAdditiveElement and IsComponentObjectRep, ["curve","char","indnr"] );
+DeclareRepresentation( 
+    "IsHermitian_DivisorRep", 
+    IsAdditiveElement and IsComponentObjectRep and IsAttributeStoringRep, 
+    ["curve","char","indnr"]
+);
 BindGlobal("Hermitian_DivisorFamily",NewFamily("Hermitian_DivisorFam",IsAdditivelyCommutativeElementFamily));
 
 #############################################################################
