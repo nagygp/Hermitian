@@ -1,0 +1,86 @@
+  
+  [1X1 [33X[0;0YIntroduction[133X[101X
+  
+  [33X[0;0YThis  chapter  describes  the [5XGAP[105X package [5XHERmitian[105X. This package implements
+  functionalities  for  divisors  and  Riemann-Roch  spaces  of  an  algebraic
+  function field of Hermitian.[133X
+  
+  [33X[0;0YIf you are viewing this with on-line help, type:[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27X?HERmitian package[127X[104X
+  [4X[32X[104X
+  
+  [33X[0;0Yto see the functions provided by the [5XHERmitian[105X package.[133X
+  
+  
+  [1X1.1 [33X[0;0YUnpacking the [5XHERmitian[105X[101X[1X Package[133X[101X
+  
+  [33X[0;0YIf the [5XHERmitian[105X package was obtained as a part of the [5XGAP[105X distribution from
+  the  [21XDownload[121X  section  of  the  [5XGAP[105X  website,  you  may  proceed to Section
+  [14X???Compiling  Binaries  of  the  HERmitian  Package???[114X.  Alternatively,  the
+  [5XHERmitian[105X  package  may  be installed using a separate archive, for example,
+  for  an update or an installation in a non-default location (see [14X'Reference:
+  GAP Root Directories'[114X).[133X
+  
+  [33X[0;0YBelow we describe the installation procedure for the [11X.tar.gz[111X archive format.
+  Installation using other archive formats is performed in a similar way.[133X
+  
+  [33X[0;0YTo install the [5XHERmitian[105X package, unpack the archive file, which should have
+  a name of form [10XHERmitian-[3XXXX[103X[10X.tar.gz[110X for some version number [3XXXX[103X, by typing[133X
+  
+  [33X[0;0Y  [10Xgzip -dc HERmitian-[3XXXX[103X[10X.tar.gz | tar xpv[110X[133X
+  
+  [33X[0;0YIt may be unpacked in one of the following locations:[133X
+  
+  [30X    [33X[0;6Yin the [11Xpkg[111X directory of your [5XGAP[105X 4 installation;[133X
+  
+  [30X    [33X[0;6Yor  in  a directory named [11X.gap/pkg[111X in your home directory (to be added
+        to the [5XGAP[105X root directory unless [5XGAP[105X is started with [10X-r[110X option);[133X
+  
+  [30X    [33X[0;6Yor  in  a  directory  named  [11Xpkg[111X  in  another directory of your choice
+        (e.g. in the directory [11Xmygap[111X in your home directory).[133X
+  
+  [33X[0;0YIn  the  latter case one one must start [5XGAP[105X with the [10X-l[110X option, e.g. if your
+  private  [11Xpkg[111X directory is a subdirectory of [11Xmygap[111X in your home directory you
+  might type:[133X
+  
+  [33X[0;0Y  [10Xgap -l ";[3Xmyhomedir[103X[10X/mygap"[110X[133X
+  
+  [33X[0;0Ywhere  [3Xmyhomedir[103X  is  the path to your home directory, which (since [5XGAP[105X 4.3)
+  may be replaced by a tilde (the empty path before the semicolon is filled in
+  by the default path of the [5XGAP[105X 4 home directory).[133X
+  
+  
+  [1X1.2 [33X[0;0YLoading the [5XHERmitian[105X[101X[1X Package[133X[101X
+  
+  [33X[0;0YTo use the [5XHERmitian[105X Package you have to request it explicitly. This is done
+  by calling [2XLoadPackage[102X ([14XReference: LoadPackage[114X):[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XLoadPackage("HERmitian");[127X[104X
+    [4X[28X----------------------------------------------------------------[128X[104X
+    [4X[28XLoading  HERmitian 0.1[128X[104X
+    [4X[28Xby Gábor P. Nagy (http://www.math.u-szeged.hu/~nagyg)[128X[104X
+    [4X[28XFor help, type: ?HERmitian package [128X[104X
+    [4X[28X----------------------------------------------------------------[128X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YIf  [5XGAP[105X  cannot  find  a  working binary, the call to [10XLoadPackage[110X will still
+  succeed  but  a  warning  is issued informing that the [10XHelloWorld()[110X function
+  will be unavailable.[133X
+  
+  [33X[0;0YIf  you  want  to  load  the  [5XHERmitian[105X  package by default, you can put the
+  [10XLoadPackage[110X  command  into  your  [11Xgaprc[111X  file  (see  Section [14X'Reference: The
+  gap.ini and gaprc files'[114X).[133X
+  
+  
+  [1X1.3 [33X[0;0YTesting the [5XHERmitian[105X[101X[1X Package[133X[101X
+  
+  [33X[0;0YYou can run tests for the package by[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XTest(Filename(DirectoriesPackageLibrary("HERmitian"),"../tst/testall.tst"));[127X[104X
+  [4X[32X[104X
+  

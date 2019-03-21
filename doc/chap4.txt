@@ -1,0 +1,62 @@
+  
+  [1X4 [33X[0;0YAn example: BCH codes as Hermitian AG-codes[133X[101X
+  
+  [33X[0;0YThe following example constructs BCH codes as Hermitian AG-codes.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xmy_BCH:=function(n,l,delta,F)[127X[104X
+    [4X[25X>[125X [27X	local q,m,r,s,beta,Y,C,D_beta,P_0,P_infty,agcode;[127X[104X
+    [4X[25X>[125X [27X	#[127X[104X
+    [4X[25X>[125X [27X	q:=Size(F);[127X[104X
+    [4X[25X>[125X [27X	m:=OrderMod(q,n);[127X[104X
+    [4X[25X>[125X [27X	beta:=Z(q^m)^((q^m-1)/n);[127X[104X
+    [4X[25X>[125X [27X	#[127X[104X
+    [4X[25X>[125X [27X	Y:=Indeterminate(F,"Y");[127X[104X
+    [4X[25X>[125X [27X	C:=Hermitian_Curve(GF(q^m),Y);[127X[104X
+    [4X[25X>[125X [27X	D_beta:=Sum([0..n-1],i->Hermitian_1PointDivisor(C,beta^i));[127X[104X
+    [4X[25X>[125X [27X	P_0:=Hermitian_1PointDivisor(C,0);[127X[104X
+    [4X[25X>[125X [27X	P_infty:=Hermitian_1PointDivisor(C,infinity);[127X[104X
+    [4X[25X>[125X [27X	#[127X[104X
+    [4X[25X>[125X [27X	r:=l-1;[127X[104X
+    [4X[25X>[125X [27X	s:=n+1-delta-l;[127X[104X
+    [4X[25X>[125X [27X	agcode:=Hermitian_FunctionalCode(r*P_0+s*P_infty,D_beta);[127X[104X
+    [4X[25X>[125X [27X	#[127X[104X
+    [4X[25X>[125X [27X	return RestrictVectorSpace(agcode,F);[127X[104X
+    [4X[25X>[125X [27Xend;[127X[104X
+    [4X[28Xfunction( n, l, delta, F ) ... end[128X[104X
+    [4X[25Xgap>[125X [27X[127X[104X
+    [4X[25Xgap>[125X [27X####[127X[104X
+    [4X[25Xgap>[125X [27X[127X[104X
+    [4X[25Xgap>[125X [27Xq:=2;[127X[104X
+    [4X[28X2[128X[104X
+    [4X[25Xgap>[125X [27Xn:=35;[127X[104X
+    [4X[28X35[128X[104X
+    [4X[25Xgap>[125X [27Xl:=1;[127X[104X
+    [4X[28X1[128X[104X
+    [4X[25Xgap>[125X [27Xdelta:=5;[127X[104X
+    [4X[28X5[128X[104X
+    [4X[25Xgap>[125X [27X[127X[104X
+    [4X[25Xgap>[125X [27X[127X[104X
+    [4X[25Xgap>[125X [27XC0:=BCHCode(n,l,delta,GF(q)); time;[127X[104X
+    [4X[28Xa cyclic [35,11,5]8..13 BCH code, delta=5, b=1 over GF(2)[128X[104X
+    [4X[28X24[128X[104X
+    [4X[25Xgap>[125X [27XC1:=my_BCH(n,l,delta,GF(q)); time;[127X[104X
+    [4X[28X<vector space over GF(2), with 11 generators>[128X[104X
+    [4X[28X364[128X[104X
+    [4X[25Xgap>[125X [27X[127X[104X
+    [4X[25Xgap>[125X [27XCollected(List(C0,x->Number(x,y->IsOne(y))));[127X[104X
+    [4X[28X[ [ 0, 1 ], [ 5, 7 ], [ 7, 5 ], [ 10, 56 ], [ 13, 105 ], [ 14, 10 ], [128X[104X
+    [4X[28X  [ 15, 105 ], [ 16, 385 ], [ 17, 350 ], [ 18, 350 ], [ 19, 385 ], [128X[104X
+    [4X[28X  [ 20, 105 ], [ 21, 10 ], [ 22, 105 ], [ 25, 56 ], [ 28, 5 ], [128X[104X
+    [4X[28X  [ 30, 7 ], [ 35, 1 ] ][128X[104X
+    [4X[25Xgap>[125X [27XCollected(List(C1,x->Number(x,y->IsOne(y))));[127X[104X
+    [4X[28X[ [ 0, 1 ], [ 5, 7 ], [ 7, 5 ], [ 10, 56 ], [ 13, 105 ], [ 14, 10 ], [128X[104X
+    [4X[28X  [ 15, 105 ], [ 16, 385 ], [ 17, 350 ], [ 18, 350 ], [ 19, 385 ], [128X[104X
+    [4X[28X  [ 20, 105 ], [ 21, 10 ], [ 22, 105 ], [ 25, 56 ], [ 28, 5 ], [128X[104X
+    [4X[28X  [ 30, 7 ], [ 35, 1 ] ][128X[104X
+    [4X[25Xgap>[125X [27X[127X[104X
+    [4X[25Xgap>[125X [27XSetDesignedMinimumDistance(C1,delta);[127X[104X
+    [4X[25Xgap>[125X [27XDesignedMinimumDistance(C1);[127X[104X
+    [4X[28X5[128X[104X
+  [4X[32X[104X
+  

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>GAP (HERmitian) - Chapter 1: Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap1"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap0.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap2.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap1_mj.html">[MathJax on]</a></p>
+<p><a id="X7DFB63A97E67C0A1" name="X7DFB63A97E67C0A1"></a></p>
+<div class="ChapSects"><a href="chap1.html#X7DFB63A97E67C0A1">1 <span class="Heading">Introduction</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap1.html#X85E7A5BB7BF23319">1.1 <span class="Heading">Unpacking the <strong class="pkg">HERmitian</strong> Package</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap1.html#X84A8B0C583898BB8">1.2 <span class="Heading">Loading the <strong class="pkg">HERmitian</strong> Package</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap1.html#X8456590879EA0EBD">1.3 <span class="Heading">Testing the <strong class="pkg">HERmitian</strong> Package</span></a>
+</span>
+</div>
+</div>
+
+<h3>1 <span class="Heading">Introduction</span></h3>
+
+<p>This chapter describes the <strong class="pkg">GAP</strong> package <strong class="pkg">HERmitian</strong>. This package implements functionalities for divisors and Riemann-Roch spaces of an algebraic function field of Hermitian.</p>
+
+<p>If you are viewing this with on-line help, type:</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">?HERmitian package</span>
+</pre></div>
+
+<p>to see the functions provided by the <strong class="pkg">HERmitian</strong> package.</p>
+
+<p><a id="X85E7A5BB7BF23319" name="X85E7A5BB7BF23319"></a></p>
+
+<h4>1.1 <span class="Heading">Unpacking the <strong class="pkg">HERmitian</strong> Package</span></h4>
+
+<p>If the <strong class="pkg">HERmitian</strong> package was obtained as a part of the <strong class="pkg">GAP</strong> distribution from the "Download" section of the <strong class="pkg">GAP</strong> website, you may proceed to Section <span class="RefLink">???</span>. Alternatively, the <strong class="pkg">HERmitian</strong> package may be installed using a separate archive, for example, for an update or an installation in a non-default location (see <a href="../../../../opt/gap4//doc/ref/chap9.html#X7A4973627A5DB27D"><span class="RefLink">Reference: GAP Root Directories</span></a>).</p>
+
+<p>Below we describe the installation procedure for the <code class="file">.tar.gz</code> archive format. Installation using other archive formats is performed in a similar way.</p>
+
+<p>To install the <strong class="pkg">HERmitian</strong> package, unpack the archive file, which should have a name of form <code class="code">HERmitian-<var class="Arg">XXX</var>.tar.gz</code> for some version number <var class="Arg">XXX</var>, by typing</p>
+
+<p>  <code class="code">gzip -dc HERmitian-<var class="Arg">XXX</var>.tar.gz | tar xpv</code></p>
+
+<p>It may be unpacked in one of the following locations:</p>
+
+
+<ul>
+<li><p>in the <code class="file">pkg</code> directory of your <strong class="pkg">GAP</strong> 4 installation;</p>
+
+</li>
+<li><p>or in a directory named <code class="file">.gap/pkg</code> in your home directory (to be added to the <strong class="pkg">GAP</strong> root directory unless <strong class="pkg">GAP</strong> is started with <code class="code">-r</code> option);</p>
+
+</li>
+<li><p>or in a directory named <code class="file">pkg</code> in another directory of your choice (e.g. in the directory <code class="file">mygap</code> in your home directory).</p>
+
+</li>
+</ul>
+<p>In the latter case one one must start <strong class="pkg">GAP</strong> with the <code class="code">-l</code> option, e.g. if your private <code class="file">pkg</code> directory is a subdirectory of <code class="file">mygap</code> in your home directory you might type:</p>
+
+<p>  <code class="code">gap -l ";<var class="Arg">myhomedir</var>/mygap"</code></p>
+
+<p>where <var class="Arg">myhomedir</var> is the path to your home directory, which (since <strong class="pkg">GAP</strong> 4.3) may be replaced by a tilde (the empty path before the semicolon is filled in by the default path of the <strong class="pkg">GAP</strong> 4 home directory).</p>
+
+<p><a id="X84A8B0C583898BB8" name="X84A8B0C583898BB8"></a></p>
+
+<h4>1.2 <span class="Heading">Loading the <strong class="pkg">HERmitian</strong> Package</span></h4>
+
+<p>To use the <strong class="pkg">HERmitian</strong> Package you have to request it explicitly. This is done by calling <code class="func">LoadPackage</code> (<a href="../../../../opt/gap4//doc/ref/chap76.html#X79B373A77B29D1F5"><span class="RefLink">Reference: LoadPackage</span></a>):</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LoadPackage("HERmitian");</span>
+----------------------------------------------------------------
+Loading  HERmitian 0.1
+by Gábor P. Nagy (http://www.math.u-szeged.hu/~nagyg)
+For help, type: ?HERmitian package 
+----------------------------------------------------------------
+true
+</pre></div>
+
+<p>If <strong class="pkg">GAP</strong> cannot find a working binary, the call to <code class="code">LoadPackage</code> will still succeed but a warning is issued informing that the <code class="code">HelloWorld()</code> function will be unavailable.</p>
+
+<p>If you want to load the <strong class="pkg">HERmitian</strong> package by default, you can put the <code class="code">LoadPackage</code> command into your <code class="file">gaprc</code> file (see Section <a href="../../../../opt/gap4//doc/ref/chap3.html#X7FD66F977A3B02DF"><span class="RefLink">Reference: The gap.ini and gaprc files</span></a>).</p>
+
+<p><a id="X8456590879EA0EBD" name="X8456590879EA0EBD"></a></p>
+
+<h4>1.3 <span class="Heading">Testing the <strong class="pkg">HERmitian</strong> Package</span></h4>
+
+<p>You can run tests for the package by</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Test(Filename(DirectoriesPackageLibrary("HERmitian"),"../tst/testall.tst"));</span>
+</pre></div>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap0.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap2.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

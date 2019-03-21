@@ -1,0 +1,25 @@
+<!-- %W  background.xml               GAP documentation               Gabor P. Nagy -->
+<!-- %H                                                                             -->
+<!-- %Y  Copyright (C) 2019, Bolyai Institute of the University of Szeged (Hungary) -->
+
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<Chapter Label="HERmitian Background">
+<Heading>Mathematical background</Heading>
+
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<Section Label="Blabla">
+<Heading>Blabla</Heading>
+
+Blabla. <Cite Key="Stichtenoth_book"/> <Cite Key="HKT_book"/> <Cite Key="GAP4"/>
+
+</Section>
+</Chapter>
+
+
+
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!-- %% -->
+<!-- %E -->

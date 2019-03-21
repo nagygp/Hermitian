@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Reading PKGVERSIONDATA chunk from the PackageInfo.g file -->
+
+<!DOCTYPE Book SYSTEM "gapdoc.dtd"
+   [ <!ENTITY HERmitian "<Package>HERmitian</Package>">
+     <#Include Label="PKGVERSIONDATA">
+   ]>
+
+<!-- Documentation of the HERmitian package. -->
+
+<Book Name="HERmitian">
+
+<TitlePage>
+  <Title>The &HERmitian; Package</Title>
+  <Subtitle>Divisors and Riemann-Roch Spaces of Algebraic Function Fields of Hermitian Curves</Subtitle>
+  <Version>Version &VERSION;</Version>
+  <Date>&RELEASEDATE;</Date>
+  <Author> Gábor P. Nagy
+    <Email>nagyg@math.u-szeged.hu</Email>
+    <Homepage>http://www.math.u-szeged.hu/~nagyg/</Homepage>
+  </Author>
+   <Author> Sabira El Khalfaoui
+    <Email>sabira@math.u-szeged.hu</Email>
+  </Author>
+    <Copyright>
+    <Index>License</Index>
+    &copyright; 2019 by Gábor P. Nagy<P/>
+    &HERmitian; package is free software;
+    you can redistribute it and/or modify it under the terms of the
+    <URL Text="GNU General Public License">http://www.fsf.org/licenses/gpl.html</URL>
+    as published by the Free Software Foundation; either version 2 of the License,
+    or (at your option) any later version.
+  </Copyright>
+  <Acknowledgements>
+    We appreciate very much all past and future comments, suggestions and
+    contributions to this package and its documentation provided by &GAP;
+    users and developers.
+  </Acknowledgements>
+</TitlePage>
+
+<TableOfContents/>
+
+<Body>
+
+<#Include SYSTEM "intro.xml">
+
+<#Include SYSTEM "background.xml">
+
+<#Include SYSTEM "usage.xml">
+
+<#Include SYSTEM "example.xml">
+
+</Body>
+
+<Bibliography Databases = "references" /> 
+<TheIndex/>
+
+</Book>
+
+<!-- ==================================================================== -->

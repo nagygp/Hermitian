@@ -1,0 +1,15 @@
+  
+  
+  [1XReferences[101X
+  
+  [[20XGAP17[120X] [17XGAP -- Groups, Algorithms, and Programming, Version 4.8.8[117X, The GAP~Group (2017).
+  
+  [[20XHKT08[120X] [16XHirschfeld, J. W. P., Korchm\'aros, G. and Torres, F.[116X, [17XAlgebraic curves over a finite field[117X, Princeton University Press,
+  Princeton, NJ, Princeton Series in Applied Mathematics (2008), xx+696 pages.
+  
+  [[20XSti09[120X]  [16XStichtenoth,  H.[116X,  [17XAlgebraic  function  fields  and  codes[117X,  Springer-Verlag, Berlin, Second edition, Graduate Texts in
+  Mathematics, [19X254[119X (2009), xiv+355 pages.
+  
+  
+  
+  [32X

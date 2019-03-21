@@ -1,0 +1,49 @@
+  
+  
+  [1XIndex[101X
+  
+  [2X1PointHermitian_Divisor[102X 3.2-4  3.2-4 
+  [2XAutomorphismGroup[102X 3.1-9 
+  [2XDesignedMinimumDistance[102X 3.4-7 
+  [2XFrobeniusAutomorphismOfHermitian_Curve[102X 3.1-6 
+  [2XGeneratorMatrixOfFunctionalHermitian_CodeNC[102X 3.4-2 
+  [2XGeneratorMatrixOfHermitian_Code[102X 3.4-6 
+  HERmitian package 1. 
+  [2XHermitian_Curve[102X 3.1-2 
+  [2XHermitian_CurveAutomorphism[102X 3.1-8 
+  [2XHermitian_DecodeToCodeword[102X 3.4-8 
+  [2XHermitian_DifferentialCode[102X 3.4-4  3.4-4 
+  [2XHermitian_Divisor[102X 3.2-3  3.2-3 
+  [2XHermitian_DivisorConstruct[102X 3.2-2 
+  [2XHermitian_FunctionalCode[102X 3.4-3  3.4-3 
+  [2XHermitian_RiemannRochSpaceBasis[102X 3.3-1 
+  [2XIndeterminatesOfHermitian_Curve[102X 3.1-3 
+  [2XInfimumHermitian_Divisor[102X 3.2-12 
+  [2XIsHermitian_Code[102X 3.4-1 
+  [2XIsHermitian_Curve[102X 3.1-1 
+  [2XIsHermitian_CurveAutomorphism[102X 3.1-7 
+  [2XIsHermitian_DifferentialCode[102X 3.4-1 
+  [2XIsHermitian_Divisor[102X 3.2-1 
+  [2XIsHermitian_FunctionalCode[102X 3.4-1 
+  [2XIsRationalHermitian_Divisor[102X 3.2-6 
+  [2XLength[102X 3.4-5 
+  License .-1 
+  [2XMatrixGroupToHermitian_CurveAutGroup[102X 3.1-9 
+  [2XNegativePartOfHermitian_Divisor[102X 3.2-14 
+  [2XPositivePartOfHermitian_Divisor[102X 3.2-13 
+  [2XPrincipalHermitian_Divisor[102X 3.2-10 
+  [2XRandomBinaryVectorOfGivenDensity[102X 3.5-3 
+  [2XRandomBinaryVectorOfGivenWeight[102X 3.5-3 
+  [2XRandomPlaceOfGivenDegreeOfHermitian_Curve[102X 3.1-5 
+  [2XRandomVectorOfGivenDensity[102X 3.5-3 
+  [2XRandomVectorOfGivenWeight[102X 3.5-3 
+  [2XRestrictVectorSpace[102X 3.5-1 
+  [2XSupport[102X 3.2-8 
+  [2XSupremumHermitian_Divisor[102X 3.2-11 
+  [2XUnderlyingField[102X 3.1-4  3.2-7 
+  [2XUPolCoeffsToSmallFieldNC[102X 3.5-2 
+  [2XValuation[102X 3.2-9 
+  [2XZeroHermitian_Divisor[102X 3.2-5 
+  
+  
+  -------------------------------------------------------

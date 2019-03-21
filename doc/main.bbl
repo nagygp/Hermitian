@@ -1,0 +1,20 @@
+\begin{thebibliography}{HKT08}
+
+\bibitem[GAP17]{GAP4}
+The GAP~Group.
+\newblock {\em {GAP -- Groups, Algorithms, and Programming, Version 4.8.8}},
+  2017.
+
+\bibitem[HKT08]{HKT_book}
+J.~W.~P. Hirschfeld, G.~Korchm\'aros, and F.~Torres.
+\newblock {\em Algebraic curves over a finite field}.
+\newblock Princeton Series in Applied Mathematics. Princeton University Press,
+  Princeton, NJ, 2008.
+
+\bibitem[Sti09]{Stichtenoth_book}
+Henning Stichtenoth.
+\newblock {\em Algebraic function fields and codes}, volume 254 of {\em
+  Graduate Texts in Mathematics}.
+\newblock Springer-Verlag, Berlin, second edition, 2009.
+
+\end{thebibliography}
