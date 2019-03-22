@@ -79,3 +79,21 @@ DeclareGlobalFunction( "RandomVectorOfGivenWeight" );
 DeclareGlobalFunction( "RandomVectorOfGivenDensity" );
 DeclareGlobalFunction( "RandomBinaryVectorOfGivenWeight" );
 DeclareGlobalFunction( "RandomBinaryVectorOfGivenDensity" );
+
+#############################################################################
+##
+#C  InfoHermitian
+##
+##  <#GAPDoc Label="InfoHermitian">
+##  <ManSection>
+##  <InfoClass Name="InfoHermitian">
+##
+##  <Description>
+##  An infoclass for the package. Its default value is $0$. 
+##  With <C>SetInfoLevel(InfoHermitian,2)</C> one can get some additional 
+##  messages about the ongoing computation of Hermitian curves and their codes.
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
+##
+DeclareInfoClass( "InfoHermitian" );

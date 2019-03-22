@@ -248,10 +248,13 @@ end;
 # Works only for k<=q.
 HERM_linearConditionsForISectMultAtInfinity_NC:=function(qq,deg,k)
 	local q,M,zp,i,j;
-	if k>deg then 
-		Print("# Caution: if k>deg then ell_infty had to be a component!\n"); 
-	fi;
 	q:=Sqrt(qq);
+	if k>q then
+		Error("k>q is not supposed to happen!\n");
+	fi;
+	if k>deg then 
+		Info(InfoHermitian, 1, "Warning: If k>deg then ell_infty had to be a component!"); 
+	fi;
 	if q>deg then 
 		zp:=(q+1)*(deg+1)-(deg+1)*(deg+2)/2; 
 	else 
