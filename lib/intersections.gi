@@ -273,23 +273,7 @@ HERM_linearConditionsForISectMultAtInfinity_NC:=function(qq,deg,k)
 	return M;
 end;
 
-#############################################################################
-#############################################################################
-
-linearConditionsForISectMult:=function(qq,pt,deg,k)
-   	if not(IsPrimePowerInt(qq) and IsSquareInt(qq)) then Error("wrong first argument\n"); fi;
-	#if not(pt=[infinity] or isHpt(qq,pt)) then Error("second argument must be a Hermitian point\n"); fi;
-	if not(IsInt(deg) and deg>=0) then Error("wrong third argument\n"); fi;
-	if not(IsInt(k)) then Error("fourth argument must be an integer\n"); fi;
-	if k<1 or k^2>qq then Error("fourth argument must be between 1 and <q>\n"); fi; 
-	if pt=[infinity] then 
-		return HERM_linearConditionsForISectMultAtInfinity_NC(qq,deg,k);
-	else
-		return HERM_linearConditionsForISectMult_NC(qq,pt,deg,k);
-	fi;
-end;
-
-rationalLinCondsISectMult:=function(qq,pt,deg,k)
+HERM_rationalLinCondsISectMult:=function(qq,pt,deg,k)
    	if not(IsPrimePowerInt(qq) and IsSquareInt(qq)) then Error("wrong first argument\n"); fi;
 	#if not(pt=[infinity] or isHpt(qq,pt)) then Error("second argument must be a Hermitian point\n"); fi;
 	if not(IsInt(deg) and deg>=0) then Error("wrong third argument\n"); fi;

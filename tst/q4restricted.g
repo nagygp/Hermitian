@@ -28,3 +28,24 @@ for s in [1..Int(q^3/3)] do
     rcode:=RestrictVectorSpace(hcode,GF(2));
     Print(s,"\t",Dimension(hcode),"\t",Dimension(rcode),"\t", DesignedMinimumDistance(hcode),"\n");
 od;
+
+###
+
+LoadPackage("HERmitian");
+
+if not IsBound(q) then q:=4; fi;
+
+Y:=HermitianIndeterminates(GF(q^2),"Y1","Y2");
+Hq:=Hermitian_Curve(Y[1]);
+P_infty:=Hermitian_Place(Hq,[infinity]); 
+
+p:=Characteristic(GF(q));
+s:=q^3/p-1;
+hcode:=Hermitian_FunctionalCode(s*P_infty);
+rcode:=RestrictVectorSpace(hcode,GF(p));
+Dimension(rcode);
+
+s:=s+11;
+hcode:=Hermitian_FunctionalCode(s*P_infty);
+rcode:=RestrictVectorSpace(hcode,GF(p));
+Dimension(rcode);

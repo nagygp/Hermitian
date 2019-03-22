@@ -9,7 +9,7 @@
 #############################################################################
 ## GLOBAL PRIVATE VARIABLES AND FUNCTIONS 
 # Returns a solution of x^q+x=c in GF(q^deg) or fail
-HER_traceMapSolution:=function( q, deg, c )
+HERM_traceMapSolution:=function( q, deg, c )
 	local bas, ret, tmat;
 	bas := Basis( AsVectorSpace( GF( q ), GF( q^deg ) ) );
 	tmat := List( List( BasisVectors( bas ), u -> u^q + u ), u -> Coefficients( bas, u ) );
@@ -181,7 +181,7 @@ function( Hq, d )
 		c := Trace( GF(qq^d), GF(qq), c - c^q );
 		if IsZero( c ) then break; fi;
 	od;
-	b := HER_traceMapSolution( q, 2*d, a^(q+1) );
+	b := HERM_traceMapSolution( q, 2*d, a^(q+1) );
 	return Hermitian_Place( Hq, [ a, b ] );
 end );
 
@@ -201,7 +201,7 @@ function( Hq )
 	q := Sqrt(qq);
 	li := [ ];
 	for a in GF(qq) do
-		b := HER_traceMapSolution( q, 2, a^(q+1) );
+		b := HERM_traceMapSolution( q, 2, a^(q+1) );
 		Add( li, [ a, b ] );
 		if IsEvenInt(q) then
 			for i in [0..q-2] do

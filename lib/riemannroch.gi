@@ -25,7 +25,7 @@ HERM_normalizedRiemannRochSpaceOfHDiv_asmatrix:=function( D )
 		M := HERM_linearConditionsForISectMultAtInfinity_NC( qq, dn[1], 0 ); # we only take the conditions for deg <= dn[1]
 	else 
 		for u in dn[2] do
-			M := rationalLinCondsISectMult( qq, u[1][1], dn[1], u[2] );
+			M := HERM_rationalLinCondsISectMult( qq, u[1][1], dn[1], u[2] );
 			Add( Ms, List( M, r -> r{[1..Length(u[1])*u[2]]} ) );	# we cut the conditions for deg <= dn[1]
 		od;
 		Add( Ms, List( M, r -> r{[u[2]+1..Length(r)]}) );  # at the end we add the conditions for deg <= dn[1]
