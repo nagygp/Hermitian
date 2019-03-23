@@ -40,6 +40,8 @@ DeclareGlobalFunction( "UPolCoeffsToSmallFieldNC" );
 ##  <#/GAPDoc>
 ##
 DeclareGlobalFunction( "RestrictVectorSpace" );
+DeclareGlobalFunction( "HERM_restrictVectorSpaceByISect_NC" );
+DeclareGlobalFunction( "HERM_restrictVectorSpaceByDual_NC" );
 
 #############################################################################
 ##

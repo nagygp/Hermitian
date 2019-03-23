@@ -7,6 +7,9 @@
 #Y  Copyright (C) 2019 Gabor P. Nagy (http://www.math.u-szeged.hu/~nagyg), 14/03/2019
 
 
+##################################################
+# Commands for field element manipulation
+#
 InstallGlobalFunction( UPolCoeffsToSmallFieldNC, function(f,q)
 	local fe,i;
 	fe:=ShallowCopy(ExtRepPolynomialRatFun(f));
@@ -14,18 +17,13 @@ InstallGlobalFunction( UPolCoeffsToSmallFieldNC, function(f,q)
 	return PolynomialByExtRep(FamilyObj(f),fe);
 end);
 
-InstallGlobalFunction( RestrictVectorSpace, function(V,F) 
+##################################################
+# Commands for restricted vector spaces
+#
+InstallGlobalFunction( HERM_restrictVectorSpaceByISect_NC,
+function(V,F) 
 	local FF,fr_q,U,V1,mat,gens_q;
 	FF:=LeftActingDomain(V);
-	if Characteristic(V)<>Characteristic(F) then 
-		Error("field and vector space must have the same characteristic");
-	fi;
-	if Dimension(V)=0 then 
-		return V; 
-	fi;
-	if IsCVecRep(Basis(V)[1]) then 
-		V:=VectorSpace(FF,List(Basis(V),Unpack)); 
-	fi;
 	fr_q:=AC_FrobeniusAutomorphism(Size(F));
 	while true do
 		if Dimension(V)=0 then break; fi;
@@ -41,13 +39,45 @@ InstallGlobalFunction( RestrictVectorSpace, function(V,F)
 		gens_q:=[];
 	fi;
 	return Subspace(F^Length(Zero(V)),gens_q);
-end);
+end );
+
+InstallGlobalFunction( HERM_restrictVectorSpaceByDual_NC,
+function(V,F) 
+	local FF,M,Mrat,b;
+	FF:=LeftActingDomain(V);
+	M:=NullspaceMat(TransposedMat(Elements(Basis(V))));
+	Mrat:=[];
+	for b in Elements(NormalBase(FF)) do
+		Add(Mrat,List(M,u->List(u,x->Trace(FF,F,b*x))));
+	od;
+	M:=Concatenation(Mrat);
+	TransposedMatDestructive(M);
+	return Subspace(F^Length(Zero(V)),NullspaceMat(M));
+end );
+
+InstallGlobalFunction( RestrictVectorSpace, 
+	function(V,F)
+	local FF;
+	FF:=LeftActingDomain(V);
+	if Characteristic(V)<>Characteristic(F) then 
+		Error("field and vector space must have the same characteristic");
+	fi;
+	if Dimension(V)=0 then 
+		return Subspace(F^Length(Zero(V)),[]); 
+	fi;
+	if IsCVecRep(Basis(V)[1]) then 
+		V:=VectorSpace(FF,List(Basis(V),Unpack)); 
+	fi;
+	if 2*Dimension(V)<=Length(Zero(V)) then 
+		return HERM_restrictVectorSpaceByISect_NC(V,F);
+	else 
+		return HERM_restrictVectorSpaceByDual_NC(V,F);
+	fi;
+end );
 
 ##################################################
-#
 # Commands for error vector generation
 #
-
 InstallGlobalFunction( RandomVectorOfGivenWeight, function(F,n,k)
 	local i,ret;
 	ret:=List([1..n],i->Zero(F));
