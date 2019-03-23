@@ -45,7 +45,28 @@ hcode:=Hermitian_FunctionalCode(s*P_infty);
 rcode:=RestrictVectorSpace(hcode,GF(p));
 Dimension(rcode);
 
-s:=s+11;
+s:=s+1;
 hcode:=Hermitian_FunctionalCode(s*P_infty);
 rcode:=RestrictVectorSpace(hcode,GF(p));
 Dimension(rcode);
+
+###
+
+LoadPackage("HERmitian");
+
+if not IsBound(q) then q:=4; fi;
+
+Y:=HermitianIndeterminates(GF(q^2),"Y1","Y2");
+Hq:=Hermitian_Curve(Y[1]);
+P_infty:=Hermitian_Place(Hq,[infinity]); 
+fr:=FrobeniusAutomorphismOfHermitian_Curve(Hq);
+
+pts:=List([1..20],i->RandomPlaceOfGivenDegreeOfHermitian_Curve(Hq,3));;
+pts3:=List(pts,a->Sum(AC_FrobeniusAutomorphismOrbit(fr,a)));;
+
+for s in UnorderedTuples([0..6],3) do 
+    hcode:=Hermitian_DifferentialCode(s[1]*pts3[1]+s[2]*pts3[2]+s[3]*pts3[3]);
+    rcode:=RestrictVectorSpace(hcode,GF(2));
+    Print(s,"\t",Dimension(hcode),"\t",Dimension(rcode),"\t", DesignedMinimumDistance(hcode),"\n");
+od;
+

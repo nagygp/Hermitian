@@ -91,7 +91,7 @@ function(G,D)
 	SetFilterObj(code,IsHermitian_FunctionalCode);
 	SetLength(code,len);
 	SetGeneratorMatrixOfHermitian_Code(code,genmat);
-	if Degree(G)>=-2 then SetDesignedMinimumDistance(code,len-Degree(G)); fi;
+	SetDesignedMinimumDistance( code, Maximum(0,len-Degree(G)) ); 
 	code!.curve:=G!.curve;
 	code!.gendivs:=[G,D];
 	return code;
@@ -114,7 +114,7 @@ end);
 ##
 InstallMethod( Hermitian_DifferentialCode, "for two Hermitian divisors", true, [IsHermitian_Divisor,IsHermitian_Divisor], 0, 
 function(G,D)
-	local genmat,code,ff,len;
+	local genmat,code,ff,len,desmindi;
 	if not (IsRationalHermitian_Divisor(G) and IsRationalHermitian_Divisor(D) and Set(D!.orders)=[1]) then
 		Error("wrong input\n");
 	fi;
@@ -132,7 +132,8 @@ function(G,D)
 	SetFilterObj(code,IsHermitian_DifferentialCode);
 	SetLength(code,len);
 	SetGeneratorMatrixOfHermitian_Code(code,genmat);
-	if Degree(G)>=-2 then SetDesignedMinimumDistance(code,Degree(G)-2*Genus(G!.curve)+2); fi;
+	desmindi:=Maximum(0,Degree(G)-2*Genus(G!.curve)+2);
+	SetDesignedMinimumDistance(code,desmindi); 
 	code!.curve:=G!.curve;
 	code!.gendivs:=[G,D];
 	return code;
