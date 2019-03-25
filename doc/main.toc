@@ -45,6 +45,6 @@
 \contentsline {subsection}{\numberline {3.5.1}\leavevmode {\color {Chapter }RestrictVectorSpace}}{15}{subsection.3.5.1}
 \contentsline {subsection}{\numberline {3.5.2}\leavevmode {\color {Chapter }UPolCoeffsToSmallFieldNC}}{15}{subsection.3.5.2}
 \contentsline {subsection}{\numberline {3.5.3}\leavevmode {\color {Chapter }RandomVectorOfGivenWeight}}{15}{subsection.3.5.3}
-\contentsline {chapter}{\numberline {4}\leavevmode {\color {Chapter }An example: BCH codes as Hermitian AG-codes}}{16}{chapter.4}
-\contentsline {chapter}{References}{18}{chapter*.4}
-\contentsline {chapter}{Index}{19}{section*.5}
+\contentsline {chapter}{\numberline {4}\leavevmode {\color {Chapter }An example: BCH codes as Hermitian AG-codes}}{17}{chapter.4}
+\contentsline {chapter}{References}{19}{chapter*.4}
+\contentsline {chapter}{Index}{20}{section*.5}

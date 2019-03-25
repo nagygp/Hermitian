@@ -103,7 +103,10 @@ function(G)
 	if not (IsRationalHermitian_Divisor(G)) then
 		Error("wrong input\n");
 	fi;
-	D := Sum( AllRationalAffinePlacesOfHermitian_Curve(G!.curve) ); 
+	D := Filtered( AllRationalAffinePlacesOfHermitian_Curve( G!.curve ), 
+		p -> not IsSubset( Support( G ), Support( p ) ) 
+	); 
+	D := Sum( D );
 	return Hermitian_FunctionalCode(G,D);
 end);
 
@@ -145,7 +148,10 @@ function(G)
 	if not (IsRationalHermitian_Divisor(G)) then
 		Error("wrong input\n");
 	fi;
-	D := Sum( AllRationalAffinePlacesOfHermitian_Curve(G!.curve) ); 
+	D := Filtered( AllRationalAffinePlacesOfHermitian_Curve( G!.curve ), 
+		p -> not IsSubset( Support( G ), Support( p ) ) 
+	); 
+	D := Sum( D );
 	return Hermitian_DifferentialCode(G,D);
 end);
 

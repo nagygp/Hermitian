@@ -63,8 +63,9 @@ DeclareGlobalFunction( "GeneratorMatrixOfFunctionalHermitian_CodeNC" );
 ##  <M>D</M> and <M>G</M> are rational divisors of the
 ##  Hermitian curve <M>C</M>. <M>D=P_1+\cdots+D_n</M>, where <M>P_1,\ldots,P_n</M> are degree one places
 ##  of <M>C</M>. The supports of <M>D</M> and <M>G</M> are disjoint. If <M>D</M> is not given then it is the 
-##  sum of affine rational places of <M>C</M>. By the Riemann-Roch theorem, functional codes have 
-##  dimension <M>\deg(G)+1-g</M>. 
+##  sum of affine rational places of <M>H(q)</M>, not contained in the support of <M>G</M>. 
+##  By the Riemann-Roch theorem, functional codes have dimension at least <M>\deg(G)+1-g</M>, 
+##  with equality if <M>\deg(G)>2g-2</M>. 
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
@@ -88,8 +89,11 @@ DeclareOperation( "Hermitian_FunctionalCode", [IsHermitian_Divisor] );
 ##  <M>D</M> and <M>G</M> are rational divisors of the
 ##  Hermitian curve <M>C</M>. <M>D=P_1+\cdots+D_n</M>, where <M>P_1,\ldots,P_n</M> are degree one places
 ##  of <M>C</M>. The supports of <M>D</M> and <M>G</M> are disjoint. If <M>D</M> is not given then it is the 
-##  sum of affine rational places of <M>C</M>. The differential code is the dual of the corresponding 
-##  functional code. By the Riemann-Roch theorem, differential codes have dimension <M>n-\deg(G)-1+g</M>. 
+##  sum of affine rational places of <M>H(q)</M>, not contained in the support of <M>G</M>. 
+##  By the Riemann-Roch theorem, functional codes have dimension <M>\deg(G)+1-g</M>. 
+##  The differential code is the dual of the corresponding functional code. 
+##  By the Riemann-Roch theorem, differential codes have dimension at least <M>n-\deg(G)-1+g</M>, 
+##  with equality if <M>\deg(G)>2g-2</M>. 
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>

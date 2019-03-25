@@ -706,7 +706,7 @@ curve of equation $X^{q+1}=Y^q+Y$. AG-codes are either of functional or of diffe
 }\hfill{\scriptsize (operation)}}\\
 
 
- returns the functional AG code $C_L(D,G)=\{(f(P_1),\ldots,f(P_n)) \mid f\in L(G)\}.$ $D$ and $G$ are rational divisors of the Hermitian curve $C$. $D=P_1+\cdots+D_n$, where $P_1,\ldots,P_n$ are degree one places of $C$. The supports of $D$ and $G$ are disjoint. If $D$ is not given then it is the sum of affine rational places of $C$. By the Riemann-Roch theorem, functional codes have dimension $\deg(G)+1-g$. }
+ returns the functional AG code $C_L(D,G)=\{(f(P_1),\ldots,f(P_n)) \mid f\in L(G)\}.$ $D$ and $G$ are rational divisors of the Hermitian curve $C$. $D=P_1+\cdots+D_n$, where $P_1,\ldots,P_n$ are degree one places of $C$. The supports of $D$ and $G$ are disjoint. If $D$ is not given then it is the sum of affine rational places of $H(q)$, not contained in the support of $G$. By the Riemann-Roch theorem, functional codes have dimension at least $\deg(G)+1-g$, with equality if $\deg(G)>2g-2$. }
 
  
 
@@ -722,8 +722,8 @@ curve of equation $X^{q+1}=Y^q+Y$. AG-codes are either of functional or of diffe
 
 
  returns the differential AG code $C_\Omega(D,G) = \{res_{P_1}(\omega),\ldots,res_{P_n}(\omega) \mid \omega \in
-\Omega(G-D)\}.$ $D$ and $G$ are rational divisors of the Hermitian curve $C$. $D=P_1+\cdots+D_n$, where $P_1,\ldots,P_n$ are degree one places of $C$. The supports of $D$ and $G$ are disjoint. If $D$ is not given then it is the sum of affine rational places of $C$. The differential code is the dual of the corresponding functional code. By
-the Riemann-Roch theorem, differential codes have dimension $n-\deg(G)-1+g$. }
+\Omega(G-D)\}.$ $D$ and $G$ are rational divisors of the Hermitian curve $C$. $D=P_1+\cdots+D_n$, where $P_1,\ldots,P_n$ are degree one places of $C$. The supports of $D$ and $G$ are disjoint. If $D$ is not given then it is the sum of affine rational places of $H(q)$, not contained in the support of $G$. By the Riemann-Roch theorem, functional codes have dimension $\deg(G)+1-g$. The differential code is the dual of the corresponding functional code. By
+the Riemann-Roch theorem, differential codes have dimension at least $n-\deg(G)-1+g$, with equality if $\deg(G)>2g-2$. }
 
  
 

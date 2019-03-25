@@ -323,7 +323,9 @@
   and  [22XG[122X  are  rational  divisors of the Hermitian curve [22XC[122X. [22XD=P_1+⋯+D_n[122X, where
   [22XP_1,...,P_n[122X  are  degree  one  places  of  [22XC[122X.  The  supports  of [22XD[122X and [22XG[122X are
   disjoint.  If [22XD[122X is not given then it is the sum of affine rational places of
-  [22XC[122X. By the Riemann-Roch theorem, functional codes have dimension [22Xdeg(G)+1-g[122X.[133X
+  [22XH(q)[122X,  not  contained  in  the  support  of  [22XG[122X. By the Riemann-Roch theorem,
+  functional  codes  have  dimension  at  least  [22Xdeg(G)+1-g[122X,  with equality if
+  [22Xdeg(G)>2g-2[122X.[133X
   
   [1X3.4-4 Hermitian_DifferentialCode[101X
   
@@ -334,9 +336,11 @@
   Ω(G-D)}.[122X   [22XD[122X  and  [22XG[122X  are  rational  divisors  of  the  Hermitian  curve  [22XC[122X.
   [22XD=P_1+⋯+D_n[122X, where [22XP_1,...,P_n[122X are degree one places of [22XC[122X. The supports of [22XD[122X
   and  [22XG[122X are disjoint. If [22XD[122X is not given then it is the sum of affine rational
-  places  of  [22XC[122X.  The  differential  code  is  the  dual  of the corresponding
-  functional  code.  By  the  Riemann-Roch  theorem,  differential  codes have
-  dimension [22Xn-deg(G)-1+g[122X.[133X
+  places  of  [22XH(q)[122X,  not  contained  in  the support of [22XG[122X. By the Riemann-Roch
+  theorem,  functional  codes have dimension [22Xdeg(G)+1-g[122X. The differential code
+  is  the  dual  of  the  corresponding  functional  code. By the Riemann-Roch
+  theorem,  differential  codes  have  dimension  at  least [22Xn-deg(G)-1+g[122X, with
+  equality if [22Xdeg(G)>2g-2[122X.[133X
   
   [1X3.4-5 Length[101X
   
