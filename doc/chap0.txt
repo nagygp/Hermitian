@@ -53,7 +53,12 @@
     1.2 [33X[0;0YLoading the [5XHERmitian[105X Package[133X
     1.3 [33X[0;0YTesting the [5XHERmitian[105X Package[133X
   2 [33X[0;0YMathematical background[133X
-    2.1 [33X[0;0YBlabla[133X
+    2.1 [33X[0;0YAlgebraic curves, places, divisors[133X
+    2.2 [33X[0;0YFunction fields and Riemann-Roch spaces[133X
+    2.3 [33X[0;0YAutomorphisms of algebraic curves[133X
+    2.4 [33X[0;0YAlgebraic plane curves over finite fields[133X
+    2.5 [33X[0;0YAlgebraic-geometry codes[133X
+    2.6 [33X[0;0YHermitian curves over finite fields[133X
   3 [33X[0;0YHow to use the package[133X
     3.1 [33X[0;0YHermitian curves[133X
       3.1-1 IsHermitian_Curve

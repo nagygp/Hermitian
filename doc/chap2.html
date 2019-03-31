@@ -22,18 +22,145 @@
 <p id="mathjaxlink" class="pcenter"><a href="chap2_mj.html">[MathJax on]</a></p>
 <p><a id="X7EF1B6708069B0C7" name="X7EF1B6708069B0C7"></a></p>
 <div class="ChapSects"><a href="chap2.html#X7EF1B6708069B0C7">2 <span class="Heading">Mathematical background</span></a>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X8120363781D6D51D">2.1 <span class="Heading">Blabla</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X87F7152A83FFE016">2.1 <span class="Heading">Algebraic curves, places, divisors</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X79D81F6581FEE07D">2.2 <span class="Heading">Function fields and Riemann-Roch spaces</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X875FAF2D817EB7DB">2.3 <span class="Heading">Automorphisms of algebraic curves</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X7BDEE9C27CA403BA">2.4 <span class="Heading">Algebraic plane curves over finite fields</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X85C45F447B0F7202">2.5 <span class="Heading">Algebraic-geometry codes</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X7AB6DDB382EBEFAD">2.6 <span class="Heading">Hermitian curves over finite fields</span></a>
 </span>
 </div>
 </div>
 
 <h3>2 <span class="Heading">Mathematical background</span></h3>
 
-<p><a id="X8120363781D6D51D" name="X8120363781D6D51D"></a></p>
+<p>Our notation and terminology are standard. The reader is referred to <a href="chapBib.html#biBHKT_book">[HKT08]</a>, <a href="chapBib.html#biBStichtenoth_book">[Sti09]</a>. For the decoding of algebraic-geometric codes see the survey paper <a href="chapBib.html#biBHoholdtPellikaan">[HP95]</a>.</p>
 
-<h4>2.1 <span class="Heading">Blabla</span></h4>
+<p><a id="X87F7152A83FFE016" name="X87F7152A83FFE016"></a></p>
 
-<p>Blabla. <a href="chapBib.html#biBStichtenoth_book">[Sti09]</a> <a href="chapBib.html#biBHKT_book">[HKT08]</a> <a href="chapBib.html#biBGAP4">[GAP17]</a></p>
+<h4>2.1 <span class="Heading">Algebraic curves, places, divisors</span></h4>
+
+<p>An algebraic plane curve <span class="Math">\mathscr{X}</span> over the field <span class="Math">K</span> is given by a polynomial <span class="Math">f(X,Y)\in K[X,Y]</span> of degree <span class="Math">n</span>; the usual notation is <span class="Math">\mathscr{X}:f(X,Y)=0</span>. The <em>affine points</em> of <span class="Math">\mathscr{X}</span> are pairs <span class="Math">(x,y)\in L^2</span>, where <span class="Math">L</span> is an extension field of <span class="Math">K</span> and <span class="Math">f(x,y)=0</span> holds. We say that <span class="Math">(x,y)</span> is a <em>smooth point</em> of <span class="Math">\mathscr{X}</span> if <span class="Math">(\frac{\partial{f}}{\partial{X}}(x,y), \frac{\partial{f}}{\partial{Y}}(x,y)) \neq (0,0)</span>. At a smooth affine point <span class="Math">(x,y)\in L^2</span>, the curve has formal local parametrization <span class="Math">(\xi(t),\eta(t))\in L[[t]]^2</span> such that <span class="Math">\xi(0)=x</span>, <span class="Math">\eta(0)=y</span> and <span class="Math">f(\xi(t),\eta(t))=0</span>. Non smooth points are called <em>singular.</em></p>
+
+<p>The affine curve <span class="Math">\mathscr{X}:f(X,Y)=0</span> has <em>homogeneous equation</em> <span class="Math">F(X,Y,Z)=0</span> with <span class="Math">F(X,Y,Z)=Z^nf(\frac{X}{Z},\frac{Y}{Z})</span>. The <em>projective points</em> of <span class="Math">\mathscr{X}</span> satisfy <span class="Math">F(x,y,z)=0</span>. In particular, the affine point <span class="Math">(x,y)</span> of <span class="Math">\mathcal{X}</span> corresponds to a projective point <span class="Math">(x:y:1)</span>. The points of <span class="Math">\mathscr{X}</span> at infinity are given by the homogeneous equation <span class="Math">F(X,Y,0)=0</span>. Smoothness and local parametrization at projective points are defined in the obvious way. We say that the projective point <span class="Math">(x:y:z)</span> of <span class="Math">\mathscr{X}</span> is <em>defined over <span class="Math">L</span></em> if <span class="Math">x/y,y/z,z/x</span> are either infinite or in <span class="Math">L</span>. Notice that any singular point (affine or projective) is defined over an algebraic extension of the underlying field <span class="Math">K</span>.</p>
+
+<p>The algebraic curve <span class="Math">\mathscr{X}</span> is said to be <em>nonsingular</em> or <em>smooth,</em> if all its points are smooth. This implies that <span class="Math">f</span> is absolutely irreducible. For smooth algebraic plane curves, the concept of a <em>place</em> is equivalent with the concept of a point, when <span class="Math">\mathscr{X}</span> is considered as a curve over the algebraic closure of <span class="Math">K</span>. A <em>divisor</em> is a formal sum <span class="Math">D=n_1P_1+\ldots+n_kP_k</span> with integers <span class="Math">n_1,\ldots,n_k</span> and places <span class="Math">P_1,\ldots,P_k</span>. The degree of <span class="Math">D</span> is <span class="Math">n_1+\cdots+n_k</span>. The integer <span class="Math">n_i</span> is the <em>valuation</em> <span class="Math">v_{P_i}(D)</span> of <span class="Math">D</span> at <span class="Math">P_i</span>; for <span class="Math">P\neq P_i</span> one has <span class="Math">v_P(D)=0</span>. The <em>support</em> of <span class="Math">D</span> is the set of places <span class="Math">P</span> such that <span class="Math">v_P(D)\neq 0</span>.</p>
+
+<p><a id="X79D81F6581FEE07D" name="X79D81F6581FEE07D"></a></p>
+
+<h4>2.2 <span class="Heading">Function fields and Riemann-Roch spaces</span></h4>
+
+<p>Let <span class="Math">\mathscr{X}:f(X,Y)=0</span> be a smooth plane algebraic curve. The function field <span class="Math">K(\mathscr{X})</span> of <span class="Math">\mathscr{X}</span> is generated by the variables <span class="Math">x,y</span> subject to the algebraic relation <span class="Math">f(x,y)=0</span>. In particular, each element of <span class="Math">K(\mathscr{X})</span> can be written as <span class="Math">a(x,y)/b(x,y)</span> with <span class="Math">a,b\in K[X,Y]</span>. Let <span class="Math">h\in K(\mathscr{X})</span> and a place <span class="Math">P</span> of <span class="Math">\mathscr{X}</span>, we define the valuation <span class="Math">v_P(h)</span> as the subdegree of <span class="Math">h(\xi(t),\eta(t))</span>, where <span class="Math">(\xi(t),\eta(t))</span> is the formal local parametrization at <span class="Math">P</span>. If <span class="Math">v_P(h)&gt;0</span> then <span class="Math">P</span> is a <em>zero</em> of <span class="Math">h</span>, if <span class="Math">v_P(h)&lt;0</span> then <span class="Math">P</span> is a <em>pole</em> of <span class="Math">h</span>. If <span class="Math">v_P(h)\geq 0</span>, then <span class="Math">h(P)=h(\xi(0),\eta(0))</span> is a well-defined element of <span class="Math">K</span>.</p>
+
+<p>For every non-zero function <span class="Math">h\in K(\mathscr{X})</span>, <span class="Math">\mathrm{Div}(h)</span> stands for the principal divisor associated with <span class="Math">h</span> while <span class="Math">\mathrm{Div}(h)_0</span> and <span class="Math">\mathrm{Div}(h)_\infty</span> for its zero and pole divisor. Furthermore, for every separable function <span class="Math">h\in K (\mathscr{X})</span>, <span class="Math">dh</span> is the exact differential arising from <span class="Math">h</span>, and <span class="Math">\Omega</span> denotes the set of all these differentials. Also, <span class="Math">{\mathrm{res}}_P(dh)</span> is the residue of <span class="Math">dh</span> at a place of <span class="Math">P</span> of <span class="Math">K(\mathscr{X})</span>.</p>
+
+<p>For any divisor <span class="Math">A</span> of <span class="Math">K(\mathscr{X})</span>, the <em>Riemann-Roch space</em> of <span class="Math">A</span> is</p>
+
+<p class="pcenter">\mathcal{L}(A)=\{h\in K(\mathscr{X})\setminus \{0\}|\, \mathrm{Div}(h)\succeq -A \}\cup \{0\}.</p>
+
+<p>We denote <span class="Math">\ell(A)=\dim(\mathcal{L}(A))</span>. Furthermore, the <em>differential space</em> of <span class="Math">A</span> is</p>
+
+<p class="pcenter">\Omega(A)=\{dh\in \Omega \mid \mathrm{Div}(dh)\succeq A \}\cup \{0\}.</p>
+
+<p>Both the Riemann-Roch and the differential spaces are linear spaces over <span class="Math">K</span>. Their dimensions are given by the theorem of Riemann-Roch:</p>
+
+<p class="pcenter">\ell(A)=\deg(A)+1-g+\ell(W-A).</p>
+
+<p>Here, <span class="Math">W</span> is a canonical divisor of <span class="Math">\mathscr{X}</span>, and <span class="Math">g</span> is the <em>genus</em> of <span class="Math">\mathscr{X}</span>. The latter is the most important birational invariant of an algebraic curve. For smooth curves of degree <span class="Math">n</span>, the genus formula is</p>
+
+<p class="pcenter">g=\frac{(n-1)(n-2)}{2}.</p>
+
+<p>The theorem of Riemann-Roch implies</p>
+
+<p class="pcenter">\ell(A)\geq \deg(A)+1-g,</p>
+
+<p>with equality if <span class="Math">\deg(A)&gt;2g-2</span>.</p>
+
+<p><a id="X875FAF2D817EB7DB" name="X875FAF2D817EB7DB"></a></p>
+
+<h4>2.3 <span class="Heading">Automorphisms of algebraic curves</span></h4>
+
+<p>Let <span class="Math">\mathscr{X}:f(X,Y)=0</span> be a smooth plane algebraic curve with function field <span class="Math">K(\mathscr{X})=K(x,y),</span> where the elements <span class="Math">x,y</span> are subject to the algebraic relation <span class="Math">f(x,y)=0</span>. We assume that <span class="Math">K</span> is the constant field of <span class="Math">K(\mathscr{X})</span>. An <em>automorphism</em> of <span class="Math">\mathscr{X}</span> is an automorphism of the function field, leaving all elements of <span class="Math">K</span> fixed. In particular, for any automorphism <span class="Math">\alpha</span> of <span class="Math">\mathscr{X}</span>, there are polynomials <span class="Math">u,v,w\in K[X,Y]</span> such that</p>
+
+<p class="pcenter">\alpha:(x,y) \to \left(\frac{u(x,y)}{w(x,y)},\frac{v(x,y)}{w(x,y)}\right).</p>
+
+<p>Substituting formal power series in <span class="Math">\alpha</span>, we obtain an action of <span class="Math">\alpha</span> on the set of places of <span class="Math">\mathscr{X}</span>. This extends to an action on divisors, differentials and Riemann-Roch spaces.</p>
+
+<p><a id="X7BDEE9C27CA403BA" name="X7BDEE9C27CA403BA"></a></p>
+
+<h4>2.4 <span class="Heading">Algebraic plane curves over finite fields</span></h4>
+
+<p>Let <span class="Math">p</span> be a prime and <span class="Math">K</span> an algebraically closed field of characteristic <span class="Math">p</span>. For <span class="Math">q=p^e</span> we define the <em>Frobenius automorphism</em> <span class="Math">\mathrm{Frob}_q:x\mapsto x^q</span> of <span class="Math">K</span>. This extends to an Frobenius map of <span class="Math">K</span>-polynomials (acting on the coefficients) and of affine and projective points over <span class="Math">K</span> (acting on the coordinates). The curve <span class="Math">\mathscr{X}</span> is said to be <span class="Math">\mathbb{F}_q</span>-rational, if it is <span class="Math">\mathrm{Frob}_q</span>-invariant. Moreover, the Frobenius action extends to places and divisors of <span class="Math">\mathbb{F}_q</span>-rational curves, which allows us to speak of places and divisors defined over <span class="Math">\mathbb{F}_q</span>. Let <span class="Math">\mathscr{X}</span> be an algebraic plane curve over <span class="Math">\mathbb{F}_q</span> and <span class="Math">P</span> a place of <span class="Math">\mathscr{X}</span>. Let <span class="Math">r</span> be the smallest positive integer such that <span class="Math">P</span> is defined over <span class="Math">\mathbb{F}_{q^r}</span>. Then, the divisor</p>
+
+<p class="pcenter">P+P^{\mathrm{Frob}_q}+P^{\mathrm{Frob}_q^2}+\cdots+P^{\mathrm{Frob}_q^{r-1}}</p>
+
+<p>is an <span class="Math">\mathbb{F}_q</span>-rational place of degree <span class="Math">r</span> of <span class="Math">\mathscr{X}</span>.</p>
+
+<p>If <span class="Math">A</span> is an <span class="Math">\mathbb{F}_q</span>-rational divisor then the Riemann-Roch space <span class="Math">\mathcal{L}(A)</span> has a basis which consists of <span class="Math">\mathbb{F}_q</span>-rational elements of the function field of <span class="Math">\mathscr{X}</span>. Hence, we can view <span class="Math">\mathcal{L}(A)</span> as an <span class="Math">\mathbb{F}_q</span>-linear space of dimension <span class="Math">\ell(A)</span>. Similarly, <span class="Math">\Omega(A)</span> can be seen as a vector space over <span class="Math">\mathbb{F}_q</span>.</p>
+
+<p>If <span class="Math">\mathscr{X}</span> is an algebraic curve over <span class="Math">\mathbb{F}_q</span> and <span class="Math">\alpha</span> is an automorphism of <span class="Math">\mathscr{X}</span>, then we say that <span class="Math">\alpha</span> is defined over <span class="Math">\mathbb{F}_q</span> provided <span class="Math">\alpha</span> commutes with the Frobenius map <span class="Math">\mathrm{Frob}_q</span>. The automorphisms of <span class="Math">\mathscr{X}</span> which are defined over <span class="Math">\mathbb{F}_q</span> form a subgroup of <span class="Math">\mathrm{Aut}(\mathscr{X})</span>.</p>
+
+<p><a id="X85C45F447B0F7202" name="X85C45F447B0F7202"></a></p>
+
+<h4>2.5 <span class="Heading">Algebraic-geometry codes</span></h4>
+
+<p>Algebraic-geometry (AG) codes are linear codes constructed from algebraic curves defined over a finite field <span class="Math">\mathbb{F}_{q}</span>. The best known such general construction was originally introduced by Goppa, see <a href="chapBib.html#biBGoppa">[Gop88]</a>. It provides linear codes from certain rational functions whose poles are prescribed by a given <span class="Math">\mathbb{F}_{q}</span>-rational divisor <span class="Math">G</span>, by evaluating them at some set of <span class="Math">\mathbb{F}_{q}</span>-rational places disjoint from <span class="Math">\mathrm{supp}(G)</span>. The dual to such a code can be obtained by computing residues of differential forms. The former are the <em>functional</em> codes, and the latter are the <em>differential</em> codes.</p>
+
+<p>Let <span class="Math">\mathscr{X}</span> be a smooth plane curve defined over the finite field <span class="Math">\mathbb{F}_q</span>. Write <span class="Math">D=Q_1+\ldots+Q_n</span> for the <span class="Math">\mathbb{F}_{q}</span>-rational places <span class="Math">Q_1,\ldots,Q_n</span>. Let <span class="Math">G</span> be another divisor of <span class="Math">\mathbb{F}_{q}(\mathscr{X})</span> whose support <span class="Math">\mathrm{supp}(G)</span> contains none of the places <span class="Math">Q_i</span> with <span class="Math">1\le i \le n</span>. For any function <span class="Math">h\in \mathcal{L}(G)</span>, the <em>evaluation</em> of <span class="Math">h</span> at <span class="Math">D</span> is given by</p>
+
+<p class="pcenter">\mathrm{ev}_D(h)=(h(Q_1),\ldots h(Q_n)).</p>
+
+<p>This defines the <em>evaluation map</em> <span class="Math">\mathrm{ev}_D:\mathcal{L}(G)\to \mathbb{F}_{q}^n</span> which is <span class="Math">\mathbb{F}_{q}</span>-linear and also injective when <span class="Math">n&gt;\deg(G)</span>. Therefore, its image is a subspace of the vector space <span class="Math">\mathbb{F}_{q}^n</span>, or equivalently, an AG <span class="Math">[n,k,d]</span>-code where <span class="Math">d\geq n-\deg(G)</span> and if <span class="Math">\deg(G)&gt;2g-2</span> then <span class="Math">k= \deg(G)+1-g</span>. Such a code is the <em>functional</em> code</p>
+
+<p class="pcenter">C_L(D,G) = \{ (h(Q_1),\ldots,h(Q_n)) \mid h\in \mathcal{L}(G)\}</p>
+
+<p>with <em>designed minimum distance</em> <span class="Math"> n-\deg(G)</span>. The dual code</p>
+
+<p class="pcenter">C_\Omega(D,G) = \{ (\mathrm{res}_{Q_1}(dh), \ldots, \mathrm{res}_{Q_1}(dh)) \mid dh\in\Omega(G-D)\}</p>
+
+<p>of <span class="Math">C_L(D,G)</span> is named a <em>differential code</em>. The differential code <span class="Math">C_\Omega(D,G)</span> is a <span class="Math">[n,\ell(G-D)-\ell(G)+\deg D,d]</span>-code with <span class="Math">d\geq \deg(G)-(2g-2)</span>, and its designed minimum distance is <span class="Math">\deg(G)-(2g-2)</span>.</p>
+
+<p>Typically the divisor <span class="Math">G</span> is taken to be a multiple <span class="Math">mP</span> of a single place <span class="Math">P</span> of degree one. Such codes are the <em>one-point</em> codes, and have been extensively investigated. It has been shown however that AG-codes with better parameters than the comparable one-point Hermitian code may be obtained by allowing the divisor <span class="Math">G</span> to be more general, see <a href="chapBib.html#biBMatthewsMichel">[MM05]</a> and the references therein.</p>
+
+<p><a id="X7AB6DDB382EBEFAD" name="X7AB6DDB382EBEFAD"></a></p>
+
+<h4>2.6 <span class="Heading">Hermitian curves over finite fields</span></h4>
+
+<p>This package implements places, divisors and Riemann-Roch spaces of the <em>Hermitian curve</em> <span class="Math">\mathscr{H}_q</span> defined over <span class="Math">\mathbb{F}_{q^2}</span>. We quote the most important geometric and combinatorial properties of <span class="Math">\mathscr{H}_q</span>, the references are <a href="chapBib.html#biBHirschfeld">[Hir98]</a> and <a href="chapBib.html#biBHughesPiper">[HP73]</a>. In the projective plane <span class="Math">PG(2,\mathbb{F}_{q^2})</span> equipped with homogeneous coordinates <span class="Math">(X:Y:Z)</span>, a canonical form of <span class="Math">\mathscr{H}_q</span> is <span class="Math">X^{q+1}-Y^qZ-YZ^q=0</span> so that</p>
+
+<p class="pcenter">\mathscr{H}_q:X^{q+1}=Y^q+Y</p>
+
+<p>in the affine equation. Every <span class="Math">\mathbb{F}_{q^2}</span>-rational place of the function field <span class="Math">\mathbb{F}_{q^2}(\mathscr{H}_q)</span> of <span class="Math">\mathscr{H}_q</span> corresponds to a point of <span class="Math">\mathscr{H}_q</span> in <span class="Math">PG(2,\mathbb{F}_{q^2})</span>, and this holds true for the degree one places of the constant field extension <span class="Math">\mathbb{F}_{q^{2k}}(\mathscr{H}_q)</span> which correspond to the points of <span class="Math">\mathscr{H}_q</span> in <span class="Math">PG(2,\mathbb{F}_{q^{2k}})</span>. Moreover, a place <span class="Math">P</span> of degree <span class="Math">r&gt;1</span> of <span class="Math">\mathbb{F}_{q^2}(\mathscr{H}_q)</span> is represented by a divisor <span class="Math">P_1+P_2+\ldots +P_r</span> of the constant field extension <span class="Math">\mathbb{F}_{q^{2r}}(\mathscr{H}_q)</span> where <span class="Math">P_i</span> are degree one places of <span class="Math">\mathbb{F}_{q^{2r}}(\mathscr{H}_q)</span> with <span class="Math">P_i=P_1^{\mathrm{Frob}_{q^2}^i}</span> for <span class="Math">i=0,1,\ldots,r-1</span>. Furthermore,</p>
+
+<p class="pcenter">|\mathscr{H}_q(\mathbb{F}_{q^2})|=|\mathscr{H}_q(\mathbb{F}_{q^4})|=q^3+1</p>
+
+<p>and</p>
+
+<p class="pcenter">|\mathscr{H}_q(\mathbb{F}_{q^6})|=q^6+1+q^4(q-1),</p>
+
+<p>where <span class="Math">\mathscr{H}_q(K)</span> denotes the set of <span class="Math">K</span>-rational points of the projective curve <span class="Math">\mathscr{H}_q</span>. A line <span class="Math">l</span> of <span class="Math">PG(2, \mathbb{F}_{q^2})</span> is either a tangent to <span class="Math">\mathscr{H}_q</span> at an <span class="Math">{\mathbb{F}}_{q^2}</span>-rational point of <span class="Math">\mathscr{H}_q</span> or it meets <span class="Math">\mathscr{H}_q</span> at <span class="Math">q+1</span> distinct <span class="Math">{\mathbb{F}}_{q^2}</span>-rational points. In terms of intersection divisors, see \cite[Section 6.2]{HKT_book},</p>
+
+<p class="pcenter"> I(\mathscr{H}_q,l)=(q+1)Q </p>
+
+<p>for the point <span class="Math">Q\in \mathscr{H}_q({\mathbb{F}}_{q^2})</span> of tangent <span class="Math">l</span> of <span class="Math">\mathscr{H}_q</span>, and</p>
+
+<p class="pcenter">I(\mathscr{H}_q,l)=\sum_{i=1}^{q+1} Q_i</p>
+
+<p>for the <span class="Math">q+1</span> distinct points of intersections <span class="Math">Q_1,\ldots,Q_{q+1}</span> of <span class="Math">l</span> and <span class="Math">\mathscr{H}_q</span>.</p>
+
+<p>Through every point <span class="Math">V\in PG(2,{\mathbb{F}}_{q^2})</span> not in <span class="Math">\mathscr{H}_q({\mathbb{F}}_{q^2})</span> there are <span class="Math">q^2-q+1</span> secants and <span class="Math">q+1</span> tangents to <span class="Math">\mathscr{H}_q</span>. The corresponding <span class="Math">q+1</span> tangency points are the common points of <span class="Math">\mathscr{H}_q</span> with the polar line of <span class="Math">V</span> relative to the unitary polarity associated to <span class="Math">\mathscr{H}_q</span>. Let <span class="Math">V=(1:0:0)</span>. Then the line <span class="Math">l_\infty</span> of equation <span class="Math">Z=0</span> is tangent at <span class="Math">P_\infty=(0:1:0)</span> while another line through <span class="Math">V</span> with equation <span class="Math">Y-cZ=0</span> is either a tangent or a secant according as <span class="Math">c^q+c</span> is <span class="Math">0</span> or not.</p>
+
+<p>If <span class="Math">K</span> is the algebraic closure of <span class="Math">\mathbb{F}_{q^2}</span> with <span class="Math">q&gt;2</span>, then the group of <span class="Math">K</span>-automorphisms of the Hermitian curve <span class="Math">\mathscr{H}_q</span> is the projective unitary group <span class="Math">PGU(3,q)</span>. In particular, all automorphisms of <span class="Math">\mathscr{H}_q</span> are defined over <span class="Math">\mathbb{F}_{q^2}</span>. The automorphism group act doubly transitively on the set of <span class="Math">\mathbb{F}_{q^2}</span>-rational points.</p>
 
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3.html">[Next Chapter]</a>&nbsp;  </div>

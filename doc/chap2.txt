@@ -1,8 +1,288 @@
   
   [1X2 [33X[0;0YMathematical background[133X[101X
   
+  [33X[0;0YOur  notation  and  terminology  are  standard.  The  reader  is referred to
+  [HKT08],  [Sti09].  For  the  decoding  of algebraic-geometric codes see the
+  survey paper [HP95].[133X
   
-  [1X2.1 [33X[0;0YBlabla[133X[101X
   
-  [33X[0;0YBlabla. [Sti09] [HKT08] [GAP17][133X
+  [1X2.1 [33X[0;0YAlgebraic curves, places, divisors[133X[101X
+  
+  [33X[0;0YAn  algebraic  plane  curve  [23X\mathscr{X}[123X  over  the  field  [23XK[123X  is given by a
+  polynomial   [23Xf(X,Y)\in   K[X,Y][123X   of   degree   [23Xn[123X;  the  usual  notation  is
+  [23X\mathscr{X}:f(X,Y)=0[123X.  The  [13Xaffine  points[113X of [23X\mathscr{X}[123X are pairs [23X(x,y)\in
+  L^2[123X,  where  [23XL[123X  is  an  extension field of [23XK[123X and [23Xf(x,y)=0[123X holds. We say that
+  [23X(x,y)[123X      is      a      [13Xsmooth      point[113X      of      [23X\mathscr{X}[123X      if
+  [23X(\frac{\partial{f}}{\partial{X}}(x,y), \frac{\partial{f}}{\partial{Y}}(x,y))
+  \neq  (0,0)[123X.  At  a  smooth  affine point [23X(x,y)\in L^2[123X, the curve has formal
+  local  parametrization  [23X(\xi(t),\eta(t))\in  L[[t]]^2[123X  such  that  [23X\xi(0)=x[123X,
+  [23X\eta(0)=y[123X and [23Xf(\xi(t),\eta(t))=0[123X. Non smooth points are called [13Xsingular.[113X[133X
+  
+  [33X[0;0YThe  affine  curve  [23X\mathscr{X}:f(X,Y)=0[123X has [13Xhomogeneous equation[113X [23XF(X,Y,Z)=0[123X
+  with   [23XF(X,Y,Z)=Z^nf(\frac{X}{Z},\frac{Y}{Z})[123X.   The  [13Xprojective  points[113X  of
+  [23X\mathscr{X}[123X  satisfy  [23XF(x,y,z)=0[123X.  In  particular, the affine point [23X(x,y)[123X of
+  [23X\mathcal{X}[123X  corresponds  to  a  projective  point  [23X(x:y:1)[123X.  The  points of
+  [23X\mathscr{X}[123X  at  infinity  are given by the homogeneous equation [23XF(X,Y,0)=0[123X.
+  Smoothness and local parametrization at projective points are defined in the
+  obvious  way.  We  say  that  the projective point [23X(x:y:z)[123X of [23X\mathscr{X}[123X is
+  [13Xdefined  over  [23XL[123X[113X if [23Xx/y,y/z,z/x[123X are either infinite or in [23XL[123X. Notice that any
+  singular point (affine or projective) is defined over an algebraic extension
+  of the underlying field [23XK[123X.[133X
+  
+  [33X[0;0YThe  algebraic curve [23X\mathscr{X}[123X is said to be [13Xnonsingular[113X or [13Xsmooth,[113X if all
+  its  points  are  smooth. This implies that [23Xf[123X is absolutely irreducible. For
+  smooth algebraic plane curves, the concept of a [13Xplace[113X is equivalent with the
+  concept  of  a  point,  when  [23X\mathscr{X}[123X  is considered as a curve over the
+  algebraic  closure  of  [23XK[123X.  A [13Xdivisor[113X is a formal sum [23XD=n_1P_1+\ldots+n_kP_k[123X
+  with  integers  [23Xn_1,\ldots,n_k[123X and places [23XP_1,\ldots,P_k[123X. The degree of [23XD[123X is
+  [23Xn_1+\cdots+n_k[123X. The integer [23Xn_i[123X is the [13Xvaluation[113X [23Xv_{P_i}(D)[123X of [23XD[123X at [23XP_i[123X; for
+  [23XP\neq  P_i[123X  one  has  [23Xv_P(D)=0[123X. The [13Xsupport[113X of [23XD[123X is the set of places [23XP[123X such
+  that [23Xv_P(D)\neq 0[123X.[133X
+  
+  
+  [1X2.2 [33X[0;0YFunction fields and Riemann-Roch spaces[133X[101X
+  
+  [33X[0;0YLet  [23X\mathscr{X}:f(X,Y)=0[123X  be  a  smooth plane algebraic curve. The function
+  field  [23XK(\mathscr{X})[123X  of  [23X\mathscr{X}[123X  is  generated  by  the variables [23Xx,y[123X
+  subject  to  the algebraic relation [23Xf(x,y)=0[123X. In particular, each element of
+  [23XK(\mathscr{X})[123X  can be written as [23Xa(x,y)/b(x,y)[123X with [23Xa,b\in K[X,Y][123X. Let [23Xh\in
+  K(\mathscr{X})[123X  and a place [23XP[123X of [23X\mathscr{X}[123X, we define the valuation [23Xv_P(h)[123X
+  as  the subdegree of [23Xh(\xi(t),\eta(t))[123X, where [23X(\xi(t),\eta(t))[123X is the formal
+  local  parametrization  at [23XP[123X. If [23Xv_P(h)>0[123X then [23XP[123X is a [13Xzero[113X of [23Xh[123X, if [23Xv_P(h)<0[123X
+  then  [23XP[123X  is  a  [13Xpole[113X of [23Xh[123X. If [23Xv_P(h)\geq 0[123X, then [23Xh(P)=h(\xi(0),\eta(0))[123X is a
+  well-defined element of [23XK[123X.[133X
+  
+  [33X[0;0YFor  every non-zero function [23Xh\in K(\mathscr{X})[123X, [23X\mathrm{Div}(h)[123X stands for
+  the   principal  divisor  associated  with  [23Xh[123X  while  [23X\mathrm{Div}(h)_0[123X  and
+  [23X\mathrm{Div}(h)_\infty[123X for its zero and pole divisor. Furthermore, for every
+  separable  function  [23Xh\in  K  (\mathscr{X})[123X,  [23Xdh[123X  is  the exact differential
+  arising from [23Xh[123X, and [23X\Omega[123X denotes the set of all these differentials. Also,
+  [23X{\mathrm{res}}_P(dh)[123X is the residue of [23Xdh[123X at a place of [23XP[123X of [23XK(\mathscr{X})[123X.[133X
+  
+  [33X[0;0YFor any divisor [23XA[123X of [23XK(\mathscr{X})[123X, the [13XRiemann-Roch space[113X of [23XA[123X is[133X
+  
+  
+  [24X[33X[0;6Y\mathcal{L}(A)=\{h\in            K(\mathscr{X})\setminus            \{0\}|\,
+  \mathrm{Div}(h)\succeq -A \}\cup \{0\}.[133X
+  
+  [124X
+  
+  [33X[0;0YWe  denote [23X\ell(A)=\dim(\mathcal{L}(A))[123X. Furthermore, the [13Xdifferential space[113X
+  of [23XA[123X is[133X
+  
+  
+  [24X[33X[0;6Y\Omega(A)=\{dh\in \Omega \mid \mathrm{Div}(dh)\succeq A \}\cup \{0\}.[133X
+  
+  [124X
+  
+  [33X[0;0YBoth  the Riemann-Roch and the differential spaces are linear spaces over [23XK[123X.
+  Their dimensions are given by the theorem of Riemann-Roch:[133X
+  
+  
+  [24X[33X[0;6Y\ell(A)=\deg(A)+1-g+\ell(W-A).[133X
+  
+  [124X
+  
+  [33X[0;0YHere,  [23XW[123X  is  a  canonical  divisor  of  [23X\mathscr{X}[123X,  and [23Xg[123X is the [13Xgenus[113X of
+  [23X\mathscr{X}[123X.  The  latter  is  the most important birational invariant of an
+  algebraic curve. For smooth curves of degree [23Xn[123X, the genus formula is[133X
+  
+  
+  [24X[33X[0;6Yg=\frac{(n-1)(n-2)}{2}.[133X
+  
+  [124X
+  
+  [33X[0;0YThe theorem of Riemann-Roch implies[133X
+  
+  
+  [24X[33X[0;6Y\ell(A)\geq \deg(A)+1-g,[133X
+  
+  [124X
+  
+  [33X[0;0Ywith equality if [23X\deg(A)>2g-2[123X.[133X
+  
+  
+  [1X2.3 [33X[0;0YAutomorphisms of algebraic curves[133X[101X
+  
+  [33X[0;0YLet  [23X\mathscr{X}:f(X,Y)=0[123X  be  a  smooth plane algebraic curve with function
+  field  [23XK(\mathscr{X})=K(x,y),[123X  where  the  elements  [23Xx,y[123X  are subject to the
+  algebraic  relation  [23Xf(x,y)=0[123X.  We  assume  that  [23XK[123X is the constant field of
+  [23XK(\mathscr{X})[123X.  An  [13Xautomorphism[113X  of  [23X\mathscr{X}[123X is an automorphism of the
+  function  field,  leaving  all  elements  of [23XK[123X fixed. In particular, for any
+  automorphism  [23X\alpha[123X  of  [23X\mathscr{X}[123X, there are polynomials [23Xu,v,w\in K[X,Y][123X
+  such that[133X
+  
+  
+  [24X[33X[0;6Y\alpha:(x,y) \to \left(\frac{u(x,y)}{w(x,y)},\frac{v(x,y)}{w(x,y)}\right).[133X
+  
+  [124X
+  
+  [33X[0;0YSubstituting formal power series in [23X\alpha[123X, we obtain an action of [23X\alpha[123X on
+  the  set  of  places  of [23X\mathscr{X}[123X. This extends to an action on divisors,
+  differentials and Riemann-Roch spaces.[133X
+  
+  
+  [1X2.4 [33X[0;0YAlgebraic plane curves over finite fields[133X[101X
+  
+  [33X[0;0YLet  [23Xp[123X  be  a prime and [23XK[123X an algebraically closed field of characteristic [23Xp[123X.
+  For  [23Xq=p^e[123X we define the [13XFrobenius automorphism[113X [23X\mathrm{Frob}_q:x\mapsto x^q[123X
+  of  [23XK[123X.  This  extends  to  an  Frobenius map of [23XK[123X-polynomials (acting on the
+  coefficients)  and  of  affine  and  projective points over [23XK[123X (acting on the
+  coordinates).  The curve [23X\mathscr{X}[123X is said to be [23X\mathbb{F}_q[123X-rational, if
+  it  is  [23X\mathrm{Frob}_q[123X-invariant. Moreover, the Frobenius action extends to
+  places  and  divisors  of  [23X\mathbb{F}_q[123X-rational  curves, which allows us to
+  speak  of  places and divisors defined over [23X\mathbb{F}_q[123X. Let [23X\mathscr{X}[123X be
+  an algebraic plane curve over [23X\mathbb{F}_q[123X and [23XP[123X a place of [23X\mathscr{X}[123X. Let
+  [23Xr[123X   be   the   smallest  positive  integer  such  that  [23XP[123X  is  defined  over
+  [23X\mathbb{F}_{q^r}[123X. Then, the divisor[133X
+  
+  
+  [24X[33X[0;6YP+P^{\mathrm{Frob}_q}+P^{\mathrm{Frob}_q^2}+\cdots+P^{\mathrm{Frob}_q^{r-1}}[133X
+  
+  [124X
+  
+  [33X[0;0Yis an [23X\mathbb{F}_q[123X-rational place of degree [23Xr[123X of [23X\mathscr{X}[123X.[133X
+  
+  [33X[0;0YIf  [23XA[123X  is  an  [23X\mathbb{F}_q[123X-rational  divisor  then  the  Riemann-Roch space
+  [23X\mathcal{L}(A)[123X  has a basis which consists of [23X\mathbb{F}_q[123X-rational elements
+  of  the  function field of [23X\mathscr{X}[123X. Hence, we can view [23X\mathcal{L}(A)[123X as
+  an  [23X\mathbb{F}_q[123X-linear space of dimension [23X\ell(A)[123X. Similarly, [23X\Omega(A)[123X can
+  be seen as a vector space over [23X\mathbb{F}_q[123X.[133X
+  
+  [33X[0;0YIf  [23X\mathscr{X}[123X  is  an  algebraic  curve over [23X\mathbb{F}_q[123X and [23X\alpha[123X is an
+  automorphism  of  [23X\mathscr{X}[123X,  then  we  say  that  [23X\alpha[123X  is defined over
+  [23X\mathbb{F}_q[123X    provided    [23X\alpha[123X   commutes   with   the   Frobenius   map
+  [23X\mathrm{Frob}_q[123X.  The  automorphisms  of  [23X\mathscr{X}[123X which are defined over
+  [23X\mathbb{F}_q[123X form a subgroup of [23X\mathrm{Aut}(\mathscr{X})[123X.[133X
+  
+  
+  [1X2.5 [33X[0;0YAlgebraic-geometry codes[133X[101X
+  
+  [33X[0;0YAlgebraic-geometry  (AG)  codes  are linear codes constructed from algebraic
+  curves  defined  over  a  finite  field  [23X\mathbb{F}_{q}[123X. The best known such
+  general  construction  was  originally  introduced by Goppa, see [Gop88]. It
+  provides  linear  codes  from  certain  rational  functions  whose poles are
+  prescribed  by a given [23X\mathbb{F}_{q}[123X-rational divisor [23XG[123X, by evaluating them
+  at    some    set    of   [23X\mathbb{F}_{q}[123X-rational   places   disjoint   from
+  [23X\mathrm{supp}(G)[123X.  The  dual  to  such  a  code can be obtained by computing
+  residues of differential forms. The former are the [13Xfunctional[113X codes, and the
+  latter are the [13Xdifferential[113X codes.[133X
+  
+  [33X[0;0YLet  [23X\mathscr{X}[123X  be  a  smooth  plane  curve  defined over the finite field
+  [23X\mathbb{F}_q[123X.  Write [23XD=Q_1+\ldots+Q_n[123X for the [23X\mathbb{F}_{q}[123X-rational places
+  [23XQ_1,\ldots,Q_n[123X.  Let  [23XG[123X  be  another  divisor of [23X\mathbb{F}_{q}(\mathscr{X})[123X
+  whose  support  [23X\mathrm{supp}(G)[123X contains none of the places [23XQ_i[123X with [23X1\le i
+  \le  n[123X.  For  any  function [23Xh\in \mathcal{L}(G)[123X, the [13Xevaluation[113X of [23Xh[123X at [23XD[123X is
+  given by[133X
+  
+  
+  [24X[33X[0;6Y\mathrm{ev}_D(h)=(h(Q_1),\ldots h(Q_n)).[133X
+  
+  [124X
+  
+  [33X[0;0YThis    defines    the    [13Xevaluation   map[113X   [23X\mathrm{ev}_D:\mathcal{L}(G)\to
+  \mathbb{F}_{q}^n[123X  which  is  [23X\mathbb{F}_{q}[123X-linear  and  also injective when
+  [23Xn>\deg(G)[123X.   Therefore,  its  image  is  a  subspace  of  the  vector  space
+  [23X\mathbb{F}_{q}^n[123X,  or equivalently, an AG [23X[n,k,d][123X-code where [23Xd\geq n-\deg(G)[123X
+  and if [23X\deg(G)>2g-2[123X then [23Xk= \deg(G)+1-g[123X. Such a code is the [13Xfunctional[113X code[133X
+  
+  
+  [24X[33X[0;6YC_L(D,G) = \{ (h(Q_1),\ldots,h(Q_n)) \mid h\in \mathcal{L}(G)\}[133X
+  
+  [124X
+  
+  [33X[0;0Ywith [13Xdesigned minimum distance[113X [23X n-\deg(G)[123X. The dual code[133X
+  
+  
+  [24X[33X[0;6YC_\Omega(D,G)  = \{ (\mathrm{res}_{Q_1}(dh), \ldots, \mathrm{res}_{Q_1}(dh))
+  \mid dh\in\Omega(G-D)\}[133X
+  
+  [124X
+  
+  [33X[0;0Yof   [23XC_L(D,G)[123X   is   named   a  [13Xdifferential  code[113X.  The  differential  code
+  [23XC_\Omega(D,G)[123X   is   a   [23X[n,\ell(G-D)-\ell(G)+\deg   D,d][123X-code   with  [23Xd\geq
+  \deg(G)-(2g-2)[123X, and its designed minimum distance is [23X\deg(G)-(2g-2)[123X.[133X
+  
+  [33X[0;0YTypically  the divisor [23XG[123X is taken to be a multiple [23XmP[123X of a single place [23XP[123X of
+  degree  one.  Such  codes are the [13Xone-point[113X codes, and have been extensively
+  investigated. It has been shown however that AG-codes with better parameters
+  than the comparable one-point Hermitian code may be obtained by allowing the
+  divisor [23XG[123X to be more general, see [MM05] and the references therein.[133X
+  
+  
+  [1X2.6 [33X[0;0YHermitian curves over finite fields[133X[101X
+  
+  [33X[0;0YThis  package  implements  places,  divisors  and Riemann-Roch spaces of the
+  [13XHermitian  curve[113X  [23X\mathscr{H}_q[123X  defined over [23X\mathbb{F}_{q^2}[123X. We quote the
+  most  important geometric and combinatorial properties of [23X\mathscr{H}_q[123X, the
+  references    are    [Hir98]   and   [HP73].   In   the   projective   plane
+  [23XPG(2,\mathbb{F}_{q^2})[123X  equipped  with  homogeneous  coordinates  [23X(X:Y:Z)[123X, a
+  canonical form of [23X\mathscr{H}_q[123X is [23XX^{q+1}-Y^qZ-YZ^q=0[123X so that[133X
+  
+  
+  [24X[33X[0;6Y\mathscr{H}_q:X^{q+1}=Y^q+Y[133X
+  
+  [124X
+  
+  [33X[0;0Yin  the  affine  equation.  Every  [23X\mathbb{F}_{q^2}[123X-rational  place  of  the
+  function  field [23X\mathbb{F}_{q^2}(\mathscr{H}_q)[123X of [23X\mathscr{H}_q[123X corresponds
+  to  a  point of [23X\mathscr{H}_q[123X in [23XPG(2,\mathbb{F}_{q^2})[123X, and this holds true
+  for    the   degree   one   places   of   the   constant   field   extension
+  [23X\mathbb{F}_{q^{2k}}(\mathscr{H}_q)[123X   which   correspond  to  the  points  of
+  [23X\mathscr{H}_q[123X  in  [23XPG(2,\mathbb{F}_{q^{2k}})[123X.  Moreover, a place [23XP[123X of degree
+  [23Xr>1[123X   of   [23X\mathbb{F}_{q^2}(\mathscr{H}_q)[123X   is  represented  by  a  divisor
+  [23XP_1+P_2+\ldots      +P_r[123X     of     the     constant     field     extension
+  [23X\mathbb{F}_{q^{2r}}(\mathscr{H}_q)[123X  where  [23XP_i[123X  are  degree  one  places  of
+  [23X\mathbb{F}_{q^{2r}}(\mathscr{H}_q)[123X  with [23XP_i=P_1^{\mathrm{Frob}_{q^2}^i}[123X for
+  [23Xi=0,1,\ldots,r-1[123X. Furthermore,[133X
+  
+  
+  [24X[33X[0;6Y|\mathscr{H}_q(\mathbb{F}_{q^2})|=|\mathscr{H}_q(\mathbb{F}_{q^4})|=q^3+1[133X
+  
+  [124X
+  
+  [33X[0;0Yand[133X
+  
+  
+  [24X[33X[0;6Y|\mathscr{H}_q(\mathbb{F}_{q^6})|=q^6+1+q^4(q-1),[133X
+  
+  [124X
+  
+  [33X[0;0Ywhere   [23X\mathscr{H}_q(K)[123X  denotes  the  set  of  [23XK[123X-rational  points  of  the
+  projective  curve  [23X\mathscr{H}_q[123X.  A  line  [23Xl[123X  of [23XPG(2, \mathbb{F}_{q^2})[123X is
+  either a tangent to [23X\mathscr{H}_q[123X at an [23X{\mathbb{F}}_{q^2}[123X-rational point of
+  [23X\mathscr{H}_q[123X    or    it    meets    [23X\mathscr{H}_q[123X    at    [23Xq+1[123X    distinct
+  [23X{\mathbb{F}}_{q^2}[123X-rational  points.  In terms of intersection divisors, see
+  \cite[Section 6.2]{HKT_book},[133X
+  
+  
+  [24X[33X[0;6YI(\mathscr{H}_q,l)=(q+1)Q[133X
+  
+  [124X
+  
+  [33X[0;0Yfor  the  point  [23XQ\in  \mathscr{H}_q({\mathbb{F}}_{q^2})[123X  of  tangent  [23Xl[123X  of
+  [23X\mathscr{H}_q[123X, and[133X
+  
+  
+  [24X[33X[0;6YI(\mathscr{H}_q,l)=\sum_{i=1}^{q+1} Q_i[133X
+  
+  [124X
+  
+  [33X[0;0Yfor  the  [23Xq+1[123X  distinct  points of intersections [23XQ_1,\ldots,Q_{q+1}[123X of [23Xl[123X and
+  [23X\mathscr{H}_q[123X.[133X
+  
+  [33X[0;0YThrough     every     point    [23XV\in    PG(2,{\mathbb{F}}_{q^2})[123X    not    in
+  [23X\mathscr{H}_q({\mathbb{F}}_{q^2})[123X there are [23Xq^2-q+1[123X secants and [23Xq+1[123X tangents
+  to  [23X\mathscr{H}_q[123X.  The  corresponding  [23Xq+1[123X  tangency  points are the common
+  points  of  [23X\mathscr{H}_q[123X  with  the polar line of [23XV[123X relative to the unitary
+  polarity  associated to [23X\mathscr{H}_q[123X. Let [23XV=(1:0:0)[123X. Then the line [23Xl_\infty[123X
+  of  equation [23XZ=0[123X is tangent at [23XP_\infty=(0:1:0)[123X while another line through [23XV[123X
+  with equation [23XY-cZ=0[123X is either a tangent or a secant according as [23Xc^q+c[123X is [23X0[123X
+  or not.[133X
+  
+  [33X[0;0YIf  [23XK[123X  is the algebraic closure of [23X\mathbb{F}_{q^2}[123X with [23Xq>2[123X, then the group
+  of  [23XK[123X-automorphisms  of  the Hermitian curve [23X\mathscr{H}_q[123X is the projective
+  unitary  group  [23XPGU(3,q)[123X.  In particular, all automorphisms of [23X\mathscr{H}_q[123X
+  are  defined  over  [23X\mathbb{F}_{q^2}[123X.  The  automorphism  group  act  doubly
+  transitively on the set of [23X\mathbb{F}_{q^2}[123X-rational points.[133X
   

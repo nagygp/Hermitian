@@ -1,46 +1,46 @@
 \indexentry{License|hyperpage}{2}
 \indexentry{HERmitian package|hyperpage}{4}
-\indexentry{IsHermitianuScoreCurve@\texttt  {IsHermitian{\textunderscore }Curve}|hyperpage}{7}
-\indexentry{HermitianuScoreCurve@\texttt  {Hermitian{\textunderscore }Curve}|hyperpage}{7}
-\indexentry{IndeterminatesOfHermitianuScoreCurve@\texttt  {Indeterminates}\-\texttt  {Of}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Curve}|hyperpage}{7}
-\indexentry{UnderlyingField@\texttt  {UnderlyingField}|hyperpage}{7}
-\indexentry{RandomPlaceOfGivenDegreeOfHermitianuScoreCurve@\texttt  {Random}\-\texttt  {Place}\-\texttt  {Of}\-\texttt  {Given}\-\texttt  {Degree}\-\texttt  {Of}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Curve}|hyperpage}{8}
-\indexentry{FrobeniusAutomorphismOfHermitianuScoreCurve@\texttt  {Frobenius}\-\texttt  {Automorphism}\-\texttt  {Of}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Curve}|hyperpage}{8}
-\indexentry{IsHermitianuScoreCurveAutomorphism@\texttt  {IsHermitian{\textunderscore }}\-\texttt  {Curve}\-\texttt  {Automorphism}|hyperpage}{8}
-\indexentry{HermitianuScoreCurveAutomorphism@\texttt  {Hermitian{\textunderscore }}\-\texttt  {Curve}\-\texttt  {Automorphism}|hyperpage}{8}
-\indexentry{MatrixGroupToHermitianuScoreCurveAutGroup@\texttt  {Matrix}\-\texttt  {Group}\-\texttt  {To}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Curve}\-\texttt  {Aut}\-\texttt  {Group}|hyperpage}{8}
-\indexentry{AutomorphismGroup@\texttt  {AutomorphismGroup}|hyperpage}{9}
-\indexentry{IsHermitianuScoreDivisor@\texttt  {IsHermitian{\textunderscore }Divisor}|hyperpage}{9}
-\indexentry{HermitianuScoreDivisorConstruct@\texttt  {Hermitian{\textunderscore }}\-\texttt  {Divisor}\-\texttt  {Construct}|hyperpage}{9}
-\indexentry{HermitianuScoreDivisor@\texttt  {Hermitian{\textunderscore }Divisor}|hyperpage}{9}
-\indexentry{HermitianuScoreDivisor@\texttt  {Hermitian{\textunderscore }Divisor}|hyperpage}{9}
-\indexentry{HermitianuScorePlace@\texttt  {Hermitian{\textunderscore }Place}|hyperpage}{9}
-\indexentry{ZeroHermitianuScoreDivisor@\texttt  {Zero}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Divisor}|hyperpage}{9}
-\indexentry{IsRationalHermitianuScoreDivisor@\texttt  {IsRational}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Divisor}|hyperpage}{10}
+\indexentry{IsHermitianuScoreCurve@\texttt  {IsHermitian{\textunderscore }Curve}|hyperpage}{10}
+\indexentry{HermitianuScoreCurve@\texttt  {Hermitian{\textunderscore }Curve}|hyperpage}{10}
+\indexentry{IndeterminatesOfHermitianuScoreCurve@\texttt  {Indeterminates}\-\texttt  {Of}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Curve}|hyperpage}{10}
 \indexentry{UnderlyingField@\texttt  {UnderlyingField}|hyperpage}{10}
-\indexentry{Support@\texttt  {Support}|hyperpage}{10}
-\indexentry{Valuation@\texttt  {Valuation}|hyperpage}{10}
-\indexentry{PrincipalHermitianuScoreDivisor@\texttt  {Principal}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Divisor}|hyperpage}{10}
-\indexentry{SupremumHermitianuScoreDivisor@\texttt  {Supremum}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Divisor}|hyperpage}{10}
-\indexentry{InfimumHermitianuScoreDivisor@\texttt  {Infimum}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Divisor}|hyperpage}{10}
-\indexentry{PositivePartOfHermitianuScoreDivisor@\texttt  {Positive}\-\texttt  {Part}\-\texttt  {Of}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Divisor}|hyperpage}{10}
-\indexentry{NegativePartOfHermitianuScoreDivisor@\texttt  {Negative}\-\texttt  {Part}\-\texttt  {Of}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Divisor}|hyperpage}{11}
-\indexentry{HermitianuScoreRiemannRochSpaceBasis@\texttt  {Hermitian{\textunderscore }}\-\texttt  {Riemann}\-\texttt  {Roch}\-\texttt  {Space}\-\texttt  {Basis}|hyperpage}{12}
-\indexentry{IsHermitianuScoreCode@\texttt  {IsHermitian{\textunderscore }Code}|hyperpage}{12}
-\indexentry{IsHermitianuScoreFunctionalCode@\texttt  {IsHermitian{\textunderscore }}\-\texttt  {Functional}\-\texttt  {Code}|hyperpage}{12}
-\indexentry{IsHermitianuScoreDifferentialCode@\texttt  {IsHermitian{\textunderscore }}\-\texttt  {Differential}\-\texttt  {Code}|hyperpage}{12}
-\indexentry{GeneratorMatrixOfFunctionalHermitianuScoreCodeNC@\texttt  {Generator}\-\texttt  {Matrix}\-\texttt  {Of}\-\texttt  {Functional}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {CodeNC}|hyperpage}{13}
-\indexentry{HermitianuScoreFunctionalCode@\texttt  {Hermitian{\textunderscore }}\-\texttt  {Functional}\-\texttt  {Code}|hyperpage}{13}
-\indexentry{HermitianuScoreFunctionalCode@\texttt  {Hermitian{\textunderscore }}\-\texttt  {Functional}\-\texttt  {Code}|hyperpage}{13}
-\indexentry{HermitianuScoreDifferentialCode@\texttt  {Hermitian{\textunderscore }}\-\texttt  {Differential}\-\texttt  {Code}|hyperpage}{13}
-\indexentry{HermitianuScoreDifferentialCode@\texttt  {Hermitian{\textunderscore }}\-\texttt  {Differential}\-\texttt  {Code}|hyperpage}{13}
-\indexentry{Length@\texttt  {Length}|hyperpage}{13}
-\indexentry{GeneratorMatrixOfHermitianuScoreCode@\texttt  {Generator}\-\texttt  {Matrix}\-\texttt  {Of}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Code}|hyperpage}{13}
-\indexentry{DesignedMinimumDistance@\texttt  {DesignedMinimumDistance}|hyperpage}{13}
-\indexentry{HermitianuScoreDecodeToCodeword@\texttt  {Hermitian{\textunderscore }}\-\texttt  {Decode}\-\texttt  {To}\-\texttt  {Codeword}|hyperpage}{14}
-\indexentry{RestrictVectorSpace@\texttt  {RestrictVectorSpace}|hyperpage}{15}
-\indexentry{UPolCoeffsToSmallFieldNC@\texttt  {UPolCoeffsToSmallFieldNC}|hyperpage}{15}
-\indexentry{RandomVectorOfGivenWeight@\texttt  {RandomVectorOfGivenWeight}|hyperpage}{15}
-\indexentry{RandomVectorOfGivenDensity@\texttt  {RandomVectorOfGivenDensity}|hyperpage}{15}
-\indexentry{RandomBinaryVectorOfGivenWeight@\texttt  {RandomBinaryVectorOfGivenWeight}|hyperpage}{15}
-\indexentry{RandomBinaryVectorOfGivenDensity@\texttt  {RandomBinaryVectorOfGivenDensity}|hyperpage}{15}
+\indexentry{RandomPlaceOfGivenDegreeOfHermitianuScoreCurve@\texttt  {Random}\-\texttt  {Place}\-\texttt  {Of}\-\texttt  {Given}\-\texttt  {Degree}\-\texttt  {Of}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Curve}|hyperpage}{11}
+\indexentry{FrobeniusAutomorphismOfHermitianuScoreCurve@\texttt  {Frobenius}\-\texttt  {Automorphism}\-\texttt  {Of}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Curve}|hyperpage}{11}
+\indexentry{IsHermitianuScoreCurveAutomorphism@\texttt  {IsHermitian{\textunderscore }}\-\texttt  {Curve}\-\texttt  {Automorphism}|hyperpage}{11}
+\indexentry{HermitianuScoreCurveAutomorphism@\texttt  {Hermitian{\textunderscore }}\-\texttt  {Curve}\-\texttt  {Automorphism}|hyperpage}{11}
+\indexentry{MatrixGroupToHermitianuScoreCurveAutGroup@\texttt  {Matrix}\-\texttt  {Group}\-\texttt  {To}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Curve}\-\texttt  {Aut}\-\texttt  {Group}|hyperpage}{11}
+\indexentry{AutomorphismGroup@\texttt  {AutomorphismGroup}|hyperpage}{12}
+\indexentry{IsHermitianuScoreDivisor@\texttt  {IsHermitian{\textunderscore }Divisor}|hyperpage}{12}
+\indexentry{HermitianuScoreDivisorConstruct@\texttt  {Hermitian{\textunderscore }}\-\texttt  {Divisor}\-\texttt  {Construct}|hyperpage}{12}
+\indexentry{HermitianuScoreDivisor@\texttt  {Hermitian{\textunderscore }Divisor}|hyperpage}{12}
+\indexentry{HermitianuScoreDivisor@\texttt  {Hermitian{\textunderscore }Divisor}|hyperpage}{12}
+\indexentry{HermitianuScorePlace@\texttt  {Hermitian{\textunderscore }Place}|hyperpage}{12}
+\indexentry{ZeroHermitianuScoreDivisor@\texttt  {Zero}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Divisor}|hyperpage}{12}
+\indexentry{IsRationalHermitianuScoreDivisor@\texttt  {IsRational}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Divisor}|hyperpage}{13}
+\indexentry{UnderlyingField@\texttt  {UnderlyingField}|hyperpage}{13}
+\indexentry{Support@\texttt  {Support}|hyperpage}{13}
+\indexentry{Valuation@\texttt  {Valuation}|hyperpage}{13}
+\indexentry{PrincipalHermitianuScoreDivisor@\texttt  {Principal}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Divisor}|hyperpage}{13}
+\indexentry{SupremumHermitianuScoreDivisor@\texttt  {Supremum}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Divisor}|hyperpage}{13}
+\indexentry{InfimumHermitianuScoreDivisor@\texttt  {Infimum}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Divisor}|hyperpage}{13}
+\indexentry{PositivePartOfHermitianuScoreDivisor@\texttt  {Positive}\-\texttt  {Part}\-\texttt  {Of}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Divisor}|hyperpage}{13}
+\indexentry{NegativePartOfHermitianuScoreDivisor@\texttt  {Negative}\-\texttt  {Part}\-\texttt  {Of}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Divisor}|hyperpage}{14}
+\indexentry{HermitianuScoreRiemannRochSpaceBasis@\texttt  {Hermitian{\textunderscore }}\-\texttt  {Riemann}\-\texttt  {Roch}\-\texttt  {Space}\-\texttt  {Basis}|hyperpage}{15}
+\indexentry{IsHermitianuScoreCode@\texttt  {IsHermitian{\textunderscore }Code}|hyperpage}{15}
+\indexentry{IsHermitianuScoreFunctionalCode@\texttt  {IsHermitian{\textunderscore }}\-\texttt  {Functional}\-\texttt  {Code}|hyperpage}{15}
+\indexentry{IsHermitianuScoreDifferentialCode@\texttt  {IsHermitian{\textunderscore }}\-\texttt  {Differential}\-\texttt  {Code}|hyperpage}{15}
+\indexentry{GeneratorMatrixOfFunctionalHermitianuScoreCodeNC@\texttt  {Generator}\-\texttt  {Matrix}\-\texttt  {Of}\-\texttt  {Functional}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {CodeNC}|hyperpage}{16}
+\indexentry{HermitianuScoreFunctionalCode@\texttt  {Hermitian{\textunderscore }}\-\texttt  {Functional}\-\texttt  {Code}|hyperpage}{16}
+\indexentry{HermitianuScoreFunctionalCode@\texttt  {Hermitian{\textunderscore }}\-\texttt  {Functional}\-\texttt  {Code}|hyperpage}{16}
+\indexentry{HermitianuScoreDifferentialCode@\texttt  {Hermitian{\textunderscore }}\-\texttt  {Differential}\-\texttt  {Code}|hyperpage}{16}
+\indexentry{HermitianuScoreDifferentialCode@\texttt  {Hermitian{\textunderscore }}\-\texttt  {Differential}\-\texttt  {Code}|hyperpage}{16}
+\indexentry{Length@\texttt  {Length}|hyperpage}{16}
+\indexentry{GeneratorMatrixOfHermitianuScoreCode@\texttt  {Generator}\-\texttt  {Matrix}\-\texttt  {Of}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Code}|hyperpage}{16}
+\indexentry{DesignedMinimumDistance@\texttt  {DesignedMinimumDistance}|hyperpage}{16}
+\indexentry{HermitianuScoreDecodeToCodeword@\texttt  {Hermitian{\textunderscore }}\-\texttt  {Decode}\-\texttt  {To}\-\texttt  {Codeword}|hyperpage}{17}
+\indexentry{RestrictVectorSpace@\texttt  {RestrictVectorSpace}|hyperpage}{18}
+\indexentry{UPolCoeffsToSmallFieldNC@\texttt  {UPolCoeffsToSmallFieldNC}|hyperpage}{18}
+\indexentry{RandomVectorOfGivenWeight@\texttt  {RandomVectorOfGivenWeight}|hyperpage}{18}
+\indexentry{RandomVectorOfGivenDensity@\texttt  {RandomVectorOfGivenDensity}|hyperpage}{18}
+\indexentry{RandomBinaryVectorOfGivenWeight@\texttt  {RandomBinaryVectorOfGivenWeight}|hyperpage}{18}
+\indexentry{RandomBinaryVectorOfGivenDensity@\texttt  {RandomBinaryVectorOfGivenDensity}|hyperpage}{18}

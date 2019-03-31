@@ -1,15 +1,40 @@
 \begin{thebibliography}{HKT08}
 
-\bibitem[GAP17]{GAP4}
-The GAP~Group.
-\newblock {\em {GAP -- Groups, Algorithms, and Programming, Version 4.8.8}},
-  2017.
+\bibitem[Gop88]{Goppa}
+V.~D. Goppa.
+\newblock {\em Geometry and codes}, volume~24 of {\em Mathematics and its
+  Applications (Soviet Series)}.
+\newblock Kluwer Academic Publishers Group, Dordrecht, 1988.
+\newblock Translated from the Russian by N. G. Shartse.
+
+\bibitem[Hir98]{Hirschfeld}
+J.~W.~P. Hirschfeld.
+\newblock {\em Projective geometries over finite fields}.
+\newblock Oxford Mathematical Monographs. The Clarendon Press, Oxford
+  University Press, New York, second edition, 1998.
 
 \bibitem[HKT08]{HKT_book}
 J.~W.~P. Hirschfeld, G.~Korchm\'aros, and F.~Torres.
 \newblock {\em Algebraic curves over a finite field}.
 \newblock Princeton Series in Applied Mathematics. Princeton University Press,
   Princeton, NJ, 2008.
+
+\bibitem[HP73]{HughesPiper}
+Daniel~R. Hughes and Fred~C. Piper.
+\newblock {\em Projective planes}.
+\newblock Springer-Verlag, New York-Berlin, 1973.
+\newblock Graduate Texts in Mathematics, Vol. 6.
+
+\bibitem[HP95]{HoholdtPellikaan}
+Tom H{\o}holdt and Ruud Pellikaan.
+\newblock On the decoding of algebraic-geometric codes.
+\newblock {\em IEEE Trans. Inform. Theory}, 41(6, part 1):1589--1614, 1995.
+\newblock Special issue on algebraic geometry codes.
+
+\bibitem[MM05]{MatthewsMichel}
+Gretchen~L. Matthews and Todd~W. Michel.
+\newblock One-point codes using places of higher degree.
+\newblock {\em IEEE Trans. Inform. Theory}, 51(4):1590--1593, 2005.
 
 \bibitem[Sti09]{Stichtenoth_book}
 Henning Stichtenoth.

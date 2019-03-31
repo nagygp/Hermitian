@@ -1,3 +1,7 @@
-\backcite {Stichtenoth_book}{{6}{2.1}{section.2.1}}
-\backcite {HKT_book}{{6}{2.1}{section.2.1}}
-\backcite {GAP4}{{6}{2.1}{section.2.1}}
+\backcite {HKT_book}{{6}{2}{chapter.2}}
+\backcite {Stichtenoth_book}{{6}{2}{chapter.2}}
+\backcite {HoholdtPellikaan}{{6}{2}{chapter.2}}
+\backcite {Goppa}{{8}{2.5}{section.2.5}}
+\backcite {MatthewsMichel}{{8}{2.5}{section.2.5}}
+\backcite {Hirschfeld}{{9}{2.6}{section.2.6}}
+\backcite {HughesPiper}{{9}{2.6}{section.2.6}}
