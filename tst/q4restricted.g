@@ -70,3 +70,22 @@ for s in UnorderedTuples([0..6],3) do
     Print(s,"\t",Dimension(hcode),"\t",Dimension(rcode),"\t", DesignedMinimumDistance(hcode),"\n");
 od;
 
+###
+
+LoadPackage("HERmitian");
+
+if not IsBound(q) then q:=4; fi;
+
+Y:=HermitianIndeterminates(GF(q^2),"Y1","Y2");
+Hq:=Hermitian_Curve(Y[1]);
+P_infty:=Hermitian_Place(Hq,[infinity]); 
+
+s:=q^3/Characteristic(Hq);
+for k in [1..q^3] do
+    D:=Sum(AllRationalAffinePlacesOfHermitian_Curve(Hq){[1..k]});
+    hcode:=Hermitian_FunctionalCode(s*P_infty,D);
+    rcode:=RestrictVectorSpace(hcode,PrimeField(GF(q)));
+    m:=Length(FactorsInt(q));
+    dd:=q^3-2*m*(q^3-Dimension(hcode));
+    Print(k,"\t",Dimension(hcode),"\t",Dimension(rcode),"\t",dd,"\t", DesignedMinimumDistance(hcode),"\n");
+od;

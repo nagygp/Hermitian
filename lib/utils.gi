@@ -52,7 +52,11 @@ function(V,F)
 	od;
 	M:=Concatenation(Mrat);
 	TransposedMatDestructive(M);
-	return Subspace(F^Length(Zero(V)),NullspaceMat(M));
+	if M=[] then 
+		return F^Length(Zero(V));
+	else
+		return Subspace(F^Length(Zero(V)),NullspaceMat(M));
+	fi;
 end );
 
 InstallGlobalFunction( RestrictVectorSpace, 
