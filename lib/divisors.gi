@@ -268,6 +268,51 @@ function( D, pt )
 	return Valuation( D, pt!.points[1] );
 end );
 
+InstallGlobalFunction( HERM_polValueAtInfinitePlace ,
+function( f )
+    local tdeg, erep, i;
+    if IsZero( f ) then 
+        return 0*Characteristic( f );
+    fi;
+    tdeg := HERM_totalDegreeOfPolynomial( f );
+    erep:=ExtRepPolynomialRatFun( f );
+    if tdeg = 0 then
+        return erep[2];
+    fi;
+    i := Position( erep, [2,tdeg] );
+    if i = fail then
+        return 0*Z(Characteristic ( f ) );
+    else 
+        return erep[i+1];
+    fi;
+end );
+
+InstallMethod( Value, "for a Hermitian rational function and a Hermitian place",
+	[ IsRationalFunction, IsHermitian_Place ],
+function( f, pt )
+	local fnum, fden;
+	if not IsHermitianRationalFunction( f ) then
+		TryNextMethod();
+	fi;
+	fnum := NumeratorOfRationalFunction( f );
+	fden := DenominatorOfRationalFunction( f );
+    if IsInfiniteHermitian_Place( pt ) then 
+        fnum := HERM_polValueAtInfinitePlace( fnum );
+        fden := HERM_polValueAtInfinitePlace( fden );
+    else
+        fnum := Value( fnum, IndeterminatesOfHermitianRatFunc( f ), pt!.points[1] );
+        fden := Value( fden, IndeterminatesOfHermitianRatFunc( f ), pt!.points[1] );
+    fi;
+    if not IsZero( fden ) then 
+    	return fnum/fden;
+    elif not IsZero( fnum ) then
+        return infinity; 
+    else 
+        Error( "Evaluation map not implemented for 0/0\n" );
+    fi;
+end );
+
+
 #############################################################################
 #############################################################################
 

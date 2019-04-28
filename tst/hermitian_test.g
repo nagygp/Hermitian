@@ -107,5 +107,5 @@ sent=sent_decoded;
 #######################
 
 #STOP_TEST( "testall.tst", 10000 );
-#LogTo();
+#LogTo()
 

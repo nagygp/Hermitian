@@ -89,3 +89,41 @@ for k in [1..q^3] do
     dd:=q^3-2*m*(q^3-Dimension(hcode));
     Print(k,"\t",Dimension(hcode),"\t",Dimension(rcode),"\t",dd,"\t", DesignedMinimumDistance(hcode),"\n");
 od;
+
+###
+
+my_rand:=function(q)
+    local res;
+    res:=0*Z(q);
+    while IsZero(res) do res:=Random( GF(q) ); od;
+    return res;
+end;
+
+LoadPackage("HERmitian");
+
+if not IsBound(q) then q:=4; fi;
+
+Y:=HermitianIndeterminates(GF(q^2),"Y1","Y2");
+Hq:=Hermitian_Curve(Y[1]);
+P_infty:=Hermitian_Place(Hq,[infinity]); 
+
+p:=Characteristic(Hq);
+s:=q^3/p-1;
+hcode:=Hermitian_FunctionalCode(s*P_infty);
+mat:=GeneratorMatrixOfHermitian_Code(hcode);
+
+#monom:=List([1..q^3],i->my_rand(q^2));
+rr:=Hermitian_RiemannRochSpaceBasis((s-1)*P_infty);;
+monomf:=Random(GF(q^2)^Size(rr))*rr;;
+#pl:=RandomRationalPlaceOfHermitian_Curve(Hq);
+#Value(monomf,pl);
+#Value(monomf,P_infty);
+monom:=List(AllRationalAffinePlacesOfHermitian_Curve(Hq),p->Value(monomf,p));;
+
+diag:=CVEC_ZeroMat(Length(hcode),CVecClass(LeftActingDomain(hcode),Length(hcode)));
+for i in [1..Length(hcode)] do diag[i][i]:=monom[i]; od;
+mat1:=mat*diag;
+
+RestrictVectorSpace(VectorSpace(GF(q^2),mat1),GF(p));
+
+

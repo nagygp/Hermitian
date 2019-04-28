@@ -272,6 +272,24 @@ DeclareOperation( "Valuation", [IsHermitian_Divisor,IsHermitian_Place] );
 
 #############################################################################
 ##
+#F  Value(<f>,<pl>)
+##
+##  <#GAPDoc Label="Value">
+##  <ManSection>
+##  <Oper Name="Value" Arg='f,pl'/>
+##
+##  <Description>
+##  The value of a Hermitian rational function <A>f</A> at the place <A>pl</A>. 
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
+##
+DeclareGlobalFunction( "HERM_polValueAtInfinitePlace" );
+DeclareOperation( "Value", [ IsRationalFunction, IsHermitian_Place ] );
+
+
+#############################################################################
+##
 #A  IsRationalHermitian_Divisor(<D>)
 ##
 ##  <#GAPDoc Label="IsRationalHermitian_Divisor">
