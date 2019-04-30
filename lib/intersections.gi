@@ -16,7 +16,8 @@
 ##
 
 # returns the total degree of the polynomial <pol>
-HERM_totalDegreeOfPolynomial:=function(pol)
+InstallGlobalFunction( HERM_totalDegreeOfPolynomial, 
+function(pol)
 	local ret;
     if IsZero(pol) then Error("zero polynomial has no total degree\n"); fi;
     if IsFFE(pol) then return 0; fi;
@@ -24,10 +25,11 @@ HERM_totalDegreeOfPolynomial:=function(pol)
 	ret:=ExtRepPolynomialRatFun(ret)[1];
 	ret:=Sum(2*[1..Length(ret)/2],i->ret[i]);
 	return ret;
-end;
+end );
 
 # returns a power series expansion in indeterminate <u> of X^(Sqrt(qq)+1)=Y^Sqrt(qq)+Y at <pt> modulo x^k (up to degree <k>)
-HERM_powerSeriesAtHpt_NC:=function(Hq,pt,k) 
+InstallGlobalFunction( HERM_powerSeriesAtHpt_NC, 
+function(Hq,pt,k) 
 	local a,ret,t,q,u;
 	q:=Sqrt(Hq!.fieldsize); 
 	a:=pt[1];
@@ -39,11 +41,12 @@ HERM_powerSeriesAtHpt_NC:=function(Hq,pt,k)
 		t:=-t^q;
 	od;
 	return ret; 
-end;
+end );
 
 # returns those points of intersection of Hq with pol=0, whose degree is <=deglim.
 # Each point occurs once. 
-HERM_hermitianIntersection:=function(Hq,pol,deglim)
+InstallGlobalFunction( HERM_hermitianIntersection, 
+function(Hq,pol,deglim)
 	local XY,xy,q,resx,fs,ys,xs,ret;
     if IsZero(pol) then 
         Error("zero polynomial has no intersection with the curve\n"); 
@@ -77,11 +80,12 @@ HERM_hermitianIntersection:=function(Hq,pol,deglim)
 	od;
 	ret:=Set(ret);
 	return ret;
-end;
+end );
 
 # Let i.m. be the intersection multiplicity of f=0 with X^(Sqrt(qq)+1)=Y^Sqrt(qq)+Y at the affine point <pt>.
 # returns min(Sqrt(qq),i.m.)
-HERM_isectmultAtHptOrq:=function(Hq,pt,f)
+InstallGlobalFunction( HERM_isectmultAtHptOrq, 
+function(Hq,pt,f)
 	local u,xy,q,pt0,f0;
 	if not(pt in Hq) then Error("point <pt> not on the Hermitian curve\n"); fi;
 	q:=Sqrt(Hq!.fieldsize);
@@ -96,11 +100,12 @@ HERM_isectmultAtHptOrq:=function(Hq,pt,f)
 	fi;
 	u:=Value(f0,xy,[pt0[1]+xy[1],pt0[2]+pt0[1]^q*xy[1]]);
 	return Minimum(q,CoefficientsOfLaurentPolynomial(u)[2]);
-end;
+end );
 
 
 # returns the intersection multiplicity of f=0 with X^(Sqrt(qq)+1)=Y^Sqrt(qq)+Y at the affine point <pt>
-HERM_isectmultAtHpt_exact:=function(Hq,pt,f)
+InstallGlobalFunction( HERM_isectmultAtHpt_exact, 
+function(Hq,pt,f)
 	local u,xy,q,pt0,f0;
 	if not(pt in Hq) then Error("point <pt> not on the Hermitian curve\n"); fi;
 	q:=Sqrt(Hq!.fieldsize);
@@ -116,14 +121,15 @@ HERM_isectmultAtHpt_exact:=function(Hq,pt,f)
 	u:=HERM_powerSeriesAtHpt_NC(Hq,pt0,(q+1)*HERM_totalDegreeOfPolynomial(f0));
 	u:=Value(f0,xy,pt0+[xy[1],u]);
 	return CoefficientsOfLaurentPolynomial(u)[2];
-end;
+end );
 
 #############################################################################
 #############################################################################
 
 # returns elm as an element of GF(q^2) or fail
 # This is needed by some stupid bug in AsInternalFFE()
-HERM_asGFq2Elm:=function(qq,elm)
+InstallGlobalFunction( HERM_asGFq2Elm, 
+function(qq,elm)
 	elm:=AsInternalFFE(elm);
 	if elm=fail then 
 		return fail;
@@ -133,14 +139,15 @@ HERM_asGFq2Elm:=function(qq,elm)
 	else 
 		return Z(qq)^LogFFE(elm,Z(qq)); 
 	fi; 
-end;
+end );
 
 # returns Tr_{k/GF(qq)}(v) where v is a FF vector and k is the closure field of v
-HERM_tracemap4vector:=function(qq,vec)
+InstallGlobalFunction( HERM_tracemap4vector, 
+function(qq,vec)
 	local L;
 	L:=Field(Concatenation([Z(qq)],vec));
 	return List(vec,u->HERM_asGFq2Elm(qq,Trace(L,GF(qq),u)));
-end;
+end );
 
 #############################################################################
 #############################################################################
@@ -148,7 +155,8 @@ end;
 # Returns the system of linear conditions for the coefficients of the curves C 
 # such that deg(C)=deg and I(pt;C,H(q))>=k.
 # Works only for k<=q.
-HERM_linearConditionsForISectMult_NC:=function(qq,pt,deg,k)
+InstallGlobalFunction( HERM_linearConditionsForISectMult_NC, 
+function(qq,pt,deg,k)
 	local M,q,vj,uivj,i,j,nrow,zp;
 	M:=[];
 	q:=Sqrt(qq);
@@ -186,12 +194,13 @@ HERM_linearConditionsForISectMult_NC:=function(qq,pt,deg,k)
 		od;
 	od;
 	return M;
-end;
+end );
 
 # Returns the system of GF(q^2)-rational linear conditions for the coefficients of the curves C 
 # such that deg(C)=deg and I(pt;C,H(q))>=k for all Frobenius images of <pt>.
 # Works only for k<=q.
-HERM_rationalLinCondsISectMult_NC:=function(qq,pt,deg,k)
+InstallGlobalFunction( HERM_rationalLinCondsISectMult_NC, 
+function(qq,pt,deg,k)
 	local M,Mrat,q,vj,uivj,i,j,nrow,zp,L,bas,b;
 	M:=[];
 	q:=Sqrt(qq);
@@ -241,12 +250,13 @@ HERM_rationalLinCondsISectMult_NC:=function(qq,pt,deg,k)
 		od;
 	od;
 	return M;
-end;
+end );
 
 # Returns the system of GF(q^2)-rational linear conditions for the coefficients of the curves C 
 # such that deg(C)=deg and I(P_\infty;C,H(q^2))>=k for all Frobenius images of <pt>.
 # Works only for k<=q.
-HERM_linearConditionsForISectMultAtInfinity_NC:=function(qq,deg,k)
+InstallGlobalFunction( HERM_linearConditionsForISectMultAtInfinity_NC, 
+function(qq,deg,k)
 	local q,M,zp,i,j;
 	q:=Sqrt(qq);
 	if k>q then
@@ -274,9 +284,10 @@ HERM_linearConditionsForISectMultAtInfinity_NC:=function(qq,deg,k)
 		od;
 	od;
 	return M;
-end;
+end );
 
-HERM_rationalLinCondsISectMult:=function(qq,pt,deg,k)
+InstallGlobalFunction( HERM_rationalLinCondsISectMult, 
+function(qq,pt,deg,k)
    	if not(IsPrimePowerInt(qq) and IsSquareInt(qq)) then Error("wrong first argument\n"); fi;
 	#if not(pt=[infinity] or isHpt(qq,pt)) then Error("second argument must be a Hermitian point\n"); fi;
 	if not(IsInt(deg) and deg>=0) then Error("wrong third argument\n"); fi;
@@ -287,4 +298,4 @@ HERM_rationalLinCondsISectMult:=function(qq,pt,deg,k)
 	else
 		return HERM_rationalLinCondsISectMult_NC(qq,pt,deg,k);
 	fi;
-end;
+end );

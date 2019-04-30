@@ -113,11 +113,18 @@ hcode:=Hermitian_FunctionalCode(s*P_infty);
 mat:=GeneratorMatrixOfHermitian_Code(hcode);
 
 #monom:=List([1..q^3],i->my_rand(q^2));
-rr:=Hermitian_RiemannRochSpaceBasis((s-1)*P_infty);;
-monomf:=Random(GF(q^2)^Size(rr))*rr;;
+#rr:=Hermitian_RiemannRochSpaceBasis((s-1)*P_infty);;
+#monomf:=Random(GF(q^2)^Size(rr))*rr;;
 #pl:=RandomRationalPlaceOfHermitian_Curve(Hq);
 #Value(monomf,pl);
 #Value(monomf,P_infty);
+#monom:=List(AllRationalAffinePlacesOfHermitian_Curve(Hq),p->Value(monomf,p));;
+
+pt:=RandomPlaceOfGivenDegreeOfHermitian_Curve(Hq,3);
+fr:=FrobeniusAutomorphismOfHermitian_Curve(Hq);
+d:=Sum(AC_FrobeniusAutomorphismOrbit(fr,pt));
+rr:=Hermitian_RiemannRochSpaceBasis(6*d);;
+monomf:=Random(GF(q^2)^Size(rr))*rr;;
 monom:=List(AllRationalAffinePlacesOfHermitian_Curve(Hq),p->Value(monomf,p));;
 
 diag:=CVEC_ZeroMat(Length(hcode),CVecClass(LeftActingDomain(hcode),Length(hcode)));

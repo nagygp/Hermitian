@@ -24,3 +24,14 @@
 ##
 #DeclareGlobalFunction( "PrincipalHermitian_Divisor" );
 
+DeclareGlobalFunction( "HERM_totalDegreeOfPolynomial" );
+DeclareGlobalFunction( "HERM_powerSeriesAtHpt_NC" );
+DeclareGlobalFunction( "HERM_hermitianIntersection" );
+DeclareGlobalFunction( "HERM_isectmultAtHptOrq" );
+DeclareGlobalFunction( "HERM_isectmultAtHpt_exact" );
+DeclareGlobalFunction( "HERM_asGFq2Elm" );
+DeclareGlobalFunction( "HERM_tracemap4vector" );
+DeclareGlobalFunction( "HERM_linearConditionsForISectMult_NC" );
+DeclareGlobalFunction( "HERM_rationalLinCondsISectMult_NC" );
+DeclareGlobalFunction( "HERM_linearConditionsForISectMultAtInfinity_NC" );
+DeclareGlobalFunction( "HERM_rationalLinCondsISectMult" );
