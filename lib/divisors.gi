@@ -299,6 +299,8 @@ function( f, pt )
     if IsInfiniteHermitian_Place( pt ) then 
         fnum := HERM_polValueAtInfinitePlace( fnum );
         fden := HERM_polValueAtInfinitePlace( fden );
+	elif IndeterminatesOfHermitianRatFunc( f ) = [ ] then
+		return ExtRepPolynomialRatFun( fnum )[2];
     else
         fnum := Value( fnum, IndeterminatesOfHermitianRatFunc( f ), pt!.points[1] );
         fden := Value( fden, IndeterminatesOfHermitianRatFunc( f ), pt!.points[1] );
