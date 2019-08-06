@@ -3,31 +3,31 @@ LoadPackage("HERmitian");
 #################
 
 if not IsBound(q) then 
-	q:=5^3;
+	q:=4;
 fi;
 
 # construct the curve and the divisors
-Y:=Indeterminate(GF(q),"Y");
-C:=Hermitian_Curve(GF(q),Y);
-P_infty:=Hermitian_1PointDivisor(C,infinity); 
+Y:=HermitianIndeterminates(GF(q^2),"Y1","Y2");
+Hq:=Hermitian_Curve(Y[1]);
+P_infty:=Hermitian_Place(Hq,[infinity]); 
 
-fr:=FrobeniusAutomorphismOfHermitian_Curve(C);
-G0:=Sum(AC_FrobeniusAutomorphismOrbit(fr,RandomPlaceOfHermitian_Curve(C,4)));
+gens := HERM_GensOfGeneralUnitaryGroup( q );
+gu:=Group(gens);
+Size(gu);
+# hc:=Orbit(gu,[0,1,0]*Z(q)^0,OnLines);; Size(hc);
+# ForAll(hc,u->u[1]^(q+1)=u[2]*u[3]^q+u[2]^q*u[3]);
 
-#G:=Int(q/40+1)*G0+7*P_infty;
-G:=Int(q/60+1)*G0+7*P_infty;
-Degree(G);
+pgu:=AutomorphismGroup(Hq);
+Random(pgu)!.mat in gu;
 
-len:=Int(0.8*q);
-D:=Sum([1..len],i->Hermitian_1PointDivisor(C,Elements(GF(q))[i]));
+h:=Stabilizer(pgu,P_infty);
 
-# construct the AG differential code
-agcode:=Hermitian_DifferentialCode(G,D);
+hom:=NiceMonomorphism(pgu);
+cc:=List(ConjugacyClassesMaximalSubgroups(Image(hom)),Representative);
+List(cc,Size);
 
-#################
+uxset:=AsList(UnderlyingExternalSet(hom));;
+xs:=List(cc,x->List(Orbits(x),o->Set(uxset{o}));;
+List(xs,x->List(x,Size));
 
-aut:=AutomorphismGroup(C);
-a:=Random(aut);
-agcode2:=agcode^a;
-
-
+List(xs,x->Stabilizer(pgu,x[1],OnSets));

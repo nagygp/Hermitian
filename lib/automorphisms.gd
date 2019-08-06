@@ -30,7 +30,7 @@
 ##  <#/GAPDoc>
 ##
 DeclareCategory( "IsHermitian_CurveAutomorphism", IsMultiplicativeElementWithInverse );
-DeclareRepresentation( "IsHermitian_CurveAutomorphismRep", IsPositionalObjectRep and IsMultiplicativeElement, [1] );
+DeclareRepresentation( "IsHermitian_CurveAutomorphismRep", IsComponentObjectRep and IsMultiplicativeElement, [ "mat", "curve" ] );
 Hermitian_CurveAutomorphismFamily:=NewFamily("Hermitian_CurveAutomorphismFam");
 
 #############################################################################
@@ -48,7 +48,7 @@ Hermitian_CurveAutomorphismFamily:=NewFamily("Hermitian_CurveAutomorphismFam");
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareOperation("Hermitian_CurveAutomorphism", [ IsMatrix and IsFFECollColl ]);
+DeclareOperation("Hermitian_CurveAutomorphism", [ IsHermitian_Curve, IsMatrix and IsFFECollColl ]);
 DeclareSynonym("Hermitian_CurveAut",Hermitian_CurveAutomorphism);
 
 #############################################################################
