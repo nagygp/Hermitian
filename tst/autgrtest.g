@@ -31,3 +31,18 @@ orbs:=List(cc,x->List(Orbits(x),o->Set(uxset{o})));;
 List(orbs,x->List(x,Size));
 
 List(orbs,x->Stabilizer(pgu,x[1],OnSets));
+
+d:=orbs[4][1];;
+p_infty:=Hermitian_Place(Hq,[infinity]);
+First(uxset,x->not x in d);
+a:=RepresentativeAction(pgu,First(uxset,x->not x in d),p_infty);
+d:=Sum(d)^a;
+p_infty in Support(d);
+
+for s in [1..q^3] do
+    hcode:=Hermitian_FunctionalCode(s*P_infty,d);
+    rcode:=RestrictVectorSpace(hcode,PrimeField(GF(q)));
+    m:=Length(FactorsInt(q));
+    dd:=q^3-2*m*(q^3-Dimension(hcode));
+    Print(s,"\t",Dimension(hcode),"\t",Dimension(rcode),"\t",dd,"\t", DesignedMinimumDistance(hcode),"\n");
+od;
