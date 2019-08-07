@@ -10,8 +10,6 @@ LoadPackage("HERmitian");
 q:=5;
 Y:=HermitianIndeterminates(GF(q^2),"Y1","Y2");
 Hq:=Hermitian_Curve(Y[1]);
-#aut:=AutomorphismGroup(C);
-#Random(aut);
 
 UnderlyingField(Hq);
 p:=RandomPlaceOfGivenDegreeOfHermitian_Curve(Hq,3);
@@ -19,11 +17,15 @@ p in Hq;
 [ infinity ] in Hq;
 [0,0] in Hq;
 Z(q)*[0,0] in Hq;
-AllRationalPlacesOfHermitian_Curve(Hq);
+Size( AllRationalPlacesOfHermitian_Curve(Hq) );
+
+### automorphisms
+aut:=AutomorphismGroup(Hq);
+Random(aut);
 
 ### divisors
-p1:=Hermitian_Place(Hq,[infinity]);
-d:=3*p1-4*p;
+p_infty:=Hermitian_Place(Hq,[infinity]);
+d:=3*p_infty-4*p;
 Support(d);
 UnderlyingField(d);
 Zero(d);

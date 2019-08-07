@@ -17,14 +17,10 @@
 ##
 ##  <Description>
 ##  With automorphisms of an algebraic curve <M>C</M> one means the automorphisms of the corresponding
-##  algebraic function field <M>K(C)</M>. For Hermitian curves over finite fields, the algebraic function
-##  field is the field <M>K(t)</M> of rational functions in one indeterminate. <M>Aut(K(t))</M> consists of
-##  fractional linear mappings <M>t\mapsto \frac{a+bt}{c+dt}</M>, where <M>ad-bc\neq 0</M>. Hence,
-##  <M>Aut(K(t))\cong PGL(2,K)</M>.
-##  <P/>With fixed Frobenius automorphism <M>\Phi:x\mapsto x^q</M>, we can speak of <M>GF(q)</M>-rational
-##  automorphisms, or, automorphisms defined over <M>GF(q)</M>. These form a subgroup isomorphic to
-##  <M>PGL(2,q)</M>, having a faithful permutation representation of the set <M>GF(q)\cup \{\infty\}</M>
-##  of <M>GF(q)</M>-rational places.
+##  algebraic function field <M>K(C)</M>. For a Hermitian curve <M>H(q)</M> over a finite field, 
+##  <M>Aut(GF(q)(H(q)))</M> is isomorphic to the projective general linear group <M>PGU(3,q)</M>.
+##  In particular, an automorphism of <M>H(q)</M> can be represented by a <M>3\times 3</M> unitary
+##  matrix over <M>GF(q^2)</M>.
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
@@ -39,11 +35,10 @@ Hermitian_CurveAutomorphismFamily:=NewFamily("Hermitian_CurveAutomorphismFam");
 ##
 ##  <#GAPDoc Label="Hermitian_CurveAutomorphism">
 ##  <ManSection>
-##  <Oper Name="Hermitian_CurveAutomorphism" Arg='mat'/>
+##  <Oper Name="Hermitian_CurveAutomorphism" Arg='Hq,mat'/>
 ##
 ##  <Returns>
-##  the automorphism <M>t\mapsto \frac{a+bt}{c+dt}</M> of the Hermitian curve, where <A>M</A> is the
-##  nonsingular <M>2\times 2</M> matrix <M>\begin{pmatrix}a &amp; c\\ b&amp; d\end{pmatrix}</M>.
+##  the automorphism of the Hermitian curve <M>H(q)</M>, given by the unitary matrix <A>mat</A>.
 ##  </Returns>
 ##  </ManSection>
 ##  <#/GAPDoc>
@@ -53,28 +48,29 @@ DeclareSynonym("Hermitian_CurveAut",Hermitian_CurveAutomorphism);
 
 #############################################################################
 ##
-#C  MatrixGroupToHermitian_CurveAutGroup(<matgr>,<agcode>)
+#C  UnitaryGroupToHermitian_CurveAutGroup(<matgr>,<agcode>)
 ##
 ##  <#GAPDoc Label="Hermitian_CurveAutGroup">
 ##  <ManSection> <Heading>AutomorphismGroup</Heading>
-##  <Func Name="MatrixGroupToHermitian_CurveAutGroup" Arg='matgr,C'/>
+##  <Func Name="UnitaryGroupToHermitian_CurveAutGroup" Arg='matgr,Hq'/>
 ##
 ##  <Returns>
-##  the GZ curve automorphism group $G$ corresponding to the matrix group <A>matgr</A>.
+##  the group <M>G</M> of automorphisms of the Hermitian curve <A>Hq</A>, which correspond to the unitary group <A>matgr</A>.
 ##  </Returns>
+##  
 ##  <Description>
-##  The permutation action of <A>matgr</A> on the set of rational places of <A>C</A> is stored as
+##  The permutation action of <A>matgr</A> on the set of rational places of <A>Hq</A> is stored as
 ##  a nice monomorphism of $G$.
 ##  </Description>
 ##
-##  <Oper Name="AutomorphismGroup" Arg='C'/>
+##  <Oper Name="AutomorphismGroup" Arg='Hq'/>
 ##  <Returns>
-##  the automorphism group of the Hermitian curve <A>C</A>. The elements are Hermitian automorphisms. The
-##  group is isomorphic to <M>PGL(2,q)</M>, where <M>GF(q)</M> is the underlying field of <A>C</A>.
+##  the automorphism group of the Hermitian curve <A>Hq</A>. The elements are Hermitian curve automorphisms. The
+##  group is isomorphic to <M>PPG(3,q)</M>, where <M>GF(q^2)</M> is the underlying field of <A>Hq</A>.
 ##  </Returns>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareGlobalFunction( "MatrixGroupToHermitian_CurveAutGroup" );
+DeclareGlobalFunction( "UnitaryGroupToHermitian_CurveAutGroup" );
 
 #E  automorphisms.gd . . . . . . . . . . . . . . . . . . . . . . . . . . . ends here#! @Arguments matgr,orb

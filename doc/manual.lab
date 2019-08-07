@@ -16,12 +16,13 @@
 \makelabel{hermitian:Hermitian curves over finite fields}{2.6}{X7AB6DDB382EBEFAD}
 \makelabel{hermitian:How to use the package}{3}{X7FC3D36E8639C331}
 \makelabel{hermitian:Hermitian curves}{3.1}{X877AA77B8442240B}
-\makelabel{hermitian:AutomorphismGroup}{3.1.9}{X87677B0787B4461A}
-\makelabel{hermitian:Hermitian divisors}{3.2}{X7B79A0147BC8F34E}
-\makelabel{hermitian:Hermitian Riemann-Roch spaces}{3.3}{X7DDB5BF585694D3F}
-\makelabel{hermitian:Hermitian AG-codes}{3.4}{X790A517B87412E1D}
-\makelabel{hermitian:Utilities for Hermitian AG-codes}{3.5}{X78C4CB0A87B9F316}
-\makelabel{hermitian:An example: BCH codes as Hermitian AG-codes}{4}{X831017557D536266}
+\makelabel{hermitian:Automorphisms of Hermitian curves}{3.2}{X7CCCCF377D442C10}
+\makelabel{hermitian:AutomorphismGroup}{3.2.4}{X87677B0787B4461A}
+\makelabel{hermitian:Hermitian divisors}{3.3}{X7B79A0147BC8F34E}
+\makelabel{hermitian:Hermitian Riemann-Roch spaces}{3.4}{X7DDB5BF585694D3F}
+\makelabel{hermitian:Hermitian AG-codes}{3.5}{X790A517B87412E1D}
+\makelabel{hermitian:Utilities for Hermitian AG-codes}{3.6}{X78C4CB0A87B9F316}
+\makelabel{hermitian:An example: BCH type codes as Hermitian AG codes (???)}{4}{X79C9ACD17E1D249A}
 \makelabel{hermitian:Bibliography}{Bib}{X7A6F98FD85F02BFE}
 \makelabel{hermitian:References}{Bib}{X7A6F98FD85F02BFE}
 \makelabel{hermitian:Index}{Ind}{X83A0356F839C696F}
@@ -32,42 +33,42 @@
 \makelabel{hermitian:IndeterminatesOfHermitianCurve}{3.1.3}{X7DC5282B7C7381C0}
 \makelabel{hermitian:UnderlyingField}{3.1.4}{X790470C48340E8F7}
 \makelabel{hermitian:RandomPlaceOfGivenDegreeOfHermitianCurve}{3.1.5}{X8095E4FA87ADE4EA}
-\makelabel{hermitian:FrobeniusAutomorphismOfHermitianCurve}{3.1.6}{X84C46EC878997409}
-\makelabel{hermitian:IsHermitianCurveAutomorphism}{3.1.7}{X7DBD2AA379E5928D}
-\makelabel{hermitian:HermitianCurveAutomorphism}{3.1.8}{X8553A238865EEB91}
-\makelabel{hermitian:MatrixGroupToHermitianCurveAutGroup}{3.1.9}{X87677B0787B4461A}
-\makelabel{hermitian:AutomorphismGroup}{3.1.9}{X87677B0787B4461A}
-\makelabel{hermitian:IsHermitianDivisor}{3.2.1}{X7DC2715183F59DFB}
-\makelabel{hermitian:HermitianDivisorConstruct}{3.2.2}{X7C25E6A77FC66456}
-\makelabel{hermitian:HermitianDivisor}{3.2.3}{X8522DFC37BA9FE9B}
-\makelabel{hermitian:HermitianDivisor}{3.2.3}{X8522DFC37BA9FE9B}
-\makelabel{hermitian:HermitianPlace}{3.2.4}{X874B79D17AF7FD28}
-\makelabel{hermitian:ZeroHermitianDivisor}{3.2.5}{X7D106EB28504FFDD}
-\makelabel{hermitian:IsRationalHermitianDivisor}{3.2.6}{X8634CC3B79155E29}
-\makelabel{hermitian:UnderlyingField}{3.2.7}{X790470C48340E8F7}
-\makelabel{hermitian:Support}{3.2.8}{X7B689C0284AC4296}
-\makelabel{hermitian:Valuation}{3.2.9}{X80D67BB67A509A56}
-\makelabel{hermitian:PrincipalHermitianDivisor}{3.2.10}{X7DBEBF4283238ABF}
-\makelabel{hermitian:SupremumHermitianDivisor}{3.2.11}{X85754A9B7AA29851}
-\makelabel{hermitian:InfimumHermitianDivisor}{3.2.12}{X7879FBF17B270989}
-\makelabel{hermitian:PositivePartOfHermitianDivisor}{3.2.13}{X7ACE607A7C753AC6}
-\makelabel{hermitian:NegativePartOfHermitianDivisor}{3.2.14}{X78F4961F819285AC}
-\makelabel{hermitian:HermitianRiemannRochSpaceBasis}{3.3.1}{X7B5089E879E3DBDD}
-\makelabel{hermitian:IsHermitianCode}{3.4.1}{X7D67153387DB94E1}
-\makelabel{hermitian:IsHermitianFunctionalCode}{3.4.1}{X7D67153387DB94E1}
-\makelabel{hermitian:IsHermitianDifferentialCode}{3.4.1}{X7D67153387DB94E1}
-\makelabel{hermitian:GeneratorMatrixOfFunctionalHermitianCodeNC}{3.4.2}{X8693655985BF0B1B}
-\makelabel{hermitian:HermitianFunctionalCode}{3.4.3}{X877B39B9783ADE8B}
-\makelabel{hermitian:HermitianFunctionalCode}{3.4.3}{X877B39B9783ADE8B}
-\makelabel{hermitian:HermitianDifferentialCode}{3.4.4}{X817FBF377D94ED1D}
-\makelabel{hermitian:HermitianDifferentialCode}{3.4.4}{X817FBF377D94ED1D}
-\makelabel{hermitian:Length}{3.4.5}{X780769238600AFD1}
-\makelabel{hermitian:GeneratorMatrixOfHermitianCode}{3.4.6}{X839F5C6085C27928}
-\makelabel{hermitian:DesignedMinimumDistance}{3.4.7}{X84EB7DAF7DB9DB9F}
-\makelabel{hermitian:HermitianDecodeToCodeword}{3.4.8}{X86ED0E6E799550B2}
-\makelabel{hermitian:RestrictVectorSpace}{3.5.1}{X853BF1BC7F6462B8}
-\makelabel{hermitian:UPolCoeffsToSmallFieldNC}{3.5.2}{X8596810487A72298}
-\makelabel{hermitian:RandomVectorOfGivenWeight}{3.5.3}{X7D6980057AF64327}
-\makelabel{hermitian:RandomVectorOfGivenDensity}{3.5.3}{X7D6980057AF64327}
-\makelabel{hermitian:RandomBinaryVectorOfGivenWeight}{3.5.3}{X7D6980057AF64327}
-\makelabel{hermitian:RandomBinaryVectorOfGivenDensity}{3.5.3}{X7D6980057AF64327}
+\makelabel{hermitian:FrobeniusAutomorphismOfHermitianCurve}{3.2.1}{X84C46EC878997409}
+\makelabel{hermitian:IsHermitianCurveAutomorphism}{3.2.2}{X7DBD2AA379E5928D}
+\makelabel{hermitian:HermitianCurveAutomorphism}{3.2.3}{X8553A238865EEB91}
+\makelabel{hermitian:UnitaryGroupToHermitianCurveAutGroup}{3.2.4}{X87677B0787B4461A}
+\makelabel{hermitian:AutomorphismGroup}{3.2.4}{X87677B0787B4461A}
+\makelabel{hermitian:IsHermitianDivisor}{3.3.1}{X7DC2715183F59DFB}
+\makelabel{hermitian:HermitianDivisorConstruct}{3.3.2}{X7C25E6A77FC66456}
+\makelabel{hermitian:HermitianDivisor}{3.3.3}{X8522DFC37BA9FE9B}
+\makelabel{hermitian:HermitianDivisor}{3.3.3}{X8522DFC37BA9FE9B}
+\makelabel{hermitian:HermitianPlace}{3.3.4}{X874B79D17AF7FD28}
+\makelabel{hermitian:ZeroHermitianDivisor}{3.3.5}{X7D106EB28504FFDD}
+\makelabel{hermitian:IsRationalHermitianDivisor}{3.3.6}{X8634CC3B79155E29}
+\makelabel{hermitian:UnderlyingField}{3.3.7}{X790470C48340E8F7}
+\makelabel{hermitian:Support}{3.3.8}{X7B689C0284AC4296}
+\makelabel{hermitian:Valuation}{3.3.9}{X80D67BB67A509A56}
+\makelabel{hermitian:PrincipalHermitianDivisor}{3.3.10}{X7DBEBF4283238ABF}
+\makelabel{hermitian:SupremumHermitianDivisor}{3.3.11}{X85754A9B7AA29851}
+\makelabel{hermitian:InfimumHermitianDivisor}{3.3.12}{X7879FBF17B270989}
+\makelabel{hermitian:PositivePartOfHermitianDivisor}{3.3.13}{X7ACE607A7C753AC6}
+\makelabel{hermitian:NegativePartOfHermitianDivisor}{3.3.14}{X78F4961F819285AC}
+\makelabel{hermitian:HermitianRiemannRochSpaceBasis}{3.4.1}{X7B5089E879E3DBDD}
+\makelabel{hermitian:IsHermitianCode}{3.5.1}{X7D67153387DB94E1}
+\makelabel{hermitian:IsHermitianFunctionalCode}{3.5.1}{X7D67153387DB94E1}
+\makelabel{hermitian:IsHermitianDifferentialCode}{3.5.1}{X7D67153387DB94E1}
+\makelabel{hermitian:GeneratorMatrixOfFunctionalHermitianCodeNC}{3.5.2}{X8693655985BF0B1B}
+\makelabel{hermitian:HermitianFunctionalCode}{3.5.3}{X877B39B9783ADE8B}
+\makelabel{hermitian:HermitianFunctionalCode}{3.5.3}{X877B39B9783ADE8B}
+\makelabel{hermitian:HermitianDifferentialCode}{3.5.4}{X817FBF377D94ED1D}
+\makelabel{hermitian:HermitianDifferentialCode}{3.5.4}{X817FBF377D94ED1D}
+\makelabel{hermitian:Length}{3.5.5}{X780769238600AFD1}
+\makelabel{hermitian:GeneratorMatrixOfHermitianCode}{3.5.6}{X839F5C6085C27928}
+\makelabel{hermitian:DesignedMinimumDistance}{3.5.7}{X84EB7DAF7DB9DB9F}
+\makelabel{hermitian:HermitianDecodeToCodeword}{3.5.8}{X86ED0E6E799550B2}
+\makelabel{hermitian:RestrictVectorSpace}{3.6.1}{X853BF1BC7F6462B8}
+\makelabel{hermitian:UPolCoeffsToSmallFieldNC}{3.6.2}{X8596810487A72298}
+\makelabel{hermitian:RandomVectorOfGivenWeight}{3.6.3}{X7D6980057AF64327}
+\makelabel{hermitian:RandomVectorOfGivenDensity}{3.6.3}{X7D6980057AF64327}
+\makelabel{hermitian:RandomBinaryVectorOfGivenWeight}{3.6.3}{X7D6980057AF64327}
+\makelabel{hermitian:RandomBinaryVectorOfGivenDensity}{3.6.3}{X7D6980057AF64327}

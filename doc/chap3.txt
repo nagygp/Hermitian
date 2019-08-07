@@ -48,17 +48,33 @@
   has degree 1.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XY:=Indeterminate(GF(9),"Y");[127X[104X
-    [4X[28XY[128X[104X
-    [4X[25Xgap>[125X [27XC:=Hermitian_Curve(GF(9),Y);[127X[104X
-    [4X[28X<GZ curve over GF(9) with indeterminate Y>[128X[104X
-    [4X[25Xgap>[125X [27Xaut:=AutomorphismGroup(C);[127X[104X
-    [4X[28X<group of GZ curve automorphisms of size 720>[128X[104X
-    [4X[25Xgap>[125X [27XRandom(aut);[127X[104X
-    [4X[28XHermitian_CurveAut([ [ Z(3)^0, Z(3^2)^3 ], [ Z(3^2)^5, Z(3) ] ])[128X[104X
+    [4X[25Xgap>[125X [27Xq:=5;[127X[104X
+    [4X[28X5[128X[104X
+    [4X[25Xgap>[125X [27XY:=HermitianIndeterminates(GF(q^2),"Y1","Y2");[127X[104X
+    [4X[28X[ Y1, Y2 ][128X[104X
+    [4X[25Xgap>[125X [27XHq:=Hermitian_Curve(Y[1]);[127X[104X
+    [4X[28X<Hermitian curve over GF(25) with indeterminates [ Y1, Y2 ]>[128X[104X
+    [4X[25Xgap>[125X [27X[127X[104X
+    [4X[25Xgap>[125X [27XUnderlyingField(Hq);[127X[104X
+    [4X[28XGF(5^2)[128X[104X
+    [4X[25Xgap>[125X [27Xp:=RandomPlaceOfGivenDegreeOfHermitian_Curve(Hq,3);[127X[104X
+    [4X[28X<Hermitian place [ Z(5^6)^12002, Z(5^6)^14911 ] over indeterminates [ Y1, Y2 ]>[128X[104X
+    [4X[25Xgap>[125X [27Xp in Hq;[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27X[ infinity ] in Hq;[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27X[0,0] in Hq;[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XZ(q)*[0,0] in Hq;[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XSize( AllRationalPlacesOfHermitian_Curve(Hq) );[127X[104X
+    [4X[28X126[128X[104X
   [4X[32X[104X
   
-  [1X3.1-6 FrobeniusAutomorphismOfHermitian_Curve[101X
+  
+  [1X3.2 [33X[0;0YAutomorphisms of Hermitian curves[133X[101X
+  
+  [1X3.2-1 FrobeniusAutomorphismOfHermitian_Curve[101X
   
   [33X[1;0Y[29X[2XFrobeniusAutomorphismOfHermitian_Curve[102X( [3XHq[103X ) [32X attribute[133X
   
@@ -67,48 +83,50 @@
   sense  of  the  package [5XOnAlgClosure[105X, acting on the algebraic closure of the
   underlying finite field.[133X
   
-  [1X3.1-7 IsHermitian_CurveAutomorphism[101X
+  [1X3.2-2 IsHermitian_CurveAutomorphism[101X
   
   [33X[1;0Y[29X[2XIsHermitian_CurveAutomorphism[102X( [3Xobj[103X ) [32X Category[133X
   
   [33X[0;0YWith  automorphisms  of  an algebraic curve [22XC[122X one means the automorphisms of
-  the  corresponding  algebraic function field [22XK(C)[122X. For Hermitian curves over
-  finite  fields,  the  algebraic function field is the field [22XK(t)[122X of rational
-  functions  in  one  indeterminate.  [22XAut(K(t))[122X  consists of fractional linear
-  mappings [22Xt↦ fraca+btc+dt[122X, where [22Xad-bc≠ 0[122X. Hence, [22XAut(K(t))≅ PGL(2,K)[122X.[133X
+  the  corresponding algebraic function field [22XK(C)[122X. For a Hermitian curve [22XH(q)[122X
+  over  a  finite  field,  [22XAut(GF(q)(H(q)))[122X  is  isomorphic  to the projective
+  general linear group [22XPGU(3,q)[122X. In particular, an automorphism of [22XH(q)[122X can be
+  represented by a [22X3× 3[122X unitary matrix over [22XGF(q^2)[122X.[133X
   
-  [33X[0;0YWith  fixed  Frobenius automorphism [22XΦ:x↦ x^q[122X, we can speak of [22XGF(q)[122X-rational
-  automorphisms,  or,  automorphisms defined over [22XGF(q)[122X. These form a subgroup
-  isomorphic  to [22XPGL(2,q)[122X, having a faithful permutation representation of the
-  set [22XGF(q)∪ {∞}[122X of [22XGF(q)[122X-rational places.[133X
+  [1X3.2-3 Hermitian_CurveAutomorphism[101X
   
-  [1X3.1-8 Hermitian_CurveAutomorphism[101X
-  
-  [33X[1;0Y[29X[2XHermitian_CurveAutomorphism[102X( [3Xmat[103X ) [32X operation[133X
-  [6XReturns:[106X  [33X[0;10Ythe  automorphism  [22Xt↦ fraca+btc+dt[122X of the Hermitian curve, where [3XM[103X
-            is the nonsingular [22X2× 2[122X matrix [22Xbeginpmatrixa & c b& dendpmatrix[122X.[133X
+  [33X[1;0Y[29X[2XHermitian_CurveAutomorphism[102X( [3XHq[103X, [3Xmat[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ythe automorphism of the Hermitian curve [22XH(q)[122X, given by the unitary
+            matrix [3Xmat[103X.[133X
   
   
-  [1X3.1-9 [33X[0;0YAutomorphismGroup[133X[101X
+  [1X3.2-4 [33X[0;0YAutomorphismGroup[133X[101X
   
-  [33X[1;0Y[29X[2XMatrixGroupToHermitian_CurveAutGroup[102X( [3Xmatgr[103X, [3XC[103X ) [32X function[133X
-  [6XReturns:[106X  [33X[0;10Ythe  GZ  curve  automorphism group $G$ corresponding to the matrix
-            group [3Xmatgr[103X.[133X
+  [33X[1;0Y[29X[2XUnitaryGroupToHermitian_CurveAutGroup[102X( [3Xmatgr[103X, [3XHq[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ythe  group  [22XG[122X  of  automorphisms  of the Hermitian curve [3XHq[103X, which
+            correspond to the unitary group [3Xmatgr[103X.[133X
   
-  [33X[0;0YThe permutation action of [3Xmatgr[103X on the set of rational places of [3XC[103X is stored
-  as a nice monomorphism of $G$.[133X
+  [33X[0;0YThe  permutation  action  of  [3Xmatgr[103X  on  the set of rational places of [3XHq[103X is
+  stored as a nice monomorphism of $G$.[133X
   
-  [33X[1;0Y[29X[2XAutomorphismGroup[102X( [3XC[103X ) [32X operation[133X
-  [6XReturns:[106X  [33X[0;10Ythe  automorphism group of the Hermitian curve [3XC[103X. The elements are
-            Hermitian  automorphisms.  The  group  is  isomorphic to [22XPGL(2,q)[122X,
-            where [22XGF(q)[122X is the underlying field of [3XC[103X.[133X
+  [33X[1;0Y[29X[2XAutomorphismGroup[102X( [3XHq[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ythe automorphism group of the Hermitian curve [3XHq[103X. The elements are
+            Hermitian   curve   automorphisms.  The  group  is  isomorphic  to
+            [22XPPG(3,q)[122X, where [22XGF(q^2)[122X is the underlying field of [3XHq[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xaut:=AutomorphismGroup(Hq);[127X[104X
+    [4X[28X<group of Hermitian curve automorphisms of size 378000>[128X[104X
+    [4X[25Xgap>[125X [27XRandom(aut);[127X[104X
+    [4X[28XHermitian_CurveAut([ [ Z(5)^0, Z(5^2)^11, Z(5^2)^19 ], [ Z(5^2)^20, Z(5^2)^16, Z(5^2)^21 ], [ Z(5), Z(5^2)^4, Z(5^2)^10 ] ])[128X[104X
+  [4X[32X[104X
   
   
-  [1X3.2 [33X[0;0YHermitian divisors[133X[101X
+  [1X3.3 [33X[0;0YHermitian divisors[133X[101X
   
   [33X[0;0YThe following functions are available:[133X
   
-  [1X3.2-1 IsHermitian_Divisor[101X
+  [1X3.3-1 IsHermitian_Divisor[101X
   
   [33X[1;0Y[29X[2XIsHermitian_Divisor[102X( [3Xobj[103X ) [32X Category[133X
   
@@ -116,14 +134,14 @@
   Hermitian  curve  [22XH(q):X^q+1=Y^q+Y[122X.  Hermitian  divisors  form  an  additive
   commutative group.[133X
   
-  [1X3.2-2 Hermitian_DivisorConstruct[101X
+  [1X3.3-2 Hermitian_DivisorConstruct[101X
   
   [33X[1;0Y[29X[2XHermitian_DivisorConstruct[102X( [3XHq[103X, [3Xpts[103X, [3Xords[103X ) [32X function[133X
   
   [33X[0;0Yreturns the Hermitian divisor over [3XHq[103X with points from [3Xpts[103X and corresponding
   orders from [3Xords[103X. It checks the input.[133X
   
-  [1X3.2-3 Hermitian_Divisor[101X
+  [1X3.3-3 Hermitian_Divisor[101X
   
   [33X[1;0Y[29X[2XHermitian_Divisor[102X( [3XHq[103X, [3Xpts[103X, [3Xords[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XHermitian_Divisor[102X( [3XHq[103X, [3Xpairs[103X ) [32X operation[133X
@@ -133,130 +151,110 @@
   [3Xords[103X  contains the respective orders. The elements of the list [3Xpairs[103X are the
   point-order pairs.[133X
   
-  [1X3.2-4 Hermitian_Place[101X
+  [1X3.3-4 Hermitian_Place[101X
   
   [33X[1;0Y[29X[2XHermitian_Place[102X( [3XHq[103X, [3Xpt[103X ) [32X operation[133X
   
   [33X[0;0Yreturns  the  corresponding  place  of  the  Hermitian curve [3XHq[103X, where [3Xpt[103X is
   either an affine point [3XHq[103X, or the infinite point is [10X[ infinity ][110X.[133X
   
-  [1X3.2-5 ZeroHermitian_Divisor[101X
+  [1X3.3-5 ZeroHermitian_Divisor[101X
   
   [33X[1;0Y[29X[2XZeroHermitian_Divisor[102X( [3XHq[103X ) [32X operation[133X
   
   [33X[0;0Yreturns the zero divisor over the Hermitian curve [3XHq[103X.[133X
   
-  [1X3.2-6 IsRationalHermitian_Divisor[101X
+  [1X3.3-6 IsRationalHermitian_Divisor[101X
   
   [33X[1;0Y[29X[2XIsRationalHermitian_Divisor[102X( [3XD[103X ) [32X attribute[133X
   
   [33X[0;0YReturns  true  if  [3XD[103X  is  invariant  under the Frobenius automorphism of the
   underlying Hermitian curve.[133X
   
-  [1X3.2-7 UnderlyingField[101X
+  [1X3.3-7 UnderlyingField[101X
   
   [33X[1;0Y[29X[2XUnderlyingField[102X( [3XD[103X ) [32X attribute[133X
   
   [33X[0;0YThe  underlying field of a Hermitian divisor is the field of coefficients of
   the corresponding Hermitian curve.[133X
   
-  [1X3.2-8 Support[101X
+  [1X3.3-8 Support[101X
   
   [33X[1;0Y[29X[2XSupport[102X( [3XD[103X ) [32X attribute[133X
   
   [33X[0;0YThe support of a Hermitian divisor is the set of points with nonzero orders.[133X
   
-  [1X3.2-9 Valuation[101X
+  [1X3.3-9 Valuation[101X
   
   [33X[1;0Y[29X[2XValuation[102X( [3XD[103X, [3Xpt[103X ) [32X operation[133X
   
   [33X[0;0YThe  valuation  of  a  Hermitian  divisor  [3XD[103X at the point or place [3Xpt[103X is its
   corresponding order.[133X
   
-  [1X3.2-10 PrincipalHermitian_Divisor[101X
+  [1X3.3-10 PrincipalHermitian_Divisor[101X
   
   [33X[1;0Y[29X[2XPrincipalHermitian_Divisor[102X( [3XHq[103X, [3Xf[103X ) [32X operation[133X
   
   [33X[0;0Yreturns  the  principal  divisor of the rational function [3Xf[103X of the Hermitian
   curve [3XHq[103X.[133X
   
-  [1X3.2-11 SupremumHermitian_Divisor[101X
+  [1X3.3-11 SupremumHermitian_Divisor[101X
   
   [33X[1;0Y[29X[2XSupremumHermitian_Divisor[102X( [3XD1[103X, [3XD2[103X ) [32X function[133X
   
   [33X[0;0Yreturns the place-wise maximum of the orders of [3XD1[103X and [3XD2[103X.[133X
   
-  [1X3.2-12 InfimumHermitian_Divisor[101X
+  [1X3.3-12 InfimumHermitian_Divisor[101X
   
   [33X[1;0Y[29X[2XInfimumHermitian_Divisor[102X( [3XD1[103X, [3XD2[103X ) [32X function[133X
   
   [33X[0;0Yreturns the place-wise minimum of the orders of [3XD1[103X and [3XD2[103X.[133X
   
-  [1X3.2-13 PositivePartOfHermitian_Divisor[101X
+  [1X3.3-13 PositivePartOfHermitian_Divisor[101X
   
   [33X[1;0Y[29X[2XPositivePartOfHermitian_Divisor[102X( [3XD[103X ) [32X function[133X
   
   [33X[0;0Yreturns the positive part of the divisor [3XD[103X.[133X
   
-  [1X3.2-14 NegativePartOfHermitian_Divisor[101X
+  [1X3.3-14 NegativePartOfHermitian_Divisor[101X
   
   [33X[1;0Y[29X[2XNegativePartOfHermitian_Divisor[102X( [3XD[103X ) [32X function[133X
   
   [33X[0;0Yreturns the negative part of the divisor [3XD[103X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xp1:=Hermitian_Place(C,infinity);[127X[104X
-    [4X[28X<GZ divisor with support of length 1 over indeterminate Y>[128X[104X
-    [4X[25Xgap>[125X [27Xp2:=Hermitian_Place(C,Z(3));[127X[104X
-    [4X[28X<GZ divisor with support of length 1 over indeterminate Y>[128X[104X
-    [4X[25Xgap>[125X [27Xd:=3*p1-4*p2;[127X[104X
-    [4X[28X<GZ divisor with support of length 2 over indeterminate Y>[128X[104X
+    [4X[25Xgap>[125X [27Xp_infty:=Hermitian_Place(Hq,[infinity]);[127X[104X
+    [4X[28X<Hermitian place [ infinity ] over indeterminates [ Y1, Y2 ]>[128X[104X
+    [4X[25Xgap>[125X [27Xd:=3*p_infty-4*p;[127X[104X
+    [4X[28X<Hermitian divisor with support of length 2 over indeterminates [ Y1, Y2 ]>[128X[104X
     [4X[25Xgap>[125X [27XSupport(d);[127X[104X
-    [4X[28X[ infinity, Z(3) ][128X[104X
+    [4X[28X[ [ infinity ], [ Z(5^6)^12002, Z(5^6)^14911 ] ][128X[104X
     [4X[25Xgap>[125X [27XUnderlyingField(d);[127X[104X
-    [4X[28XGF(3^2)[128X[104X
+    [4X[28XGF(5^2)[128X[104X
     [4X[25Xgap>[125X [27XZero(d);[127X[104X
-    [4X[28X<GZ divisor with support of length 0 over indeterminate Y>[128X[104X
+    [4X[28X<Hermitian divisor with support of length 0 over indeterminates [ Y1, Y2 ]>[128X[104X
     [4X[25Xgap>[125X [27XCharacteristic(d);[127X[104X
-    [4X[28X3[128X[104X
-    [4X[28Xgap>[128X[104X
-    [4X[25Xgap>[125X [27Xd:=Hermitian_Divisor(C,[Z(27)^2,Z(3),infinity],[5,-1,2]);[127X[104X
-    [4X[28X<GZ divisor with support of length 3 over indeterminate Y>[128X[104X
-    [4X[25Xgap>[125X [27XValuation(Z(3),d);[127X[104X
-    [4X[28X-1[128X[104X
-    [4X[25Xgap>[125X [27XValuation(Z(3)^2,d);[127X[104X
+    [4X[28X5[128X[104X
+    [4X[25Xgap>[125X [27X[127X[104X
+    [4X[25Xgap>[125X [27XValuation(d,p);[127X[104X
+    [4X[28X-4[128X[104X
+    [4X[25Xgap>[125X [27XValuation(d,[1,2]);[127X[104X
     [4X[28X0[128X[104X
-    [4X[28Xgap>[128X[104X
-    [4X[25Xgap>[125X [27Xfr:=AC_FrobeniusAutomorphism(9);[127X[104X
-    [4X[28XAC_FrobeniusAutomorphism(3^2)[128X[104X
+    [4X[25Xgap>[125X [27X[127X[104X
+    [4X[25Xgap>[125X [27Xfr:=FrobeniusAutomorphismOfHermitian_Curve(Hq);[127X[104X
+    [4X[28XAC_FrobeniusAutomorphism(5^2)[128X[104X
     [4X[25Xgap>[125X [27Xd^fr;[127X[104X
-    [4X[28X<GZ divisor with support of length 3 over indeterminate Y>[128X[104X
+    [4X[28X<Hermitian divisor with support of length 2 over indeterminates [ Y1, Y2 ]>[128X[104X
     [4X[25Xgap>[125X [27XSupport(d^fr);[127X[104X
-    [4X[28X[ infinity, Z(3), Z(3^3)^18 ][128X[104X
+    [4X[28X[ [ infinity ], [ Z(5^6)^3194, Z(5^6)^13423 ] ][128X[104X
     [4X[25Xgap>[125X [27XSupport(d);[127X[104X
-    [4X[28X[ infinity, Z(3), Z(3^3)^2 ][128X[104X
-    [4X[28Xgap>[128X[104X
-    [4X[25Xgap>[125X [27Xrf:=Y^8-1;[127X[104X
-    [4X[28XY^8-Z(3)^0[128X[104X
-    [4X[25Xgap>[125X [27XList(GF(9),u->Valuation(u,rf));[127X[104X
-    [4X[28X[ 0, 1, 1, 1, 1, 1, 1, 1, 1 ][128X[104X
-    [4X[25Xgap>[125X [27XList(GF(9),u->Valuation(u,One(Y)));[127X[104X
-    [4X[28X[ 0, 0, 0, 0, 0, 0, 0, 0, 0 ][128X[104X
-    [4X[25Xgap>[125X [27XList(GF(9),u->Valuation(u,Zero(Y)));[127X[104X
-    [4X[28X[ -infinity, -infinity, -infinity, -infinity, -infinity, -infinity,[128X[104X
-    [4X[28X  -infinity, -infinity, -infinity ][128X[104X
-    [4X[28Xgap>[128X[104X
-    [4X[28Xgap>[128X[104X
-    [4X[25Xgap>[125X [27XList(GF(3),u->Valuation(u,One(Y)));[127X[104X
-    [4X[28X[ 0, 0, 0 ][128X[104X
-    [4X[25Xgap>[125X [27XList(GF(3),u->Valuation(u,Zero(Y)));[127X[104X
-    [4X[28X[ -infinity, -infinity, -infinity ][128X[104X
+    [4X[28X[ [ infinity ], [ Z(5^6)^12002, Z(5^6)^14911 ] ][128X[104X
   [4X[32X[104X
   
   
-  [1X3.3 [33X[0;0YHermitian Riemann-Roch spaces[133X[101X
+  [1X3.4 [33X[0;0YHermitian Riemann-Roch spaces[133X[101X
   
-  [1X3.3-1 Hermitian_RiemannRochSpaceBasis[101X
+  [1X3.4-1 Hermitian_RiemannRochSpaceBasis[101X
   
   [33X[1;0Y[29X[2XHermitian_RiemannRochSpaceBasis[102X( [3XD[103X ) [32X function[133X
   
@@ -264,39 +262,44 @@
   is defined by [22X{ f ∈ K[Y] ∣ Div(f) ≥ - D }[122X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xa:=RandomPlaceOfHermitian_Curve(C,4);[127X[104X
-    [4X[28X<GZ divisor with support of length 1 over indeterminate Y>[128X[104X
-    [4X[25Xgap>[125X [27Xfr:=FrobeniusAutomorphismOfHermitian_Curve(C);[127X[104X
-    [4X[28XAC_FrobeniusAutomorphism(3^2)[128X[104X
+    [4X[25Xgap>[125X [27Xa:=RandomPlaceOfGivenDegreeOfHermitian_Curve(Hq,3);[127X[104X
+    [4X[28X<Hermitian place [ Z(5^6)^5885, Z(5^6)^13071 ] over indeterminates [ Y1, Y2 ]>[128X[104X
+    [4X[25Xgap>[125X [27Xfr:=FrobeniusAutomorphismOfHermitian_Curve(Hq);[127X[104X
+    [4X[28XAC_FrobeniusAutomorphism(5^2)[128X[104X
     [4X[25Xgap>[125X [27Xd:=Sum(AC_FrobeniusAutomorphismOrbit(fr,a));[127X[104X
-    [4X[28X<GZ divisor with support of length 4 over indeterminate Y>[128X[104X
+    [4X[28X<Hermitian divisor with support of length 3 over indeterminates [ Y1, Y2 ]>[128X[104X
     [4X[25Xgap>[125X [27XIsRationalHermitian_Divisor(d);[127X[104X
     [4X[28Xtrue[128X[104X
-    [4X[28Xgap>[128X[104X
-    [4X[25Xgap>[125X [27XHermitian_RiemannRochSpaceBasis(3*d);[127X[104X
-    [4X[28X[ Z(3)^0/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),[128X[104X
-    [4X[28X  Y/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),[128X[104X
-    [4X[28X  Y^2/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),[128X[104X
-    [4X[28X  Y^3/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),[128X[104X
-    [4X[28X  Y^4/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),[128X[104X
-    [4X[28X  Y^5/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),[128X[104X
-    [4X[28X  Y^6/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),[128X[104X
-    [4X[28X  Y^7/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),[128X[104X
-    [4X[28X  Y^8/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),[128X[104X
-    [4X[28X  Y^9/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),[128X[104X
-    [4X[28X  Y^10/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),[128X[104X
-    [4X[28X  Y^11/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),[128X[104X
-    [4X[28X  Y^12/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2) ][128X[104X
-    [4X[25Xgap>[125X [27XForAll(last,x->x=x^fr);[127X[104X
+    [4X[25Xgap>[125X [27X[127X[104X
+    [4X[25Xgap>[125X [27Xbb:=Hermitian_RiemannRochSpaceBasis(5*d);[127X[104X
+    [4X[28X[ (Y1^3+Z(5^2)*Y1^2+Z(5^2)^17)/(Z(5^2)*Y1^3+Z(5^2)^17*Y1*Y2^2-Y2^3+Z(5^2)^14*Y1*Y2+Z(5^2)^11*Y2^2+Z(5^2)^11*Y1+Z(5^2)^7*Y2+Z(5^2)^\[128X[104X
+    [4X[28X15), [128X[104X
+    [4X[28X  (Z(5^2)^16*Y1^2+Z(5^2)^23*Y1+Y2+Z(5^2)^5)/(Z(5^2)*Y1^3+Z(5^2)^17*Y1*Y2^2-Y2^3+Z(5^2)^14*Y1*Y2+Z(5^2)^11*Y2^2+Z(5^2)^11*Y1+Z(5^2)\[128X[104X
+    [4X[28X^7*Y2+Z(5^2)^15), [128X[104X
+    [4X[28X  (Z(5^2)^17*Y1^2+Y1*Y2+Z(5^2)^5*Y1+Z(5^2)^21)/(Z(5^2)*Y1^3+Z(5^2)^17*Y1*Y2^2-Y2^3+Z(5^2)^14*Y1*Y2+Z(5^2)^11*Y2^2+Z(5^2)^11*Y1+Z(5\[128X[104X
+    [4X[28X^2)^7*Y2+Z(5^2)^15), [128X[104X
+    [4X[28X  (Y1^2*Y2+Z(5^2)^3*Y1^2+Z(5^2)^21*Y1+Z(5^2)^22)/(Z(5^2)*Y1^3+Z(5^2)^17*Y1*Y2^2-Y2^3+Z(5^2)^14*Y1*Y2+Z(5^2)^11*Y2^2+Z(5^2)^11*Y1+Z\[128X[104X
+    [4X[28X(5^2)^7*Y2+Z(5^2)^15), [128X[104X
+    [4X[28X  (Z(5^2)^23*Y1^2+Y2^2+Z(5^2)^8*Y1+Z(5^2)^13)/(Z(5^2)*Y1^3+Z(5^2)^17*Y1*Y2^2-Y2^3+Z(5^2)^14*Y1*Y2+Z(5^2)^11*Y2^2+Z(5^2)^11*Y1+Z(5^\[128X[104X
+    [4X[28X2)^7*Y2+Z(5^2)^15), [128X[104X
+    [4X[28X  (Y1*Y2^2+Z(5^2)^7*Y1^2+Z(5^2)^13*Y1+Z(5^2)^4)/(Z(5^2)*Y1^3+Z(5^2)^17*Y1*Y2^2-Y2^3+Z(5^2)^14*Y1*Y2+Z(5^2)^11*Y2^2+Z(5^2)^11*Y1+Z(\[128X[104X
+    [4X[28X5^2)^7*Y2+Z(5^2)^15), [128X[104X
+    [4X[28X  (Y2^3+Z(5^2)^5*Y1^2+Z(5^2)^11*Y1+Z(5^2)^14)/(Z(5^2)*Y1^3+Z(5^2)^17*Y1*Y2^2-Y2^3+Z(5^2)^14*Y1*Y2+Z(5^2)^11*Y2^2+Z(5^2)^11*Y1+Z(5^\[128X[104X
+    [4X[28X2)^7*Y2+Z(5^2)^15) ][128X[104X
+    [4X[25Xgap>[125X [27XSize(bb);[127X[104X
+    [4X[28X7[128X[104X
+    [4X[25Xgap>[125X [27XForAll(bb,x->x=x^fr);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XForAll(bb,x->PrincipalHermitian_Divisor(Hq,x)>=-5*d);[127X[104X
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
   
-  [1X3.4 [33X[0;0YHermitian AG-codes[133X[101X
+  [1X3.5 [33X[0;0YHermitian AG-codes[133X[101X
   
   [33X[0;0YThe following functions are available:[133X
   
-  [1X3.4-1 IsHermitian_Code[101X
+  [1X3.5-1 IsHermitian_Code[101X
   
   [33X[1;0Y[29X[2XIsHermitian_Code[102X( [3Xobj[103X ) [32X Category[133X
   [33X[1;0Y[29X[2XIsHermitian_FunctionalCode[102X( [3Xobj[103X ) [32X Category[133X
@@ -306,7 +309,7 @@
   Hermitian  curve  of equation [22XX^q+1=Y^q+Y[122X. AG-codes are either of functional
   or of differential type.[133X
   
-  [1X3.4-2 GeneratorMatrixOfFunctionalHermitian_CodeNC[101X
+  [1X3.5-2 GeneratorMatrixOfFunctionalHermitian_CodeNC[101X
   
   [33X[1;0Y[29X[2XGeneratorMatrixOfFunctionalHermitian_CodeNC[102X( [3XG[103X, [3Xpls[103X ) [32X function[133X
   
@@ -314,47 +317,47 @@
   the  sum  of the degree one places in the list [3Xpls[103X. The support of [3XG[103X must be
   disjoint from [3Xpls[103X.[133X
   
-  [1X3.4-3 Hermitian_FunctionalCode[101X
+  [1X3.5-3 Hermitian_FunctionalCode[101X
   
   [33X[1;0Y[29X[2XHermitian_FunctionalCode[102X( [3XG[103X, [3XD[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XHermitian_FunctionalCode[102X( [3XG[103X ) [32X operation[133X
   
   [33X[0;0Yreturns  the  functional AG code [22XC_L(D,G)={(f(P_1),...,f(P_n)) ∣ f∈ L(G)}.[122X [22XD[122X
-  and  [22XG[122X  are  rational  divisors of the Hermitian curve [22XC[122X. [22XD=P_1+⋯+D_n[122X, where
-  [22XP_1,...,P_n[122X  are  degree  one  places  of  [22XC[122X.  The  supports  of [22XD[122X and [22XG[122X are
+  and  [22XG[122X are rational divisors of the Hermitian curve [22XH(q)[122X. [22XD=P_1+⋯+P_n[122X, where
+  [22XP_1,...,P_n[122X  are  degree  one  places  of  [22XH(q)[122X. The supports of [22XD[122X and [22XG[122X are
   disjoint.  If [22XD[122X is not given then it is the sum of affine rational places of
   [22XH(q)[122X,  not  contained  in  the  support  of  [22XG[122X. By the Riemann-Roch theorem,
   functional  codes  have  dimension  at  least  [22Xdeg(G)+1-g[122X,  with equality if
   [22Xdeg(G)>2g-2[122X.[133X
   
-  [1X3.4-4 Hermitian_DifferentialCode[101X
+  [1X3.5-4 Hermitian_DifferentialCode[101X
   
   [33X[1;0Y[29X[2XHermitian_DifferentialCode[102X( [3XG[103X, [3XD[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XHermitian_DifferentialCode[102X( [3XG[103X ) [32X operation[133X
   
   [33X[0;0Yreturns the differential AG code [22XC_Ω(D,G) = {res_P_1(ω),...,res_P_n(ω) ∣ ω ∈
-  Ω(G-D)}.[122X   [22XD[122X  and  [22XG[122X  are  rational  divisors  of  the  Hermitian  curve  [22XC[122X.
-  [22XD=P_1+⋯+D_n[122X, where [22XP_1,...,P_n[122X are degree one places of [22XC[122X. The supports of [22XD[122X
-  and  [22XG[122X are disjoint. If [22XD[122X is not given then it is the sum of affine rational
-  places  of  [22XH(q)[122X,  not  contained  in  the support of [22XG[122X. By the Riemann-Roch
-  theorem,  functional  codes have dimension [22Xdeg(G)+1-g[122X. The differential code
-  is  the  dual  of  the  corresponding  functional  code. By the Riemann-Roch
-  theorem,  differential  codes  have  dimension  at  least [22Xn-deg(G)-1+g[122X, with
-  equality if [22Xdeg(G)>2g-2[122X.[133X
+  Ω(G-D)}.[122X  [22XD[122X  and  [22XG[122X  are  rational  divisors  of  the  Hermitian curve [22XH(q)[122X.
+  [22XD=P_1+⋯+P_n[122X,  where  [22XP_1,...,P_n[122X are degree one places of [22XH(q)[122X. The supports
+  of  [22XD[122X  and  [22XG[122X  are  disjoint. If [22XD[122X is not given then it is the sum of affine
+  rational  places  of  [22XH(q)[122X,  not  contained  in  the  support  of  [22XG[122X. By the
+  Riemann-Roch  theorem,  functional  codes  have  dimension  [22Xdeg(G)+1-g[122X.  The
+  differential  code  is the dual of the corresponding functional code. By the
+  Riemann-Roch   theorem,   differential   codes   have   dimension  at  least
+  [22Xn-deg(G)-1+g[122X, with equality if [22Xdeg(G)>2g-2[122X.[133X
   
-  [1X3.4-5 Length[101X
+  [1X3.5-5 Length[101X
   
   [33X[1;0Y[29X[2XLength[102X( [3XC[103X ) [32X attribute[133X
   
   [33X[0;0Yreturns the length of the AG code [3XC[103X.[133X
   
-  [1X3.4-6 GeneratorMatrixOfHermitian_Code[101X
+  [1X3.5-6 GeneratorMatrixOfHermitian_Code[101X
   
   [33X[1;0Y[29X[2XGeneratorMatrixOfHermitian_Code[102X( [3XC[103X ) [32X attribute[133X
   
   [33X[0;0Yreturns the generator matrix of the AG code [3XC[103X in [5XCVEC[105X matrix format.[133X
   
-  [1X3.4-7 DesignedMinimumDistance[101X
+  [1X3.5-7 DesignedMinimumDistance[101X
   
   [33X[1;0Y[29X[2XDesignedMinimumDistance[102X( [3XC[103X ) [32X attribute[133X
   
@@ -364,19 +367,52 @@
   [22XC_Ω(D,G)[122X, [22Xδ=deg(G)-(2g-2)[122X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xcode:=Hermitian_FunctionalCode(d);[127X[104X
-    [4X[28X<[9,5] Hermitian AG-code over GF(3^2)>[128X[104X
+    [4X[25Xgap>[125X [27XHermitian_FunctionalCode(5*d);[127X[104X
+    [4X[28X<[125,7] Hermitian AG-code over GF(5^2)>[128X[104X
+    [4X[25Xgap>[125X [27Xa:=Sum(AllRationalAffinePlacesOfHermitian_Curve(Hq));[127X[104X
+    [4X[28X<Hermitian divisor with support of length 125 over indeterminates [ Y1, Y2 ]>[128X[104X
+    [4X[25Xgap>[125X [27Xcode:=Hermitian_FunctionalCode(8*d,a);[127X[104X
+    [4X[28X<[125,15] Hermitian AG-code over GF(5^2)>[128X[104X
     [4X[25Xgap>[125X [27XPrint(code);[127X[104X
-    [4X[28XHermitian_FunctionalCode(Hermitian_Divisor(Hermitian_Curve(GF(9),Y),[128X[104X
-    [4X[28X[ Z(3^8)^302, Z(3^8)^2718, Z(3^8)^3678, Z(3^8)^4782 ],[128X[104X
-    [4X[28X[ 1, 1, 1, 1 ]),Hermitian_Divisor(Hermitian_Curve(GF(9),Y),[128X[104X
-    [4X[28X[ 0*Z(3), Z(3)^0, Z(3), Z(3^2), Z(3^2)^2, Z(3^2)^3, Z(3^2)^5,[128X[104X
-    [4X[28X  Z(3^2)^6, Z(3^2)^7 ],[ 1, 1, 1, 1, 1, 1, 1, 1, 1 ]))[128X[104X
+    [4X[28XHermitian_FunctionalCode(Hermitian_Divisor(Hermitian_Curve(Y1),[ [ Z(5^6)^5885, Z(5^6)^13071 ], [ Z(5^6)^6485, Z(5^6)^13647 ], [128X[104X
+    [4X[28X  [ Z(5^6)^6509, Z(5^6)^14295 ] ],[ 8, 8, 8 ]),Hermitian_Divisor(Hermitian_Curve(Y1),[ [ 0*Z(5), 0*Z(5) ], [ 0*Z(5), Z(5^2)^3 ], [128X[104X
+    [4X[28X  [ 0*Z(5), Z(5^2)^9 ], [ 0*Z(5), Z(5^2)^15 ], [ 0*Z(5), Z(5^2)^21 ], [ Z(5)^0, Z(5)^3 ], [ Z(5)^0, Z(5^2) ], [128X[104X
+    [4X[28X  [ Z(5)^0, Z(5^2)^4 ], [ Z(5)^0, Z(5^2)^5 ], [ Z(5)^0, Z(5^2)^20 ], [ Z(5), Z(5) ], [ Z(5), Z(5^2)^8 ], [ Z(5), Z(5^2)^13 ], [128X[104X
+    [4X[28X  [ Z(5), Z(5^2)^16 ], [ Z(5), Z(5^2)^17 ], [ Z(5)^2, Z(5)^3 ], [ Z(5)^2, Z(5^2) ], [ Z(5)^2, Z(5^2)^4 ], [ Z(5)^2, Z(5^2)^5 ], [128X[104X
+    [4X[28X  [ Z(5)^2, Z(5^2)^20 ], [ Z(5)^3, Z(5) ], [ Z(5)^3, Z(5^2)^8 ], [ Z(5)^3, Z(5^2)^13 ], [ Z(5)^3, Z(5^2)^16 ], [128X[104X
+    [4X[28X  [ Z(5)^3, Z(5^2)^17 ], [ Z(5^2), Z(5)^0 ], [ Z(5^2), Z(5^2)^2 ], [ Z(5^2), Z(5^2)^7 ], [ Z(5^2), Z(5^2)^10 ], [128X[104X
+    [4X[28X  [ Z(5^2), Z(5^2)^11 ], [ Z(5^2)^2, Z(5) ], [ Z(5^2)^2, Z(5^2)^8 ], [ Z(5^2)^2, Z(5^2)^13 ], [ Z(5^2)^2, Z(5^2)^16 ], [128X[104X
+    [4X[28X  [ Z(5^2)^2, Z(5^2)^17 ], [ Z(5^2)^3, Z(5)^2 ], [ Z(5^2)^3, Z(5^2)^14 ], [ Z(5^2)^3, Z(5^2)^19 ], [ Z(5^2)^3, Z(5^2)^22 ], [128X[104X
+    [4X[28X  [ Z(5^2)^3, Z(5^2)^23 ], [ Z(5^2)^4, Z(5)^3 ], [ Z(5^2)^4, Z(5^2) ], [ Z(5^2)^4, Z(5^2)^4 ], [ Z(5^2)^4, Z(5^2)^5 ], [128X[104X
+    [4X[28X  [ Z(5^2)^4, Z(5^2)^20 ], [ Z(5^2)^5, Z(5)^0 ], [ Z(5^2)^5, Z(5^2)^2 ], [ Z(5^2)^5, Z(5^2)^7 ], [ Z(5^2)^5, Z(5^2)^10 ], [128X[104X
+    [4X[28X  [ Z(5^2)^5, Z(5^2)^11 ], [ Z(5^2)^7, Z(5)^2 ], [ Z(5^2)^7, Z(5^2)^14 ], [ Z(5^2)^7, Z(5^2)^19 ], [ Z(5^2)^7, Z(5^2)^22 ], [128X[104X
+    [4X[28X  [ Z(5^2)^7, Z(5^2)^23 ], [ Z(5^2)^8, Z(5)^3 ], [ Z(5^2)^8, Z(5^2) ], [ Z(5^2)^8, Z(5^2)^4 ], [ Z(5^2)^8, Z(5^2)^5 ], [128X[104X
+    [4X[28X  [ Z(5^2)^8, Z(5^2)^20 ], [ Z(5^2)^9, Z(5)^0 ], [ Z(5^2)^9, Z(5^2)^2 ], [ Z(5^2)^9, Z(5^2)^7 ], [ Z(5^2)^9, Z(5^2)^10 ], [128X[104X
+    [4X[28X  [ Z(5^2)^9, Z(5^2)^11 ], [ Z(5^2)^10, Z(5) ], [ Z(5^2)^10, Z(5^2)^8 ], [ Z(5^2)^10, Z(5^2)^13 ], [ Z(5^2)^10, Z(5^2)^16 ], [128X[104X
+    [4X[28X  [ Z(5^2)^10, Z(5^2)^17 ], [ Z(5^2)^11, Z(5)^2 ], [ Z(5^2)^11, Z(5^2)^14 ], [ Z(5^2)^11, Z(5^2)^19 ], [ Z(5^2)^11, Z(5^2)^22 ], [128X[104X
+    [4X[28X  [ Z(5^2)^11, Z(5^2)^23 ], [ Z(5^2)^13, Z(5)^0 ], [ Z(5^2)^13, Z(5^2)^2 ], [ Z(5^2)^13, Z(5^2)^7 ], [ Z(5^2)^13, Z(5^2)^10 ], [128X[104X
+    [4X[28X  [ Z(5^2)^13, Z(5^2)^11 ], [ Z(5^2)^14, Z(5) ], [ Z(5^2)^14, Z(5^2)^8 ], [ Z(5^2)^14, Z(5^2)^13 ], [ Z(5^2)^14, Z(5^2)^16 ], [128X[104X
+    [4X[28X  [ Z(5^2)^14, Z(5^2)^17 ], [ Z(5^2)^15, Z(5)^2 ], [ Z(5^2)^15, Z(5^2)^14 ], [ Z(5^2)^15, Z(5^2)^19 ], [ Z(5^2)^15, Z(5^2)^22 ], [128X[104X
+    [4X[28X  [ Z(5^2)^15, Z(5^2)^23 ], [ Z(5^2)^16, Z(5)^3 ], [ Z(5^2)^16, Z(5^2) ], [ Z(5^2)^16, Z(5^2)^4 ], [ Z(5^2)^16, Z(5^2)^5 ], [128X[104X
+    [4X[28X  [ Z(5^2)^16, Z(5^2)^20 ], [ Z(5^2)^17, Z(5)^0 ], [ Z(5^2)^17, Z(5^2)^2 ], [ Z(5^2)^17, Z(5^2)^7 ], [ Z(5^2)^17, Z(5^2)^10 ], [128X[104X
+    [4X[28X  [ Z(5^2)^17, Z(5^2)^11 ], [ Z(5^2)^19, Z(5)^2 ], [ Z(5^2)^19, Z(5^2)^14 ], [ Z(5^2)^19, Z(5^2)^19 ], [ Z(5^2)^19, Z(5^2)^22 ], [128X[104X
+    [4X[28X  [ Z(5^2)^19, Z(5^2)^23 ], [ Z(5^2)^20, Z(5)^3 ], [ Z(5^2)^20, Z(5^2) ], [ Z(5^2)^20, Z(5^2)^4 ], [ Z(5^2)^20, Z(5^2)^5 ], [128X[104X
+    [4X[28X  [ Z(5^2)^20, Z(5^2)^20 ], [ Z(5^2)^21, Z(5)^0 ], [ Z(5^2)^21, Z(5^2)^2 ], [ Z(5^2)^21, Z(5^2)^7 ], [ Z(5^2)^21, Z(5^2)^10 ], [128X[104X
+    [4X[28X  [ Z(5^2)^21, Z(5^2)^11 ], [ Z(5^2)^22, Z(5) ], [ Z(5^2)^22, Z(5^2)^8 ], [ Z(5^2)^22, Z(5^2)^13 ], [ Z(5^2)^22, Z(5^2)^16 ], [128X[104X
+    [4X[28X  [ Z(5^2)^22, Z(5^2)^17 ], [ Z(5^2)^23, Z(5)^2 ], [ Z(5^2)^23, Z(5^2)^14 ], [ Z(5^2)^23, Z(5^2)^19 ], [ Z(5^2)^23, Z(5^2)^22 ], [128X[104X
+    [4X[28X  [ Z(5^2)^23, Z(5^2)^23 ] ],[ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, [128X[104X
+    [4X[28X  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, [128X[104X
+    [4X[28X  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, [128X[104X
+    [4X[28X  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ]))[128X[104X
     [4X[25Xgap>[125X [27XDesignedMinimumDistance(code);[127X[104X
-    [4X[28X5[128X[104X
+    [4X[28X101[128X[104X
+    [4X[25Xgap>[125X [27XLeftActingDomain(code);[127X[104X
+    [4X[28XGF(5^2)[128X[104X
+    [4X[25Xgap>[125X [27XUnderlyingField(code);[127X[104X
+    [4X[28XGF(5^2)[128X[104X
   [4X[32X[104X
   
-  [1X3.4-8 Hermitian_DecodeToCodeword[101X
+  [1X3.5-8 Hermitian_DecodeToCodeword[101X
   
   [33X[1;0Y[29X[2XHermitian_DecodeToCodeword[102X( [3XC[103X, [3Xw[103X ) [32X operation[133X
   
@@ -390,70 +426,76 @@
   equations.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xq:=5^3;[127X[104X
-    [4X[28X125[128X[104X
+    [4X[25Xgap>[125X [27Xq:=4;[127X[104X
+    [4X[28X4[128X[104X
     [4X[25Xgap>[125X [27X# construct the curve and the divisors[127X[104X
-    [4X[25Xgap>[125X [27XY:=Indeterminate(GF(q),"Y");[127X[104X
-    [4X[28XY[128X[104X
-    [4X[25Xgap>[125X [27XC:=Hermitian_Curve(GF(q),Y);[127X[104X
-    [4X[28X<GZ curve over GF(125) with indeterminate Y>[128X[104X
-    [4X[25Xgap>[125X [27XP_infty:=Hermitian_1PointDivisor(C,infinity);[127X[104X
-    [4X[28X<GZ divisor with support of length 1 over indeterminate Y>[128X[104X
-    [4X[28Xgap>[128X[104X
-    [4X[25Xgap>[125X [27Xfr:=FrobeniusAutomorphismOfHermitian_Curve(C);[127X[104X
-    [4X[28XAC_FrobeniusAutomorphism(5^3)[128X[104X
-    [4X[25Xgap>[125X [27XP4:=Sum(AC_FrobeniusAutomorphismOrbit(fr,RandomPlaceOfHermitian_Curve(C,4)));[127X[104X
-    [4X[28X<GZ divisor with support of length 4 over indeterminate Y>[128X[104X
+    [4X[25Xgap>[125X [27XY:=HermitianIndeterminates(GF(q^2),"Y1","Y2");[127X[104X
+    [4X[28X[ Y1, Y2 ][128X[104X
+    [4X[25Xgap>[125X [27XHq:=Hermitian_Curve(Y[1]);[127X[104X
+    [4X[28X<Hermitian curve over GF(16) with indeterminates [ Y1, Y2 ]>[128X[104X
+    [4X[25Xgap>[125X [27XP_infty:=Hermitian_Place(Hq,[infinity]); [127X[104X
+    [4X[28X<Hermitian place [ infinity ] over indeterminates [ Y1, Y2 ]>[128X[104X
+    [4X[25Xgap>[125X [27X[127X[104X
+    [4X[25Xgap>[125X [27Xfr:=FrobeniusAutomorphismOfHermitian_Curve(Hq);[127X[104X
+    [4X[28XAC_FrobeniusAutomorphism(2^4)[128X[104X
+    [4X[25Xgap>[125X [27XP4:=RandomPlaceOfGivenDegreeOfHermitian_Curve(Hq,5);[127X[104X
+    [4X[28X<Hermitian place [ Z(2,20)+Z(2,20)^3+Z(2,20)^4+Z(2,20)^6+Z(2,20)^11+Z(2,20)^13+Z(2,20)^15+Z(2,20)^17+Z(2,20)^18+Z(2,20)^19, [128X[104X
+    [4X[28X  Z(2,20)+Z(2,20)^4+Z(2,20)^5+Z(2,20)^7+Z(2,20)^8+Z(2,20)^12+Z(2,20)^13+Z(2,20)^15+Z(2,20)^19 ] over indeterminates [ Y1, Y2 ]>[128X[104X
+    [4X[25Xgap>[125X [27XP4:=Sum(AC_FrobeniusAutomorphismOrbit(fr,P4));[127X[104X
+    [4X[28X<Hermitian divisor with support of length 5 over indeterminates [ Y1, Y2 ]>[128X[104X
     [4X[25Xgap>[125X [27XG:=5*P4+7*P_infty;[127X[104X
-    [4X[28X<GZ divisor with support of length 5 over indeterminate Y>[128X[104X
+    [4X[28X<Hermitian divisor with support of length 6 over indeterminates [ Y1, Y2 ]>[128X[104X
     [4X[25Xgap>[125X [27XDegree(G);[127X[104X
-    [4X[28X27[128X[104X
-    [4X[28Xgap>[128X[104X
-    [4X[25Xgap>[125X [27Xlen:=90;[127X[104X
-    [4X[28X90[128X[104X
-    [4X[25Xgap>[125X [27XD:=Sum([1..len],i->Hermitian_1PointDivisor(C,Elements(GF(q))[i]));[127X[104X
-    [4X[28X<GZ divisor with support of length 90 over indeterminate Y>[128X[104X
-    [4X[28Xgap>[128X[104X
+    [4X[28X32[128X[104X
+    [4X[25Xgap>[125X [27X[127X[104X
+    [4X[25Xgap>[125X [27Xlen:=50;[127X[104X
+    [4X[28X50[128X[104X
+    [4X[25Xgap>[125X [27Xaffpts:=AllRationalAffinePlacesOfHermitian_Curve(Hq);;[127X[104X
+    [4X[25Xgap>[125X [27XD:=Sum(affpts{[1..len]});[127X[104X
+    [4X[28X<Hermitian divisor with support of length 50 over indeterminates [ Y1, Y2 ]>[128X[104X
+    [4X[25Xgap>[125X [27X[127X[104X
     [4X[25Xgap>[125X [27X# construct the AG differential code[127X[104X
+    [4X[25Xgap>[125X [27XHermitian_DifferentialCode(G);[127X[104X
+    [4X[28X<[64,37] Hermitian AG-code over GF(2^4)>[128X[104X
     [4X[25Xgap>[125X [27Xagcode:=Hermitian_DifferentialCode(G,D);[127X[104X
-    [4X[28X<[90,62] Hermitian AG-code over GF(5^3)>[128X[104X
+    [4X[28X<[50,23] Hermitian AG-code over GF(2^4)>[128X[104X
     [4X[25Xgap>[125X [27XDesignedMinimumDistance(agcode);[127X[104X
-    [4X[28X29[128X[104X
+    [4X[28X22[128X[104X
     [4X[25Xgap>[125X [27XLength(agcode)-Degree(G)-1;[127X[104X
-    [4X[28X62[128X[104X
-    [4X[28Xgap>[128X[104X
+    [4X[28X17[128X[104X
+    [4X[25Xgap>[125X [27X[127X[104X
     [4X[25Xgap>[125X [27X# test codeword generation[127X[104X
-    [4X[25Xgap>[125X [27Xt:=Int((DesignedMinimumDistance(agcode)-1)/2);[127X[104X
-    [4X[28X14[128X[104X
+    [4X[25Xgap>[125X [27Xt:=Int((DesignedMinimumDistance(agcode)-1-Genus(G!.curve))/2);[127X[104X
+    [4X[28X7[128X[104X
     [4X[25Xgap>[125X [27Xsent:=Random(agcode);;[127X[104X
     [4X[25Xgap>[125X [27Xerr:=RandomVectorOfGivenWeight(GF(q),Length(agcode),t);;[127X[104X
     [4X[25Xgap>[125X [27Xreceived:=sent+err;;[127X[104X
-    [4X[28Xgap>[128X[104X
+    [4X[25Xgap>[125X [27X[127X[104X
     [4X[25Xgap>[125X [27X# decoding[127X[104X
     [4X[25Xgap>[125X [27Xsent_decoded:=Hermitian_DecodeToCodeword(agcode,received);[127X[104X
-    [4X[28X<cvec over GF(5,3) of length 90>[128X[104X
+    [4X[28X<cvec over GF(2,4) of length 50>[128X[104X
     [4X[25Xgap>[125X [27Xsent=sent_decoded;[127X[104X
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
   
-  [1X3.5 [33X[0;0YUtilities for Hermitian AG-codes[133X[101X
+  [1X3.6 [33X[0;0YUtilities for Hermitian AG-codes[133X[101X
   
-  [1X3.5-1 RestrictVectorSpace[101X
+  [1X3.6-1 RestrictVectorSpace[101X
   
   [33X[1;0Y[29X[2XRestrictVectorSpace[102X( [3XV[103X, [3XF[103X ) [32X function[133X
   
   [33X[0;0YLet [22XK[122X be a field and [22XV[122X a linear subspace of [22XK^n[122X. The restriction of [3XV[103X to the
   field [3XF[103X is the intersection [22XV∩ F^n[122X.[133X
   
-  [1X3.5-2 UPolCoeffsToSmallFieldNC[101X
+  [1X3.6-2 UPolCoeffsToSmallFieldNC[101X
   
   [33X[1;0Y[29X[2XUPolCoeffsToSmallFieldNC[102X( [3Xf[103X, [3Xq[103X ) [32X function[133X
   
   [33X[0;0YThis  non-checking  function  returns  the same polynomial as [3Xf[103X, making sure
   that the coefficients are in [22XGF(q)[122X.[133X
   
-  [1X3.5-3 RandomVectorOfGivenWeight[101X
+  [1X3.6-3 RandomVectorOfGivenWeight[101X
   
   [33X[1;0Y[29X[2XRandomVectorOfGivenWeight[102X( [3XF[103X, [3Xn[103X, [3Xk[103X ) [32X function[133X
   

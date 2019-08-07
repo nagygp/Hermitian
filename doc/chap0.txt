@@ -66,41 +66,42 @@
       3.1-3 IndeterminatesOfHermitian_Curve
       3.1-4 UnderlyingField
       3.1-5 RandomPlaceOfGivenDegreeOfHermitian_Curve
-      3.1-6 FrobeniusAutomorphismOfHermitian_Curve
-      3.1-7 IsHermitian_CurveAutomorphism
-      3.1-8 Hermitian_CurveAutomorphism
-      3.1-9 [33X[0;0YAutomorphismGroup[133X
-    3.2 [33X[0;0YHermitian divisors[133X
-      3.2-1 IsHermitian_Divisor
-      3.2-2 Hermitian_DivisorConstruct
-      3.2-3 Hermitian_Divisor
-      3.2-4 Hermitian_Place
-      3.2-5 ZeroHermitian_Divisor
-      3.2-6 IsRationalHermitian_Divisor
-      3.2-7 UnderlyingField
-      3.2-8 Support
-      3.2-9 Valuation
-      3.2-10 PrincipalHermitian_Divisor
-      3.2-11 SupremumHermitian_Divisor
-      3.2-12 InfimumHermitian_Divisor
-      3.2-13 PositivePartOfHermitian_Divisor
-      3.2-14 NegativePartOfHermitian_Divisor
-    3.3 [33X[0;0YHermitian Riemann-Roch spaces[133X
-      3.3-1 Hermitian_RiemannRochSpaceBasis
-    3.4 [33X[0;0YHermitian AG-codes[133X
-      3.4-1 IsHermitian_Code
-      3.4-2 GeneratorMatrixOfFunctionalHermitian_CodeNC
-      3.4-3 Hermitian_FunctionalCode
-      3.4-4 Hermitian_DifferentialCode
-      3.4-5 Length
-      3.4-6 GeneratorMatrixOfHermitian_Code
-      3.4-7 DesignedMinimumDistance
-      3.4-8 Hermitian_DecodeToCodeword
-    3.5 [33X[0;0YUtilities for Hermitian AG-codes[133X
-      3.5-1 RestrictVectorSpace
-      3.5-2 UPolCoeffsToSmallFieldNC
-      3.5-3 RandomVectorOfGivenWeight
-  4 [33X[0;0YAn example: BCH codes as Hermitian AG-codes[133X
+    3.2 [33X[0;0YAutomorphisms of Hermitian curves[133X
+      3.2-1 FrobeniusAutomorphismOfHermitian_Curve
+      3.2-2 IsHermitian_CurveAutomorphism
+      3.2-3 Hermitian_CurveAutomorphism
+      3.2-4 [33X[0;0YAutomorphismGroup[133X
+    3.3 [33X[0;0YHermitian divisors[133X
+      3.3-1 IsHermitian_Divisor
+      3.3-2 Hermitian_DivisorConstruct
+      3.3-3 Hermitian_Divisor
+      3.3-4 Hermitian_Place
+      3.3-5 ZeroHermitian_Divisor
+      3.3-6 IsRationalHermitian_Divisor
+      3.3-7 UnderlyingField
+      3.3-8 Support
+      3.3-9 Valuation
+      3.3-10 PrincipalHermitian_Divisor
+      3.3-11 SupremumHermitian_Divisor
+      3.3-12 InfimumHermitian_Divisor
+      3.3-13 PositivePartOfHermitian_Divisor
+      3.3-14 NegativePartOfHermitian_Divisor
+    3.4 [33X[0;0YHermitian Riemann-Roch spaces[133X
+      3.4-1 Hermitian_RiemannRochSpaceBasis
+    3.5 [33X[0;0YHermitian AG-codes[133X
+      3.5-1 IsHermitian_Code
+      3.5-2 GeneratorMatrixOfFunctionalHermitian_CodeNC
+      3.5-3 Hermitian_FunctionalCode
+      3.5-4 Hermitian_DifferentialCode
+      3.5-5 Length
+      3.5-6 GeneratorMatrixOfHermitian_Code
+      3.5-7 DesignedMinimumDistance
+      3.5-8 Hermitian_DecodeToCodeword
+    3.6 [33X[0;0YUtilities for Hermitian AG-codes[133X
+      3.6-1 RestrictVectorSpace
+      3.6-2 UPolCoeffsToSmallFieldNC
+      3.6-3 RandomVectorOfGivenWeight
+  4 [33X[0;0YAn example: BCH type codes as Hermitian AG codes (???)[133X
   
   
   [32X

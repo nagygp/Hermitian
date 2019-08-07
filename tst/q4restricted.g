@@ -17,14 +17,18 @@ od;
 ###
 
 pt:=RandomPlaceOfGivenDegreeOfHermitian_Curve(Hq,3);
-a:=Hermitian_Place(Hq,pt);
 fr:=FrobeniusAutomorphismOfHermitian_Curve(Hq);
-d:=Sum(AC_FrobeniusAutomorphismOrbit(fr,a));
+d:=Sum(AC_FrobeniusAutomorphismOrbit(fr,pt));
 IsRationalHermitian_Divisor(d);
 
 for s in [1..Int(q^3/3)] do
+    hcode:=Hermitian_FunctionalCode(s*d);
+    rcode:=RestrictVectorSpace(hcode,GF(2));
+    Print(s,"\t",Dimension(hcode),"\t",Dimension(rcode),"\t", DesignedMinimumDistance(hcode),"\n");
+od;
+
+for s in [1..Int(q^3/3)] do
     hcode:=Hermitian_DifferentialCode(s*d);
-#    hcode:=Hermitian_FunctionalCode(s*d);
     rcode:=RestrictVectorSpace(hcode,GF(2));
     Print(s,"\t",Dimension(hcode),"\t",Dimension(rcode),"\t", DesignedMinimumDistance(hcode),"\n");
 od;

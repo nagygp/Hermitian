@@ -24,15 +24,33 @@ The following functions are available:
 <#Include Label="RandomPlaceOfGivenDegreeOfHermitian_Curve">
 
 <Example>
-gap&gt; Y:=Indeterminate(GF(9),"Y");
-Y
-gap&gt; C:=Hermitian_Curve(GF(9),Y);
-&lt;GZ curve over GF(9) with indeterminate Y&gt;
-gap&gt; aut:=AutomorphismGroup(C);
-&lt;group of GZ curve automorphisms of size 720&gt;
-gap&gt; Random(aut);
-Hermitian_CurveAut([ [ Z(3)^0, Z(3^2)^3 ], [ Z(3^2)^5, Z(3) ] ])
+gap&gt; q:=5;
+5
+gap&gt; Y:=HermitianIndeterminates(GF(q^2),"Y1","Y2");
+[ Y1, Y2 ]
+gap&gt; Hq:=Hermitian_Curve(Y[1]);
+&lt;Hermitian curve over GF(25) with indeterminates [ Y1, Y2 ]&gt;
+gap&gt; 
+gap&gt; UnderlyingField(Hq);
+GF(5^2)
+gap&gt; p:=RandomPlaceOfGivenDegreeOfHermitian_Curve(Hq,3);
+&lt;Hermitian place [ Z(5^6)^12002, Z(5^6)^14911 ] over indeterminates [ Y1, Y2 ]&gt;
+gap&gt; p in Hq;
+true
+gap&gt; [ infinity ] in Hq;
+true
+gap&gt; [0,0] in Hq;
+false
+gap&gt; Z(q)*[0,0] in Hq;
+true
+gap&gt; Size( AllRationalPlacesOfHermitian_Curve(Hq) );
+126
 </Example>
+
+</Section>
+
+<Section Label="Automorphisms">
+<Heading>Automorphisms of Hermitian curves</Heading>
 
 <#Include Label="FrobeniusAutomorphismOfHermitian_Curve">
 
@@ -42,6 +60,12 @@ Hermitian_CurveAut([ [ Z(3)^0, Z(3^2)^3 ], [ Z(3^2)^5, Z(3) ] ])
 
 <#Include Label="Hermitian_CurveAutGroup">
 
+<Example>
+gap&gt; aut:=AutomorphismGroup(Hq);
+&lt;group of Hermitian curve automorphisms of size 378000&gt;
+gap&gt; Random(aut);
+Hermitian_CurveAut([ [ Z(5)^0, Z(5^2)^11, Z(5^2)^19 ], [ Z(5^2)^20, Z(5^2)^16, Z(5^2)^21 ], [ Z(5), Z(5^2)^4, Z(5^2)^10 ] ])
+</Example>
 
 
 </Section>
@@ -80,52 +104,32 @@ The following functions are available:
 <#Include Label="NegativePartOfHermitian_Divisor">
 
 <Example>
-gap&gt; p1:=Hermitian_Place(C,infinity);
-&lt;GZ divisor with support of length 1 over indeterminate Y&gt;
-gap&gt; p2:=Hermitian_Place(C,Z(3));
-&lt;GZ divisor with support of length 1 over indeterminate Y&gt;
-gap&gt; d:=3*p1-4*p2;
-&lt;GZ divisor with support of length 2 over indeterminate Y&gt;
+gap&gt; p_infty:=Hermitian_Place(Hq,[infinity]);
+&lt;Hermitian place [ infinity ] over indeterminates [ Y1, Y2 ]&gt;
+gap&gt; d:=3*p_infty-4*p;
+&lt;Hermitian divisor with support of length 2 over indeterminates [ Y1, Y2 ]&gt;
 gap&gt; Support(d);
-[ infinity, Z(3) ]
+[ [ infinity ], [ Z(5^6)^12002, Z(5^6)^14911 ] ]
 gap&gt; UnderlyingField(d);
-GF(3^2)
+GF(5^2)
 gap&gt; Zero(d);
-&lt;GZ divisor with support of length 0 over indeterminate Y&gt;
+&lt;Hermitian divisor with support of length 0 over indeterminates [ Y1, Y2 ]&gt;
 gap&gt; Characteristic(d);
-3
-gap&gt;
-gap&gt; d:=Hermitian_Divisor(C,[Z(27)^2,Z(3),infinity],[5,-1,2]);
-&lt;GZ divisor with support of length 3 over indeterminate Y&gt;
-gap&gt; Valuation(Z(3),d);
--1
-gap&gt; Valuation(Z(3)^2,d);
+5
+gap&gt; 
+gap&gt; Valuation(d,p);
+-4
+gap&gt; Valuation(d,[1,2]);
 0
-gap&gt;
-gap&gt; fr:=AC_FrobeniusAutomorphism(9);
-AC_FrobeniusAutomorphism(3^2)
+gap&gt; 
+gap&gt; fr:=FrobeniusAutomorphismOfHermitian_Curve(Hq);
+AC_FrobeniusAutomorphism(5^2)
 gap&gt; d^fr;
-&lt;GZ divisor with support of length 3 over indeterminate Y&gt;
+&lt;Hermitian divisor with support of length 2 over indeterminates [ Y1, Y2 ]&gt;
 gap&gt; Support(d^fr);
-[ infinity, Z(3), Z(3^3)^18 ]
+[ [ infinity ], [ Z(5^6)^3194, Z(5^6)^13423 ] ]
 gap&gt; Support(d);
-[ infinity, Z(3), Z(3^3)^2 ]
-gap&gt;
-gap&gt; rf:=Y^8-1;
-Y^8-Z(3)^0
-gap&gt; List(GF(9),u-&gt;Valuation(u,rf));
-[ 0, 1, 1, 1, 1, 1, 1, 1, 1 ]
-gap&gt; List(GF(9),u-&gt;Valuation(u,One(Y)));
-[ 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
-gap&gt; List(GF(9),u-&gt;Valuation(u,Zero(Y)));
-[ -infinity, -infinity, -infinity, -infinity, -infinity, -infinity,
-  -infinity, -infinity, -infinity ]
-gap&gt;
-gap&gt;
-gap&gt; List(GF(3),u-&gt;Valuation(u,One(Y)));
-[ 0, 0, 0 ]
-gap&gt; List(GF(3),u-&gt;Valuation(u,Zero(Y)));
-[ -infinity, -infinity, -infinity ]
+[ [ infinity ], [ Z(5^6)^12002, Z(5^6)^14911 ] ]
 </Example>
 
 </Section>
@@ -137,30 +141,35 @@ gap&gt; List(GF(3),u-&gt;Valuation(u,Zero(Y)));
 <#Include Label="Hermitian_RiemannRochSpaceBasis">
 
 <Example>
-gap&gt; a:=RandomPlaceOfHermitian_Curve(C,4);
-&lt;GZ divisor with support of length 1 over indeterminate Y&gt;
-gap&gt; fr:=FrobeniusAutomorphismOfHermitian_Curve(C);
-AC_FrobeniusAutomorphism(3^2)
+gap&gt; a:=RandomPlaceOfGivenDegreeOfHermitian_Curve(Hq,3);
+&lt;Hermitian place [ Z(5^6)^5885, Z(5^6)^13071 ] over indeterminates [ Y1, Y2 ]&gt;
+gap&gt; fr:=FrobeniusAutomorphismOfHermitian_Curve(Hq);
+AC_FrobeniusAutomorphism(5^2)
 gap&gt; d:=Sum(AC_FrobeniusAutomorphismOrbit(fr,a));
-&lt;GZ divisor with support of length 4 over indeterminate Y&gt;
+&lt;Hermitian divisor with support of length 3 over indeterminates [ Y1, Y2 ]&gt;
 gap&gt; IsRationalHermitian_Divisor(d);
 true
-gap&gt;
-gap&gt; Hermitian_RiemannRochSpaceBasis(3*d);
-[ Z(3)^0/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),
-  Y/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),
-  Y^2/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),
-  Y^3/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),
-  Y^4/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),
-  Y^5/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),
-  Y^6/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),
-  Y^7/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),
-  Y^8/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),
-  Y^9/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),
-  Y^10/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),
-  Y^11/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),
-  Y^12/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2) ]
-gap&gt; ForAll(last,x-&gt;x=x^fr);
+gap&gt; 
+gap&gt; bb:=Hermitian_RiemannRochSpaceBasis(5*d);
+[ (Y1^3+Z(5^2)*Y1^2+Z(5^2)^17)/(Z(5^2)*Y1^3+Z(5^2)^17*Y1*Y2^2-Y2^3+Z(5^2)^14*Y1*Y2+Z(5^2)^11*Y2^2+Z(5^2)^11*Y1+Z(5^2)^7*Y2+Z(5^2)^\
+15), 
+  (Z(5^2)^16*Y1^2+Z(5^2)^23*Y1+Y2+Z(5^2)^5)/(Z(5^2)*Y1^3+Z(5^2)^17*Y1*Y2^2-Y2^3+Z(5^2)^14*Y1*Y2+Z(5^2)^11*Y2^2+Z(5^2)^11*Y1+Z(5^2)\
+^7*Y2+Z(5^2)^15), 
+  (Z(5^2)^17*Y1^2+Y1*Y2+Z(5^2)^5*Y1+Z(5^2)^21)/(Z(5^2)*Y1^3+Z(5^2)^17*Y1*Y2^2-Y2^3+Z(5^2)^14*Y1*Y2+Z(5^2)^11*Y2^2+Z(5^2)^11*Y1+Z(5\
+^2)^7*Y2+Z(5^2)^15), 
+  (Y1^2*Y2+Z(5^2)^3*Y1^2+Z(5^2)^21*Y1+Z(5^2)^22)/(Z(5^2)*Y1^3+Z(5^2)^17*Y1*Y2^2-Y2^3+Z(5^2)^14*Y1*Y2+Z(5^2)^11*Y2^2+Z(5^2)^11*Y1+Z\
+(5^2)^7*Y2+Z(5^2)^15), 
+  (Z(5^2)^23*Y1^2+Y2^2+Z(5^2)^8*Y1+Z(5^2)^13)/(Z(5^2)*Y1^3+Z(5^2)^17*Y1*Y2^2-Y2^3+Z(5^2)^14*Y1*Y2+Z(5^2)^11*Y2^2+Z(5^2)^11*Y1+Z(5^\
+2)^7*Y2+Z(5^2)^15), 
+  (Y1*Y2^2+Z(5^2)^7*Y1^2+Z(5^2)^13*Y1+Z(5^2)^4)/(Z(5^2)*Y1^3+Z(5^2)^17*Y1*Y2^2-Y2^3+Z(5^2)^14*Y1*Y2+Z(5^2)^11*Y2^2+Z(5^2)^11*Y1+Z(\
+5^2)^7*Y2+Z(5^2)^15), 
+  (Y2^3+Z(5^2)^5*Y1^2+Z(5^2)^11*Y1+Z(5^2)^14)/(Z(5^2)*Y1^3+Z(5^2)^17*Y1*Y2^2-Y2^3+Z(5^2)^14*Y1*Y2+Z(5^2)^11*Y2^2+Z(5^2)^11*Y1+Z(5^\
+2)^7*Y2+Z(5^2)^15) ]
+gap&gt; Size(bb);
+7
+gap&gt; ForAll(bb,x-&gt;x=x^fr);
+true
+gap&gt; ForAll(bb,x-&gt;PrincipalHermitian_Divisor(Hq,x)&gt;=-5*d);
 true
 </Example>
 
@@ -186,63 +195,102 @@ The following functions are available:
 <#Include Label="DesignedMinimumDistance">
 
 <Example>
-gap&gt; code:=Hermitian_FunctionalCode(d);
-&lt;[9,5] Hermitian AG-code over GF(3^2)&gt;
+gap&gt; Hermitian_FunctionalCode(5*d);
+&lt;[125,7] Hermitian AG-code over GF(5^2)&gt;
+gap&gt; a:=Sum(AllRationalAffinePlacesOfHermitian_Curve(Hq));
+&lt;Hermitian divisor with support of length 125 over indeterminates [ Y1, Y2 ]&gt;
+gap&gt; code:=Hermitian_FunctionalCode(8*d,a);
+&lt;[125,15] Hermitian AG-code over GF(5^2)&gt;
 gap&gt; Print(code);
-Hermitian_FunctionalCode(Hermitian_Divisor(Hermitian_Curve(GF(9),Y),
-[ Z(3^8)^302, Z(3^8)^2718, Z(3^8)^3678, Z(3^8)^4782 ],
-[ 1, 1, 1, 1 ]),Hermitian_Divisor(Hermitian_Curve(GF(9),Y),
-[ 0*Z(3), Z(3)^0, Z(3), Z(3^2), Z(3^2)^2, Z(3^2)^3, Z(3^2)^5,
-  Z(3^2)^6, Z(3^2)^7 ],[ 1, 1, 1, 1, 1, 1, 1, 1, 1 ]))
+Hermitian_FunctionalCode(Hermitian_Divisor(Hermitian_Curve(Y1),[ [ Z(5^6)^5885, Z(5^6)^13071 ], [ Z(5^6)^6485, Z(5^6)^13647 ], 
+  [ Z(5^6)^6509, Z(5^6)^14295 ] ],[ 8, 8, 8 ]),Hermitian_Divisor(Hermitian_Curve(Y1),[ [ 0*Z(5), 0*Z(5) ], [ 0*Z(5), Z(5^2)^3 ], 
+  [ 0*Z(5), Z(5^2)^9 ], [ 0*Z(5), Z(5^2)^15 ], [ 0*Z(5), Z(5^2)^21 ], [ Z(5)^0, Z(5)^3 ], [ Z(5)^0, Z(5^2) ], 
+  [ Z(5)^0, Z(5^2)^4 ], [ Z(5)^0, Z(5^2)^5 ], [ Z(5)^0, Z(5^2)^20 ], [ Z(5), Z(5) ], [ Z(5), Z(5^2)^8 ], [ Z(5), Z(5^2)^13 ], 
+  [ Z(5), Z(5^2)^16 ], [ Z(5), Z(5^2)^17 ], [ Z(5)^2, Z(5)^3 ], [ Z(5)^2, Z(5^2) ], [ Z(5)^2, Z(5^2)^4 ], [ Z(5)^2, Z(5^2)^5 ], 
+  [ Z(5)^2, Z(5^2)^20 ], [ Z(5)^3, Z(5) ], [ Z(5)^3, Z(5^2)^8 ], [ Z(5)^3, Z(5^2)^13 ], [ Z(5)^3, Z(5^2)^16 ], 
+  [ Z(5)^3, Z(5^2)^17 ], [ Z(5^2), Z(5)^0 ], [ Z(5^2), Z(5^2)^2 ], [ Z(5^2), Z(5^2)^7 ], [ Z(5^2), Z(5^2)^10 ], 
+  [ Z(5^2), Z(5^2)^11 ], [ Z(5^2)^2, Z(5) ], [ Z(5^2)^2, Z(5^2)^8 ], [ Z(5^2)^2, Z(5^2)^13 ], [ Z(5^2)^2, Z(5^2)^16 ], 
+  [ Z(5^2)^2, Z(5^2)^17 ], [ Z(5^2)^3, Z(5)^2 ], [ Z(5^2)^3, Z(5^2)^14 ], [ Z(5^2)^3, Z(5^2)^19 ], [ Z(5^2)^3, Z(5^2)^22 ], 
+  [ Z(5^2)^3, Z(5^2)^23 ], [ Z(5^2)^4, Z(5)^3 ], [ Z(5^2)^4, Z(5^2) ], [ Z(5^2)^4, Z(5^2)^4 ], [ Z(5^2)^4, Z(5^2)^5 ], 
+  [ Z(5^2)^4, Z(5^2)^20 ], [ Z(5^2)^5, Z(5)^0 ], [ Z(5^2)^5, Z(5^2)^2 ], [ Z(5^2)^5, Z(5^2)^7 ], [ Z(5^2)^5, Z(5^2)^10 ], 
+  [ Z(5^2)^5, Z(5^2)^11 ], [ Z(5^2)^7, Z(5)^2 ], [ Z(5^2)^7, Z(5^2)^14 ], [ Z(5^2)^7, Z(5^2)^19 ], [ Z(5^2)^7, Z(5^2)^22 ], 
+  [ Z(5^2)^7, Z(5^2)^23 ], [ Z(5^2)^8, Z(5)^3 ], [ Z(5^2)^8, Z(5^2) ], [ Z(5^2)^8, Z(5^2)^4 ], [ Z(5^2)^8, Z(5^2)^5 ], 
+  [ Z(5^2)^8, Z(5^2)^20 ], [ Z(5^2)^9, Z(5)^0 ], [ Z(5^2)^9, Z(5^2)^2 ], [ Z(5^2)^9, Z(5^2)^7 ], [ Z(5^2)^9, Z(5^2)^10 ], 
+  [ Z(5^2)^9, Z(5^2)^11 ], [ Z(5^2)^10, Z(5) ], [ Z(5^2)^10, Z(5^2)^8 ], [ Z(5^2)^10, Z(5^2)^13 ], [ Z(5^2)^10, Z(5^2)^16 ], 
+  [ Z(5^2)^10, Z(5^2)^17 ], [ Z(5^2)^11, Z(5)^2 ], [ Z(5^2)^11, Z(5^2)^14 ], [ Z(5^2)^11, Z(5^2)^19 ], [ Z(5^2)^11, Z(5^2)^22 ], 
+  [ Z(5^2)^11, Z(5^2)^23 ], [ Z(5^2)^13, Z(5)^0 ], [ Z(5^2)^13, Z(5^2)^2 ], [ Z(5^2)^13, Z(5^2)^7 ], [ Z(5^2)^13, Z(5^2)^10 ], 
+  [ Z(5^2)^13, Z(5^2)^11 ], [ Z(5^2)^14, Z(5) ], [ Z(5^2)^14, Z(5^2)^8 ], [ Z(5^2)^14, Z(5^2)^13 ], [ Z(5^2)^14, Z(5^2)^16 ], 
+  [ Z(5^2)^14, Z(5^2)^17 ], [ Z(5^2)^15, Z(5)^2 ], [ Z(5^2)^15, Z(5^2)^14 ], [ Z(5^2)^15, Z(5^2)^19 ], [ Z(5^2)^15, Z(5^2)^22 ], 
+  [ Z(5^2)^15, Z(5^2)^23 ], [ Z(5^2)^16, Z(5)^3 ], [ Z(5^2)^16, Z(5^2) ], [ Z(5^2)^16, Z(5^2)^4 ], [ Z(5^2)^16, Z(5^2)^5 ], 
+  [ Z(5^2)^16, Z(5^2)^20 ], [ Z(5^2)^17, Z(5)^0 ], [ Z(5^2)^17, Z(5^2)^2 ], [ Z(5^2)^17, Z(5^2)^7 ], [ Z(5^2)^17, Z(5^2)^10 ], 
+  [ Z(5^2)^17, Z(5^2)^11 ], [ Z(5^2)^19, Z(5)^2 ], [ Z(5^2)^19, Z(5^2)^14 ], [ Z(5^2)^19, Z(5^2)^19 ], [ Z(5^2)^19, Z(5^2)^22 ], 
+  [ Z(5^2)^19, Z(5^2)^23 ], [ Z(5^2)^20, Z(5)^3 ], [ Z(5^2)^20, Z(5^2) ], [ Z(5^2)^20, Z(5^2)^4 ], [ Z(5^2)^20, Z(5^2)^5 ], 
+  [ Z(5^2)^20, Z(5^2)^20 ], [ Z(5^2)^21, Z(5)^0 ], [ Z(5^2)^21, Z(5^2)^2 ], [ Z(5^2)^21, Z(5^2)^7 ], [ Z(5^2)^21, Z(5^2)^10 ], 
+  [ Z(5^2)^21, Z(5^2)^11 ], [ Z(5^2)^22, Z(5) ], [ Z(5^2)^22, Z(5^2)^8 ], [ Z(5^2)^22, Z(5^2)^13 ], [ Z(5^2)^22, Z(5^2)^16 ], 
+  [ Z(5^2)^22, Z(5^2)^17 ], [ Z(5^2)^23, Z(5)^2 ], [ Z(5^2)^23, Z(5^2)^14 ], [ Z(5^2)^23, Z(5^2)^19 ], [ Z(5^2)^23, Z(5^2)^22 ], 
+  [ Z(5^2)^23, Z(5^2)^23 ] ],[ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ]))
 gap&gt; DesignedMinimumDistance(code);
-5
+101
+gap&gt; LeftActingDomain(code);
+GF(5^2)
+gap&gt; UnderlyingField(code);
+GF(5^2)
 </Example>
 
 <#Include Label="Hermitian_DecodeToCodeword">
 
 <Example>
-gap&gt; q:=5^3;
-125
+gap&gt; q:=4;
+4
 gap&gt; # construct the curve and the divisors
-gap&gt; Y:=Indeterminate(GF(q),"Y");
-Y
-gap&gt; C:=Hermitian_Curve(GF(q),Y);
-&lt;GZ curve over GF(125) with indeterminate Y&gt;
-gap&gt; P_infty:=Hermitian_1PointDivisor(C,infinity);
-&lt;GZ divisor with support of length 1 over indeterminate Y&gt;
-gap&gt;
-gap&gt; fr:=FrobeniusAutomorphismOfHermitian_Curve(C);
-AC_FrobeniusAutomorphism(5^3)
-gap&gt; P4:=Sum(AC_FrobeniusAutomorphismOrbit(fr,RandomPlaceOfHermitian_Curve(C,4)));
-&lt;GZ divisor with support of length 4 over indeterminate Y&gt;
+gap&gt; Y:=HermitianIndeterminates(GF(q^2),"Y1","Y2");
+[ Y1, Y2 ]
+gap&gt; Hq:=Hermitian_Curve(Y[1]);
+&lt;Hermitian curve over GF(16) with indeterminates [ Y1, Y2 ]&gt;
+gap&gt; P_infty:=Hermitian_Place(Hq,[infinity]); 
+&lt;Hermitian place [ infinity ] over indeterminates [ Y1, Y2 ]&gt;
+gap&gt; 
+gap&gt; fr:=FrobeniusAutomorphismOfHermitian_Curve(Hq);
+AC_FrobeniusAutomorphism(2^4)
+gap&gt; P4:=RandomPlaceOfGivenDegreeOfHermitian_Curve(Hq,5);
+&lt;Hermitian place [ Z(2,20)+Z(2,20)^3+Z(2,20)^4+Z(2,20)^6+Z(2,20)^11+Z(2,20)^13+Z(2,20)^15+Z(2,20)^17+Z(2,20)^18+Z(2,20)^19, 
+  Z(2,20)+Z(2,20)^4+Z(2,20)^5+Z(2,20)^7+Z(2,20)^8+Z(2,20)^12+Z(2,20)^13+Z(2,20)^15+Z(2,20)^19 ] over indeterminates [ Y1, Y2 ]&gt;
+gap&gt; P4:=Sum(AC_FrobeniusAutomorphismOrbit(fr,P4));
+&lt;Hermitian divisor with support of length 5 over indeterminates [ Y1, Y2 ]&gt;
 gap&gt; G:=5*P4+7*P_infty;
-&lt;GZ divisor with support of length 5 over indeterminate Y&gt;
+&lt;Hermitian divisor with support of length 6 over indeterminates [ Y1, Y2 ]&gt;
 gap&gt; Degree(G);
-27
-gap&gt;
-gap&gt; len:=90;
-90
-gap&gt; D:=Sum([1..len],i-&gt;Hermitian_1PointDivisor(C,Elements(GF(q))[i]));
-&lt;GZ divisor with support of length 90 over indeterminate Y&gt;
-gap&gt;
+32
+gap&gt; 
+gap&gt; len:=50;
+50
+gap&gt; affpts:=AllRationalAffinePlacesOfHermitian_Curve(Hq);;
+gap&gt; D:=Sum(affpts{[1..len]});
+&lt;Hermitian divisor with support of length 50 over indeterminates [ Y1, Y2 ]&gt;
+gap&gt; 
 gap&gt; # construct the AG differential code
+gap&gt; Hermitian_DifferentialCode(G);
+&lt;[64,37] Hermitian AG-code over GF(2^4)&gt;
 gap&gt; agcode:=Hermitian_DifferentialCode(G,D);
-&lt;[90,62] Hermitian AG-code over GF(5^3)&gt;
+&lt;[50,23] Hermitian AG-code over GF(2^4)&gt;
 gap&gt; DesignedMinimumDistance(agcode);
-29
+22
 gap&gt; Length(agcode)-Degree(G)-1;
-62
-gap&gt;
+17
+gap&gt; 
 gap&gt; # test codeword generation
-gap&gt; t:=Int((DesignedMinimumDistance(agcode)-1)/2);
-14
+gap&gt; t:=Int((DesignedMinimumDistance(agcode)-1-Genus(G!.curve))/2);
+7
 gap&gt; sent:=Random(agcode);;
 gap&gt; err:=RandomVectorOfGivenWeight(GF(q),Length(agcode),t);;
 gap&gt; received:=sent+err;;
-gap&gt;
+gap&gt; 
 gap&gt; # decoding
 gap&gt; sent_decoded:=Hermitian_DecodeToCodeword(agcode,received);
-&lt;cvec over GF(5,3) of length 90&gt;
+&lt;cvec over GF(2,4) of length 50&gt;
 gap&gt; sent=sent_decoded;
 true
 </Example>

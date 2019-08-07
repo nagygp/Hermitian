@@ -421,19 +421,39 @@ corresponding algebraic function field, it is a finite field of square order. }
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@Y:=Indeterminate(GF(9),"Y");|
-  Y
-  !gapprompt@gap>| !gapinput@C:=Hermitian_Curve(GF(9),Y);|
-  <GZ curve over GF(9) with indeterminate Y>
-  !gapprompt@gap>| !gapinput@aut:=AutomorphismGroup(C);|
-  <group of GZ curve automorphisms of size 720>
-  !gapprompt@gap>| !gapinput@Random(aut);|
-  Hermitian_CurveAut([ [ Z(3)^0, Z(3^2)^3 ], [ Z(3^2)^5, Z(3) ] ])
+  !gapprompt@gap>| !gapinput@q:=5;|
+  5
+  !gapprompt@gap>| !gapinput@Y:=HermitianIndeterminates(GF(q^2),"Y1","Y2");|
+  [ Y1, Y2 ]
+  !gapprompt@gap>| !gapinput@Hq:=Hermitian_Curve(Y[1]);|
+  <Hermitian curve over GF(25) with indeterminates [ Y1, Y2 ]>
+  !gapprompt@gap>| !gapinput@|
+  !gapprompt@gap>| !gapinput@UnderlyingField(Hq);|
+  GF(5^2)
+  !gapprompt@gap>| !gapinput@p:=RandomPlaceOfGivenDegreeOfHermitian_Curve(Hq,3);|
+  <Hermitian place [ Z(5^6)^12002, Z(5^6)^14911 ] over indeterminates [ Y1, Y2 ]>
+  !gapprompt@gap>| !gapinput@p in Hq;|
+  true
+  !gapprompt@gap>| !gapinput@[ infinity ] in Hq;|
+  true
+  !gapprompt@gap>| !gapinput@[0,0] in Hq;|
+  false
+  !gapprompt@gap>| !gapinput@Z(q)*[0,0] in Hq;|
+  true
+  !gapprompt@gap>| !gapinput@Size( AllRationalPlacesOfHermitian_Curve(Hq) );|
+  126
 \end{Verbatim}
+ }
+
  
+\section{\textcolor{Chapter }{Automorphisms of Hermitian curves}}\label{Automorphisms}
+\logpage{[ 3, 2, 0 ]}
+\hyperdef{L}{X7CCCCF377D442C10}{}
+{
+  
 
 \subsection{\textcolor{Chapter }{FrobeniusAutomorphismOfHermitian{\textunderscore}Curve}}
-\logpage{[ 3, 1, 6 ]}\nobreak
+\logpage{[ 3, 2, 1 ]}\nobreak
 \hyperdef{L}{X84C46EC878997409}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{FrobeniusAutomorphismOfHermitian{\textunderscore}Curve({\mdseries\slshape Hq})\index{FrobeniusAutomorphismOfHermitianuScoreCurve@\texttt{Frobenius}\-\texttt{Automorphism}\-\texttt{Of}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Curve}}
 \label{FrobeniusAutomorphismOfHermitianuScoreCurve}
@@ -447,62 +467,66 @@ the package \textsf{OnAlgClosure}, acting on the algebraic closure of the underl
  
 
 \subsection{\textcolor{Chapter }{IsHermitian{\textunderscore}CurveAutomorphism}}
-\logpage{[ 3, 1, 7 ]}\nobreak
+\logpage{[ 3, 2, 2 ]}\nobreak
 \hyperdef{L}{X7DBD2AA379E5928D}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{IsHermitian{\textunderscore}CurveAutomorphism({\mdseries\slshape obj})\index{IsHermitianuScoreCurveAutomorphism@\texttt{IsHermitian{\textunderscore}}\-\texttt{Curve}\-\texttt{Automorphism}}
 \label{IsHermitianuScoreCurveAutomorphism}
 }\hfill{\scriptsize (Category)}}\\
 
 
- With automorphisms of an algebraic curve $C$ one means the automorphisms of the corresponding algebraic function field $K(C)$. For Hermitian curves over finite fields, the algebraic function field is the
-field $K(t)$ of rational functions in one indeterminate. $Aut(K(t))$ consists of fractional linear mappings $t\mapsto \frac{a+bt}{c+dt}$, where $ad-bc\neq 0$. Hence, $Aut(K(t))\cong PGL(2,K)$. 
-
-With fixed Frobenius automorphism $\Phi:x\mapsto x^q$, we can speak of $GF(q)$-rational automorphisms, or, automorphisms defined over $GF(q)$. These form a subgroup isomorphic to $PGL(2,q)$, having a faithful permutation representation of the set $GF(q)\cup \{\infty\}$ of $GF(q)$-rational places. }
+ With automorphisms of an algebraic curve $C$ one means the automorphisms of the corresponding algebraic function field $K(C)$. For a Hermitian curve $H(q)$ over a finite field, $Aut(GF(q)(H(q)))$ is isomorphic to the projective general linear group $PGU(3,q)$. In particular, an automorphism of $H(q)$ can be represented by a $3\times 3$ unitary matrix over $GF(q^2)$. }
 
  
 
 \subsection{\textcolor{Chapter }{Hermitian{\textunderscore}CurveAutomorphism}}
-\logpage{[ 3, 1, 8 ]}\nobreak
+\logpage{[ 3, 2, 3 ]}\nobreak
 \hyperdef{L}{X8553A238865EEB91}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{Hermitian{\textunderscore}CurveAutomorphism({\mdseries\slshape mat})\index{HermitianuScoreCurveAutomorphism@\texttt{Hermitian{\textunderscore}}\-\texttt{Curve}\-\texttt{Automorphism}}
+{\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{Hermitian{\textunderscore}CurveAutomorphism({\mdseries\slshape Hq, mat})\index{HermitianuScoreCurveAutomorphism@\texttt{Hermitian{\textunderscore}}\-\texttt{Curve}\-\texttt{Automorphism}}
 \label{HermitianuScoreCurveAutomorphism}
 }\hfill{\scriptsize (operation)}}\\
 \textbf{\indent Returns:\ }
- the automorphism $t\mapsto \frac{a+bt}{c+dt}$ of the Hermitian curve, where \mbox{\texttt{\mdseries\slshape M}} is the nonsingular $2\times 2$ matrix $\begin{pmatrix}a & c\\ b& d\end{pmatrix}$. 
+ the automorphism of the Hermitian curve $H(q)$, given by the unitary matrix \mbox{\texttt{\mdseries\slshape mat}}. 
 
 }
 
  
-\subsection{\textcolor{Chapter }{AutomorphismGroup}}\logpage{[ 3, 1, 9 ]}
+\subsection{\textcolor{Chapter }{AutomorphismGroup}}\logpage{[ 3, 2, 4 ]}
 \hyperdef{L}{X87677B0787B4461A}{}
 {
-\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{MatrixGroupToHermitian{\textunderscore}CurveAutGroup({\mdseries\slshape matgr, C})\index{MatrixGroupToHermitianuScoreCurveAutGroup@\texttt{Matrix}\-\texttt{Group}\-\texttt{To}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Curve}\-\texttt{Aut}\-\texttt{Group}}
-\label{MatrixGroupToHermitianuScoreCurveAutGroup}
+\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{UnitaryGroupToHermitian{\textunderscore}CurveAutGroup({\mdseries\slshape matgr, Hq})\index{UnitaryGroupToHermitianuScoreCurveAutGroup@\texttt{Unitary}\-\texttt{Group}\-\texttt{To}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Curve}\-\texttt{Aut}\-\texttt{Group}}
+\label{UnitaryGroupToHermitianuScoreCurveAutGroup}
 }\hfill{\scriptsize (function)}}\\
 \textbf{\indent Returns:\ }
- the GZ curve automorphism group \$G\$ corresponding to the matrix group \mbox{\texttt{\mdseries\slshape matgr}}. 
+ the group $G$ of automorphisms of the Hermitian curve \mbox{\texttt{\mdseries\slshape Hq}}, which correspond to the unitary group \mbox{\texttt{\mdseries\slshape matgr}}. 
 
 
 
- The permutation action of \mbox{\texttt{\mdseries\slshape matgr}} on the set of rational places of \mbox{\texttt{\mdseries\slshape C}} is stored as a nice monomorphism of \$G\$. \noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{AutomorphismGroup({\mdseries\slshape C})\index{AutomorphismGroup@\texttt{AutomorphismGroup}}
+ The permutation action of \mbox{\texttt{\mdseries\slshape matgr}} on the set of rational places of \mbox{\texttt{\mdseries\slshape Hq}} is stored as a nice monomorphism of \$G\$. \noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{AutomorphismGroup({\mdseries\slshape Hq})\index{AutomorphismGroup@\texttt{AutomorphismGroup}}
 \label{AutomorphismGroup}
 }\hfill{\scriptsize (operation)}}\\
 \textbf{\indent Returns:\ }
- the automorphism group of the Hermitian curve \mbox{\texttt{\mdseries\slshape C}}. The elements are Hermitian automorphisms. The group is isomorphic to $PGL(2,q)$, where $GF(q)$ is the underlying field of \mbox{\texttt{\mdseries\slshape C}}. 
+ the automorphism group of the Hermitian curve \mbox{\texttt{\mdseries\slshape Hq}}. The elements are Hermitian curve automorphisms. The group is isomorphic to $PPG(3,q)$, where $GF(q^2)$ is the underlying field of \mbox{\texttt{\mdseries\slshape Hq}}. 
 
 }
 
+ 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@aut:=AutomorphismGroup(Hq);|
+  <group of Hermitian curve automorphisms of size 378000>
+  !gapprompt@gap>| !gapinput@Random(aut);|
+  Hermitian_CurveAut([ [ Z(5)^0, Z(5^2)^11, Z(5^2)^19 ], [ Z(5^2)^20, Z(5^2)^16, Z(5^2)^21 ], [ Z(5), Z(5^2)^4, Z(5^2)^10 ] ])
+\end{Verbatim}
  }
 
  
 \section{\textcolor{Chapter }{Hermitian divisors}}\label{Divisors}
-\logpage{[ 3, 2, 0 ]}
+\logpage{[ 3, 3, 0 ]}
 \hyperdef{L}{X7B79A0147BC8F34E}{}
 {
   The following functions are available: 
 
 \subsection{\textcolor{Chapter }{IsHermitian{\textunderscore}Divisor}}
-\logpage{[ 3, 2, 1 ]}\nobreak
+\logpage{[ 3, 3, 1 ]}\nobreak
 \hyperdef{L}{X7DC2715183F59DFB}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{IsHermitian{\textunderscore}Divisor({\mdseries\slshape obj})\index{IsHermitianuScoreDivisor@\texttt{IsHermitian{\textunderscore}Divisor}}
 \label{IsHermitianuScoreDivisor}
@@ -515,7 +539,7 @@ Hermitian curve $H(q):X^{q+1}=Y^q+Y$. Hermitian divisors form an additive commut
  
 
 \subsection{\textcolor{Chapter }{Hermitian{\textunderscore}DivisorConstruct}}
-\logpage{[ 3, 2, 2 ]}\nobreak
+\logpage{[ 3, 3, 2 ]}\nobreak
 \hyperdef{L}{X7C25E6A77FC66456}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{Hermitian{\textunderscore}DivisorConstruct({\mdseries\slshape Hq, pts, ords})\index{HermitianuScoreDivisorConstruct@\texttt{Hermitian{\textunderscore}}\-\texttt{Divisor}\-\texttt{Construct}}
 \label{HermitianuScoreDivisorConstruct}
@@ -527,7 +551,7 @@ Hermitian curve $H(q):X^{q+1}=Y^q+Y$. Hermitian divisors form an additive commut
  
 
 \subsection{\textcolor{Chapter }{Hermitian{\textunderscore}Divisor}}
-\logpage{[ 3, 2, 3 ]}\nobreak
+\logpage{[ 3, 3, 3 ]}\nobreak
 \hyperdef{L}{X8522DFC37BA9FE9B}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{Hermitian{\textunderscore}Divisor({\mdseries\slshape Hq, pts, ords})\index{HermitianuScoreDivisor@\texttt{Hermitian{\textunderscore}Divisor}}
 \label{HermitianuScoreDivisor}
@@ -542,7 +566,7 @@ Hermitian curve $H(q):X^{q+1}=Y^q+Y$. Hermitian divisors form an additive commut
  
 
 \subsection{\textcolor{Chapter }{Hermitian{\textunderscore}Place}}
-\logpage{[ 3, 2, 4 ]}\nobreak
+\logpage{[ 3, 3, 4 ]}\nobreak
 \hyperdef{L}{X874B79D17AF7FD28}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{Hermitian{\textunderscore}Place({\mdseries\slshape Hq, pt})\index{HermitianuScorePlace@\texttt{Hermitian{\textunderscore}Place}}
 \label{HermitianuScorePlace}
@@ -554,7 +578,7 @@ Hermitian curve $H(q):X^{q+1}=Y^q+Y$. Hermitian divisors form an additive commut
  
 
 \subsection{\textcolor{Chapter }{ZeroHermitian{\textunderscore}Divisor}}
-\logpage{[ 3, 2, 5 ]}\nobreak
+\logpage{[ 3, 3, 5 ]}\nobreak
 \hyperdef{L}{X7D106EB28504FFDD}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{ZeroHermitian{\textunderscore}Divisor({\mdseries\slshape Hq})\index{ZeroHermitianuScoreDivisor@\texttt{Zero}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Divisor}}
 \label{ZeroHermitianuScoreDivisor}
@@ -566,7 +590,7 @@ Hermitian curve $H(q):X^{q+1}=Y^q+Y$. Hermitian divisors form an additive commut
  
 
 \subsection{\textcolor{Chapter }{IsRationalHermitian{\textunderscore}Divisor}}
-\logpage{[ 3, 2, 6 ]}\nobreak
+\logpage{[ 3, 3, 6 ]}\nobreak
 \hyperdef{L}{X8634CC3B79155E29}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{IsRationalHermitian{\textunderscore}Divisor({\mdseries\slshape D})\index{IsRationalHermitianuScoreDivisor@\texttt{IsRational}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Divisor}}
 \label{IsRationalHermitianuScoreDivisor}
@@ -579,7 +603,7 @@ curve. }
  
 
 \subsection{\textcolor{Chapter }{UnderlyingField}}
-\logpage{[ 3, 2, 7 ]}\nobreak
+\logpage{[ 3, 3, 7 ]}\nobreak
 \hyperdef{L}{X790470C48340E8F7}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{UnderlyingField({\mdseries\slshape D})\index{UnderlyingField@\texttt{UnderlyingField}}
 \label{UnderlyingField}
@@ -592,7 +616,7 @@ the corresponding Hermitian curve. }
  
 
 \subsection{\textcolor{Chapter }{Support}}
-\logpage{[ 3, 2, 8 ]}\nobreak
+\logpage{[ 3, 3, 8 ]}\nobreak
 \hyperdef{L}{X7B689C0284AC4296}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{Support({\mdseries\slshape D})\index{Support@\texttt{Support}}
 \label{Support}
@@ -604,7 +628,7 @@ the corresponding Hermitian curve. }
  
 
 \subsection{\textcolor{Chapter }{Valuation}}
-\logpage{[ 3, 2, 9 ]}\nobreak
+\logpage{[ 3, 3, 9 ]}\nobreak
 \hyperdef{L}{X80D67BB67A509A56}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{Valuation({\mdseries\slshape D, pt})\index{Valuation@\texttt{Valuation}}
 \label{Valuation}
@@ -616,7 +640,7 @@ the corresponding Hermitian curve. }
  
 
 \subsection{\textcolor{Chapter }{PrincipalHermitian{\textunderscore}Divisor}}
-\logpage{[ 3, 2, 10 ]}\nobreak
+\logpage{[ 3, 3, 10 ]}\nobreak
 \hyperdef{L}{X7DBEBF4283238ABF}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{PrincipalHermitian{\textunderscore}Divisor({\mdseries\slshape Hq, f})\index{PrincipalHermitianuScoreDivisor@\texttt{Principal}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Divisor}}
 \label{PrincipalHermitianuScoreDivisor}
@@ -628,7 +652,7 @@ the corresponding Hermitian curve. }
  
 
 \subsection{\textcolor{Chapter }{SupremumHermitian{\textunderscore}Divisor}}
-\logpage{[ 3, 2, 11 ]}\nobreak
+\logpage{[ 3, 3, 11 ]}\nobreak
 \hyperdef{L}{X85754A9B7AA29851}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{SupremumHermitian{\textunderscore}Divisor({\mdseries\slshape D1, D2})\index{SupremumHermitianuScoreDivisor@\texttt{Supremum}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Divisor}}
 \label{SupremumHermitianuScoreDivisor}
@@ -640,7 +664,7 @@ the corresponding Hermitian curve. }
  
 
 \subsection{\textcolor{Chapter }{InfimumHermitian{\textunderscore}Divisor}}
-\logpage{[ 3, 2, 12 ]}\nobreak
+\logpage{[ 3, 3, 12 ]}\nobreak
 \hyperdef{L}{X7879FBF17B270989}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{InfimumHermitian{\textunderscore}Divisor({\mdseries\slshape D1, D2})\index{InfimumHermitianuScoreDivisor@\texttt{Infimum}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Divisor}}
 \label{InfimumHermitianuScoreDivisor}
@@ -652,7 +676,7 @@ the corresponding Hermitian curve. }
  
 
 \subsection{\textcolor{Chapter }{PositivePartOfHermitian{\textunderscore}Divisor}}
-\logpage{[ 3, 2, 13 ]}\nobreak
+\logpage{[ 3, 3, 13 ]}\nobreak
 \hyperdef{L}{X7ACE607A7C753AC6}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{PositivePartOfHermitian{\textunderscore}Divisor({\mdseries\slshape D})\index{PositivePartOfHermitianuScoreDivisor@\texttt{Positive}\-\texttt{Part}\-\texttt{Of}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Divisor}}
 \label{PositivePartOfHermitianuScoreDivisor}
@@ -664,7 +688,7 @@ the corresponding Hermitian curve. }
  
 
 \subsection{\textcolor{Chapter }{NegativePartOfHermitian{\textunderscore}Divisor}}
-\logpage{[ 3, 2, 14 ]}\nobreak
+\logpage{[ 3, 3, 14 ]}\nobreak
 \hyperdef{L}{X78F4961F819285AC}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{NegativePartOfHermitian{\textunderscore}Divisor({\mdseries\slshape D})\index{NegativePartOfHermitianuScoreDivisor@\texttt{Negative}\-\texttt{Part}\-\texttt{Of}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Divisor}}
 \label{NegativePartOfHermitianuScoreDivisor}
@@ -675,64 +699,44 @@ the corresponding Hermitian curve. }
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@p1:=Hermitian_Place(C,infinity);|
-  <GZ divisor with support of length 1 over indeterminate Y>
-  !gapprompt@gap>| !gapinput@p2:=Hermitian_Place(C,Z(3));|
-  <GZ divisor with support of length 1 over indeterminate Y>
-  !gapprompt@gap>| !gapinput@d:=3*p1-4*p2;|
-  <GZ divisor with support of length 2 over indeterminate Y>
+  !gapprompt@gap>| !gapinput@p_infty:=Hermitian_Place(Hq,[infinity]);|
+  <Hermitian place [ infinity ] over indeterminates [ Y1, Y2 ]>
+  !gapprompt@gap>| !gapinput@d:=3*p_infty-4*p;|
+  <Hermitian divisor with support of length 2 over indeterminates [ Y1, Y2 ]>
   !gapprompt@gap>| !gapinput@Support(d);|
-  [ infinity, Z(3) ]
+  [ [ infinity ], [ Z(5^6)^12002, Z(5^6)^14911 ] ]
   !gapprompt@gap>| !gapinput@UnderlyingField(d);|
-  GF(3^2)
+  GF(5^2)
   !gapprompt@gap>| !gapinput@Zero(d);|
-  <GZ divisor with support of length 0 over indeterminate Y>
+  <Hermitian divisor with support of length 0 over indeterminates [ Y1, Y2 ]>
   !gapprompt@gap>| !gapinput@Characteristic(d);|
-  3
-  gap>
-  !gapprompt@gap>| !gapinput@d:=Hermitian_Divisor(C,[Z(27)^2,Z(3),infinity],[5,-1,2]);|
-  <GZ divisor with support of length 3 over indeterminate Y>
-  !gapprompt@gap>| !gapinput@Valuation(Z(3),d);|
-  -1
-  !gapprompt@gap>| !gapinput@Valuation(Z(3)^2,d);|
+  5
+  !gapprompt@gap>| !gapinput@|
+  !gapprompt@gap>| !gapinput@Valuation(d,p);|
+  -4
+  !gapprompt@gap>| !gapinput@Valuation(d,[1,2]);|
   0
-  gap>
-  !gapprompt@gap>| !gapinput@fr:=AC_FrobeniusAutomorphism(9);|
-  AC_FrobeniusAutomorphism(3^2)
+  !gapprompt@gap>| !gapinput@|
+  !gapprompt@gap>| !gapinput@fr:=FrobeniusAutomorphismOfHermitian_Curve(Hq);|
+  AC_FrobeniusAutomorphism(5^2)
   !gapprompt@gap>| !gapinput@d^fr;|
-  <GZ divisor with support of length 3 over indeterminate Y>
+  <Hermitian divisor with support of length 2 over indeterminates [ Y1, Y2 ]>
   !gapprompt@gap>| !gapinput@Support(d^fr);|
-  [ infinity, Z(3), Z(3^3)^18 ]
+  [ [ infinity ], [ Z(5^6)^3194, Z(5^6)^13423 ] ]
   !gapprompt@gap>| !gapinput@Support(d);|
-  [ infinity, Z(3), Z(3^3)^2 ]
-  gap>
-  !gapprompt@gap>| !gapinput@rf:=Y^8-1;|
-  Y^8-Z(3)^0
-  !gapprompt@gap>| !gapinput@List(GF(9),u->Valuation(u,rf));|
-  [ 0, 1, 1, 1, 1, 1, 1, 1, 1 ]
-  !gapprompt@gap>| !gapinput@List(GF(9),u->Valuation(u,One(Y)));|
-  [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
-  !gapprompt@gap>| !gapinput@List(GF(9),u->Valuation(u,Zero(Y)));|
-  [ -infinity, -infinity, -infinity, -infinity, -infinity, -infinity,
-    -infinity, -infinity, -infinity ]
-  gap>
-  gap>
-  !gapprompt@gap>| !gapinput@List(GF(3),u->Valuation(u,One(Y)));|
-  [ 0, 0, 0 ]
-  !gapprompt@gap>| !gapinput@List(GF(3),u->Valuation(u,Zero(Y)));|
-  [ -infinity, -infinity, -infinity ]
+  [ [ infinity ], [ Z(5^6)^12002, Z(5^6)^14911 ] ]
 \end{Verbatim}
  }
 
  
 \section{\textcolor{Chapter }{Hermitian Riemann-Roch spaces}}\label{RRspaces}
-\logpage{[ 3, 3, 0 ]}
+\logpage{[ 3, 4, 0 ]}
 \hyperdef{L}{X7DDB5BF585694D3F}{}
 {
   
 
 \subsection{\textcolor{Chapter }{Hermitian{\textunderscore}RiemannRochSpaceBasis}}
-\logpage{[ 3, 3, 1 ]}\nobreak
+\logpage{[ 3, 4, 1 ]}\nobreak
 \hyperdef{L}{X7B5089E879E3DBDD}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{Hermitian{\textunderscore}RiemannRochSpaceBasis({\mdseries\slshape D})\index{HermitianuScoreRiemannRochSpaceBasis@\texttt{Hermitian{\textunderscore}}\-\texttt{Riemann}\-\texttt{Roch}\-\texttt{Space}\-\texttt{Basis}}
 \label{HermitianuScoreRiemannRochSpaceBasis}
@@ -743,43 +747,48 @@ the corresponding Hermitian curve. }
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@a:=RandomPlaceOfHermitian_Curve(C,4);|
-  <GZ divisor with support of length 1 over indeterminate Y>
-  !gapprompt@gap>| !gapinput@fr:=FrobeniusAutomorphismOfHermitian_Curve(C);|
-  AC_FrobeniusAutomorphism(3^2)
+  !gapprompt@gap>| !gapinput@a:=RandomPlaceOfGivenDegreeOfHermitian_Curve(Hq,3);|
+  <Hermitian place [ Z(5^6)^5885, Z(5^6)^13071 ] over indeterminates [ Y1, Y2 ]>
+  !gapprompt@gap>| !gapinput@fr:=FrobeniusAutomorphismOfHermitian_Curve(Hq);|
+  AC_FrobeniusAutomorphism(5^2)
   !gapprompt@gap>| !gapinput@d:=Sum(AC_FrobeniusAutomorphismOrbit(fr,a));|
-  <GZ divisor with support of length 4 over indeterminate Y>
+  <Hermitian divisor with support of length 3 over indeterminates [ Y1, Y2 ]>
   !gapprompt@gap>| !gapinput@IsRationalHermitian_Divisor(d);|
   true
-  gap>
-  !gapprompt@gap>| !gapinput@Hermitian_RiemannRochSpaceBasis(3*d);|
-  [ Z(3)^0/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),
-    Y/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),
-    Y^2/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),
-    Y^3/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),
-    Y^4/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),
-    Y^5/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),
-    Y^6/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),
-    Y^7/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),
-    Y^8/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),
-    Y^9/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),
-    Y^10/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),
-    Y^11/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2),
-    Y^12/(Y^12+Y^9+Z(3^2)^2*Y^6+Z(3^2)^3*Y^3+Z(3^2)^2) ]
-  !gapprompt@gap>| !gapinput@ForAll(last,x->x=x^fr);|
+  !gapprompt@gap>| !gapinput@|
+  !gapprompt@gap>| !gapinput@bb:=Hermitian_RiemannRochSpaceBasis(5*d);|
+  [ (Y1^3+Z(5^2)*Y1^2+Z(5^2)^17)/(Z(5^2)*Y1^3+Z(5^2)^17*Y1*Y2^2-Y2^3+Z(5^2)^14*Y1*Y2+Z(5^2)^11*Y2^2+Z(5^2)^11*Y1+Z(5^2)^7*Y2+Z(5^2)^\
+  15), 
+    (Z(5^2)^16*Y1^2+Z(5^2)^23*Y1+Y2+Z(5^2)^5)/(Z(5^2)*Y1^3+Z(5^2)^17*Y1*Y2^2-Y2^3+Z(5^2)^14*Y1*Y2+Z(5^2)^11*Y2^2+Z(5^2)^11*Y1+Z(5^2)\
+  ^7*Y2+Z(5^2)^15), 
+    (Z(5^2)^17*Y1^2+Y1*Y2+Z(5^2)^5*Y1+Z(5^2)^21)/(Z(5^2)*Y1^3+Z(5^2)^17*Y1*Y2^2-Y2^3+Z(5^2)^14*Y1*Y2+Z(5^2)^11*Y2^2+Z(5^2)^11*Y1+Z(5\
+  ^2)^7*Y2+Z(5^2)^15), 
+    (Y1^2*Y2+Z(5^2)^3*Y1^2+Z(5^2)^21*Y1+Z(5^2)^22)/(Z(5^2)*Y1^3+Z(5^2)^17*Y1*Y2^2-Y2^3+Z(5^2)^14*Y1*Y2+Z(5^2)^11*Y2^2+Z(5^2)^11*Y1+Z\
+  (5^2)^7*Y2+Z(5^2)^15), 
+    (Z(5^2)^23*Y1^2+Y2^2+Z(5^2)^8*Y1+Z(5^2)^13)/(Z(5^2)*Y1^3+Z(5^2)^17*Y1*Y2^2-Y2^3+Z(5^2)^14*Y1*Y2+Z(5^2)^11*Y2^2+Z(5^2)^11*Y1+Z(5^\
+  2)^7*Y2+Z(5^2)^15), 
+    (Y1*Y2^2+Z(5^2)^7*Y1^2+Z(5^2)^13*Y1+Z(5^2)^4)/(Z(5^2)*Y1^3+Z(5^2)^17*Y1*Y2^2-Y2^3+Z(5^2)^14*Y1*Y2+Z(5^2)^11*Y2^2+Z(5^2)^11*Y1+Z(\
+  5^2)^7*Y2+Z(5^2)^15), 
+    (Y2^3+Z(5^2)^5*Y1^2+Z(5^2)^11*Y1+Z(5^2)^14)/(Z(5^2)*Y1^3+Z(5^2)^17*Y1*Y2^2-Y2^3+Z(5^2)^14*Y1*Y2+Z(5^2)^11*Y2^2+Z(5^2)^11*Y1+Z(5^\
+  2)^7*Y2+Z(5^2)^15) ]
+  !gapprompt@gap>| !gapinput@Size(bb);|
+  7
+  !gapprompt@gap>| !gapinput@ForAll(bb,x->x=x^fr);|
+  true
+  !gapprompt@gap>| !gapinput@ForAll(bb,x->PrincipalHermitian_Divisor(Hq,x)>=-5*d);|
   true
 \end{Verbatim}
  }
 
  
 \section{\textcolor{Chapter }{Hermitian AG-codes}}\label{AGcodes}
-\logpage{[ 3, 4, 0 ]}
+\logpage{[ 3, 5, 0 ]}
 \hyperdef{L}{X790A517B87412E1D}{}
 {
   The following functions are available: 
 
 \subsection{\textcolor{Chapter }{IsHermitian{\textunderscore}Code}}
-\logpage{[ 3, 4, 1 ]}\nobreak
+\logpage{[ 3, 5, 1 ]}\nobreak
 \hyperdef{L}{X7D67153387DB94E1}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{IsHermitian{\textunderscore}Code({\mdseries\slshape obj})\index{IsHermitianuScoreCode@\texttt{IsHermitian{\textunderscore}Code}}
 \label{IsHermitianuScoreCode}
@@ -798,7 +807,7 @@ curve of equation $X^{q+1}=Y^q+Y$. AG-codes are either of functional or of diffe
  
 
 \subsection{\textcolor{Chapter }{GeneratorMatrixOfFunctionalHermitian{\textunderscore}CodeNC}}
-\logpage{[ 3, 4, 2 ]}\nobreak
+\logpage{[ 3, 5, 2 ]}\nobreak
 \hyperdef{L}{X8693655985BF0B1B}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{GeneratorMatrixOfFunctionalHermitian{\textunderscore}CodeNC({\mdseries\slshape G, pls})\index{GeneratorMatrixOfFunctionalHermitianuScoreCodeNC@\texttt{Generator}\-\texttt{Matrix}\-\texttt{Of}\-\texttt{Functional}\-\texttt{Hermitian{\textunderscore}}\-\texttt{CodeNC}}
 \label{GeneratorMatrixOfFunctionalHermitianuScoreCodeNC}
@@ -810,7 +819,7 @@ curve of equation $X^{q+1}=Y^q+Y$. AG-codes are either of functional or of diffe
  
 
 \subsection{\textcolor{Chapter }{Hermitian{\textunderscore}FunctionalCode}}
-\logpage{[ 3, 4, 3 ]}\nobreak
+\logpage{[ 3, 5, 3 ]}\nobreak
 \hyperdef{L}{X877B39B9783ADE8B}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{Hermitian{\textunderscore}FunctionalCode({\mdseries\slshape G, D})\index{HermitianuScoreFunctionalCode@\texttt{Hermitian{\textunderscore}}\-\texttt{Functional}\-\texttt{Code}}
 \label{HermitianuScoreFunctionalCode}
@@ -820,12 +829,12 @@ curve of equation $X^{q+1}=Y^q+Y$. AG-codes are either of functional or of diffe
 }\hfill{\scriptsize (operation)}}\\
 
 
- returns the functional AG code $C_L(D,G)=\{(f(P_1),\ldots,f(P_n)) \mid f\in L(G)\}.$ $D$ and $G$ are rational divisors of the Hermitian curve $C$. $D=P_1+\cdots+D_n$, where $P_1,\ldots,P_n$ are degree one places of $C$. The supports of $D$ and $G$ are disjoint. If $D$ is not given then it is the sum of affine rational places of $H(q)$, not contained in the support of $G$. By the Riemann-Roch theorem, functional codes have dimension at least $\deg(G)+1-g$, with equality if $\deg(G)>2g-2$. }
+ returns the functional AG code $C_L(D,G)=\{(f(P_1),\ldots,f(P_n)) \mid f\in L(G)\}.$ $D$ and $G$ are rational divisors of the Hermitian curve $H(q)$. $D=P_1+\cdots+P_n$, where $P_1,\ldots,P_n$ are degree one places of $H(q)$. The supports of $D$ and $G$ are disjoint. If $D$ is not given then it is the sum of affine rational places of $H(q)$, not contained in the support of $G$. By the Riemann-Roch theorem, functional codes have dimension at least $\deg(G)+1-g$, with equality if $\deg(G)>2g-2$. }
 
  
 
 \subsection{\textcolor{Chapter }{Hermitian{\textunderscore}DifferentialCode}}
-\logpage{[ 3, 4, 4 ]}\nobreak
+\logpage{[ 3, 5, 4 ]}\nobreak
 \hyperdef{L}{X817FBF377D94ED1D}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{Hermitian{\textunderscore}DifferentialCode({\mdseries\slshape G, D})\index{HermitianuScoreDifferentialCode@\texttt{Hermitian{\textunderscore}}\-\texttt{Differential}\-\texttt{Code}}
 \label{HermitianuScoreDifferentialCode}
@@ -836,13 +845,13 @@ curve of equation $X^{q+1}=Y^q+Y$. AG-codes are either of functional or of diffe
 
 
  returns the differential AG code $C_\Omega(D,G) = \{res_{P_1}(\omega),\ldots,res_{P_n}(\omega) \mid \omega \in
-\Omega(G-D)\}.$ $D$ and $G$ are rational divisors of the Hermitian curve $C$. $D=P_1+\cdots+D_n$, where $P_1,\ldots,P_n$ are degree one places of $C$. The supports of $D$ and $G$ are disjoint. If $D$ is not given then it is the sum of affine rational places of $H(q)$, not contained in the support of $G$. By the Riemann-Roch theorem, functional codes have dimension $\deg(G)+1-g$. The differential code is the dual of the corresponding functional code. By
+\Omega(G-D)\}.$ $D$ and $G$ are rational divisors of the Hermitian curve $H(q)$. $D=P_1+\cdots+P_n$, where $P_1,\ldots,P_n$ are degree one places of $H(q)$. The supports of $D$ and $G$ are disjoint. If $D$ is not given then it is the sum of affine rational places of $H(q)$, not contained in the support of $G$. By the Riemann-Roch theorem, functional codes have dimension $\deg(G)+1-g$. The differential code is the dual of the corresponding functional code. By
 the Riemann-Roch theorem, differential codes have dimension at least $n-\deg(G)-1+g$, with equality if $\deg(G)>2g-2$. }
 
  
 
 \subsection{\textcolor{Chapter }{Length}}
-\logpage{[ 3, 4, 5 ]}\nobreak
+\logpage{[ 3, 5, 5 ]}\nobreak
 \hyperdef{L}{X780769238600AFD1}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{Length({\mdseries\slshape C})\index{Length@\texttt{Length}}
 \label{Length}
@@ -854,7 +863,7 @@ the Riemann-Roch theorem, differential codes have dimension at least $n-\deg(G)-
  
 
 \subsection{\textcolor{Chapter }{GeneratorMatrixOfHermitian{\textunderscore}Code}}
-\logpage{[ 3, 4, 6 ]}\nobreak
+\logpage{[ 3, 5, 6 ]}\nobreak
 \hyperdef{L}{X839F5C6085C27928}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{GeneratorMatrixOfHermitian{\textunderscore}Code({\mdseries\slshape C})\index{GeneratorMatrixOfHermitianuScoreCode@\texttt{Generator}\-\texttt{Matrix}\-\texttt{Of}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Code}}
 \label{GeneratorMatrixOfHermitianuScoreCode}
@@ -866,7 +875,7 @@ the Riemann-Roch theorem, differential codes have dimension at least $n-\deg(G)-
  
 
 \subsection{\textcolor{Chapter }{DesignedMinimumDistance}}
-\logpage{[ 3, 4, 7 ]}\nobreak
+\logpage{[ 3, 5, 7 ]}\nobreak
 \hyperdef{L}{X84EB7DAF7DB9DB9F}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{DesignedMinimumDistance({\mdseries\slshape C})\index{DesignedMinimumDistance@\texttt{DesignedMinimumDistance}}
 \label{DesignedMinimumDistance}
@@ -877,21 +886,54 @@ the Riemann-Roch theorem, differential codes have dimension at least $n-\deg(G)-
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@code:=Hermitian_FunctionalCode(d);|
-  <[9,5] Hermitian AG-code over GF(3^2)>
+  !gapprompt@gap>| !gapinput@Hermitian_FunctionalCode(5*d);|
+  <[125,7] Hermitian AG-code over GF(5^2)>
+  !gapprompt@gap>| !gapinput@a:=Sum(AllRationalAffinePlacesOfHermitian_Curve(Hq));|
+  <Hermitian divisor with support of length 125 over indeterminates [ Y1, Y2 ]>
+  !gapprompt@gap>| !gapinput@code:=Hermitian_FunctionalCode(8*d,a);|
+  <[125,15] Hermitian AG-code over GF(5^2)>
   !gapprompt@gap>| !gapinput@Print(code);|
-  Hermitian_FunctionalCode(Hermitian_Divisor(Hermitian_Curve(GF(9),Y),
-  [ Z(3^8)^302, Z(3^8)^2718, Z(3^8)^3678, Z(3^8)^4782 ],
-  [ 1, 1, 1, 1 ]),Hermitian_Divisor(Hermitian_Curve(GF(9),Y),
-  [ 0*Z(3), Z(3)^0, Z(3), Z(3^2), Z(3^2)^2, Z(3^2)^3, Z(3^2)^5,
-    Z(3^2)^6, Z(3^2)^7 ],[ 1, 1, 1, 1, 1, 1, 1, 1, 1 ]))
+  Hermitian_FunctionalCode(Hermitian_Divisor(Hermitian_Curve(Y1),[ [ Z(5^6)^5885, Z(5^6)^13071 ], [ Z(5^6)^6485, Z(5^6)^13647 ], 
+    [ Z(5^6)^6509, Z(5^6)^14295 ] ],[ 8, 8, 8 ]),Hermitian_Divisor(Hermitian_Curve(Y1),[ [ 0*Z(5), 0*Z(5) ], [ 0*Z(5), Z(5^2)^3 ], 
+    [ 0*Z(5), Z(5^2)^9 ], [ 0*Z(5), Z(5^2)^15 ], [ 0*Z(5), Z(5^2)^21 ], [ Z(5)^0, Z(5)^3 ], [ Z(5)^0, Z(5^2) ], 
+    [ Z(5)^0, Z(5^2)^4 ], [ Z(5)^0, Z(5^2)^5 ], [ Z(5)^0, Z(5^2)^20 ], [ Z(5), Z(5) ], [ Z(5), Z(5^2)^8 ], [ Z(5), Z(5^2)^13 ], 
+    [ Z(5), Z(5^2)^16 ], [ Z(5), Z(5^2)^17 ], [ Z(5)^2, Z(5)^3 ], [ Z(5)^2, Z(5^2) ], [ Z(5)^2, Z(5^2)^4 ], [ Z(5)^2, Z(5^2)^5 ], 
+    [ Z(5)^2, Z(5^2)^20 ], [ Z(5)^3, Z(5) ], [ Z(5)^3, Z(5^2)^8 ], [ Z(5)^3, Z(5^2)^13 ], [ Z(5)^3, Z(5^2)^16 ], 
+    [ Z(5)^3, Z(5^2)^17 ], [ Z(5^2), Z(5)^0 ], [ Z(5^2), Z(5^2)^2 ], [ Z(5^2), Z(5^2)^7 ], [ Z(5^2), Z(5^2)^10 ], 
+    [ Z(5^2), Z(5^2)^11 ], [ Z(5^2)^2, Z(5) ], [ Z(5^2)^2, Z(5^2)^8 ], [ Z(5^2)^2, Z(5^2)^13 ], [ Z(5^2)^2, Z(5^2)^16 ], 
+    [ Z(5^2)^2, Z(5^2)^17 ], [ Z(5^2)^3, Z(5)^2 ], [ Z(5^2)^3, Z(5^2)^14 ], [ Z(5^2)^3, Z(5^2)^19 ], [ Z(5^2)^3, Z(5^2)^22 ], 
+    [ Z(5^2)^3, Z(5^2)^23 ], [ Z(5^2)^4, Z(5)^3 ], [ Z(5^2)^4, Z(5^2) ], [ Z(5^2)^4, Z(5^2)^4 ], [ Z(5^2)^4, Z(5^2)^5 ], 
+    [ Z(5^2)^4, Z(5^2)^20 ], [ Z(5^2)^5, Z(5)^0 ], [ Z(5^2)^5, Z(5^2)^2 ], [ Z(5^2)^5, Z(5^2)^7 ], [ Z(5^2)^5, Z(5^2)^10 ], 
+    [ Z(5^2)^5, Z(5^2)^11 ], [ Z(5^2)^7, Z(5)^2 ], [ Z(5^2)^7, Z(5^2)^14 ], [ Z(5^2)^7, Z(5^2)^19 ], [ Z(5^2)^7, Z(5^2)^22 ], 
+    [ Z(5^2)^7, Z(5^2)^23 ], [ Z(5^2)^8, Z(5)^3 ], [ Z(5^2)^8, Z(5^2) ], [ Z(5^2)^8, Z(5^2)^4 ], [ Z(5^2)^8, Z(5^2)^5 ], 
+    [ Z(5^2)^8, Z(5^2)^20 ], [ Z(5^2)^9, Z(5)^0 ], [ Z(5^2)^9, Z(5^2)^2 ], [ Z(5^2)^9, Z(5^2)^7 ], [ Z(5^2)^9, Z(5^2)^10 ], 
+    [ Z(5^2)^9, Z(5^2)^11 ], [ Z(5^2)^10, Z(5) ], [ Z(5^2)^10, Z(5^2)^8 ], [ Z(5^2)^10, Z(5^2)^13 ], [ Z(5^2)^10, Z(5^2)^16 ], 
+    [ Z(5^2)^10, Z(5^2)^17 ], [ Z(5^2)^11, Z(5)^2 ], [ Z(5^2)^11, Z(5^2)^14 ], [ Z(5^2)^11, Z(5^2)^19 ], [ Z(5^2)^11, Z(5^2)^22 ], 
+    [ Z(5^2)^11, Z(5^2)^23 ], [ Z(5^2)^13, Z(5)^0 ], [ Z(5^2)^13, Z(5^2)^2 ], [ Z(5^2)^13, Z(5^2)^7 ], [ Z(5^2)^13, Z(5^2)^10 ], 
+    [ Z(5^2)^13, Z(5^2)^11 ], [ Z(5^2)^14, Z(5) ], [ Z(5^2)^14, Z(5^2)^8 ], [ Z(5^2)^14, Z(5^2)^13 ], [ Z(5^2)^14, Z(5^2)^16 ], 
+    [ Z(5^2)^14, Z(5^2)^17 ], [ Z(5^2)^15, Z(5)^2 ], [ Z(5^2)^15, Z(5^2)^14 ], [ Z(5^2)^15, Z(5^2)^19 ], [ Z(5^2)^15, Z(5^2)^22 ], 
+    [ Z(5^2)^15, Z(5^2)^23 ], [ Z(5^2)^16, Z(5)^3 ], [ Z(5^2)^16, Z(5^2) ], [ Z(5^2)^16, Z(5^2)^4 ], [ Z(5^2)^16, Z(5^2)^5 ], 
+    [ Z(5^2)^16, Z(5^2)^20 ], [ Z(5^2)^17, Z(5)^0 ], [ Z(5^2)^17, Z(5^2)^2 ], [ Z(5^2)^17, Z(5^2)^7 ], [ Z(5^2)^17, Z(5^2)^10 ], 
+    [ Z(5^2)^17, Z(5^2)^11 ], [ Z(5^2)^19, Z(5)^2 ], [ Z(5^2)^19, Z(5^2)^14 ], [ Z(5^2)^19, Z(5^2)^19 ], [ Z(5^2)^19, Z(5^2)^22 ], 
+    [ Z(5^2)^19, Z(5^2)^23 ], [ Z(5^2)^20, Z(5)^3 ], [ Z(5^2)^20, Z(5^2) ], [ Z(5^2)^20, Z(5^2)^4 ], [ Z(5^2)^20, Z(5^2)^5 ], 
+    [ Z(5^2)^20, Z(5^2)^20 ], [ Z(5^2)^21, Z(5)^0 ], [ Z(5^2)^21, Z(5^2)^2 ], [ Z(5^2)^21, Z(5^2)^7 ], [ Z(5^2)^21, Z(5^2)^10 ], 
+    [ Z(5^2)^21, Z(5^2)^11 ], [ Z(5^2)^22, Z(5) ], [ Z(5^2)^22, Z(5^2)^8 ], [ Z(5^2)^22, Z(5^2)^13 ], [ Z(5^2)^22, Z(5^2)^16 ], 
+    [ Z(5^2)^22, Z(5^2)^17 ], [ Z(5^2)^23, Z(5)^2 ], [ Z(5^2)^23, Z(5^2)^14 ], [ Z(5^2)^23, Z(5^2)^19 ], [ Z(5^2)^23, Z(5^2)^22 ], 
+    [ Z(5^2)^23, Z(5^2)^23 ] ],[ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ]))
   !gapprompt@gap>| !gapinput@DesignedMinimumDistance(code);|
-  5
+  101
+  !gapprompt@gap>| !gapinput@LeftActingDomain(code);|
+  GF(5^2)
+  !gapprompt@gap>| !gapinput@UnderlyingField(code);|
+  GF(5^2)
 \end{Verbatim}
  
 
 \subsection{\textcolor{Chapter }{Hermitian{\textunderscore}DecodeToCodeword}}
-\logpage{[ 3, 4, 8 ]}\nobreak
+\logpage{[ 3, 5, 8 ]}\nobreak
 \hyperdef{L}{X86ED0E6E799550B2}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{Hermitian{\textunderscore}DecodeToCodeword({\mdseries\slshape C, w})\index{HermitianuScoreDecodeToCodeword@\texttt{Hermitian{\textunderscore}}\-\texttt{Decode}\-\texttt{To}\-\texttt{Codeword}}
 \label{HermitianuScoreDecodeToCodeword}
@@ -904,63 +946,69 @@ The decoding algorithm is from [Hoholdt-Pellikaan 1995]. The function \texttt{He
 decoding consists of solving linear equations. }
 
  
-\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@q:=5^3;|
-  125
-  !gapprompt@gap>| !gapinput@# construct the curve and the divisors|
-  !gapprompt@gap>| !gapinput@Y:=Indeterminate(GF(q),"Y");|
-  Y
-  !gapprompt@gap>| !gapinput@C:=Hermitian_Curve(GF(q),Y);|
-  <GZ curve over GF(125) with indeterminate Y>
-  !gapprompt@gap>| !gapinput@P_infty:=Hermitian_1PointDivisor(C,infinity);|
-  <GZ divisor with support of length 1 over indeterminate Y>
-  gap>
-  !gapprompt@gap>| !gapinput@fr:=FrobeniusAutomorphismOfHermitian_Curve(C);|
-  AC_FrobeniusAutomorphism(5^3)
-  !gapprompt@gap>| !gapinput@P4:=Sum(AC_FrobeniusAutomorphismOrbit(fr,RandomPlaceOfHermitian_Curve(C,4)));|
-  <GZ divisor with support of length 4 over indeterminate Y>
-  !gapprompt@gap>| !gapinput@G:=5*P4+7*P_infty;|
-  <GZ divisor with support of length 5 over indeterminate Y>
-  !gapprompt@gap>| !gapinput@Degree(G);|
-  27
-  gap>
-  !gapprompt@gap>| !gapinput@len:=90;|
-  90
-  !gapprompt@gap>| !gapinput@D:=Sum([1..len],i->Hermitian_1PointDivisor(C,Elements(GF(q))[i]));|
-  <GZ divisor with support of length 90 over indeterminate Y>
-  gap>
-  !gapprompt@gap>| !gapinput@# construct the AG differential code|
-  !gapprompt@gap>| !gapinput@agcode:=Hermitian_DifferentialCode(G,D);|
-  <[90,62] Hermitian AG-code over GF(5^3)>
-  !gapprompt@gap>| !gapinput@DesignedMinimumDistance(agcode);|
-  29
-  !gapprompt@gap>| !gapinput@Length(agcode)-Degree(G)-1;|
-  62
-  gap>
-  !gapprompt@gap>| !gapinput@# test codeword generation|
-  !gapprompt@gap>| !gapinput@t:=Int((DesignedMinimumDistance(agcode)-1)/2);|
-  14
-  !gapprompt@gap>| !gapinput@sent:=Random(agcode);;|
-  !gapprompt@gap>| !gapinput@err:=RandomVectorOfGivenWeight(GF(q),Length(agcode),t);;|
-  !gapprompt@gap>| !gapinput@received:=sent+err;;|
-  gap>
-  !gapprompt@gap>| !gapinput@# decoding|
-  !gapprompt@gap>| !gapinput@sent_decoded:=Hermitian_DecodeToCodeword(agcode,received);|
-  <cvec over GF(5,3) of length 90>
-  !gapprompt@gap>| !gapinput@sent=sent_decoded;|
+\begin{Verbatim}[commandchars=@|B,fontsize=\small,frame=single,label=Example]
+  @gapprompt|gap>B @gapinput|q:=4;B
+  4
+  @gapprompt|gap>B @gapinput|# construct the curve and the divisorsB
+  @gapprompt|gap>B @gapinput|Y:=HermitianIndeterminates(GF(q^2),"Y1","Y2");B
+  [ Y1, Y2 ]
+  @gapprompt|gap>B @gapinput|Hq:=Hermitian_Curve(Y[1]);B
+  <Hermitian curve over GF(16) with indeterminates [ Y1, Y2 ]>
+  @gapprompt|gap>B @gapinput|P_infty:=Hermitian_Place(Hq,[infinity]); B
+  <Hermitian place [ infinity ] over indeterminates [ Y1, Y2 ]>
+  @gapprompt|gap>B @gapinput|B
+  @gapprompt|gap>B @gapinput|fr:=FrobeniusAutomorphismOfHermitian_Curve(Hq);B
+  AC_FrobeniusAutomorphism(2^4)
+  @gapprompt|gap>B @gapinput|P4:=RandomPlaceOfGivenDegreeOfHermitian_Curve(Hq,5);B
+  <Hermitian place [ Z(2,20)+Z(2,20)^3+Z(2,20)^4+Z(2,20)^6+Z(2,20)^11+Z(2,20)^13+Z(2,20)^15+Z(2,20)^17+Z(2,20)^18+Z(2,20)^19, 
+    Z(2,20)+Z(2,20)^4+Z(2,20)^5+Z(2,20)^7+Z(2,20)^8+Z(2,20)^12+Z(2,20)^13+Z(2,20)^15+Z(2,20)^19 ] over indeterminates [ Y1, Y2 ]>
+  @gapprompt|gap>B @gapinput|P4:=Sum(AC_FrobeniusAutomorphismOrbit(fr,P4));B
+  <Hermitian divisor with support of length 5 over indeterminates [ Y1, Y2 ]>
+  @gapprompt|gap>B @gapinput|G:=5*P4+7*P_infty;B
+  <Hermitian divisor with support of length 6 over indeterminates [ Y1, Y2 ]>
+  @gapprompt|gap>B @gapinput|Degree(G);B
+  32
+  @gapprompt|gap>B @gapinput|B
+  @gapprompt|gap>B @gapinput|len:=50;B
+  50
+  @gapprompt|gap>B @gapinput|affpts:=AllRationalAffinePlacesOfHermitian_Curve(Hq);;B
+  @gapprompt|gap>B @gapinput|D:=Sum(affpts{[1..len]});B
+  <Hermitian divisor with support of length 50 over indeterminates [ Y1, Y2 ]>
+  @gapprompt|gap>B @gapinput|B
+  @gapprompt|gap>B @gapinput|# construct the AG differential codeB
+  @gapprompt|gap>B @gapinput|Hermitian_DifferentialCode(G);B
+  <[64,37] Hermitian AG-code over GF(2^4)>
+  @gapprompt|gap>B @gapinput|agcode:=Hermitian_DifferentialCode(G,D);B
+  <[50,23] Hermitian AG-code over GF(2^4)>
+  @gapprompt|gap>B @gapinput|DesignedMinimumDistance(agcode);B
+  22
+  @gapprompt|gap>B @gapinput|Length(agcode)-Degree(G)-1;B
+  17
+  @gapprompt|gap>B @gapinput|B
+  @gapprompt|gap>B @gapinput|# test codeword generationB
+  @gapprompt|gap>B @gapinput|t:=Int((DesignedMinimumDistance(agcode)-1-Genus(G!.curve))/2);B
+  7
+  @gapprompt|gap>B @gapinput|sent:=Random(agcode);;B
+  @gapprompt|gap>B @gapinput|err:=RandomVectorOfGivenWeight(GF(q),Length(agcode),t);;B
+  @gapprompt|gap>B @gapinput|received:=sent+err;;B
+  @gapprompt|gap>B @gapinput|B
+  @gapprompt|gap>B @gapinput|# decodingB
+  @gapprompt|gap>B @gapinput|sent_decoded:=Hermitian_DecodeToCodeword(agcode,received);B
+  <cvec over GF(2,4) of length 50>
+  @gapprompt|gap>B @gapinput|sent=sent_decoded;B
   true
 \end{Verbatim}
  }
 
  
 \section{\textcolor{Chapter }{Utilities for Hermitian AG-codes}}\label{Utilities}
-\logpage{[ 3, 5, 0 ]}
+\logpage{[ 3, 6, 0 ]}
 \hyperdef{L}{X78C4CB0A87B9F316}{}
 {
   
 
 \subsection{\textcolor{Chapter }{RestrictVectorSpace}}
-\logpage{[ 3, 5, 1 ]}\nobreak
+\logpage{[ 3, 6, 1 ]}\nobreak
 \hyperdef{L}{X853BF1BC7F6462B8}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{RestrictVectorSpace({\mdseries\slshape V, F})\index{RestrictVectorSpace@\texttt{RestrictVectorSpace}}
 \label{RestrictVectorSpace}
@@ -972,7 +1020,7 @@ decoding consists of solving linear equations. }
  
 
 \subsection{\textcolor{Chapter }{UPolCoeffsToSmallFieldNC}}
-\logpage{[ 3, 5, 2 ]}\nobreak
+\logpage{[ 3, 6, 2 ]}\nobreak
 \hyperdef{L}{X8596810487A72298}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{UPolCoeffsToSmallFieldNC({\mdseries\slshape f, q})\index{UPolCoeffsToSmallFieldNC@\texttt{UPolCoeffsToSmallFieldNC}}
 \label{UPolCoeffsToSmallFieldNC}
@@ -984,7 +1032,7 @@ decoding consists of solving linear equations. }
  
 
 \subsection{\textcolor{Chapter }{RandomVectorOfGivenWeight}}
-\logpage{[ 3, 5, 3 ]}\nobreak
+\logpage{[ 3, 6, 3 ]}\nobreak
 \hyperdef{L}{X7D6980057AF64327}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{RandomVectorOfGivenWeight({\mdseries\slshape F, n, k})\index{RandomVectorOfGivenWeight@\texttt{RandomVectorOfGivenWeight}}
 \label{RandomVectorOfGivenWeight}
@@ -1013,66 +1061,13 @@ decoding consists of solving linear equations. }
  }
 
         
-\chapter{\textcolor{Chapter }{An example: BCH codes as Hermitian AG-codes}}\label{HERmitian Example}
+\chapter{\textcolor{Chapter }{An example: BCH type codes as Hermitian AG codes (???)}}\label{HERmitian Example}
 \logpage{[ 4, 0, 0 ]}
-\hyperdef{L}{X831017557D536266}{}
+\hyperdef{L}{X79C9ACD17E1D249A}{}
 {
-   The following example constructs BCH codes as Hermitian AG-codes. 
+   The following example constructs BCH type codes as Hermitian AG codes. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@my_BCH:=function(n,l,delta,F)|
-  !gapprompt@>| !gapinput@	local q,m,r,s,beta,Y,C,D_beta,P_0,P_infty,agcode;|
-  !gapprompt@>| !gapinput@	#|
-  !gapprompt@>| !gapinput@	q:=Size(F);|
-  !gapprompt@>| !gapinput@	m:=OrderMod(q,n);|
-  !gapprompt@>| !gapinput@	beta:=Z(q^m)^((q^m-1)/n);|
-  !gapprompt@>| !gapinput@	#|
-  !gapprompt@>| !gapinput@	Y:=Indeterminate(F,"Y");|
-  !gapprompt@>| !gapinput@	C:=Hermitian_Curve(GF(q^m),Y);|
-  !gapprompt@>| !gapinput@	D_beta:=Sum([0..n-1],i->Hermitian_1PointDivisor(C,beta^i));|
-  !gapprompt@>| !gapinput@	P_0:=Hermitian_1PointDivisor(C,0);|
-  !gapprompt@>| !gapinput@	P_infty:=Hermitian_1PointDivisor(C,infinity);|
-  !gapprompt@>| !gapinput@	#|
-  !gapprompt@>| !gapinput@	r:=l-1;|
-  !gapprompt@>| !gapinput@	s:=n+1-delta-l;|
-  !gapprompt@>| !gapinput@	agcode:=Hermitian_FunctionalCode(r*P_0+s*P_infty,D_beta);|
-  !gapprompt@>| !gapinput@	#|
-  !gapprompt@>| !gapinput@	return RestrictVectorSpace(agcode,F);|
-  !gapprompt@>| !gapinput@end;|
-  function( n, l, delta, F ) ... end
   !gapprompt@gap>| !gapinput@|
-  !gapprompt@gap>| !gapinput@####|
-  !gapprompt@gap>| !gapinput@|
-  !gapprompt@gap>| !gapinput@q:=2;|
-  2
-  !gapprompt@gap>| !gapinput@n:=35;|
-  35
-  !gapprompt@gap>| !gapinput@l:=1;|
-  1
-  !gapprompt@gap>| !gapinput@delta:=5;|
-  5
-  !gapprompt@gap>| !gapinput@|
-  !gapprompt@gap>| !gapinput@|
-  !gapprompt@gap>| !gapinput@C0:=BCHCode(n,l,delta,GF(q)); time;|
-  a cyclic [35,11,5]8..13 BCH code, delta=5, b=1 over GF(2)
-  24
-  !gapprompt@gap>| !gapinput@C1:=my_BCH(n,l,delta,GF(q)); time;|
-  <vector space over GF(2), with 11 generators>
-  364
-  !gapprompt@gap>| !gapinput@|
-  !gapprompt@gap>| !gapinput@Collected(List(C0,x->Number(x,y->IsOne(y))));|
-  [ [ 0, 1 ], [ 5, 7 ], [ 7, 5 ], [ 10, 56 ], [ 13, 105 ], [ 14, 10 ], 
-    [ 15, 105 ], [ 16, 385 ], [ 17, 350 ], [ 18, 350 ], [ 19, 385 ], 
-    [ 20, 105 ], [ 21, 10 ], [ 22, 105 ], [ 25, 56 ], [ 28, 5 ], 
-    [ 30, 7 ], [ 35, 1 ] ]
-  !gapprompt@gap>| !gapinput@Collected(List(C1,x->Number(x,y->IsOne(y))));|
-  [ [ 0, 1 ], [ 5, 7 ], [ 7, 5 ], [ 10, 56 ], [ 13, 105 ], [ 14, 10 ], 
-    [ 15, 105 ], [ 16, 385 ], [ 17, 350 ], [ 18, 350 ], [ 19, 385 ], 
-    [ 20, 105 ], [ 21, 10 ], [ 22, 105 ], [ 25, 56 ], [ 28, 5 ], 
-    [ 30, 7 ], [ 35, 1 ] ]
-  !gapprompt@gap>| !gapinput@|
-  !gapprompt@gap>| !gapinput@SetDesignedMinimumDistance(C1,delta);|
-  !gapprompt@gap>| !gapinput@DesignedMinimumDistance(C1);|
-  5
 \end{Verbatim}
  }
 

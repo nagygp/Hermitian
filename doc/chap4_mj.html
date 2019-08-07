@@ -8,7 +8,7 @@
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
-<title>GAP (HERmitian) - Chapter 4: An example: BCH codes as Hermitian AG-codes</title>
+<title>GAP (HERmitian) - Chapter 4: An example: BCH type codes as Hermitian AG codes (???)</title>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <meta name="generator" content="GAPDoc2HTML" />
 <link rel="stylesheet" type="text/css" href="manual.css" />
@@ -23,70 +23,17 @@
 <div class="chlinkprevnexttop">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap3_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapBib_mj.html">[Next Chapter]</a>&nbsp;  </div>
 
 <p id="mathjaxlink" class="pcenter"><a href="chap4.html">[MathJax off]</a></p>
-<p><a id="X831017557D536266" name="X831017557D536266"></a></p>
-<div class="ChapSects"><a href="chap4_mj.html#X831017557D536266">4 <span class="Heading">An example: BCH codes as Hermitian AG-codes</span></a>
+<p><a id="X79C9ACD17E1D249A" name="X79C9ACD17E1D249A"></a></p>
+<div class="ChapSects"><a href="chap4_mj.html#X79C9ACD17E1D249A">4 <span class="Heading">An example: BCH type codes as Hermitian AG codes (???)</span></a>
 </div>
 
-<h3>4 <span class="Heading">An example: BCH codes as Hermitian AG-codes</span></h3>
+<h3>4 <span class="Heading">An example: BCH type codes as Hermitian AG codes (???)</span></h3>
 
-<p>The following example constructs BCH codes as Hermitian AG-codes.</p>
+<p>The following example constructs BCH type codes as Hermitian AG codes.</p>
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">my_BCH:=function(n,l,delta,F)</span>
-<span class="GAPprompt">&gt;</span> <span class="GAPinput">	local q,m,r,s,beta,Y,C,D_beta,P_0,P_infty,agcode;</span>
-<span class="GAPprompt">&gt;</span> <span class="GAPinput">	#</span>
-<span class="GAPprompt">&gt;</span> <span class="GAPinput">	q:=Size(F);</span>
-<span class="GAPprompt">&gt;</span> <span class="GAPinput">	m:=OrderMod(q,n);</span>
-<span class="GAPprompt">&gt;</span> <span class="GAPinput">	beta:=Z(q^m)^((q^m-1)/n);</span>
-<span class="GAPprompt">&gt;</span> <span class="GAPinput">	#</span>
-<span class="GAPprompt">&gt;</span> <span class="GAPinput">	Y:=Indeterminate(F,"Y");</span>
-<span class="GAPprompt">&gt;</span> <span class="GAPinput">	C:=Hermitian_Curve(GF(q^m),Y);</span>
-<span class="GAPprompt">&gt;</span> <span class="GAPinput">	D_beta:=Sum([0..n-1],i-&gt;Hermitian_1PointDivisor(C,beta^i));</span>
-<span class="GAPprompt">&gt;</span> <span class="GAPinput">	P_0:=Hermitian_1PointDivisor(C,0);</span>
-<span class="GAPprompt">&gt;</span> <span class="GAPinput">	P_infty:=Hermitian_1PointDivisor(C,infinity);</span>
-<span class="GAPprompt">&gt;</span> <span class="GAPinput">	#</span>
-<span class="GAPprompt">&gt;</span> <span class="GAPinput">	r:=l-1;</span>
-<span class="GAPprompt">&gt;</span> <span class="GAPinput">	s:=n+1-delta-l;</span>
-<span class="GAPprompt">&gt;</span> <span class="GAPinput">	agcode:=Hermitian_FunctionalCode(r*P_0+s*P_infty,D_beta);</span>
-<span class="GAPprompt">&gt;</span> <span class="GAPinput">	#</span>
-<span class="GAPprompt">&gt;</span> <span class="GAPinput">	return RestrictVectorSpace(agcode,F);</span>
-<span class="GAPprompt">&gt;</span> <span class="GAPinput">end;</span>
-function( n, l, delta, F ) ... end
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput"></span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">####</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput"></span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">q:=2;</span>
-2
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">n:=35;</span>
-35
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">l:=1;</span>
-1
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">delta:=5;</span>
-5
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput"></span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput"></span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">C0:=BCHCode(n,l,delta,GF(q)); time;</span>
-a cyclic [35,11,5]8..13 BCH code, delta=5, b=1 over GF(2)
-24
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">C1:=my_BCH(n,l,delta,GF(q)); time;</span>
-&lt;vector space over GF(2), with 11 generators&gt;
-364
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput"></span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Collected(List(C0,x-&gt;Number(x,y-&gt;IsOne(y))));</span>
-[ [ 0, 1 ], [ 5, 7 ], [ 7, 5 ], [ 10, 56 ], [ 13, 105 ], [ 14, 10 ], 
-  [ 15, 105 ], [ 16, 385 ], [ 17, 350 ], [ 18, 350 ], [ 19, 385 ], 
-  [ 20, 105 ], [ 21, 10 ], [ 22, 105 ], [ 25, 56 ], [ 28, 5 ], 
-  [ 30, 7 ], [ 35, 1 ] ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Collected(List(C1,x-&gt;Number(x,y-&gt;IsOne(y))));</span>
-[ [ 0, 1 ], [ 5, 7 ], [ 7, 5 ], [ 10, 56 ], [ 13, 105 ], [ 14, 10 ], 
-  [ 15, 105 ], [ 16, 385 ], [ 17, 350 ], [ 18, 350 ], [ 19, 385 ], 
-  [ 20, 105 ], [ 21, 10 ], [ 22, 105 ], [ 25, 56 ], [ 28, 5 ], 
-  [ 30, 7 ], [ 35, 1 ] ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput"></span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetDesignedMinimumDistance(C1,delta);</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DesignedMinimumDistance(C1);</span>
-5
 </pre></div>
 
 

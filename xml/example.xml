@@ -5,67 +5,14 @@
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 <Chapter Label="HERmitian Example">
-<Heading>An example: BCH codes as Hermitian AG-codes</Heading>
+<Heading>An example: BCH type codes as Hermitian AG codes (???)</Heading>
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
-The following example constructs BCH codes as Hermitian AG-codes.
+The following example constructs BCH type codes as Hermitian AG codes.
 
 <Example>
-gap&gt; my_BCH:=function(n,l,delta,F)
-&gt; 	local q,m,r,s,beta,Y,C,D_beta,P_0,P_infty,agcode;
-&gt; 	#
-&gt; 	q:=Size(F);
-&gt; 	m:=OrderMod(q,n);
-&gt; 	beta:=Z(q^m)^((q^m-1)/n);
-&gt; 	#
-&gt; 	Y:=Indeterminate(F,"Y");
-&gt; 	C:=Hermitian_Curve(GF(q^m),Y);
-&gt; 	D_beta:=Sum([0..n-1],i-&gt;Hermitian_1PointDivisor(C,beta^i));
-&gt; 	P_0:=Hermitian_1PointDivisor(C,0);
-&gt; 	P_infty:=Hermitian_1PointDivisor(C,infinity);
-&gt; 	#
-&gt; 	r:=l-1;
-&gt; 	s:=n+1-delta-l;
-&gt; 	agcode:=Hermitian_FunctionalCode(r*P_0+s*P_infty,D_beta);
-&gt; 	#
-&gt; 	return RestrictVectorSpace(agcode,F);
-&gt; end;
-function( n, l, delta, F ) ... end
 gap&gt; 
-gap&gt; ####
-gap&gt; 
-gap&gt; q:=2;
-2
-gap&gt; n:=35;
-35
-gap&gt; l:=1;
-1
-gap&gt; delta:=5;
-5
-gap&gt; 
-gap&gt; 
-gap&gt; C0:=BCHCode(n,l,delta,GF(q)); time;
-a cyclic [35,11,5]8..13 BCH code, delta=5, b=1 over GF(2)
-24
-gap&gt; C1:=my_BCH(n,l,delta,GF(q)); time;
-&lt;vector space over GF(2), with 11 generators&gt;
-364
-gap&gt; 
-gap&gt; Collected(List(C0,x-&gt;Number(x,y-&gt;IsOne(y))));
-[ [ 0, 1 ], [ 5, 7 ], [ 7, 5 ], [ 10, 56 ], [ 13, 105 ], [ 14, 10 ], 
-  [ 15, 105 ], [ 16, 385 ], [ 17, 350 ], [ 18, 350 ], [ 19, 385 ], 
-  [ 20, 105 ], [ 21, 10 ], [ 22, 105 ], [ 25, 56 ], [ 28, 5 ], 
-  [ 30, 7 ], [ 35, 1 ] ]
-gap&gt; Collected(List(C1,x-&gt;Number(x,y-&gt;IsOne(y))));
-[ [ 0, 1 ], [ 5, 7 ], [ 7, 5 ], [ 10, 56 ], [ 13, 105 ], [ 14, 10 ], 
-  [ 15, 105 ], [ 16, 385 ], [ 17, 350 ], [ 18, 350 ], [ 19, 385 ], 
-  [ 20, 105 ], [ 21, 10 ], [ 22, 105 ], [ 25, 56 ], [ 28, 5 ], 
-  [ 30, 7 ], [ 35, 1 ] ]
-gap&gt; 
-gap&gt; SetDesignedMinimumDistance(C1,delta);
-gap&gt; DesignedMinimumDistance(C1);
-5
 </Example>
 
 </Chapter>

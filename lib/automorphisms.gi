@@ -190,7 +190,7 @@ end );
 #############################################################################
 ##  GZ CURVE AUTOMORPHISM GROUPS
 ##  -------------------------------------------------------------------------
-InstallGlobalFunction( MatrixGroupToHermitian_CurveAutGroup, 
+InstallGlobalFunction( UnitaryGroupToHermitian_CurveAutGroup, 
 function(matgr,C)
 	local xset,projgr;
 	projgr:=GroupWithGenerators(List(GeneratorsOfGroup(matgr),g->Hermitian_CurveAutomorphism(C,g)));
@@ -224,7 +224,7 @@ function( C )
 	local q, gu;
 	q := Sqrt( Size( UnderlyingField( C ) ) );
 	gu := GroupWithGenerators( HERM_GensOfGeneralUnitaryGroup( q ) );
-	return MatrixGroupToHermitian_CurveAutGroup(gu,C);
+	return UnitaryGroupToHermitian_CurveAutGroup(gu,C);
 end );
 
 

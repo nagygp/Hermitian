@@ -61,8 +61,8 @@ DeclareGlobalFunction( "GeneratorMatrixOfFunctionalHermitian_CodeNC" );
 ##  returns the functional AG code 
 ##  <M>C_L(D,G)=\{(f(P_1),\ldots,f(P_n)) \mid f\in L(G)\}.</M> 
 ##  <M>D</M> and <M>G</M> are rational divisors of the
-##  Hermitian curve <M>C</M>. <M>D=P_1+\cdots+D_n</M>, where <M>P_1,\ldots,P_n</M> are degree one places
-##  of <M>C</M>. The supports of <M>D</M> and <M>G</M> are disjoint. If <M>D</M> is not given then it is the 
+##  Hermitian curve <M>H(q)</M>. <M>D=P_1+\cdots+P_n</M>, where <M>P_1,\ldots,P_n</M> are degree one places
+##  of <M>H(q)</M>. The supports of <M>D</M> and <M>G</M> are disjoint. If <M>D</M> is not given then it is the 
 ##  sum of affine rational places of <M>H(q)</M>, not contained in the support of <M>G</M>. 
 ##  By the Riemann-Roch theorem, functional codes have dimension at least <M>\deg(G)+1-g</M>, 
 ##  with equality if <M>\deg(G)>2g-2</M>. 
@@ -87,8 +87,8 @@ DeclareOperation( "Hermitian_FunctionalCode", [IsHermitian_Divisor] );
 ##  returns the differential AG code 
 ##  <M>C_\Omega(D,G) = \{res_{P_1}(\omega),\ldots,res_{P_n}(\omega) \mid \omega \in \Omega(G-D)\}.</M>
 ##  <M>D</M> and <M>G</M> are rational divisors of the
-##  Hermitian curve <M>C</M>. <M>D=P_1+\cdots+D_n</M>, where <M>P_1,\ldots,P_n</M> are degree one places
-##  of <M>C</M>. The supports of <M>D</M> and <M>G</M> are disjoint. If <M>D</M> is not given then it is the 
+##  Hermitian curve <M>H(q)</M>. <M>D=P_1+\cdots+P_n</M>, where <M>P_1,\ldots,P_n</M> are degree one places
+##  of <M>H(q)</M>. The supports of <M>D</M> and <M>G</M> are disjoint. If <M>D</M> is not given then it is the 
 ##  sum of affine rational places of <M>H(q)</M>, not contained in the support of <M>G</M>. 
 ##  By the Riemann-Roch theorem, functional codes have dimension <M>\deg(G)+1-g</M>. 
 ##  The differential code is the dual of the corresponding functional code. 

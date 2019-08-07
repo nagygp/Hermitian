@@ -27,7 +27,7 @@ cc:=List(ConjugacyClassesMaximalSubgroups(Image(hom)),Representative);
 List(cc,Size);
 
 uxset:=AsList(UnderlyingExternalSet(hom));;
-xs:=List(cc,x->List(Orbits(x),o->Set(uxset{o}));;
-List(xs,x->List(x,Size));
+orbs:=List(cc,x->List(Orbits(x),o->Set(uxset{o})));;
+List(orbs,x->List(x,Size));
 
-List(xs,x->Stabilizer(pgu,x[1],OnSets));
+List(orbs,x->Stabilizer(pgu,x[1],OnSets));
