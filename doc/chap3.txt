@@ -17,21 +17,26 @@
   [1X3.1-2 Hermitian_Curve[101X
   
   [33X[1;0Y[29X[2XHermitian_Curve[102X( [3XK[103X, [3Xhratfn[103X ) [32X operation[133X
-  
-  [33X[0;0Yreturns the corresponding Hermitian curve [22XH(q)[122X over the algebraic closure of
-  the  field  [3XK[103X.  The  indeterminates [22XX,Y[122X of [3Xhratfn[103X generate the corresponding
-  Hermitian  function  field  [22XK(X,Y)[122X  such  that  [22XX^q+1 = Y^q + Y[122X. [3XK[103X must be a
-  finite  field  of  square order. The points of [22XH(q)[122X are either affine [22XP(a,b)[122X
-  satisfying  [22Xa^q+1=b^q+b[122X, or the infinite point [10X[ infinity ][110X. One can use the
-  [10Xin[110X operation to test if a point lies on the Hermitian curve.[133X
+  [6XReturns:[106X  [33X[0;10YThe  corresponding Hermitian curve [22XH(q)[122X over the algebraic closure
+            of  the  field  [3XK[103X.  The  indeterminates [22XX,Y[122X of [3Xhratfn[103X generate the
+            corresponding  Hermitian  function  field [22XK(X,Y)[122X such that [22XX^q+1 =
+            Y^q  +  Y[122X. [3XK[103X must be a finite field of square order. The points of
+            [22XH(q)[122X  are  either  affine  [22XP(a,b)[122X  satisfying  [22Xa^q+1=b^q+b[122X, or the
+            infinite  point [10X[ infinity ][110X. One can use the [10Xin[110X operation to test
+            if a point lies on the Hermitian curve.[133X
   
   [1X3.1-3 IndeterminatesOfHermitian_Curve[101X
   
   [33X[1;0Y[29X[2XIndeterminatesOfHermitian_Curve[102X( [3XHq[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YThe indeterminates of the function field of the Hermitian curve [3XC[103X.[133X
   
-  [33X[0;0Yreturns the indeterminates of the function field of the Hermitian curve [3XC[103X.[133X
+  [1X3.1-4 Genus[101X
   
-  [1X3.1-4 UnderlyingField[101X
+  [33X[1;0Y[29X[2XGenus[102X( [3XHq[103X ) [32X attribute[133X
+  
+  [33X[0;0YThe genus of the Hermitian curve [22XH(q)[122X is [22Xq(q-1)/2[122X.[133X
+  
+  [1X3.1-5 UnderlyingField[101X
   
   [33X[1;0Y[29X[2XUnderlyingField[102X( [3XHq[103X ) [32X attribute[133X
   
@@ -39,13 +44,33 @@
   the  corresponding  algebraic function field, it is a finite field of square
   order.[133X
   
-  [1X3.1-5 RandomPlaceOfGivenDegreeOfHermitian_Curve[101X
+  [1X3.1-6 AllRationalAffinePlacesOfHermitian_Curve[101X
+  
+  [33X[1;0Y[29X[2XAllRationalAffinePlacesOfHermitian_Curve[102X( [3XHq[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10YAll  rational  affine places of the Hermitian curve [3XHq[103X. The number
+            of rational affine places of [22XH(q)[122X is [22Xq^3[122X.[133X
+  
+  [1X3.1-7 AllRationalPlacesOfHermitian_Curve[101X
+  
+  [33X[1;0Y[29X[2XAllRationalPlacesOfHermitian_Curve[102X( [3XHq[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10YAll  rational places of the Hermitian curve [3XHq[103X. Here, a place is a
+            1-point  divisor  of  degree  one,  that is, defined over [22XGF(q^2)[122X.
+            Notice  that  the  place  at  infinity  is rational. The number of
+            rational places of [22XH(q)[122X is [22Xq^3+1[122X.[133X
+  
+  [1X3.1-8 RandomRationalPlaceOfHermitian_Curve[101X
+  
+  [33X[1;0Y[29X[2XRandomRationalPlaceOfHermitian_Curve[102X( [3XHq[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10YA  random  rational place of the Hermitian curve [3XHq[103X. Here, a place
+            is a 1-point divisor of degree one, that is, defined over [22XGF(q^2)[122X.
+            Notice that the place at infinity is rational.[133X
+  
+  [1X3.1-9 RandomPlaceOfGivenDegreeOfHermitian_Curve[101X
   
   [33X[1;0Y[29X[2XRandomPlaceOfGivenDegreeOfHermitian_Curve[102X( [3XHq[103X, [3Xd[103X ) [32X operation[133X
-  
-  [33X[0;0Yreturns  a  random  place  of degree [3Xd[103X of the Hermitian curve [3XHq[103X, that is, a
-  place  defined over the field [22XGF(q^2d)[122X. Notice that the place at infinity is
-  has degree 1.[133X
+  [6XReturns:[106X  [33X[0;10YA  random  place of degree [3Xd[103X of the Hermitian curve [3XHq[103X, that is, a
+            place  defined  over  the field [22XGF(q^2d)[122X. Notice that the place at
+            infinity is has degree 1.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xq:=5;[127X[104X
@@ -77,11 +102,10 @@
   [1X3.2-1 FrobeniusAutomorphismOfHermitian_Curve[101X
   
   [33X[1;0Y[29X[2XFrobeniusAutomorphismOfHermitian_Curve[102X( [3XHq[103X ) [32X attribute[133X
-  
-  [33X[0;0Yreturns  the Frobenius automorphism of the underlying field of the Hermitian
-  curve  [3XHq[103X. More precisely, the output is an AC-Frobenius automorphism in the
-  sense  of  the  package [5XOnAlgClosure[105X, acting on the algebraic closure of the
-  underlying finite field.[133X
+  [6XReturns:[106X  [33X[0;10YThe   Frobenius  automorphism  of  the  underlying  field  of  the
+            Hermitian  curve [3XHq[103X. More precisely, the output is an AC-Frobenius
+            automorphism  in  the sense of the package [5XOnAlgClosure[105X, acting on
+            the algebraic closure of the underlying finite field.[133X
   
   [1X3.2-2 IsHermitian_CurveAutomorphism[101X
   
@@ -96,7 +120,7 @@
   [1X3.2-3 Hermitian_CurveAutomorphism[101X
   
   [33X[1;0Y[29X[2XHermitian_CurveAutomorphism[102X( [3XHq[103X, [3Xmat[103X ) [32X operation[133X
-  [6XReturns:[106X  [33X[0;10Ythe automorphism of the Hermitian curve [22XH(q)[122X, given by the unitary
+  [6XReturns:[106X  [33X[0;10YThe automorphism of the Hermitian curve [22XH(q)[122X, given by the unitary
             matrix [3Xmat[103X.[133X
   
   
@@ -107,10 +131,10 @@
             correspond to the unitary group [3Xmatgr[103X.[133X
   
   [33X[0;0YThe  permutation  action  of  [3Xmatgr[103X  on  the set of rational places of [3XHq[103X is
-  stored as a nice monomorphism of $G$.[133X
+  stored as a nice monomorphism of [22XG[122X.[133X
   
   [33X[1;0Y[29X[2XAutomorphismGroup[102X( [3XHq[103X ) [32X operation[133X
-  [6XReturns:[106X  [33X[0;10Ythe automorphism group of the Hermitian curve [3XHq[103X. The elements are
+  [6XReturns:[106X  [33X[0;10YThe automorphism group of the Hermitian curve [3XHq[103X. The elements are
             Hermitian   curve   automorphisms.  The  group  is  isomorphic  to
             [22XPPG(3,q)[122X, where [22XGF(q^2)[122X is the underlying field of [3XHq[103X.[133X
   
@@ -134,93 +158,106 @@
   Hermitian  curve  [22XH(q):X^q+1=Y^q+Y[122X.  Hermitian  divisors  form  an  additive
   commutative group.[133X
   
-  [1X3.3-2 Hermitian_DivisorConstruct[101X
+  [1X3.3-2 IsHermitian_Place[101X
+  
+  [33X[1;0Y[29X[2XIsHermitian_Place[102X( [3Xobj[103X ) [32X filter[133X
+  
+  [33X[0;0YIn  this implmementation, a Hermitian place is a Hermitian divisor of degree
+  one and support length one.[133X
+  
+  [1X3.3-3 Hermitian_DivisorConstruct[101X
   
   [33X[1;0Y[29X[2XHermitian_DivisorConstruct[102X( [3XHq[103X, [3Xpts[103X, [3Xords[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YThe   Hermitian   divisor   over  [3XHq[103X  with  points  from  [3Xpts[103X  and
+            corresponding orders from [3Xords[103X. It checks the input.[133X
   
-  [33X[0;0Yreturns the Hermitian divisor over [3XHq[103X with points from [3Xpts[103X and corresponding
-  orders from [3Xords[103X. It checks the input.[133X
+  [1X3.3-4 IndeterminatesOfHermitian_Divisor[101X
   
-  [1X3.3-3 Hermitian_Divisor[101X
+  [33X[1;0Y[29X[2XIndeterminatesOfHermitian_Divisor[102X( [3XD[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YThe  pair of indeterminates of the function field of the Hermitian
+            divisor [3XD[103X.[133X
+  
+  [1X3.3-5 Hermitian_Divisor[101X
   
   [33X[1;0Y[29X[2XHermitian_Divisor[102X( [3XHq[103X, [3Xpts[103X, [3Xords[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XHermitian_Divisor[102X( [3XHq[103X, [3Xpairs[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10YThe  corresponding  Hermitian divisor over the Hermitian curve [3XHq[103X.
+            The  list  [3Xpts[103X  must  be  points  of  [3XHq[103X;  the infinite point is [10X[
+            infinity  ][110X.  The  list  [3Xords[103X  contains the respective orders. The
+            elements of the list [3Xpairs[103X are the point-order pairs.[133X
   
-  [33X[0;0Yreturns the corresponding Hermitian divisor over the Hermitian curve [3XHq[103X. The
-  list  [3Xpts[103X must be points of [3XHq[103X; the infinite point is [10X[ infinity ][110X. The list
-  [3Xords[103X  contains the respective orders. The elements of the list [3Xpairs[103X are the
-  point-order pairs.[133X
-  
-  [1X3.3-4 Hermitian_Place[101X
+  [1X3.3-6 Hermitian_Place[101X
   
   [33X[1;0Y[29X[2XHermitian_Place[102X( [3XHq[103X, [3Xpt[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10YThe  corresponding  place  of  the Hermitian curve [3XHq[103X, where [3Xpt[103X is
+            either an affine point [3XHq[103X, or the infinite point is [10X[ infinity ][110X.[133X
   
-  [33X[0;0Yreturns  the  corresponding  place  of  the  Hermitian curve [3XHq[103X, where [3Xpt[103X is
-  either an affine point [3XHq[103X, or the infinite point is [10X[ infinity ][110X.[133X
-  
-  [1X3.3-5 ZeroHermitian_Divisor[101X
+  [1X3.3-7 ZeroHermitian_Divisor[101X
   
   [33X[1;0Y[29X[2XZeroHermitian_Divisor[102X( [3XHq[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10YThe zero divisor over the Hermitian curve [3XHq[103X.[133X
   
-  [33X[0;0Yreturns the zero divisor over the Hermitian curve [3XHq[103X.[133X
+  [1X3.3-8 SupremumHermitian_Divisor[101X
   
-  [1X3.3-6 IsRationalHermitian_Divisor[101X
+  [33X[1;0Y[29X[2XSupremumHermitian_Divisor[102X( [3XD1[103X, [3XD2[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YThe place-wise maximum of the orders of [3XD1[103X and [3XD2[103X.[133X
   
-  [33X[1;0Y[29X[2XIsRationalHermitian_Divisor[102X( [3XD[103X ) [32X attribute[133X
+  [1X3.3-9 InfimumHermitian_Divisor[101X
   
-  [33X[0;0YReturns  true  if  [3XD[103X  is  invariant  under the Frobenius automorphism of the
-  underlying Hermitian curve.[133X
+  [33X[1;0Y[29X[2XInfimumHermitian_Divisor[102X( [3XD1[103X, [3XD2[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YThe place-wise minimum of the orders of [3XD1[103X and [3XD2[103X.[133X
   
-  [1X3.3-7 UnderlyingField[101X
+  [1X3.3-10 PositivePartOfHermitian_Divisor[101X
+  
+  [33X[1;0Y[29X[2XPositivePartOfHermitian_Divisor[102X( [3XD[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YThe positive part of the divisor [3XD[103X.[133X
+  
+  [1X3.3-11 NegativePartOfHermitian_Divisor[101X
+  
+  [33X[1;0Y[29X[2XNegativePartOfHermitian_Divisor[102X( [3XD[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YThe negative part of the divisor [3XD[103X.[133X
+  
+  [1X3.3-12 UnderlyingField[101X
   
   [33X[1;0Y[29X[2XUnderlyingField[102X( [3XD[103X ) [32X attribute[133X
   
   [33X[0;0YThe  underlying field of a Hermitian divisor is the field of coefficients of
   the corresponding Hermitian curve.[133X
   
-  [1X3.3-8 Support[101X
+  [1X3.3-13 Support[101X
   
   [33X[1;0Y[29X[2XSupport[102X( [3XD[103X ) [32X attribute[133X
   
   [33X[0;0YThe support of a Hermitian divisor is the set of points with nonzero orders.[133X
   
-  [1X3.3-9 Valuation[101X
+  [1X3.3-14 Valuation[101X
   
   [33X[1;0Y[29X[2XValuation[102X( [3XD[103X, [3Xpt[103X ) [32X operation[133X
   
   [33X[0;0YThe  valuation  of  a  Hermitian  divisor  [3XD[103X at the point or place [3Xpt[103X is its
   corresponding order.[133X
   
-  [1X3.3-10 PrincipalHermitian_Divisor[101X
+  [1X3.3-15 Value[101X
+  
+  [33X[1;0Y[29X[2XValue[102X( [3Xf[103X, [3Xpl[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10YThe value of a Hermitian rational function [3Xf[103X at the place [3Xpl[103X.[133X
+  
+  [1X3.3-16 IsRationalHermitian_Divisor[101X
+  
+  [33X[1;0Y[29X[2XIsRationalHermitian_Divisor[102X( [3XD[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YTrue  if  [3XD[103X  is  invariant under the Frobenius automorphism of the
+            underlying Hermitian curve.[133X
+  
+  [1X3.3-17 PrincipalHermitian_Divisor[101X
   
   [33X[1;0Y[29X[2XPrincipalHermitian_Divisor[102X( [3XHq[103X, [3Xf[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10YThe  principal divisor of the rational function [3Xf[103X of the Hermitian
+            curve [3XHq[103X.[133X
   
-  [33X[0;0Yreturns  the  principal  divisor of the rational function [3Xf[103X of the Hermitian
-  curve [3XHq[103X.[133X
+  [1X3.3-18 IsInfiniteHermitian_Place[101X
   
-  [1X3.3-11 SupremumHermitian_Divisor[101X
-  
-  [33X[1;0Y[29X[2XSupremumHermitian_Divisor[102X( [3XD1[103X, [3XD2[103X ) [32X function[133X
-  
-  [33X[0;0Yreturns the place-wise maximum of the orders of [3XD1[103X and [3XD2[103X.[133X
-  
-  [1X3.3-12 InfimumHermitian_Divisor[101X
-  
-  [33X[1;0Y[29X[2XInfimumHermitian_Divisor[102X( [3XD1[103X, [3XD2[103X ) [32X function[133X
-  
-  [33X[0;0Yreturns the place-wise minimum of the orders of [3XD1[103X and [3XD2[103X.[133X
-  
-  [1X3.3-13 PositivePartOfHermitian_Divisor[101X
-  
-  [33X[1;0Y[29X[2XPositivePartOfHermitian_Divisor[102X( [3XD[103X ) [32X function[133X
-  
-  [33X[0;0Yreturns the positive part of the divisor [3XD[103X.[133X
-  
-  [1X3.3-14 NegativePartOfHermitian_Divisor[101X
-  
-  [33X[1;0Y[29X[2XNegativePartOfHermitian_Divisor[102X( [3XD[103X ) [32X function[133X
-  
-  [33X[0;0Yreturns the negative part of the divisor [3XD[103X.[133X
+  [33X[1;0Y[29X[2XIsInfiniteHermitian_Place[102X( [3Xp[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YTrue if [3Xp[103X is a Hermitian place at the infinite line.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xp_infty:=Hermitian_Place(Hq,[infinity]);[127X[104X
@@ -257,9 +294,8 @@
   [1X3.4-1 Hermitian_RiemannRochSpaceBasis[101X
   
   [33X[1;0Y[29X[2XHermitian_RiemannRochSpaceBasis[102X( [3XD[103X ) [32X function[133X
-  
-  [33X[0;0Yreturns  a [12Xbasis[112X of the Riemann-Roch space of the Hermitian divisor [3XD[103X, which
-  is defined by [22X{ f ∈ K[Y] ∣ Div(f) ≥ - D }[122X.[133X
+  [6XReturns:[106X  [33X[0;10YA  [12Xbasis[112X  of  the  Riemann-Roch  space of the Hermitian divisor [3XD[103X,
+            which is defined by [22X{ f ∈ K[Y] ∣ Div(f) ≥ - D }[122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xa:=RandomPlaceOfGivenDegreeOfHermitian_Curve(Hq,3);[127X[104X
@@ -312,59 +348,65 @@
   [1X3.5-2 GeneratorMatrixOfFunctionalHermitian_CodeNC[101X
   
   [33X[1;0Y[29X[2XGeneratorMatrixOfFunctionalHermitian_CodeNC[102X( [3XG[103X, [3Xpls[103X ) [32X function[133X
-  
-  [33X[0;0Yreturns  the generator matrix of the functional AG code [22XC_L(D,G)[122X, where [22XD[122X is
-  the  sum  of the degree one places in the list [3Xpls[103X. The support of [3XG[103X must be
-  disjoint from [3Xpls[103X.[133X
+  [6XReturns:[106X  [33X[0;10YThe  generator  matrix of the functional AG code [22XC_L(D,G)[122X, where [22XD[122X
+            is  the  sum of the degree one places in the list [3Xpls[103X. The support
+            of [3XG[103X must be disjoint from [3Xpls[103X.[133X
   
   [1X3.5-3 Hermitian_FunctionalCode[101X
   
   [33X[1;0Y[29X[2XHermitian_FunctionalCode[102X( [3XG[103X, [3XD[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XHermitian_FunctionalCode[102X( [3XG[103X ) [32X operation[133X
-  
-  [33X[0;0Yreturns  the  functional AG code [22XC_L(D,G)={(f(P_1),...,f(P_n)) ∣ f∈ L(G)}.[122X [22XD[122X
-  and  [22XG[122X are rational divisors of the Hermitian curve [22XH(q)[122X. [22XD=P_1+⋯+P_n[122X, where
-  [22XP_1,...,P_n[122X  are  degree  one  places  of  [22XH(q)[122X. The supports of [22XD[122X and [22XG[122X are
-  disjoint.  If [22XD[122X is not given then it is the sum of affine rational places of
-  [22XH(q)[122X,  not  contained  in  the  support  of  [22XG[122X. By the Riemann-Roch theorem,
-  functional  codes  have  dimension  at  least  [22Xdeg(G)+1-g[122X,  with equality if
-  [22Xdeg(G)>2g-2[122X.[133X
+  [6XReturns:[106X  [33X[0;10YThe functional AG code [22XC_L(D,G)={(f(P_1),...,f(P_n)) ∣ f∈ L(G)}.[122X [22XD[122X
+            and   [22XG[122X  are  rational  divisors  of  the  Hermitian  curve  [22XH(q)[122X.
+            [22XD=P_1+⋯+P_n[122X,  where [22XP_1,...,P_n[122X are degree one places of [22XH(q)[122X. The
+            supports of [22XD[122X and [22XG[122X are disjoint. If [22XD[122X is not given then it is the
+            sum  of  affine  rational  places  of  [22XH(q)[122X,  not contained in the
+            support  of  [22XG[122X. By the Riemann-Roch theorem, functional codes have
+            dimension at least [22Xdeg(G)+1-g[122X, with equality if [22Xdeg(G)>2g-2[122X.[133X
   
   [1X3.5-4 Hermitian_DifferentialCode[101X
   
   [33X[1;0Y[29X[2XHermitian_DifferentialCode[102X( [3XG[103X, [3XD[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XHermitian_DifferentialCode[102X( [3XG[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10YThe differential AG code [22XC_Ω(D,G) = {res_P_1(ω),...,res_P_n(ω) ∣ ω
+            ∈  Ω(G-D)}.[122X  [22XD[122X  and [22XG[122X are rational divisors of the Hermitian curve
+            [22XH(q)[122X.  [22XD=P_1+⋯+P_n[122X,  where  [22XP_1,...,P_n[122X  are  degree one places of
+            [22XH(q)[122X. The supports of [22XD[122X and [22XG[122X are disjoint. If [22XD[122X is not given then
+            it  is the sum of affine rational places of [22XH(q)[122X, not contained in
+            the  support  of  [22XG[122X. By the Riemann-Roch theorem, functional codes
+            have  dimension  [22Xdeg(G)+1-g[122X.  The differential code is the dual of
+            the  corresponding  functional  code. By the Riemann-Roch theorem,
+            differential  codes  have  dimension  at  least [22Xn-deg(G)-1+g[122X, with
+            equality if [22Xdeg(G)>2g-2[122X.[133X
   
-  [33X[0;0Yreturns the differential AG code [22XC_Ω(D,G) = {res_P_1(ω),...,res_P_n(ω) ∣ ω ∈
-  Ω(G-D)}.[122X  [22XD[122X  and  [22XG[122X  are  rational  divisors  of  the  Hermitian curve [22XH(q)[122X.
-  [22XD=P_1+⋯+P_n[122X,  where  [22XP_1,...,P_n[122X are degree one places of [22XH(q)[122X. The supports
-  of  [22XD[122X  and  [22XG[122X  are  disjoint. If [22XD[122X is not given then it is the sum of affine
-  rational  places  of  [22XH(q)[122X,  not  contained  in  the  support  of  [22XG[122X. By the
-  Riemann-Roch  theorem,  functional  codes  have  dimension  [22Xdeg(G)+1-g[122X.  The
-  differential  code  is the dual of the corresponding functional code. By the
-  Riemann-Roch   theorem,   differential   codes   have   dimension  at  least
-  [22Xn-deg(G)-1+g[122X, with equality if [22Xdeg(G)>2g-2[122X.[133X
+  [1X3.5-5 UnderlyingCurveOfHermitian_Code[101X
   
-  [1X3.5-5 Length[101X
+  [33X[1;0Y[29X[2XUnderlyingCurveOfHermitian_Code[102X( [3XC[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YThe underlying Hermitian curve of the AG code [3XC[103X.[133X
+  
+  [1X3.5-6 UnderlyingField[101X
+  
+  [33X[1;0Y[29X[2XUnderlyingField[102X( [3XC[103X ) [32X attribute[133X
+  
+  [33X[0;0YThe underlying field of an AG code is its left acting domain.[133X
+  
+  [1X3.5-7 Length[101X
   
   [33X[1;0Y[29X[2XLength[102X( [3XC[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YThe length of the AG code [3XC[103X.[133X
   
-  [33X[0;0Yreturns the length of the AG code [3XC[103X.[133X
-  
-  [1X3.5-6 GeneratorMatrixOfHermitian_Code[101X
+  [1X3.5-8 GeneratorMatrixOfHermitian_Code[101X
   
   [33X[1;0Y[29X[2XGeneratorMatrixOfHermitian_Code[102X( [3XC[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YThe generator matrix of the AG code [3XC[103X in [5XCVEC[105X matrix format.[133X
   
-  [33X[0;0Yreturns the generator matrix of the AG code [3XC[103X in [5XCVEC[105X matrix format.[133X
-  
-  [1X3.5-7 DesignedMinimumDistance[101X
+  [1X3.5-9 DesignedMinimumDistance[101X
   
   [33X[1;0Y[29X[2XDesignedMinimumDistance[102X( [3XC[103X ) [32X attribute[133X
-  
-  [33X[0;0Yreturns  the  designed  minimum  distance [22Xδ[122X of the Hermitian AG code [3XC[103X. When
-  [22Xdeg(G)≥  2g-2[122X,  then  the  general  formulas  for  [22Xδ[122X are as follows. For the
-  functional   code  [22XC_L(D,G)[122X,  [22Xδ=n-deg(G)[122X,  and  for  the  differential  code
-  [22XC_Ω(D,G)[122X, [22Xδ=deg(G)-(2g-2)[122X.[133X
+  [6XReturns:[106X  [33X[0;10YThe  designed  minimum distance [22Xδ[122X of the Hermitian AG code [3XC[103X. When
+            [22Xdeg(G)≥  2g-2[122X, then the general formulas for [22Xδ[122X are as follows. For
+            the functional code [22XC_L(D,G)[122X, [22Xδ=n-deg(G)[122X, and for the differential
+            code [22XC_Ω(D,G)[122X, [22Xδ=deg(G)-(2g-2)[122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XHermitian_FunctionalCode(5*d);[127X[104X
@@ -412,7 +454,7 @@
     [4X[28XGF(5^2)[128X[104X
   [4X[32X[104X
   
-  [1X3.5-8 Hermitian_DecodeToCodeword[101X
+  [1X3.5-10 Hermitian_DecodeToCodeword[101X
   
   [33X[1;0Y[29X[2XHermitian_DecodeToCodeword[102X( [3XC[103X, [3Xw[103X ) [32X operation[133X
   
@@ -481,37 +523,41 @@
   
   [1X3.6 [33X[0;0YUtilities for Hermitian AG-codes[133X[101X
   
-  [1X3.6-1 RestrictVectorSpace[101X
+  [1X3.6-1 InfoHermitian[101X
+  
+  [33X[1;0Y[29X[2XInfoHermitian[102X[32X info class[133X
+  
+  [33X[0;0YAn   infoclass   for   the   package.   Its   default   value   is  [22X0[122X.  With
+  [10XSetInfoLevel(InfoHermitian,2)[110X one can get some additional messages about the
+  ongoing computation of Hermitian curves and their codes.[133X
+  
+  [1X3.6-2 RestrictVectorSpace[101X
   
   [33X[1;0Y[29X[2XRestrictVectorSpace[102X( [3XV[103X, [3XF[103X ) [32X function[133X
   
   [33X[0;0YLet [22XK[122X be a field and [22XV[122X a linear subspace of [22XK^n[122X. The restriction of [3XV[103X to the
   field [3XF[103X is the intersection [22XV∩ F^n[122X.[133X
   
-  [1X3.6-2 UPolCoeffsToSmallFieldNC[101X
+  [1X3.6-3 UPolCoeffsToSmallFieldNC[101X
   
   [33X[1;0Y[29X[2XUPolCoeffsToSmallFieldNC[102X( [3Xf[103X, [3Xq[103X ) [32X function[133X
   
   [33X[0;0YThis  non-checking  function  returns  the same polynomial as [3Xf[103X, making sure
   that the coefficients are in [22XGF(q)[122X.[133X
   
-  [1X3.6-3 RandomVectorOfGivenWeight[101X
+  [1X3.6-4 RandomVectorOfGivenWeight[101X
   
   [33X[1;0Y[29X[2XRandomVectorOfGivenWeight[102X( [3XF[103X, [3Xn[103X, [3Xk[103X ) [32X function[133X
-  
-  [33X[0;0Yreturns a random vector of [22XF^n[122X of Hamming weight [22Xk[122X.[133X
+  [6XReturns:[106X  [33X[0;10YA random vector of [22XF^n[122X of Hamming weight [22Xk[122X.[133X
   
   [33X[1;0Y[29X[2XRandomVectorOfGivenDensity[102X( [3XF[103X, [3Xn[103X, [3Xdelta[103X ) [32X function[133X
-  
-  [33X[0;0Yreturns  a  random vector of [22XF^n[122X in which the density of nonzero elements is
-  approximatively [22Xδ[122X.[133X
+  [6XReturns:[106X  [33X[0;10YA random vector of [22XF^n[122X in which the density of nonzero elements is
+            approximatively [22Xδ[122X.[133X
   
   [33X[1;0Y[29X[2XRandomBinaryVectorOfGivenWeight[102X( [3Xn[103X, [3Xk[103X ) [32X function[133X
-  
-  [33X[0;0Yreturns a random vector of [22XGF(2)^n[122X of Hamming weight [22Xk[122X.[133X
+  [6XReturns:[106X  [33X[0;10YA random vector of [22XGF(2)^n[122X of Hamming weight [22Xk[122X.[133X
   
   [33X[1;0Y[29X[2XRandomBinaryVectorOfGivenDensity[102X( [3Xn[103X, [3Xdelta[103X ) [32X function[133X
-  
-  [33X[0;0Yreturns  a random vector of [22XGF(2)^n[122X in which the density of nonzero elements
-  is approximatively [22Xδ[122X.[133X
+  [6XReturns:[106X  [33X[0;10YA  random  vector  of  [22XGF(2)^n[122X  in  which  the  density of nonzero
+            elements is approximatively [22Xδ[122X.[133X
   

@@ -38,9 +38,10 @@ archive format. Installation using other archive formats is performed in a
 similar way.
 <P/>
 
-To install the &HERmitian; package, unpack the archive file, which  should
-have a name of form <C>HERmitian-<A>XXX</A>.tar.gz</C> for some version number 
-<A>XXX</A>, by typing
+To install the &HERmitian; package, download the package archive from the 
+<URL Text="package webpage">https://github.com/nagygp/Hermitian</URL>,
+unpack the archive file, which  should have a name of form 
+<C>HERmitian-<A>XXX</A>.tar.gz</C> for some version number <A>XXX</A>, by typing
 <P/>
 &nbsp;&nbsp;<C>gzip -dc HERmitian-<A>XXX</A>.tar.gz | tar xpv</C>
 <P/>

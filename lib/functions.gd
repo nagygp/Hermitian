@@ -46,11 +46,11 @@ DeclareCategory( "IsHermitianIndeterminate", IsPolynomial );
 ##  <ManSection>
 ##  <Oper Name="HermitianIndeterminate" Arg='F,s1,s2'/>
 ##  
-##  <Description>
-##  Returns a pair of indeterminates which are algebraically dependent by the
+##  <Returns>
+##  A pair of indeterminates which are algebraically dependent by the
 ##  equation <M>X^(q+1) = Y^q + Y</M>. <A>F</A> must be a finite field of
 ##  square order.
-##  </Description>
+##  </Returns>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
@@ -96,12 +96,12 @@ DeclareProperty( "IsHermitianPolynomial", IsRationalFunction );
 ##  <ManSection>
 ##  <Attr Name="IndeterminatesOfHermitianRatFunc" Arg='ratfn'/>
 ##  
-##  <Description>
-##  Returns the Hermitian indeterminates of the rational function <A>ratfn</A>.
+##  <Returns>
+##  The Hermitian indeterminates of the rational function <A>ratfn</A>.
 ##  Returns <C>fail</C> for non Hermitian input, and <C>[]</C> for constant polynomial.
 ##  This operation can be used to obtain the associated indeterminate of a
 ##  Hermitian indeterminate.
-##  </Description>
+##  </Returns>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##

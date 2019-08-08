@@ -13,15 +13,15 @@
 
 The following functions are available:
 
-<#Include Label="IsHermitian_Curve">
-
-<#Include Label="Hermitian_Curve">
-
-<#Include Label="IndeterminatesOfHermitian_Curve">
-
-<#Include Label="UnderlyingField_Curve">
-
-<#Include Label="RandomPlaceOfGivenDegreeOfHermitian_Curve">
+<#Include  Label="IsHermitian_Curve">
+<#Include  Label="Hermitian_Curve">
+<#Include  Label="IndeterminatesOfHermitian_Curve">
+<#Include  Label="Genus">
+<#Include  Label="UnderlyingField_Curve">
+<#Include  Label="AllRationalAffinePlacesOfHermitian_Curve">
+<#Include  Label="AllRationalPlacesOfHermitian_Curve">
+<#Include  Label="RandomRationalPlaceOfHermitian_Curve">
+<#Include  Label="RandomPlaceOfGivenDegreeOfHermitian_Curve">
 
 <Example>
 gap&gt; q:=5;
@@ -76,32 +76,24 @@ Hermitian_CurveAut([ [ Z(5)^0, Z(5^2)^11, Z(5^2)^19 ], [ Z(5^2)^20, Z(5^2)^16, Z
 The following functions are available:
 
 <#Include Label="IsHermitian_Divisor">
-
+<#Include Label="IsHermitian_Place">
 <#Include Label="Hermitian_DivisorConstruct">
-
+<#Include Label="IndeterminatesOfHermitian_Divisor">
 <#Include Label="Hermitian_Divisor">
-
 <#Include Label="Hermitian_Place">
-
 <#Include Label="ZeroHermitian_Divisor">
-
-<#Include Label="IsRationalHermitian_Divisor">
-
-<#Include Label="UnderlyingField_Div">
-
-<#Include Label="Support">
-
-<#Include Label="Valuation">
-
-<#Include Label="PrincipalHermitian_Divisor">
-
 <#Include Label="SupremumHermitian_Divisor">
-
 <#Include Label="InfimumHermitian_Divisor">
-
 <#Include Label="PositivePartOfHermitian_Divisor">
-
 <#Include Label="NegativePartOfHermitian_Divisor">
+<#Include Label="UnderlyingField_Div">
+<#Include Label="Support">
+<#Include Label="Valuation">
+<#Include Label="Value">
+<#Include Label="IsRationalHermitian_Divisor">
+<#Include Label="PrincipalHermitian_Divisor">
+<#Include Label="IsInfiniteHermitian_Place">
+
 
 <Example>
 gap&gt; p_infty:=Hermitian_Place(Hq,[infinity]);
@@ -180,19 +172,15 @@ true
 
 The following functions are available:
 
-<#Include Label="IsHermitian_Code">
-
-<#Include Label="GeneratorMatrixOfFunctionalHermitian_CodeNC">
-
-<#Include Label="Hermitian_FunctionalCode">
-
-<#Include Label="Hermitian_DifferentialCode">
-
-<#Include Label="Length_Code">
-
-<#Include Label="GeneratorMatrixOfHermitian_Code">
-
-<#Include Label="DesignedMinimumDistance">
+<#Include  Label="IsHermitian_Code">
+<#Include  Label="GeneratorMatrixOfFunctionalHermitian_CodeNC">
+<#Include  Label="Hermitian_FunctionalCode">
+<#Include  Label="Hermitian_DifferentialCode">
+<#Include  Label="UnderlyingCurveOfHermitian_Code">
+<#Include  Label="UnderlyingField_Code">
+<#Include  Label="Length_Code">
+<#Include  Label="GeneratorMatrixOfHermitian_Code">
+<#Include  Label="DesignedMinimumDistance">
 
 <Example>
 gap&gt; Hermitian_FunctionalCode(5*d);
@@ -300,6 +288,8 @@ true
 
 <Section Label="Utilities">
 <Heading>Utilities for Hermitian AG-codes</Heading>
+
+<#Include Label="InfoHermitian">
 
 <#Include Label="RestrictVectorSpace">
 

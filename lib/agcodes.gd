@@ -37,11 +37,11 @@ DeclareCategory( "IsHermitian_Code", IsVectorSpace );
 ##  <ManSection>
 ##  <Func Name="GeneratorMatrixOfFunctionalHermitian_CodeNC" Arg='G,pls'/>
 ##  
-##  <Description>
-##  returns the generator matrix of the functional AG code <M>C_L(D,G)</M>, where
+##  <Returns>
+##  The generator matrix of the functional AG code <M>C_L(D,G)</M>, where
 ##  <M>D</M> is the sum of the degree one places in the list <A>pls</A>. The support of 
 ##  <A>G</A> must be disjoint from <A>pls</A>.
-##  </Description>
+##  </Returns>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
@@ -57,8 +57,8 @@ DeclareGlobalFunction( "GeneratorMatrixOfFunctionalHermitian_CodeNC" );
 ##  <Oper Name="Hermitian_FunctionalCode" Arg='G,D'/>
 ##  <Oper Name="Hermitian_FunctionalCode" Arg='G'/>
 ##
-##  <Description>
-##  returns the functional AG code 
+##  <Returns>
+##  The functional AG code 
 ##  <M>C_L(D,G)=\{(f(P_1),\ldots,f(P_n)) \mid f\in L(G)\}.</M> 
 ##  <M>D</M> and <M>G</M> are rational divisors of the
 ##  Hermitian curve <M>H(q)</M>. <M>D=P_1+\cdots+P_n</M>, where <M>P_1,\ldots,P_n</M> are degree one places
@@ -66,7 +66,7 @@ DeclareGlobalFunction( "GeneratorMatrixOfFunctionalHermitian_CodeNC" );
 ##  sum of affine rational places of <M>H(q)</M>, not contained in the support of <M>G</M>. 
 ##  By the Riemann-Roch theorem, functional codes have dimension at least <M>\deg(G)+1-g</M>, 
 ##  with equality if <M>\deg(G)>2g-2</M>. 
-##  </Description>
+##  </Returns>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
@@ -83,8 +83,8 @@ DeclareOperation( "Hermitian_FunctionalCode", [IsHermitian_Divisor] );
 ##  <Oper Name="Hermitian_DifferentialCode" Arg='G,D'/>
 ##  <Oper Name="Hermitian_DifferentialCode" Arg='G'/>
 ##
-##  <Description>
-##  returns the differential AG code 
+##  <Returns>
+##  The differential AG code 
 ##  <M>C_\Omega(D,G) = \{res_{P_1}(\omega),\ldots,res_{P_n}(\omega) \mid \omega \in \Omega(G-D)\}.</M>
 ##  <M>D</M> and <M>G</M> are rational divisors of the
 ##  Hermitian curve <M>H(q)</M>. <M>D=P_1+\cdots+P_n</M>, where <M>P_1,\ldots,P_n</M> are degree one places
@@ -94,7 +94,7 @@ DeclareOperation( "Hermitian_FunctionalCode", [IsHermitian_Divisor] );
 ##  The differential code is the dual of the corresponding functional code. 
 ##  By the Riemann-Roch theorem, differential codes have dimension at least <M>n-\deg(G)-1+g</M>, 
 ##  with equality if <M>\deg(G)>2g-2</M>. 
-##  </Description>
+##  </Returns>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
@@ -111,9 +111,9 @@ DeclareOperation( "Hermitian_DifferentialCode", [IsHermitian_Divisor] );
 ##  <ManSection>
 ##  <Func Name="UnderlyingCurveOfHermitian_Code" Arg='C'/>
 ##
-##  <Description>
-##  returns the underlying Hermitian curve of the AG code <A>C</A>.
-##  </Description>
+##  <Returns>
+##  The underlying Hermitian curve of the AG code <A>C</A>.
+##  </Returns>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
@@ -143,9 +143,9 @@ DeclareAttribute( "UnderlyingField", IsHermitian_Code );
 ##  <ManSection>
 ##  <Attr Name="Length" Arg='C'/>
 ##  
-##  <Description>
-##  returns the length of the AG code <A>C</A>.
-##  </Description>
+##  <Returns>
+##  The length of the AG code <A>C</A>.
+##  </Returns>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
@@ -159,9 +159,9 @@ DeclareAttribute( "Length", IsHermitian_Code );
 ##  <ManSection>
 ##  <Attr Name="GeneratorMatrixOfHermitian_Code" Arg='C'/>
 ##  
-##  <Description>
-##  returns the generator matrix of the AG code <A>C</A> in <Package>CVEC</Package> matrix format.
-##  </Description>
+##  <Returns>
+##  The generator matrix of the AG code <A>C</A> in <Package>CVEC</Package> matrix format.
+##  </Returns>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
@@ -175,12 +175,12 @@ DeclareAttribute( "GeneratorMatrixOfHermitian_Code", IsHermitian_Code );
 ##  <ManSection>
 ##  <Attr Name="DesignedMinimumDistance" Arg='C'/>
 ##  
-##  <Description>
-##  returns the designed minimum distance <M>\delta</M> of the Hermitian AG code <A>C</A>. 
+##  <Returns>
+##  The designed minimum distance <M>\delta</M> of the Hermitian AG code <A>C</A>. 
 ##  When <M>\deg(G)\geq 2g-2</M>, then the general formulas for <M>\delta</M> are as follows. 
 ##  For the functional code <M>C_L(D,G)</M>, <M>\delta=n-\deg(G)</M>, and for the differential
 ##  code <M>C_\Omega(D,G)</M>, <M>\delta=\deg(G)-(2g-2)</M>. 
-##  </Description>
+##  </Returns>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##

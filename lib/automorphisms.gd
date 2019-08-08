@@ -38,7 +38,7 @@ Hermitian_CurveAutomorphismFamily:=NewFamily("Hermitian_CurveAutomorphismFam");
 ##  <Oper Name="Hermitian_CurveAutomorphism" Arg='Hq,mat'/>
 ##
 ##  <Returns>
-##  the automorphism of the Hermitian curve <M>H(q)</M>, given by the unitary matrix <A>mat</A>.
+##  The automorphism of the Hermitian curve <M>H(q)</M>, given by the unitary matrix <A>mat</A>.
 ##  </Returns>
 ##  </ManSection>
 ##  <#/GAPDoc>
@@ -60,12 +60,12 @@ DeclareSynonym("Hermitian_CurveAut",Hermitian_CurveAutomorphism);
 ##  
 ##  <Description>
 ##  The permutation action of <A>matgr</A> on the set of rational places of <A>Hq</A> is stored as
-##  a nice monomorphism of $G$.
+##  a nice monomorphism of <M>G</M>.
 ##  </Description>
 ##
 ##  <Oper Name="AutomorphismGroup" Arg='Hq'/>
 ##  <Returns>
-##  the automorphism group of the Hermitian curve <A>Hq</A>. The elements are Hermitian curve automorphisms. The
+##  The automorphism group of the Hermitian curve <A>Hq</A>. The elements are Hermitian curve automorphisms. The
 ##  group is isomorphic to <M>PPG(3,q)</M>, where <M>GF(q^2)</M> is the underlying field of <A>Hq</A>.
 ##  </Returns>
 ##  </ManSection>

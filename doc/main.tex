@@ -166,7 +166,7 @@ or an installation in a non-default location (see  (\textbf{Reference: GAP Root 
  Below we describe the installation procedure for the \texttt{.tar.gz} archive format. Installation using other archive formats is performed in a
 similar way. 
 
- To install the \textsf{HERmitian} package, unpack the archive file, which should have a name of form \texttt{HERmitian-\mbox{\texttt{\mdseries\slshape XXX}}.tar.gz} for some version number \mbox{\texttt{\mdseries\slshape XXX}}, by typing 
+ To install the \textsf{HERmitian} package, download the package archive from the \href{https://github.com/nagygp/Hermitian} {package webpage}, unpack the archive file, which should have a name of form \texttt{HERmitian-\mbox{\texttt{\mdseries\slshape XXX}}.tar.gz} for some version number \mbox{\texttt{\mdseries\slshape XXX}}, by typing 
 
  {\nobreakspace}{\nobreakspace}\texttt{gzip -dc HERmitian-\mbox{\texttt{\mdseries\slshape XXX}}.tar.gz | tar xpv} 
 
@@ -378,9 +378,10 @@ equation $X^{q+1} = Y^q + Y$. The base field of $H(q)$ is $GF(q^2)$. }
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{Hermitian{\textunderscore}Curve({\mdseries\slshape K, hratfn})\index{HermitianuScoreCurve@\texttt{Hermitian{\textunderscore}Curve}}
 \label{HermitianuScoreCurve}
 }\hfill{\scriptsize (operation)}}\\
+\textbf{\indent Returns:\ }
+ The corresponding Hermitian curve $H(q)$ over the algebraic closure of the field \mbox{\texttt{\mdseries\slshape K}}. The indeterminates $X,Y$ of \mbox{\texttt{\mdseries\slshape hratfn}} generate the corresponding Hermitian function field $K(X,Y)$ such that $X^{q+1} = Y^q + Y$. \mbox{\texttt{\mdseries\slshape K}} must be a finite field of square order. The points of $H(q)$ are either affine $P(a,b)$ satisfying $a^{q+1}=b^q+b$, or the infinite point \texttt{[ infinity ]}. One can use the \texttt{in} operation to test if a point lies on the Hermitian curve. 
 
-
- returns the corresponding Hermitian curve $H(q)$ over the algebraic closure of the field \mbox{\texttt{\mdseries\slshape K}}. The indeterminates $X,Y$ of \mbox{\texttt{\mdseries\slshape hratfn}} generate the corresponding Hermitian function field $K(X,Y)$ such that $X^{q+1} = Y^q + Y$. \mbox{\texttt{\mdseries\slshape K}} must be a finite field of square order. The points of $H(q)$ are either affine $P(a,b)$ satisfying $a^{q+1}=b^q+b$, or the infinite point \texttt{[ infinity ]}. One can use the \texttt{in} operation to test if a point lies on the Hermitian curve. }
+}
 
  
 
@@ -390,14 +391,27 @@ equation $X^{q+1} = Y^q + Y$. The base field of $H(q)$ is $GF(q^2)$. }
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{IndeterminatesOfHermitian{\textunderscore}Curve({\mdseries\slshape Hq})\index{IndeterminatesOfHermitianuScoreCurve@\texttt{Indeterminates}\-\texttt{Of}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Curve}}
 \label{IndeterminatesOfHermitianuScoreCurve}
 }\hfill{\scriptsize (function)}}\\
+\textbf{\indent Returns:\ }
+ The indeterminates of the function field of the Hermitian curve \mbox{\texttt{\mdseries\slshape C}}. 
+
+}
+
+ 
+
+\subsection{\textcolor{Chapter }{Genus}}
+\logpage{[ 3, 1, 4 ]}\nobreak
+\hyperdef{L}{X782B5219817D4816}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{Genus({\mdseries\slshape Hq})\index{Genus@\texttt{Genus}}
+\label{Genus}
+}\hfill{\scriptsize (attribute)}}\\
 
 
- returns the indeterminates of the function field of the Hermitian curve \mbox{\texttt{\mdseries\slshape C}}. }
+ The genus of the Hermitian curve $H(q)$ is $q(q-1)/2$. }
 
  
 
 \subsection{\textcolor{Chapter }{UnderlyingField}}
-\logpage{[ 3, 1, 4 ]}\nobreak
+\logpage{[ 3, 1, 5 ]}\nobreak
 \hyperdef{L}{X790470C48340E8F7}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{UnderlyingField({\mdseries\slshape Hq})\index{UnderlyingField@\texttt{UnderlyingField}}
 \label{UnderlyingField}
@@ -409,15 +423,56 @@ corresponding algebraic function field, it is a finite field of square order. }
 
  
 
+\subsection{\textcolor{Chapter }{AllRationalAffinePlacesOfHermitian{\textunderscore}Curve}}
+\logpage{[ 3, 1, 6 ]}\nobreak
+\hyperdef{L}{X7F4D50178151B0AF}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{AllRationalAffinePlacesOfHermitian{\textunderscore}Curve({\mdseries\slshape Hq})\index{AllRationalAffinePlacesOfHermitianuScoreCurve@\texttt{All}\-\texttt{Rational}\-\texttt{Affine}\-\texttt{Places}\-\texttt{Of}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Curve}}
+\label{AllRationalAffinePlacesOfHermitianuScoreCurve}
+}\hfill{\scriptsize (operation)}}\\
+\textbf{\indent Returns:\ }
+ All rational affine places of the Hermitian curve \mbox{\texttt{\mdseries\slshape Hq}}. The number of rational affine places of $H(q)$ is $q^3$. 
+
+}
+
+ 
+
+\subsection{\textcolor{Chapter }{AllRationalPlacesOfHermitian{\textunderscore}Curve}}
+\logpage{[ 3, 1, 7 ]}\nobreak
+\hyperdef{L}{X7DE5CB668347CD01}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{AllRationalPlacesOfHermitian{\textunderscore}Curve({\mdseries\slshape Hq})\index{AllRationalPlacesOfHermitianuScoreCurve@\texttt{All}\-\texttt{Rational}\-\texttt{Places}\-\texttt{Of}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Curve}}
+\label{AllRationalPlacesOfHermitianuScoreCurve}
+}\hfill{\scriptsize (operation)}}\\
+\textbf{\indent Returns:\ }
+ All rational places of the Hermitian curve \mbox{\texttt{\mdseries\slshape Hq}}. Here, a place is a 1-point divisor of degree one, that is, defined over $GF(q^2)$. Notice that the place at infinity is rational. The number of rational places
+of $H(q)$ is $q^3+1$. 
+
+}
+
+ 
+
+\subsection{\textcolor{Chapter }{RandomRationalPlaceOfHermitian{\textunderscore}Curve}}
+\logpage{[ 3, 1, 8 ]}\nobreak
+\hyperdef{L}{X84A7C34A87278295}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{RandomRationalPlaceOfHermitian{\textunderscore}Curve({\mdseries\slshape Hq})\index{RandomRationalPlaceOfHermitianuScoreCurve@\texttt{Random}\-\texttt{Rational}\-\texttt{Place}\-\texttt{Of}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Curve}}
+\label{RandomRationalPlaceOfHermitianuScoreCurve}
+}\hfill{\scriptsize (operation)}}\\
+\textbf{\indent Returns:\ }
+ A random rational place of the Hermitian curve \mbox{\texttt{\mdseries\slshape Hq}}. Here, a place is a 1-point divisor of degree one, that is, defined over $GF(q^2)$. Notice that the place at infinity is rational. 
+
+}
+
+ 
+
 \subsection{\textcolor{Chapter }{RandomPlaceOfGivenDegreeOfHermitian{\textunderscore}Curve}}
-\logpage{[ 3, 1, 5 ]}\nobreak
+\logpage{[ 3, 1, 9 ]}\nobreak
 \hyperdef{L}{X8095E4FA87ADE4EA}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{RandomPlaceOfGivenDegreeOfHermitian{\textunderscore}Curve({\mdseries\slshape Hq, d})\index{RandomPlaceOfGivenDegreeOfHermitianuScoreCurve@\texttt{Random}\-\texttt{Place}\-\texttt{Of}\-\texttt{Given}\-\texttt{Degree}\-\texttt{Of}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Curve}}
 \label{RandomPlaceOfGivenDegreeOfHermitianuScoreCurve}
 }\hfill{\scriptsize (operation)}}\\
+\textbf{\indent Returns:\ }
+ A random place of degree \mbox{\texttt{\mdseries\slshape d}} of the Hermitian curve \mbox{\texttt{\mdseries\slshape Hq}}, that is, a place defined over the field $GF(q^{2d})$. Notice that the place at infinity is has degree 1. 
 
-
- returns a random place of degree \mbox{\texttt{\mdseries\slshape d}} of the Hermitian curve \mbox{\texttt{\mdseries\slshape Hq}}, that is, a place defined over the field $GF(q^{2d})$. Notice that the place at infinity is has degree 1. }
+}
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -458,11 +513,11 @@ corresponding algebraic function field, it is a finite field of square order. }
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{FrobeniusAutomorphismOfHermitian{\textunderscore}Curve({\mdseries\slshape Hq})\index{FrobeniusAutomorphismOfHermitianuScoreCurve@\texttt{Frobenius}\-\texttt{Automorphism}\-\texttt{Of}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Curve}}
 \label{FrobeniusAutomorphismOfHermitianuScoreCurve}
 }\hfill{\scriptsize (attribute)}}\\
+\textbf{\indent Returns:\ }
+ The Frobenius automorphism of the underlying field of the Hermitian curve \mbox{\texttt{\mdseries\slshape Hq}}. More precisely, the output is an AC-Frobenius automorphism in the sense of
+the package \textsf{OnAlgClosure}, acting on the algebraic closure of the underlying finite field. 
 
-
- returns the Frobenius automorphism of the underlying field of the Hermitian
-curve \mbox{\texttt{\mdseries\slshape Hq}}. More precisely, the output is an AC-Frobenius automorphism in the sense of
-the package \textsf{OnAlgClosure}, acting on the algebraic closure of the underlying finite field. }
+}
 
  
 
@@ -485,7 +540,7 @@ the package \textsf{OnAlgClosure}, acting on the algebraic closure of the underl
 \label{HermitianuScoreCurveAutomorphism}
 }\hfill{\scriptsize (operation)}}\\
 \textbf{\indent Returns:\ }
- the automorphism of the Hermitian curve $H(q)$, given by the unitary matrix \mbox{\texttt{\mdseries\slshape mat}}. 
+ The automorphism of the Hermitian curve $H(q)$, given by the unitary matrix \mbox{\texttt{\mdseries\slshape mat}}. 
 
 }
 
@@ -501,11 +556,11 @@ the package \textsf{OnAlgClosure}, acting on the algebraic closure of the underl
 
 
 
- The permutation action of \mbox{\texttt{\mdseries\slshape matgr}} on the set of rational places of \mbox{\texttt{\mdseries\slshape Hq}} is stored as a nice monomorphism of \$G\$. \noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{AutomorphismGroup({\mdseries\slshape Hq})\index{AutomorphismGroup@\texttt{AutomorphismGroup}}
+ The permutation action of \mbox{\texttt{\mdseries\slshape matgr}} on the set of rational places of \mbox{\texttt{\mdseries\slshape Hq}} is stored as a nice monomorphism of $G$. \noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{AutomorphismGroup({\mdseries\slshape Hq})\index{AutomorphismGroup@\texttt{AutomorphismGroup}}
 \label{AutomorphismGroup}
 }\hfill{\scriptsize (operation)}}\\
 \textbf{\indent Returns:\ }
- the automorphism group of the Hermitian curve \mbox{\texttt{\mdseries\slshape Hq}}. The elements are Hermitian curve automorphisms. The group is isomorphic to $PPG(3,q)$, where $GF(q^2)$ is the underlying field of \mbox{\texttt{\mdseries\slshape Hq}}. 
+ The automorphism group of the Hermitian curve \mbox{\texttt{\mdseries\slshape Hq}}. The elements are Hermitian curve automorphisms. The group is isomorphic to $PPG(3,q)$, where $GF(q^2)$ is the underlying field of \mbox{\texttt{\mdseries\slshape Hq}}. 
 
 }
 
@@ -538,20 +593,47 @@ Hermitian curve $H(q):X^{q+1}=Y^q+Y$. Hermitian divisors form an additive commut
 
  
 
-\subsection{\textcolor{Chapter }{Hermitian{\textunderscore}DivisorConstruct}}
+\subsection{\textcolor{Chapter }{IsHermitian{\textunderscore}Place}}
 \logpage{[ 3, 3, 2 ]}\nobreak
+\hyperdef{L}{X879DE37E85114158}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{IsHermitian{\textunderscore}Place({\mdseries\slshape obj})\index{IsHermitianuScorePlace@\texttt{IsHermitian{\textunderscore}Place}}
+\label{IsHermitianuScorePlace}
+}\hfill{\scriptsize (filter)}}\\
+
+
+ In this implmementation, a Hermitian place is a Hermitian divisor of degree
+one and support length one. }
+
+ 
+
+\subsection{\textcolor{Chapter }{Hermitian{\textunderscore}DivisorConstruct}}
+\logpage{[ 3, 3, 3 ]}\nobreak
 \hyperdef{L}{X7C25E6A77FC66456}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{Hermitian{\textunderscore}DivisorConstruct({\mdseries\slshape Hq, pts, ords})\index{HermitianuScoreDivisorConstruct@\texttt{Hermitian{\textunderscore}}\-\texttt{Divisor}\-\texttt{Construct}}
 \label{HermitianuScoreDivisorConstruct}
 }\hfill{\scriptsize (function)}}\\
+\textbf{\indent Returns:\ }
+ The Hermitian divisor over \mbox{\texttt{\mdseries\slshape Hq}} with points from \mbox{\texttt{\mdseries\slshape pts}} and corresponding orders from \mbox{\texttt{\mdseries\slshape ords}}. It checks the input. 
 
+}
 
- returns the Hermitian divisor over \mbox{\texttt{\mdseries\slshape Hq}} with points from \mbox{\texttt{\mdseries\slshape pts}} and corresponding orders from \mbox{\texttt{\mdseries\slshape ords}}. It checks the input. }
+ 
+
+\subsection{\textcolor{Chapter }{IndeterminatesOfHermitian{\textunderscore}Divisor}}
+\logpage{[ 3, 3, 4 ]}\nobreak
+\hyperdef{L}{X8434A7A37E69FDC3}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{IndeterminatesOfHermitian{\textunderscore}Divisor({\mdseries\slshape D})\index{IndeterminatesOfHermitianuScoreDivisor@\texttt{Indeterminates}\-\texttt{Of}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Divisor}}
+\label{IndeterminatesOfHermitianuScoreDivisor}
+}\hfill{\scriptsize (function)}}\\
+\textbf{\indent Returns:\ }
+ The pair of indeterminates of the function field of the Hermitian divisor \mbox{\texttt{\mdseries\slshape D}}. 
+
+}
 
  
 
 \subsection{\textcolor{Chapter }{Hermitian{\textunderscore}Divisor}}
-\logpage{[ 3, 3, 3 ]}\nobreak
+\logpage{[ 3, 3, 5 ]}\nobreak
 \hyperdef{L}{X8522DFC37BA9FE9B}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{Hermitian{\textunderscore}Divisor({\mdseries\slshape Hq, pts, ords})\index{HermitianuScoreDivisor@\texttt{Hermitian{\textunderscore}Divisor}}
 \label{HermitianuScoreDivisor}
@@ -559,51 +641,93 @@ Hermitian curve $H(q):X^{q+1}=Y^q+Y$. Hermitian divisors form an additive commut
 \noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{Hermitian{\textunderscore}Divisor({\mdseries\slshape Hq, pairs})\index{HermitianuScoreDivisor@\texttt{Hermitian{\textunderscore}Divisor}}
 \label{HermitianuScoreDivisor}
 }\hfill{\scriptsize (operation)}}\\
+\textbf{\indent Returns:\ }
+ The corresponding Hermitian divisor over the Hermitian curve \mbox{\texttt{\mdseries\slshape Hq}}. The list \mbox{\texttt{\mdseries\slshape pts}} must be points of \mbox{\texttt{\mdseries\slshape Hq}}; the infinite point is \texttt{[ infinity ]}. The list \mbox{\texttt{\mdseries\slshape ords}} contains the respective orders. The elements of the list \mbox{\texttt{\mdseries\slshape pairs}} are the point-order pairs. 
 
-
- returns the corresponding Hermitian divisor over the Hermitian curve \mbox{\texttt{\mdseries\slshape Hq}}. The list \mbox{\texttt{\mdseries\slshape pts}} must be points of \mbox{\texttt{\mdseries\slshape Hq}}; the infinite point is \texttt{[ infinity ]}. The list \mbox{\texttt{\mdseries\slshape ords}} contains the respective orders. The elements of the list \mbox{\texttt{\mdseries\slshape pairs}} are the point-order pairs. }
+}
 
  
 
 \subsection{\textcolor{Chapter }{Hermitian{\textunderscore}Place}}
-\logpage{[ 3, 3, 4 ]}\nobreak
+\logpage{[ 3, 3, 6 ]}\nobreak
 \hyperdef{L}{X874B79D17AF7FD28}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{Hermitian{\textunderscore}Place({\mdseries\slshape Hq, pt})\index{HermitianuScorePlace@\texttt{Hermitian{\textunderscore}Place}}
 \label{HermitianuScorePlace}
 }\hfill{\scriptsize (operation)}}\\
+\textbf{\indent Returns:\ }
+ The corresponding place of the Hermitian curve \mbox{\texttt{\mdseries\slshape Hq}}, where \mbox{\texttt{\mdseries\slshape pt}} is either an affine point \mbox{\texttt{\mdseries\slshape Hq}}, or the infinite point is \texttt{[ infinity ]}. 
 
-
- returns the corresponding place of the Hermitian curve \mbox{\texttt{\mdseries\slshape Hq}}, where \mbox{\texttt{\mdseries\slshape pt}} is either an affine point \mbox{\texttt{\mdseries\slshape Hq}}, or the infinite point is \texttt{[ infinity ]}. }
+}
 
  
 
 \subsection{\textcolor{Chapter }{ZeroHermitian{\textunderscore}Divisor}}
-\logpage{[ 3, 3, 5 ]}\nobreak
+\logpage{[ 3, 3, 7 ]}\nobreak
 \hyperdef{L}{X7D106EB28504FFDD}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{ZeroHermitian{\textunderscore}Divisor({\mdseries\slshape Hq})\index{ZeroHermitianuScoreDivisor@\texttt{Zero}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Divisor}}
 \label{ZeroHermitianuScoreDivisor}
 }\hfill{\scriptsize (operation)}}\\
+\textbf{\indent Returns:\ }
+ The zero divisor over the Hermitian curve \mbox{\texttt{\mdseries\slshape Hq}}. 
 
-
- returns the zero divisor over the Hermitian curve \mbox{\texttt{\mdseries\slshape Hq}}. }
+}
 
  
 
-\subsection{\textcolor{Chapter }{IsRationalHermitian{\textunderscore}Divisor}}
-\logpage{[ 3, 3, 6 ]}\nobreak
-\hyperdef{L}{X8634CC3B79155E29}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{IsRationalHermitian{\textunderscore}Divisor({\mdseries\slshape D})\index{IsRationalHermitianuScoreDivisor@\texttt{IsRational}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Divisor}}
-\label{IsRationalHermitianuScoreDivisor}
-}\hfill{\scriptsize (attribute)}}\\
+\subsection{\textcolor{Chapter }{SupremumHermitian{\textunderscore}Divisor}}
+\logpage{[ 3, 3, 8 ]}\nobreak
+\hyperdef{L}{X85754A9B7AA29851}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{SupremumHermitian{\textunderscore}Divisor({\mdseries\slshape D1, D2})\index{SupremumHermitianuScoreDivisor@\texttt{Supremum}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Divisor}}
+\label{SupremumHermitianuScoreDivisor}
+}\hfill{\scriptsize (function)}}\\
+\textbf{\indent Returns:\ }
+ The place-wise maximum of the orders of \mbox{\texttt{\mdseries\slshape D1}} and \mbox{\texttt{\mdseries\slshape D2}}. 
 
+}
 
- Returns true if \mbox{\texttt{\mdseries\slshape D}} is invariant under the Frobenius automorphism of the underlying Hermitian
-curve. }
+ 
+
+\subsection{\textcolor{Chapter }{InfimumHermitian{\textunderscore}Divisor}}
+\logpage{[ 3, 3, 9 ]}\nobreak
+\hyperdef{L}{X7879FBF17B270989}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{InfimumHermitian{\textunderscore}Divisor({\mdseries\slshape D1, D2})\index{InfimumHermitianuScoreDivisor@\texttt{Infimum}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Divisor}}
+\label{InfimumHermitianuScoreDivisor}
+}\hfill{\scriptsize (function)}}\\
+\textbf{\indent Returns:\ }
+ The place-wise minimum of the orders of \mbox{\texttt{\mdseries\slshape D1}} and \mbox{\texttt{\mdseries\slshape D2}}. 
+
+}
+
+ 
+
+\subsection{\textcolor{Chapter }{PositivePartOfHermitian{\textunderscore}Divisor}}
+\logpage{[ 3, 3, 10 ]}\nobreak
+\hyperdef{L}{X7ACE607A7C753AC6}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{PositivePartOfHermitian{\textunderscore}Divisor({\mdseries\slshape D})\index{PositivePartOfHermitianuScoreDivisor@\texttt{Positive}\-\texttt{Part}\-\texttt{Of}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Divisor}}
+\label{PositivePartOfHermitianuScoreDivisor}
+}\hfill{\scriptsize (function)}}\\
+\textbf{\indent Returns:\ }
+ The positive part of the divisor \mbox{\texttt{\mdseries\slshape D}}. 
+
+}
+
+ 
+
+\subsection{\textcolor{Chapter }{NegativePartOfHermitian{\textunderscore}Divisor}}
+\logpage{[ 3, 3, 11 ]}\nobreak
+\hyperdef{L}{X78F4961F819285AC}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{NegativePartOfHermitian{\textunderscore}Divisor({\mdseries\slshape D})\index{NegativePartOfHermitianuScoreDivisor@\texttt{Negative}\-\texttt{Part}\-\texttt{Of}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Divisor}}
+\label{NegativePartOfHermitianuScoreDivisor}
+}\hfill{\scriptsize (function)}}\\
+\textbf{\indent Returns:\ }
+ The negative part of the divisor \mbox{\texttt{\mdseries\slshape D}}. 
+
+}
 
  
 
 \subsection{\textcolor{Chapter }{UnderlyingField}}
-\logpage{[ 3, 3, 7 ]}\nobreak
+\logpage{[ 3, 3, 12 ]}\nobreak
 \hyperdef{L}{X790470C48340E8F7}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{UnderlyingField({\mdseries\slshape D})\index{UnderlyingField@\texttt{UnderlyingField}}
 \label{UnderlyingField}
@@ -616,7 +740,7 @@ the corresponding Hermitian curve. }
  
 
 \subsection{\textcolor{Chapter }{Support}}
-\logpage{[ 3, 3, 8 ]}\nobreak
+\logpage{[ 3, 3, 13 ]}\nobreak
 \hyperdef{L}{X7B689C0284AC4296}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{Support({\mdseries\slshape D})\index{Support@\texttt{Support}}
 \label{Support}
@@ -628,7 +752,7 @@ the corresponding Hermitian curve. }
  
 
 \subsection{\textcolor{Chapter }{Valuation}}
-\logpage{[ 3, 3, 9 ]}\nobreak
+\logpage{[ 3, 3, 14 ]}\nobreak
 \hyperdef{L}{X80D67BB67A509A56}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{Valuation({\mdseries\slshape D, pt})\index{Valuation@\texttt{Valuation}}
 \label{Valuation}
@@ -639,63 +763,56 @@ the corresponding Hermitian curve. }
 
  
 
+\subsection{\textcolor{Chapter }{Value}}
+\logpage{[ 3, 3, 15 ]}\nobreak
+\hyperdef{L}{X7A70769C7F52CD2D}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{Value({\mdseries\slshape f, pl})\index{Value@\texttt{Value}}
+\label{Value}
+}\hfill{\scriptsize (operation)}}\\
+\textbf{\indent Returns:\ }
+ The value of a Hermitian rational function \mbox{\texttt{\mdseries\slshape f}} at the place \mbox{\texttt{\mdseries\slshape pl}}. 
+
+}
+
+ 
+
+\subsection{\textcolor{Chapter }{IsRationalHermitian{\textunderscore}Divisor}}
+\logpage{[ 3, 3, 16 ]}\nobreak
+\hyperdef{L}{X8634CC3B79155E29}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{IsRationalHermitian{\textunderscore}Divisor({\mdseries\slshape D})\index{IsRationalHermitianuScoreDivisor@\texttt{IsRational}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Divisor}}
+\label{IsRationalHermitianuScoreDivisor}
+}\hfill{\scriptsize (attribute)}}\\
+\textbf{\indent Returns:\ }
+ True if \mbox{\texttt{\mdseries\slshape D}} is invariant under the Frobenius automorphism of the underlying Hermitian
+curve. 
+
+}
+
+ 
+
 \subsection{\textcolor{Chapter }{PrincipalHermitian{\textunderscore}Divisor}}
-\logpage{[ 3, 3, 10 ]}\nobreak
+\logpage{[ 3, 3, 17 ]}\nobreak
 \hyperdef{L}{X7DBEBF4283238ABF}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{PrincipalHermitian{\textunderscore}Divisor({\mdseries\slshape Hq, f})\index{PrincipalHermitianuScoreDivisor@\texttt{Principal}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Divisor}}
 \label{PrincipalHermitianuScoreDivisor}
 }\hfill{\scriptsize (operation)}}\\
+\textbf{\indent Returns:\ }
+ The principal divisor of the rational function \mbox{\texttt{\mdseries\slshape f}} of the Hermitian curve \mbox{\texttt{\mdseries\slshape Hq}}. 
 
-
- returns the principal divisor of the rational function \mbox{\texttt{\mdseries\slshape f}} of the Hermitian curve \mbox{\texttt{\mdseries\slshape Hq}}. }
-
- 
-
-\subsection{\textcolor{Chapter }{SupremumHermitian{\textunderscore}Divisor}}
-\logpage{[ 3, 3, 11 ]}\nobreak
-\hyperdef{L}{X85754A9B7AA29851}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{SupremumHermitian{\textunderscore}Divisor({\mdseries\slshape D1, D2})\index{SupremumHermitianuScoreDivisor@\texttt{Supremum}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Divisor}}
-\label{SupremumHermitianuScoreDivisor}
-}\hfill{\scriptsize (function)}}\\
-
-
- returns the place-wise maximum of the orders of \mbox{\texttt{\mdseries\slshape D1}} and \mbox{\texttt{\mdseries\slshape D2}}. }
+}
 
  
 
-\subsection{\textcolor{Chapter }{InfimumHermitian{\textunderscore}Divisor}}
-\logpage{[ 3, 3, 12 ]}\nobreak
-\hyperdef{L}{X7879FBF17B270989}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{InfimumHermitian{\textunderscore}Divisor({\mdseries\slshape D1, D2})\index{InfimumHermitianuScoreDivisor@\texttt{Infimum}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Divisor}}
-\label{InfimumHermitianuScoreDivisor}
-}\hfill{\scriptsize (function)}}\\
+\subsection{\textcolor{Chapter }{IsInfiniteHermitian{\textunderscore}Place}}
+\logpage{[ 3, 3, 18 ]}\nobreak
+\hyperdef{L}{X7C9FA01C807341ED}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{IsInfiniteHermitian{\textunderscore}Place({\mdseries\slshape p})\index{IsInfiniteHermitianuScorePlace@\texttt{IsInfinite}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Place}}
+\label{IsInfiniteHermitianuScorePlace}
+}\hfill{\scriptsize (attribute)}}\\
+\textbf{\indent Returns:\ }
+ True if \mbox{\texttt{\mdseries\slshape p}} is a Hermitian place at the infinite line. 
 
-
- returns the place-wise minimum of the orders of \mbox{\texttt{\mdseries\slshape D1}} and \mbox{\texttt{\mdseries\slshape D2}}. }
-
- 
-
-\subsection{\textcolor{Chapter }{PositivePartOfHermitian{\textunderscore}Divisor}}
-\logpage{[ 3, 3, 13 ]}\nobreak
-\hyperdef{L}{X7ACE607A7C753AC6}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{PositivePartOfHermitian{\textunderscore}Divisor({\mdseries\slshape D})\index{PositivePartOfHermitianuScoreDivisor@\texttt{Positive}\-\texttt{Part}\-\texttt{Of}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Divisor}}
-\label{PositivePartOfHermitianuScoreDivisor}
-}\hfill{\scriptsize (function)}}\\
-
-
- returns the positive part of the divisor \mbox{\texttt{\mdseries\slshape D}}. }
-
- 
-
-\subsection{\textcolor{Chapter }{NegativePartOfHermitian{\textunderscore}Divisor}}
-\logpage{[ 3, 3, 14 ]}\nobreak
-\hyperdef{L}{X78F4961F819285AC}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{NegativePartOfHermitian{\textunderscore}Divisor({\mdseries\slshape D})\index{NegativePartOfHermitianuScoreDivisor@\texttt{Negative}\-\texttt{Part}\-\texttt{Of}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Divisor}}
-\label{NegativePartOfHermitianuScoreDivisor}
-}\hfill{\scriptsize (function)}}\\
-
-
- returns the negative part of the divisor \mbox{\texttt{\mdseries\slshape D}}. }
+}
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -741,9 +858,10 @@ the corresponding Hermitian curve. }
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{Hermitian{\textunderscore}RiemannRochSpaceBasis({\mdseries\slshape D})\index{HermitianuScoreRiemannRochSpaceBasis@\texttt{Hermitian{\textunderscore}}\-\texttt{Riemann}\-\texttt{Roch}\-\texttt{Space}\-\texttt{Basis}}
 \label{HermitianuScoreRiemannRochSpaceBasis}
 }\hfill{\scriptsize (function)}}\\
+\textbf{\indent Returns:\ }
+ A \textsc{basis} of the Riemann-Roch space of the Hermitian divisor \mbox{\texttt{\mdseries\slshape D}}, which is defined by $\{ f \in K[Y] \mid Div(f) \geq - D \}$. 
 
-
- returns a \textsc{basis} of the Riemann-Roch space of the Hermitian divisor \mbox{\texttt{\mdseries\slshape D}}, which is defined by $\{ f \in K[Y] \mid Div(f) \geq - D \}$. }
+}
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -812,9 +930,10 @@ curve of equation $X^{q+1}=Y^q+Y$. AG-codes are either of functional or of diffe
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{GeneratorMatrixOfFunctionalHermitian{\textunderscore}CodeNC({\mdseries\slshape G, pls})\index{GeneratorMatrixOfFunctionalHermitianuScoreCodeNC@\texttt{Generator}\-\texttt{Matrix}\-\texttt{Of}\-\texttt{Functional}\-\texttt{Hermitian{\textunderscore}}\-\texttt{CodeNC}}
 \label{GeneratorMatrixOfFunctionalHermitianuScoreCodeNC}
 }\hfill{\scriptsize (function)}}\\
+\textbf{\indent Returns:\ }
+ The generator matrix of the functional AG code $C_L(D,G)$, where $D$ is the sum of the degree one places in the list \mbox{\texttt{\mdseries\slshape pls}}. The support of \mbox{\texttt{\mdseries\slshape G}} must be disjoint from \mbox{\texttt{\mdseries\slshape pls}}. 
 
-
- returns the generator matrix of the functional AG code $C_L(D,G)$, where $D$ is the sum of the degree one places in the list \mbox{\texttt{\mdseries\slshape pls}}. The support of \mbox{\texttt{\mdseries\slshape G}} must be disjoint from \mbox{\texttt{\mdseries\slshape pls}}. }
+}
 
  
 
@@ -827,9 +946,10 @@ curve of equation $X^{q+1}=Y^q+Y$. AG-codes are either of functional or of diffe
 \noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{Hermitian{\textunderscore}FunctionalCode({\mdseries\slshape G})\index{HermitianuScoreFunctionalCode@\texttt{Hermitian{\textunderscore}}\-\texttt{Functional}\-\texttt{Code}}
 \label{HermitianuScoreFunctionalCode}
 }\hfill{\scriptsize (operation)}}\\
+\textbf{\indent Returns:\ }
+ The functional AG code $C_L(D,G)=\{(f(P_1),\ldots,f(P_n)) \mid f\in L(G)\}.$ $D$ and $G$ are rational divisors of the Hermitian curve $H(q)$. $D=P_1+\cdots+P_n$, where $P_1,\ldots,P_n$ are degree one places of $H(q)$. The supports of $D$ and $G$ are disjoint. If $D$ is not given then it is the sum of affine rational places of $H(q)$, not contained in the support of $G$. By the Riemann-Roch theorem, functional codes have dimension at least $\deg(G)+1-g$, with equality if $\deg(G)>2g-2$. 
 
-
- returns the functional AG code $C_L(D,G)=\{(f(P_1),\ldots,f(P_n)) \mid f\in L(G)\}.$ $D$ and $G$ are rational divisors of the Hermitian curve $H(q)$. $D=P_1+\cdots+P_n$, where $P_1,\ldots,P_n$ are degree one places of $H(q)$. The supports of $D$ and $G$ are disjoint. If $D$ is not given then it is the sum of affine rational places of $H(q)$, not contained in the support of $G$. By the Riemann-Roch theorem, functional codes have dimension at least $\deg(G)+1-g$, with equality if $\deg(G)>2g-2$. }
+}
 
  
 
@@ -842,47 +962,76 @@ curve of equation $X^{q+1}=Y^q+Y$. AG-codes are either of functional or of diffe
 \noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{Hermitian{\textunderscore}DifferentialCode({\mdseries\slshape G})\index{HermitianuScoreDifferentialCode@\texttt{Hermitian{\textunderscore}}\-\texttt{Differential}\-\texttt{Code}}
 \label{HermitianuScoreDifferentialCode}
 }\hfill{\scriptsize (operation)}}\\
-
-
- returns the differential AG code $C_\Omega(D,G) = \{res_{P_1}(\omega),\ldots,res_{P_n}(\omega) \mid \omega \in
+\textbf{\indent Returns:\ }
+ The differential AG code $C_\Omega(D,G) = \{res_{P_1}(\omega),\ldots,res_{P_n}(\omega) \mid \omega \in
 \Omega(G-D)\}.$ $D$ and $G$ are rational divisors of the Hermitian curve $H(q)$. $D=P_1+\cdots+P_n$, where $P_1,\ldots,P_n$ are degree one places of $H(q)$. The supports of $D$ and $G$ are disjoint. If $D$ is not given then it is the sum of affine rational places of $H(q)$, not contained in the support of $G$. By the Riemann-Roch theorem, functional codes have dimension $\deg(G)+1-g$. The differential code is the dual of the corresponding functional code. By
-the Riemann-Roch theorem, differential codes have dimension at least $n-\deg(G)-1+g$, with equality if $\deg(G)>2g-2$. }
+the Riemann-Roch theorem, differential codes have dimension at least $n-\deg(G)-1+g$, with equality if $\deg(G)>2g-2$. 
+
+}
+
+ 
+
+\subsection{\textcolor{Chapter }{UnderlyingCurveOfHermitian{\textunderscore}Code}}
+\logpage{[ 3, 5, 5 ]}\nobreak
+\hyperdef{L}{X84EF4A3F84C8E759}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{UnderlyingCurveOfHermitian{\textunderscore}Code({\mdseries\slshape C})\index{UnderlyingCurveOfHermitianuScoreCode@\texttt{Underlying}\-\texttt{Curve}\-\texttt{Of}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Code}}
+\label{UnderlyingCurveOfHermitianuScoreCode}
+}\hfill{\scriptsize (function)}}\\
+\textbf{\indent Returns:\ }
+ The underlying Hermitian curve of the AG code \mbox{\texttt{\mdseries\slshape C}}. 
+
+}
+
+ 
+
+\subsection{\textcolor{Chapter }{UnderlyingField}}
+\logpage{[ 3, 5, 6 ]}\nobreak
+\hyperdef{L}{X790470C48340E8F7}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{UnderlyingField({\mdseries\slshape C})\index{UnderlyingField@\texttt{UnderlyingField}}
+\label{UnderlyingField}
+}\hfill{\scriptsize (attribute)}}\\
+
+
+ The underlying field of an AG code is its left acting domain. }
 
  
 
 \subsection{\textcolor{Chapter }{Length}}
-\logpage{[ 3, 5, 5 ]}\nobreak
+\logpage{[ 3, 5, 7 ]}\nobreak
 \hyperdef{L}{X780769238600AFD1}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{Length({\mdseries\slshape C})\index{Length@\texttt{Length}}
 \label{Length}
 }\hfill{\scriptsize (attribute)}}\\
+\textbf{\indent Returns:\ }
+ The length of the AG code \mbox{\texttt{\mdseries\slshape C}}. 
 
-
- returns the length of the AG code \mbox{\texttt{\mdseries\slshape C}}. }
+}
 
  
 
 \subsection{\textcolor{Chapter }{GeneratorMatrixOfHermitian{\textunderscore}Code}}
-\logpage{[ 3, 5, 6 ]}\nobreak
+\logpage{[ 3, 5, 8 ]}\nobreak
 \hyperdef{L}{X839F5C6085C27928}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{GeneratorMatrixOfHermitian{\textunderscore}Code({\mdseries\slshape C})\index{GeneratorMatrixOfHermitianuScoreCode@\texttt{Generator}\-\texttt{Matrix}\-\texttt{Of}\-\texttt{Hermitian{\textunderscore}}\-\texttt{Code}}
 \label{GeneratorMatrixOfHermitianuScoreCode}
 }\hfill{\scriptsize (attribute)}}\\
+\textbf{\indent Returns:\ }
+ The generator matrix of the AG code \mbox{\texttt{\mdseries\slshape C}} in \textsf{CVEC} matrix format. 
 
-
- returns the generator matrix of the AG code \mbox{\texttt{\mdseries\slshape C}} in \textsf{CVEC} matrix format. }
+}
 
  
 
 \subsection{\textcolor{Chapter }{DesignedMinimumDistance}}
-\logpage{[ 3, 5, 7 ]}\nobreak
+\logpage{[ 3, 5, 9 ]}\nobreak
 \hyperdef{L}{X84EB7DAF7DB9DB9F}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{DesignedMinimumDistance({\mdseries\slshape C})\index{DesignedMinimumDistance@\texttt{DesignedMinimumDistance}}
 \label{DesignedMinimumDistance}
 }\hfill{\scriptsize (attribute)}}\\
+\textbf{\indent Returns:\ }
+ The designed minimum distance $\delta$ of the Hermitian AG code \mbox{\texttt{\mdseries\slshape C}}. When $\deg(G)\geq 2g-2$, then the general formulas for $\delta$ are as follows. For the functional code $C_L(D,G)$, $\delta=n-\deg(G)$, and for the differential code $C_\Omega(D,G)$, $\delta=\deg(G)-(2g-2)$. 
 
-
- returns the designed minimum distance $\delta$ of the Hermitian AG code \mbox{\texttt{\mdseries\slshape C}}. When $\deg(G)\geq 2g-2$, then the general formulas for $\delta$ are as follows. For the functional code $C_L(D,G)$, $\delta=n-\deg(G)$, and for the differential code $C_\Omega(D,G)$, $\delta=\deg(G)-(2g-2)$. }
+}
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -933,7 +1082,7 @@ the Riemann-Roch theorem, differential codes have dimension at least $n-\deg(G)-
  
 
 \subsection{\textcolor{Chapter }{Hermitian{\textunderscore}DecodeToCodeword}}
-\logpage{[ 3, 5, 8 ]}\nobreak
+\logpage{[ 3, 5, 10 ]}\nobreak
 \hyperdef{L}{X86ED0E6E799550B2}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{Hermitian{\textunderscore}DecodeToCodeword({\mdseries\slshape C, w})\index{HermitianuScoreDecodeToCodeword@\texttt{Hermitian{\textunderscore}}\-\texttt{Decode}\-\texttt{To}\-\texttt{Codeword}}
 \label{HermitianuScoreDecodeToCodeword}
@@ -1007,8 +1156,21 @@ decoding consists of solving linear equations. }
 {
   
 
-\subsection{\textcolor{Chapter }{RestrictVectorSpace}}
+\subsection{\textcolor{Chapter }{InfoHermitian}}
 \logpage{[ 3, 6, 1 ]}\nobreak
+\hyperdef{L}{X80969C167CA2D6C7}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{InfoHermitian\index{InfoHermitian@\texttt{InfoHermitian}}
+\label{InfoHermitian}
+}\hfill{\scriptsize (info class)}}\\
+
+
+ An infoclass for the package. Its default value is $0$. With \texttt{SetInfoLevel(InfoHermitian,2)} one can get some additional messages about the ongoing computation of
+Hermitian curves and their codes. }
+
+ 
+
+\subsection{\textcolor{Chapter }{RestrictVectorSpace}}
+\logpage{[ 3, 6, 2 ]}\nobreak
 \hyperdef{L}{X853BF1BC7F6462B8}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{RestrictVectorSpace({\mdseries\slshape V, F})\index{RestrictVectorSpace@\texttt{RestrictVectorSpace}}
 \label{RestrictVectorSpace}
@@ -1020,7 +1182,7 @@ decoding consists of solving linear equations. }
  
 
 \subsection{\textcolor{Chapter }{UPolCoeffsToSmallFieldNC}}
-\logpage{[ 3, 6, 2 ]}\nobreak
+\logpage{[ 3, 6, 3 ]}\nobreak
 \hyperdef{L}{X8596810487A72298}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{UPolCoeffsToSmallFieldNC({\mdseries\slshape f, q})\index{UPolCoeffsToSmallFieldNC@\texttt{UPolCoeffsToSmallFieldNC}}
 \label{UPolCoeffsToSmallFieldNC}
@@ -1032,29 +1194,33 @@ decoding consists of solving linear equations. }
  
 
 \subsection{\textcolor{Chapter }{RandomVectorOfGivenWeight}}
-\logpage{[ 3, 6, 3 ]}\nobreak
+\logpage{[ 3, 6, 4 ]}\nobreak
 \hyperdef{L}{X7D6980057AF64327}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{RandomVectorOfGivenWeight({\mdseries\slshape F, n, k})\index{RandomVectorOfGivenWeight@\texttt{RandomVectorOfGivenWeight}}
 \label{RandomVectorOfGivenWeight}
 }\hfill{\scriptsize (function)}}\\
+\textbf{\indent Returns:\ }
+ A random vector of $F^n$ of Hamming weight $k$. 
 
-
- returns a random vector of $F^n$ of Hamming weight $k$. \noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{RandomVectorOfGivenDensity({\mdseries\slshape F, n, delta})\index{RandomVectorOfGivenDensity@\texttt{RandomVectorOfGivenDensity}}
+\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{RandomVectorOfGivenDensity({\mdseries\slshape F, n, delta})\index{RandomVectorOfGivenDensity@\texttt{RandomVectorOfGivenDensity}}
 \label{RandomVectorOfGivenDensity}
 }\hfill{\scriptsize (function)}}\\
+\textbf{\indent Returns:\ }
+ A random vector of $F^n$ in which the density of nonzero elements is approximatively $\delta$. 
 
-
- returns a random vector of $F^n$ in which the density of nonzero elements is approximatively $\delta$. \noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{RandomBinaryVectorOfGivenWeight({\mdseries\slshape n, k})\index{RandomBinaryVectorOfGivenWeight@\texttt{RandomBinaryVectorOfGivenWeight}}
+\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{RandomBinaryVectorOfGivenWeight({\mdseries\slshape n, k})\index{RandomBinaryVectorOfGivenWeight@\texttt{RandomBinaryVectorOfGivenWeight}}
 \label{RandomBinaryVectorOfGivenWeight}
 }\hfill{\scriptsize (function)}}\\
+\textbf{\indent Returns:\ }
+ A random vector of $GF(2)^n$ of Hamming weight $k$. 
 
-
- returns a random vector of $GF(2)^n$ of Hamming weight $k$. \noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{RandomBinaryVectorOfGivenDensity({\mdseries\slshape n, delta})\index{RandomBinaryVectorOfGivenDensity@\texttt{RandomBinaryVectorOfGivenDensity}}
+\noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{RandomBinaryVectorOfGivenDensity({\mdseries\slshape n, delta})\index{RandomBinaryVectorOfGivenDensity@\texttt{RandomBinaryVectorOfGivenDensity}}
 \label{RandomBinaryVectorOfGivenDensity}
 }\hfill{\scriptsize (function)}}\\
+\textbf{\indent Returns:\ }
+ A random vector of $GF(2)^n$ in which the density of nonzero elements is approximatively $\delta$. 
 
-
- returns a random vector of $GF(2)^n$ in which the density of nonzero elements is approximatively $\delta$. }
+}
 
  }
 

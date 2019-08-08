@@ -15,10 +15,10 @@
 ##  <ManSection>
 ##  <Func Name="PrincipalHermitian_Divisor" Arg='Hq,f'/>
 ##
-##  <Description>
-##  returns the principal divisor of the rational function <A>f</A> of the
+##  <Returns>
+##  The principal divisor of the rational function <A>f</A> of the
 ##  Hermitian curve <A>C</A>.
-##  </Description>
+##  </Returns>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##

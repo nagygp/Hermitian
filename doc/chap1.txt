@@ -26,8 +26,10 @@
   [33X[0;0YBelow we describe the installation procedure for the [11X.tar.gz[111X archive format.
   Installation using other archive formats is performed in a similar way.[133X
   
-  [33X[0;0YTo install the [5XHERmitian[105X package, unpack the archive file, which should have
-  a name of form [10XHERmitian-[3XXXX[103X[10X.tar.gz[110X for some version number [3XXXX[103X, by typing[133X
+  [33X[0;0YTo  install  the  [5XHERmitian[105X  package,  download the package archive from the
+  package  webpage  ([7Xhttps://github.com/nagygp/Hermitian[107X),  unpack the archive
+  file, which should have a name of form [10XHERmitian-[3XXXX[103X[10X.tar.gz[110X for some version
+  number [3XXXX[103X, by typing[133X
   
   [33X[0;0Y  [10Xgzip -dc HERmitian-[3XXXX[103X[10X.tar.gz | tar xpv[110X[133X
   

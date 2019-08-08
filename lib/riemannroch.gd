@@ -15,11 +15,11 @@
 ##  <ManSection>
 ##  <Func Name="Hermitian_RiemannRochSpaceBasis" Arg='D'/>
 ##
-##  <Description>
-##  returns a <B>basis</B> of the Riemann-Roch space of the Hermitian divisor 
+##  <Returns>
+##  A <B>basis</B> of the Riemann-Roch space of the Hermitian divisor 
 ##  <A>D</A>, which is defined by <M>\{ f \in K[Y] \mid Div(f) \geq - D \}</M>. 
 ##  
-##  </Description>
+##  </Returns>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##

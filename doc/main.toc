@@ -14,43 +14,54 @@
 \contentsline {subsection}{\numberline {3.1.1}\leavevmode {\color {Chapter }IsHermitian{\textunderscore }Curve}}{10}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}\leavevmode {\color {Chapter }Hermitian{\textunderscore }Curve}}{10}{subsection.3.1.2}
 \contentsline {subsection}{\numberline {3.1.3}\leavevmode {\color {Chapter }IndeterminatesOfHermitian{\textunderscore }Curve}}{10}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4}\leavevmode {\color {Chapter }UnderlyingField}}{10}{subsection.3.1.4}
-\contentsline {subsection}{\numberline {3.1.5}\leavevmode {\color {Chapter }RandomPlaceOfGivenDegreeOfHermitian{\textunderscore }Curve}}{11}{subsection.3.1.5}
-\contentsline {section}{\numberline {3.2}\leavevmode {\color {Chapter }Automorphisms of Hermitian curves}}{11}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}\leavevmode {\color {Chapter }FrobeniusAutomorphismOfHermitian{\textunderscore }Curve}}{11}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}\leavevmode {\color {Chapter }IsHermitian{\textunderscore }CurveAutomorphism}}{11}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.1.4}\leavevmode {\color {Chapter }Genus}}{10}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}\leavevmode {\color {Chapter }UnderlyingField}}{10}{subsection.3.1.5}
+\contentsline {subsection}{\numberline {3.1.6}\leavevmode {\color {Chapter }AllRationalAffinePlacesOfHermitian{\textunderscore }Curve}}{11}{subsection.3.1.6}
+\contentsline {subsection}{\numberline {3.1.7}\leavevmode {\color {Chapter }AllRationalPlacesOfHermitian{\textunderscore }Curve}}{11}{subsection.3.1.7}
+\contentsline {subsection}{\numberline {3.1.8}\leavevmode {\color {Chapter }RandomRationalPlaceOfHermitian{\textunderscore }Curve}}{11}{subsection.3.1.8}
+\contentsline {subsection}{\numberline {3.1.9}\leavevmode {\color {Chapter }RandomPlaceOfGivenDegreeOfHermitian{\textunderscore }Curve}}{11}{subsection.3.1.9}
+\contentsline {section}{\numberline {3.2}\leavevmode {\color {Chapter }Automorphisms of Hermitian curves}}{12}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}\leavevmode {\color {Chapter }FrobeniusAutomorphismOfHermitian{\textunderscore }Curve}}{12}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}\leavevmode {\color {Chapter }IsHermitian{\textunderscore }CurveAutomorphism}}{12}{subsection.3.2.2}
 \contentsline {subsection}{\numberline {3.2.3}\leavevmode {\color {Chapter }Hermitian{\textunderscore }CurveAutomorphism}}{12}{subsection.3.2.3}
 \contentsline {subsection}{\numberline {3.2.4}\leavevmode {\color {Chapter }AutomorphismGroup}}{12}{subsection.3.2.4}
 \contentsline {section}{\numberline {3.3}\leavevmode {\color {Chapter }Hermitian divisors}}{12}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}\leavevmode {\color {Chapter }IsHermitian{\textunderscore }Divisor}}{12}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}\leavevmode {\color {Chapter }Hermitian{\textunderscore }DivisorConstruct}}{12}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}\leavevmode {\color {Chapter }Hermitian{\textunderscore }Divisor}}{12}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}\leavevmode {\color {Chapter }Hermitian{\textunderscore }Place}}{13}{subsection.3.3.4}
-\contentsline {subsection}{\numberline {3.3.5}\leavevmode {\color {Chapter }ZeroHermitian{\textunderscore }Divisor}}{13}{subsection.3.3.5}
-\contentsline {subsection}{\numberline {3.3.6}\leavevmode {\color {Chapter }IsRationalHermitian{\textunderscore }Divisor}}{13}{subsection.3.3.6}
-\contentsline {subsection}{\numberline {3.3.7}\leavevmode {\color {Chapter }UnderlyingField}}{13}{subsection.3.3.7}
-\contentsline {subsection}{\numberline {3.3.8}\leavevmode {\color {Chapter }Support}}{13}{subsection.3.3.8}
-\contentsline {subsection}{\numberline {3.3.9}\leavevmode {\color {Chapter }Valuation}}{13}{subsection.3.3.9}
-\contentsline {subsection}{\numberline {3.3.10}\leavevmode {\color {Chapter }PrincipalHermitian{\textunderscore }Divisor}}{13}{subsection.3.3.10}
-\contentsline {subsection}{\numberline {3.3.11}\leavevmode {\color {Chapter }SupremumHermitian{\textunderscore }Divisor}}{14}{subsection.3.3.11}
-\contentsline {subsection}{\numberline {3.3.12}\leavevmode {\color {Chapter }InfimumHermitian{\textunderscore }Divisor}}{14}{subsection.3.3.12}
-\contentsline {subsection}{\numberline {3.3.13}\leavevmode {\color {Chapter }PositivePartOfHermitian{\textunderscore }Divisor}}{14}{subsection.3.3.13}
-\contentsline {subsection}{\numberline {3.3.14}\leavevmode {\color {Chapter }NegativePartOfHermitian{\textunderscore }Divisor}}{14}{subsection.3.3.14}
+\contentsline {subsection}{\numberline {3.3.2}\leavevmode {\color {Chapter }IsHermitian{\textunderscore }Place}}{13}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}\leavevmode {\color {Chapter }Hermitian{\textunderscore }DivisorConstruct}}{13}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}\leavevmode {\color {Chapter }IndeterminatesOfHermitian{\textunderscore }Divisor}}{13}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}\leavevmode {\color {Chapter }Hermitian{\textunderscore }Divisor}}{13}{subsection.3.3.5}
+\contentsline {subsection}{\numberline {3.3.6}\leavevmode {\color {Chapter }Hermitian{\textunderscore }Place}}{13}{subsection.3.3.6}
+\contentsline {subsection}{\numberline {3.3.7}\leavevmode {\color {Chapter }ZeroHermitian{\textunderscore }Divisor}}{13}{subsection.3.3.7}
+\contentsline {subsection}{\numberline {3.3.8}\leavevmode {\color {Chapter }SupremumHermitian{\textunderscore }Divisor}}{13}{subsection.3.3.8}
+\contentsline {subsection}{\numberline {3.3.9}\leavevmode {\color {Chapter }InfimumHermitian{\textunderscore }Divisor}}{13}{subsection.3.3.9}
+\contentsline {subsection}{\numberline {3.3.10}\leavevmode {\color {Chapter }PositivePartOfHermitian{\textunderscore }Divisor}}{14}{subsection.3.3.10}
+\contentsline {subsection}{\numberline {3.3.11}\leavevmode {\color {Chapter }NegativePartOfHermitian{\textunderscore }Divisor}}{14}{subsection.3.3.11}
+\contentsline {subsection}{\numberline {3.3.12}\leavevmode {\color {Chapter }UnderlyingField}}{14}{subsection.3.3.12}
+\contentsline {subsection}{\numberline {3.3.13}\leavevmode {\color {Chapter }Support}}{14}{subsection.3.3.13}
+\contentsline {subsection}{\numberline {3.3.14}\leavevmode {\color {Chapter }Valuation}}{14}{subsection.3.3.14}
+\contentsline {subsection}{\numberline {3.3.15}\leavevmode {\color {Chapter }Value}}{14}{subsection.3.3.15}
+\contentsline {subsection}{\numberline {3.3.16}\leavevmode {\color {Chapter }IsRationalHermitian{\textunderscore }Divisor}}{14}{subsection.3.3.16}
+\contentsline {subsection}{\numberline {3.3.17}\leavevmode {\color {Chapter }PrincipalHermitian{\textunderscore }Divisor}}{14}{subsection.3.3.17}
+\contentsline {subsection}{\numberline {3.3.18}\leavevmode {\color {Chapter }IsInfiniteHermitian{\textunderscore }Place}}{15}{subsection.3.3.18}
 \contentsline {section}{\numberline {3.4}\leavevmode {\color {Chapter }Hermitian Riemann-Roch spaces}}{15}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}\leavevmode {\color {Chapter }Hermitian{\textunderscore }RiemannRochSpaceBasis}}{15}{subsection.3.4.1}
-\contentsline {section}{\numberline {3.5}\leavevmode {\color {Chapter }Hermitian AG-codes}}{15}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}\leavevmode {\color {Chapter }IsHermitian{\textunderscore }Code}}{15}{subsection.3.5.1}
+\contentsline {section}{\numberline {3.5}\leavevmode {\color {Chapter }Hermitian AG-codes}}{16}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}\leavevmode {\color {Chapter }IsHermitian{\textunderscore }Code}}{16}{subsection.3.5.1}
 \contentsline {subsection}{\numberline {3.5.2}\leavevmode {\color {Chapter }GeneratorMatrixOfFunctionalHermitian{\textunderscore }CodeNC}}{16}{subsection.3.5.2}
 \contentsline {subsection}{\numberline {3.5.3}\leavevmode {\color {Chapter }Hermitian{\textunderscore }FunctionalCode}}{16}{subsection.3.5.3}
-\contentsline {subsection}{\numberline {3.5.4}\leavevmode {\color {Chapter }Hermitian{\textunderscore }DifferentialCode}}{16}{subsection.3.5.4}
-\contentsline {subsection}{\numberline {3.5.5}\leavevmode {\color {Chapter }Length}}{16}{subsection.3.5.5}
-\contentsline {subsection}{\numberline {3.5.6}\leavevmode {\color {Chapter }GeneratorMatrixOfHermitian{\textunderscore }Code}}{16}{subsection.3.5.6}
-\contentsline {subsection}{\numberline {3.5.7}\leavevmode {\color {Chapter }DesignedMinimumDistance}}{17}{subsection.3.5.7}
-\contentsline {subsection}{\numberline {3.5.8}\leavevmode {\color {Chapter }Hermitian{\textunderscore }DecodeToCodeword}}{18}{subsection.3.5.8}
+\contentsline {subsection}{\numberline {3.5.4}\leavevmode {\color {Chapter }Hermitian{\textunderscore }DifferentialCode}}{17}{subsection.3.5.4}
+\contentsline {subsection}{\numberline {3.5.5}\leavevmode {\color {Chapter }UnderlyingCurveOfHermitian{\textunderscore }Code}}{17}{subsection.3.5.5}
+\contentsline {subsection}{\numberline {3.5.6}\leavevmode {\color {Chapter }UnderlyingField}}{17}{subsection.3.5.6}
+\contentsline {subsection}{\numberline {3.5.7}\leavevmode {\color {Chapter }Length}}{17}{subsection.3.5.7}
+\contentsline {subsection}{\numberline {3.5.8}\leavevmode {\color {Chapter }GeneratorMatrixOfHermitian{\textunderscore }Code}}{17}{subsection.3.5.8}
+\contentsline {subsection}{\numberline {3.5.9}\leavevmode {\color {Chapter }DesignedMinimumDistance}}{17}{subsection.3.5.9}
+\contentsline {subsection}{\numberline {3.5.10}\leavevmode {\color {Chapter }Hermitian{\textunderscore }DecodeToCodeword}}{18}{subsection.3.5.10}
 \contentsline {section}{\numberline {3.6}\leavevmode {\color {Chapter }Utilities for Hermitian AG-codes}}{19}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}\leavevmode {\color {Chapter }RestrictVectorSpace}}{19}{subsection.3.6.1}
-\contentsline {subsection}{\numberline {3.6.2}\leavevmode {\color {Chapter }UPolCoeffsToSmallFieldNC}}{19}{subsection.3.6.2}
-\contentsline {subsection}{\numberline {3.6.3}\leavevmode {\color {Chapter }RandomVectorOfGivenWeight}}{19}{subsection.3.6.3}
-\contentsline {chapter}{\numberline {4}\leavevmode {\color {Chapter }An example: BCH type codes as Hermitian AG codes (???)}}{20}{chapter.4}
-\contentsline {chapter}{References}{21}{chapter*.4}
-\contentsline {chapter}{Index}{22}{section*.5}
+\contentsline {subsection}{\numberline {3.6.1}\leavevmode {\color {Chapter }InfoHermitian}}{19}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}\leavevmode {\color {Chapter }RestrictVectorSpace}}{20}{subsection.3.6.2}
+\contentsline {subsection}{\numberline {3.6.3}\leavevmode {\color {Chapter }UPolCoeffsToSmallFieldNC}}{20}{subsection.3.6.3}
+\contentsline {subsection}{\numberline {3.6.4}\leavevmode {\color {Chapter }RandomVectorOfGivenWeight}}{20}{subsection.3.6.4}
+\contentsline {chapter}{\numberline {4}\leavevmode {\color {Chapter }An example: BCH type codes as Hermitian AG codes (???)}}{21}{chapter.4}
+\contentsline {chapter}{References}{22}{chapter*.4}
+\contentsline {chapter}{Index}{23}{section*.5}

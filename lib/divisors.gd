@@ -33,7 +33,7 @@ DeclareCategory( "IsHermitian_Divisor", IsAdditiveElementWithInverse and IsExtLE
 ##  <Filt Name="IsHermitian_Place" Arg='obj'/>
 ##
 ##  <Description>
-##  In this implmementation, a Hermitian place is a Hermitian divisor degree and support length one.
+##  In this implmementation, a Hermitian place is a Hermitian divisor of degree one and support length one.
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
@@ -48,6 +48,7 @@ DeclareFilter( "IsHermitian_Place" );
 ##  <Filt Name="IsHermitian_DivisorRep" Arg='obj' Type='Representation'/>
 ##
 ##  <Description>
+##  As &GAP; objects, Hermitian divisors are represented as attribute storing additive elements. 
 ##  </Description>
 ##  </ManSection>
 ##
@@ -66,10 +67,10 @@ BindGlobal("Hermitian_DivisorFamily",NewFamily("Hermitian_DivisorFam",IsAdditive
 ##  <ManSection>
 ##  <Func Name="Hermitian_DivisorConstruct" Arg='Hq,pts,ords'/>
 ##
-##  <Description>
-##  returns the Hermitian divisor over <A>Hq</A> with points from <A>pts</A>
+##  <Returns>
+##  The Hermitian divisor over <A>Hq</A> with points from <A>pts</A>
 ##  and corresponding orders from <A>ords</A>. It checks the input.
-##  </Description>
+##  </Returns>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
@@ -83,9 +84,9 @@ DeclareGlobalFunction( "Hermitian_DivisorConstruct" );
 ##  <ManSection>
 ##  <Func Name="IndeterminatesOfHermitian_Divisor" Arg='D'/>
 ##
-##  <Description>
-##  returns the pair of indeterminates of the function field of the Hermitian divisor <A>D</A>.
-##  </Description>
+##  <Returns>
+##  The pair of indeterminates of the function field of the Hermitian divisor <A>D</A>.
+##  </Returns>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
@@ -101,12 +102,12 @@ DeclareGlobalFunction( "IndeterminatesOfHermitian_Divisor" );
 ##  <Oper Name="Hermitian_Divisor" Arg='Hq,pts,ords'/>
 ##  <Oper Name="Hermitian_Divisor" Arg='Hq,pairs'/>
 ##
-##  <Description>
-##  returns the corresponding Hermitian divisor over the Hermitian curve
+##  <Returns>
+##  The corresponding Hermitian divisor over the Hermitian curve
 ##  <A>Hq</A>. The list <A>pts</A> must be points of <A>Hq</A>; the infinite
 ##  point is <C>[ infinity ]</C>. The list <A>ords</A> contains the respective
 ##  orders. The elements of the list <A>pairs</A> are the point-order pairs.
-##  </Description>
+##  </Returns>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
@@ -121,11 +122,11 @@ DeclareOperation( "Hermitian_Divisor", [IsHermitian_Curve,IsList,IsList] );
 ##  <ManSection>
 ##  <Oper Name="Hermitian_Place" Arg='Hq,pt'/>
 ##
-##  <Description>
-##  returns the corresponding place of the Hermitian curve <A>Hq</A>, where
+##  <Returns>
+##  The corresponding place of the Hermitian curve <A>Hq</A>, where
 ##  <A>pt</A> is either an affine point <A>Hq</A>, or the infinite
 ##  point is <C>[ infinity ]</C>. 
-##  </Description>
+##  </Returns>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
@@ -139,9 +140,9 @@ DeclareOperation( "Hermitian_Place", [IsHermitian_Curve,IsList] );
 ##  <ManSection>
 ##  <Oper Name="ZeroHermitian_Divisor" Arg='Hq'/>
 ##
-##  <Description>
-##  returns the zero divisor over the Hermitian curve <A>Hq</A>. 
-##  </Description>
+##  <Returns>
+##  The zero divisor over the Hermitian curve <A>Hq</A>. 
+##  </Returns>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
@@ -163,9 +164,9 @@ DeclareOperation( "ZeroHermitian_Divisor", [IsHermitian_Curve] );
 ##  <ManSection>
 ##  <Func Name="SupremumHermitian_Divisor" Arg='D1,D2'/>
 ##
-##  <Description>
-##  returns the place-wise maximum of the orders of <A>D1</A> and <A>D2</A>.
-##  </Description>
+##  <Returns>
+##  The place-wise maximum of the orders of <A>D1</A> and <A>D2</A>.
+##  </Returns>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
@@ -179,9 +180,9 @@ DeclareGlobalFunction( "SupremumHermitian_Divisor" );
 ##  <ManSection>
 ##  <Func Name="InfimumHermitian_Divisor" Arg='D1,D2'/>
 ##
-##  <Description>
-##  returns the place-wise minimum of the orders of <A>D1</A> and <A>D2</A>.
-##  </Description>
+##  <Returns>
+##  The place-wise minimum of the orders of <A>D1</A> and <A>D2</A>.
+##  </Returns>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
@@ -195,9 +196,9 @@ DeclareGlobalFunction( "InfimumHermitian_Divisor" );
 ##  <ManSection>
 ##  <Func Name="PositivePartOfHermitian_Divisor" Arg='D'/>
 ##
-##  <Description>
-##  returns the positive part of the divisor <A>D</A>.
-##  </Description>
+##  <Returns>
+##  The positive part of the divisor <A>D</A>.
+##  </Returns>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
@@ -211,9 +212,9 @@ DeclareGlobalFunction( "PositivePartOfHermitian_Divisor" );
 ##  <ManSection>
 ##  <Func Name="NegativePartOfHermitian_Divisor" Arg='D'/>
 ##
-##  <Description>
-##  returns the negative part of the divisor <A>D</A>.
-##  </Description>
+##  <Returns>
+##  The negative part of the divisor <A>D</A>.
+##  </Returns>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
@@ -278,9 +279,9 @@ DeclareOperation( "Valuation", [IsHermitian_Divisor,IsHermitian_Place] );
 ##  <ManSection>
 ##  <Oper Name="Value" Arg='f,pl'/>
 ##
-##  <Description>
+##  <Returns>
 ##  The value of a Hermitian rational function <A>f</A> at the place <A>pl</A>. 
-##  </Description>
+##  </Returns>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
@@ -296,10 +297,10 @@ DeclareOperation( "Value", [ IsRationalFunction, IsHermitian_Place ] );
 ##  <ManSection>
 ##  <Attr Name="IsRationalHermitian_Divisor" Arg='D'/>
 ##
-##  <Description>
-##  Returns true if <A>D</A> is invariant under the Frobenius automorphism of the 
+##  <Returns>
+##  True if <A>D</A> is invariant under the Frobenius automorphism of the 
 ##  underlying Hermitian curve.
-##  </Description>
+##  </Returns>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
@@ -313,10 +314,10 @@ DeclareAttribute( "IsRationalHermitian_Divisor", IsHermitian_Divisor );
 ##  <ManSection>
 ##  <Oper Name="PrincipalHermitian_Divisor" Arg='Hq,f'/>
 ##
-##  <Description>
-##  returns the principal divisor of the rational function <A>f</A> of the
+##  <Returns>
+##  The principal divisor of the rational function <A>f</A> of the
 ##  Hermitian curve <A>Hq</A>.
-##  </Description>
+##  </Returns>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
@@ -330,9 +331,9 @@ DeclareOperation( "PrincipalHermitian_Divisor", [ IsHermitian_Curve, IsRationalF
 ##  <ManSection>
 ##  <Attr Name="IsInfiniteHermitian_Place" Arg='p'/>
 ##
-##  <Description>
-##  Returns <C>true</C> if <A>p</A> is a Hermitian place at the infinite line.
-##  </Description>
+##  <Returns>
+##  True if <A>p</A> is a Hermitian place at the infinite line.
+##  </Returns>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##

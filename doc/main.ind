@@ -1,5 +1,9 @@
 \begin{theindex}
 
+  \item \texttt  {All}\-\texttt  {Rational}\-\texttt  {Affine}\-\texttt  {Places}\-\texttt  {Of}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Curve}, 
+		\hyperpage{11}
+  \item \texttt  {All}\-\texttt  {Rational}\-\texttt  {Places}\-\texttt  {Of}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Curve}, 
+		\hyperpage{11}
   \item \texttt  {AutomorphismGroup}, \hyperpage{12}
 
   \indexspace
@@ -9,14 +13,15 @@
   \indexspace
 
   \item \texttt  {Frobenius}\-\texttt  {Automorphism}\-\texttt  {Of}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Curve}, 
-		\hyperpage{11}
+		\hyperpage{12}
 
   \indexspace
 
   \item \texttt  {Generator}\-\texttt  {Matrix}\-\texttt  {Of}\-\texttt  {Functional}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {CodeNC}, 
 		\hyperpage{16}
   \item \texttt  {Generator}\-\texttt  {Matrix}\-\texttt  {Of}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Code}, 
-		\hyperpage{16}
+		\hyperpage{17}
+  \item \texttt  {Genus}, \hyperpage{10}
 
   \indexspace
 
@@ -27,10 +32,10 @@
   \item \texttt  {Hermitian{\textunderscore }}\-\texttt  {Decode}\-\texttt  {To}\-\texttt  {Codeword}, 
 		\hyperpage{18}
   \item \texttt  {Hermitian{\textunderscore }}\-\texttt  {Differential}\-\texttt  {Code}, 
-		\hyperpage{16}
-  \item \texttt  {Hermitian{\textunderscore }Divisor}, \hyperpage{12}
+		\hyperpage{17}
+  \item \texttt  {Hermitian{\textunderscore }Divisor}, \hyperpage{13}
   \item \texttt  {Hermitian{\textunderscore }}\-\texttt  {Divisor}\-\texttt  {Construct}, 
-		\hyperpage{12}
+		\hyperpage{13}
   \item \texttt  {Hermitian{\textunderscore }}\-\texttt  {Functional}\-\texttt  {Code}, 
 		\hyperpage{16}
   \item \texttt  {Hermitian{\textunderscore }Place}, \hyperpage{13}
@@ -41,23 +46,29 @@
 
   \item \texttt  {Indeterminates}\-\texttt  {Of}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Curve}, 
 		\hyperpage{10}
+  \item \texttt  {Indeterminates}\-\texttt  {Of}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Divisor}, 
+		\hyperpage{13}
   \item \texttt  {Infimum}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Divisor}, 
-		\hyperpage{14}
-  \item \texttt  {IsHermitian{\textunderscore }Code}, \hyperpage{15}
+		\hyperpage{13}
+  \item \texttt  {InfoHermitian}, \hyperpage{19}
+  \item \texttt  {IsHermitian{\textunderscore }Code}, \hyperpage{16}
   \item \texttt  {IsHermitian{\textunderscore }Curve}, \hyperpage{10}
   \item \texttt  {IsHermitian{\textunderscore }}\-\texttt  {Curve}\-\texttt  {Automorphism}, 
-		\hyperpage{11}
+		\hyperpage{12}
   \item \texttt  {IsHermitian{\textunderscore }}\-\texttt  {Differential}\-\texttt  {Code}, 
-		\hyperpage{15}
+		\hyperpage{16}
   \item \texttt  {IsHermitian{\textunderscore }Divisor}, \hyperpage{12}
   \item \texttt  {IsHermitian{\textunderscore }}\-\texttt  {Functional}\-\texttt  {Code}, 
+		\hyperpage{16}
+  \item \texttt  {IsHermitian{\textunderscore }Place}, \hyperpage{13}
+  \item \texttt  {IsInfinite}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Place}, 
 		\hyperpage{15}
   \item \texttt  {IsRational}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Divisor}, 
-		\hyperpage{13}
+		\hyperpage{14}
 
   \indexspace
 
-  \item \texttt  {Length}, \hyperpage{16}
+  \item \texttt  {Length}, \hyperpage{17}
   \item License, \hyperpage{2}
 
   \indexspace
@@ -70,34 +81,40 @@
   \item \texttt  {Positive}\-\texttt  {Part}\-\texttt  {Of}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Divisor}, 
 		\hyperpage{14}
   \item \texttt  {Principal}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Divisor}, 
-		\hyperpage{13}
-
-  \indexspace
-
-  \item \texttt  {RandomBinaryVectorOfGivenDensity}, \hyperpage{19}
-  \item \texttt  {RandomBinaryVectorOfGivenWeight}, \hyperpage{19}
-  \item \texttt  {Random}\-\texttt  {Place}\-\texttt  {Of}\-\texttt  {Given}\-\texttt  {Degree}\-\texttt  {Of}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Curve}, 
-		\hyperpage{11}
-  \item \texttt  {RandomVectorOfGivenDensity}, \hyperpage{19}
-  \item \texttt  {RandomVectorOfGivenWeight}, \hyperpage{19}
-  \item \texttt  {RestrictVectorSpace}, \hyperpage{19}
-
-  \indexspace
-
-  \item \texttt  {Support}, \hyperpage{13}
-  \item \texttt  {Supremum}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Divisor}, 
 		\hyperpage{14}
 
   \indexspace
 
-  \item \texttt  {UnderlyingField}, \hyperpage{10}, \hyperpage{13}
-  \item \texttt  {Unitary}\-\texttt  {Group}\-\texttt  {To}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Curve}\-\texttt  {Aut}\-\texttt  {Group}, 
-		\hyperpage{12}
-  \item \texttt  {UPolCoeffsToSmallFieldNC}, \hyperpage{19}
+  \item \texttt  {RandomBinaryVectorOfGivenDensity}, \hyperpage{20}
+  \item \texttt  {RandomBinaryVectorOfGivenWeight}, \hyperpage{20}
+  \item \texttt  {Random}\-\texttt  {Place}\-\texttt  {Of}\-\texttt  {Given}\-\texttt  {Degree}\-\texttt  {Of}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Curve}, 
+		\hyperpage{11}
+  \item \texttt  {Random}\-\texttt  {Rational}\-\texttt  {Place}\-\texttt  {Of}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Curve}, 
+		\hyperpage{11}
+  \item \texttt  {RandomVectorOfGivenDensity}, \hyperpage{20}
+  \item \texttt  {RandomVectorOfGivenWeight}, \hyperpage{20}
+  \item \texttt  {RestrictVectorSpace}, \hyperpage{20}
 
   \indexspace
 
-  \item \texttt  {Valuation}, \hyperpage{13}
+  \item \texttt  {Support}, \hyperpage{14}
+  \item \texttt  {Supremum}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Divisor}, 
+		\hyperpage{13}
+
+  \indexspace
+
+  \item \texttt  {Underlying}\-\texttt  {Curve}\-\texttt  {Of}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Code}, 
+		\hyperpage{17}
+  \item \texttt  {UnderlyingField}, \hyperpage{10}, \hyperpage{14}, 
+		\hyperpage{17}
+  \item \texttt  {Unitary}\-\texttt  {Group}\-\texttt  {To}\-\texttt  {Hermitian{\textunderscore }}\-\texttt  {Curve}\-\texttt  {Aut}\-\texttt  {Group}, 
+		\hyperpage{12}
+  \item \texttt  {UPolCoeffsToSmallFieldNC}, \hyperpage{20}
+
+  \indexspace
+
+  \item \texttt  {Valuation}, \hyperpage{14}
+  \item \texttt  {Value}, \hyperpage{14}
 
   \indexspace
 

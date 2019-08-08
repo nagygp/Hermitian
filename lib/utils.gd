@@ -54,24 +54,24 @@ DeclareGlobalFunction( "HERM_restrictVectorSpaceByDual_NC" );
 ##  <ManSection>
 ##
 ##  <Func Name="RandomVectorOfGivenWeight" Arg='F,n,k' />
-##  <Description>
-##  returns a random vector of <M>F^n</M> of Hamming weight <M>k</M>.
-##  </Description>
+##  <Returns>
+##  A random vector of <M>F^n</M> of Hamming weight <M>k</M>.
+##  </Returns>
 ##
 ##  <Func Name="RandomVectorOfGivenDensity" Arg='F,n,delta' />
-##  <Description>
-##  returns a random vector of <M>F^n</M> in which the density of nonzero elements is approximatively <M>\delta</M>.
-##  </Description>
+##  <Returns>
+##  A random vector of <M>F^n</M> in which the density of nonzero elements is approximatively <M>\delta</M>.
+##  </Returns>
 ##
 ##  <Func Name="RandomBinaryVectorOfGivenWeight" Arg='n,k' />
-##  <Description>
-##  returns a random vector of <M>GF(2)^n</M> of Hamming weight <M>k</M>.
-##  </Description>
+##  <Returns>
+##  A random vector of <M>GF(2)^n</M> of Hamming weight <M>k</M>.
+##  </Returns>
 ##
 ##  <Func Name="RandomBinaryVectorOfGivenDensity" Arg='n,delta' />
-##  <Description>
-##  returns a random vector of <M>GF(2)^n</M> in which the density of nonzero elements is approximatively <M>\delta</M>.
-##  </Description>
+##  <Returns>
+##  A random vector of <M>GF(2)^n</M> in which the density of nonzero elements is approximatively <M>\delta</M>.
+##  </Returns>
 ##
 
 ##  </ManSection>
@@ -88,10 +88,10 @@ DeclareGlobalFunction( "RandomBinaryVectorOfGivenDensity" );
 ##
 ##  <#GAPDoc Label="InfoHermitian">
 ##  <ManSection>
-##  <InfoClass Name="InfoHermitian">
+##  <InfoClass Name="InfoHermitian"/>
 ##
 ##  <Description>
-##  An infoclass for the package. Its default value is $0$. 
+##  An infoclass for the package. Its default value is <M>0</M>. 
 ##  With <C>SetInfoLevel(InfoHermitian,2)</C> one can get some additional 
 ##  messages about the ongoing computation of Hermitian curves and their codes.
 ##  </Description>
