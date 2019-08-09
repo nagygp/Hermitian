@@ -138,3 +138,32 @@ mat1:=mat*diag;
 RestrictVectorSpace(VectorSpace(GF(q^2),mat1),GF(p));
 
 
+###
+
+LoadPackage("HERmitian");
+
+if not IsBound(q) then 
+    q:=4; 
+    r:=2;
+fi;
+
+Y:=HermitianIndeterminates(GF(q^2),"Y1","Y2");
+Hq:=Hermitian_Curve(Y[1]);
+P_infty:=Hermitian_Place(Hq,[infinity]); 
+
+for s in [q^3/r..q^3] do
+    hcode:=Hermitian_FunctionalCode(s*P_infty);
+    rcode:=RestrictVectorSpace(hcode,GF(r));
+    n:=Length(hcode);
+    delta:=DesignedMinimumDistance(hcode);
+    if delta<=1 then break; fi;
+    kappa:=Dimension(rcode);
+    if kappa>1 then
+        gamma:=(kappa+delta)/(n+1);
+        Print(
+            "s=",s,"  ",gamma*1.0,"\t",
+            "[",n,",",Dimension(hcode),",",delta,"]_",q,"  --->  ",
+            "[",n,",",kappa,",",delta,"]_",r,
+            "\n");
+    fi;
+od;

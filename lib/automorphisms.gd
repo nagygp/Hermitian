@@ -66,7 +66,7 @@ DeclareSynonym("Hermitian_CurveAut",Hermitian_CurveAutomorphism);
 ##  <Oper Name="AutomorphismGroup" Arg='Hq'/>
 ##  <Returns>
 ##  The automorphism group of the Hermitian curve <A>Hq</A>. The elements are Hermitian curve automorphisms. The
-##  group is isomorphic to <M>PPG(3,q)</M>, where <M>GF(q^2)</M> is the underlying field of <A>Hq</A>.
+##  group is isomorphic to <M>PGU(3,q)</M>, where <M>GF(q^2)</M> is the underlying field of <A>Hq</A>.
 ##  </Returns>
 ##  </ManSection>
 ##  <#/GAPDoc>

@@ -214,7 +214,7 @@ DeclareOperation( "RandomRationalPlaceOfHermitian_Curve", [ IsHermitian_Curve ] 
 ##  <Returns>
 ##  A random place of degree <A>d</A> of the Hermitian curve <A>Hq</A>,
 ##  that is, a place defined over the field <M>GF(q^{2d})</M>. Notice that the 
-##  place at infinity is has degree 1.
+##  place at infinity has degree 1.
 ##  </Returns>
 ##  </ManSection>
 ##  <#/GAPDoc>

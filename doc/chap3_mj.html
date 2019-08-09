@@ -167,7 +167,7 @@
 <h5>3.1-9 RandomPlaceOfGivenDegreeOfHermitian_Curve</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RandomPlaceOfGivenDegreeOfHermitian_Curve</code>( <var class="Arg">Hq</var>, <var class="Arg">d</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
-<p>Returns: A random place of degree <var class="Arg">d</var> of the Hermitian curve <var class="Arg">Hq</var>, that is, a place defined over the field <span class="SimpleMath">\(GF(q^{2d})\)</span>. Notice that the place at infinity is has degree 1.</p>
+<p>Returns: A random place of degree <var class="Arg">d</var> of the Hermitian curve <var class="Arg">Hq</var>, that is, a place defined over the field <span class="SimpleMath">\(GF(q^{2d})\)</span>. Notice that the place at infinity has degree 1.</p>
 
 
 <div class="example"><pre>
@@ -229,7 +229,7 @@ true
 <p>The permutation action of <var class="Arg">matgr</var> on the set of rational places of <var class="Arg">Hq</var> is stored as a nice monomorphism of <span class="SimpleMath">\(G\)</span>.</p>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AutomorphismGroup</code>( <var class="Arg">Hq</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
-<p>Returns: The automorphism group of the Hermitian curve <var class="Arg">Hq</var>. The elements are Hermitian curve automorphisms. The group is isomorphic to <span class="SimpleMath">\(PPG(3,q)\)</span>, where <span class="SimpleMath">\(GF(q^2)\)</span> is the underlying field of <var class="Arg">Hq</var>.</p>
+<p>Returns: The automorphism group of the Hermitian curve <var class="Arg">Hq</var>. The elements are Hermitian curve automorphisms. The group is isomorphic to <span class="SimpleMath">\(PGU(3,q)\)</span>, where <span class="SimpleMath">\(GF(q^2)\)</span> is the underlying field of <var class="Arg">Hq</var>.</p>
 
 
 <div class="example"><pre>
@@ -257,7 +257,7 @@ Hermitian_CurveAut([ [ Z(5)^0, Z(5^2)^11, Z(5^2)^19 ], [ Z(5^2)^20, Z(5^2)^16, Z
 <h5>3.3-2 IsHermitian_Place</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsHermitian_Place</code>( <var class="Arg">obj</var> )</td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
-<p>In this implmementation, a Hermitian place is a Hermitian divisor of degree one and support length one.</p>
+<p>In this implementation, a Hermitian place is a Hermitian divisor of degree one and support length one.</p>
 
 <p><a id="X7C25E6A77FC66456" name="X7C25E6A77FC66456"></a></p>
 
@@ -286,7 +286,7 @@ Hermitian_CurveAut([ [ Z(5)^0, Z(5^2)^11, Z(5^2)^19 ], [ Z(5^2)^20, Z(5^2)^16, Z
 <h5>3.3-6 Hermitian_Place</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Hermitian_Place</code>( <var class="Arg">Hq</var>, <var class="Arg">pt</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
-<p>Returns: The corresponding place of the Hermitian curve <var class="Arg">Hq</var>, where <var class="Arg">pt</var> is either an affine point <var class="Arg">Hq</var>, or the infinite point is <code class="code">[ infinity ]</code>.</p>
+<p>Returns: The corresponding place of the Hermitian curve <var class="Arg">Hq</var>, where <var class="Arg">pt</var> is either an affine point <var class="Arg">Hq</var>, or the infinite point <code class="code">[ infinity ]</code>.</p>
 
 <p><a id="X7D106EB28504FFDD" name="X7D106EB28504FFDD"></a></p>
 

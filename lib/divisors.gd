@@ -33,7 +33,7 @@ DeclareCategory( "IsHermitian_Divisor", IsAdditiveElementWithInverse and IsExtLE
 ##  <Filt Name="IsHermitian_Place" Arg='obj'/>
 ##
 ##  <Description>
-##  In this implmementation, a Hermitian place is a Hermitian divisor of degree one and support length one.
+##  In this implementation, a Hermitian place is a Hermitian divisor of degree one and support length one.
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
@@ -125,7 +125,7 @@ DeclareOperation( "Hermitian_Divisor", [IsHermitian_Curve,IsList,IsList] );
 ##  <Returns>
 ##  The corresponding place of the Hermitian curve <A>Hq</A>, where
 ##  <A>pt</A> is either an affine point <A>Hq</A>, or the infinite
-##  point is <C>[ infinity ]</C>. 
+##  point <C>[ infinity ]</C>. 
 ##  </Returns>
 ##  </ManSection>
 ##  <#/GAPDoc>

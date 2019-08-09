@@ -70,7 +70,7 @@
   [33X[1;0Y[29X[2XRandomPlaceOfGivenDegreeOfHermitian_Curve[102X( [3XHq[103X, [3Xd[103X ) [32X operation[133X
   [6XReturns:[106X  [33X[0;10YA  random  place of degree [3Xd[103X of the Hermitian curve [3XHq[103X, that is, a
             place  defined  over  the field [22XGF(q^2d)[122X. Notice that the place at
-            infinity is has degree 1.[133X
+            infinity has degree 1.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xq:=5;[127X[104X
@@ -136,7 +136,7 @@
   [33X[1;0Y[29X[2XAutomorphismGroup[102X( [3XHq[103X ) [32X operation[133X
   [6XReturns:[106X  [33X[0;10YThe automorphism group of the Hermitian curve [3XHq[103X. The elements are
             Hermitian   curve   automorphisms.  The  group  is  isomorphic  to
-            [22XPPG(3,q)[122X, where [22XGF(q^2)[122X is the underlying field of [3XHq[103X.[133X
+            [22XPGU(3,q)[122X, where [22XGF(q^2)[122X is the underlying field of [3XHq[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xaut:=AutomorphismGroup(Hq);[127X[104X
@@ -162,7 +162,7 @@
   
   [33X[1;0Y[29X[2XIsHermitian_Place[102X( [3Xobj[103X ) [32X filter[133X
   
-  [33X[0;0YIn  this implmementation, a Hermitian place is a Hermitian divisor of degree
+  [33X[0;0YIn  this  implementation, a Hermitian place is a Hermitian divisor of degree
   one and support length one.[133X
   
   [1X3.3-3 Hermitian_DivisorConstruct[101X
@@ -190,7 +190,7 @@
   
   [33X[1;0Y[29X[2XHermitian_Place[102X( [3XHq[103X, [3Xpt[103X ) [32X operation[133X
   [6XReturns:[106X  [33X[0;10YThe  corresponding  place  of  the Hermitian curve [3XHq[103X, where [3Xpt[103X is
-            either an affine point [3XHq[103X, or the infinite point is [10X[ infinity ][110X.[133X
+            either an affine point [3XHq[103X, or the infinite point [10X[ infinity ][110X.[133X
   
   [1X3.3-7 ZeroHermitian_Divisor[101X
   
