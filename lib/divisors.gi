@@ -165,7 +165,7 @@ function( D1, D2 )
 	ps := Union( D1!.points, D2!.points );
 	v1 := List( ps, p -> Valuation( D1, p ) );
 	v2 := List( ps, p -> Valuation( D2, p ) );
-	return v1 < v2;
+	return v1 > v2;
 	# return not ( D1!.points = D2!.points and D1!.orders = D2!.orders ) and
 	# 	ForAll( D1!.points, p -> Valuation( D2, p) >= Valuation( D1, p ) ) and
 	# 	ForAll( D2!.points, p -> Valuation( D2, p) >= Valuation( D1, p ) );
