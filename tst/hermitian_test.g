@@ -36,9 +36,6 @@ d^fr;
 Support(d^fr);
 Support(d);
 
-### automorphisms
-aut:=AutomorphismGroup(Hq);
-Random(aut);
 
 ### HERM_hermitianIntersection for private usage
 s1:=HERM_hermitianIntersection(Hq,Y[1],-1);
@@ -104,6 +101,10 @@ received:=sent+err;;
 # decoding
 sent_decoded:=Hermitian_DecodeToCodeword(agcode,received);
 sent=sent_decoded;
+
+### automorphisms
+aut:=AutomorphismGroup(Hq);
+Random(aut);
 
 #######################
 #######################

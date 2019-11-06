@@ -56,12 +56,12 @@ function(Hq,pol,deglim)
     fi;
 	XY:=IndeterminatesOfHermitian_Curve(Hq);
 	xy:=List(XY,IndeterminateNumberOfUnivariateRationalFunction);
+	q:=Sqrt(Hq!.fieldsize);
 	if HERM_totalDegreeOfPolynomial(pol)>DegreeIndeterminate(pol,xy[2]) then 
-        ret:=[[infinity]]; 
+        ret:=[Z(q)^0*[0,1,0]]; 
     else 
         ret:=[]; 
     fi;
-	q:=Sqrt(Hq!.fieldsize);
 	resx:=Resultant(pol,XY[1]^(q+1)-XY[2]^q-XY[2],xy[1]);
     if IsZero(resx) then 
         Error("zero polynomial has no intersection with the curve\n"); 
@@ -73,7 +73,7 @@ function(Hq,pol,deglim)
 		if deglim<=0 or Degree(fs)<=deglim then 
 			for ys in RootsOfUPol("split",fs) do
 				for xs in RootsOfUPol("split",Gcd(One(XY[1])*Value(pol,[xy[2]],[ys]),XY[1]^(q+1)-ys^q-ys)) do
-					Add(ret,[xs,ys]);
+					Add(ret,[xs,ys,Z(q)^0]);
 				od;
 			od;
 		fi;
@@ -110,13 +110,13 @@ function(Hq,pt,f)
 	if not(pt in Hq) then Error("point <pt> not on the Hermitian curve\n"); fi;
 	q:=Sqrt(Hq!.fieldsize);
 	xy:=IndeterminatesOfHermitian_Curve(Hq);
-	if pt=[infinity] then 
+	if pt=Z(q)^0*[0,1,0] then 
 		f0:=(xy[2]^HERM_totalDegreeOfPolynomial(f))*Value(f,xy,[xy[1]/xy[2],1/xy[2]]);
 		f0:=AsPolynomial(f0);
 		pt0:=Z(q)*[0,0];
 	else
 		f0:=f;
-		pt0:=ShallowCopy(pt);
+		pt0:=pt{[1,2]};
 	fi;
 	u:=HERM_powerSeriesAtHpt_NC(Hq,pt0,(q+1)*HERM_totalDegreeOfPolynomial(f0));
 	u:=Value(f0,xy,pt0+[xy[1],u]);
@@ -293,9 +293,9 @@ function(qq,pt,deg,k)
 	if not(IsInt(deg) and deg>=0) then Error("wrong third argument\n"); fi;
 	if not(IsInt(k)) then Error("fourth argument must be an integer\n"); fi;
 	if k<1 or k^2>qq then Error("fourth argument must be between 1 and <q>\n"); fi; 
-	if pt=[infinity] then 
+	if pt=Z(qq)^0*[0,1,0] then #pt=[infinity] then 
 		return HERM_linearConditionsForISectMultAtInfinity_NC(qq,deg,k);
 	else
-		return HERM_rationalLinCondsISectMult_NC(qq,pt,deg,k);
+		return HERM_rationalLinCondsISectMult_NC(qq,pt{[1,2]},deg,k);
 	fi;
 end );
