@@ -55,7 +55,8 @@ DeclareFilter( "IsHermitian_Place" );
 DeclareRepresentation( 
     "IsHermitian_DivisorRep", 
     IsAdditiveElement and IsComponentObjectRep and IsAttributeStoringRep, 
-    ["curve","char","indnr"]
+    #["curve","char","indnr"]
+    ["curve","points","orders"]
 );
 BindGlobal("Hermitian_DivisorFamily",NewFamily("Hermitian_DivisorFam",IsAdditivelyCommutativeElementFamily));
 
@@ -68,7 +69,7 @@ BindGlobal("Hermitian_DivisorFamily",NewFamily("Hermitian_DivisorFam",IsAdditive
 ##  <Func Name="Hermitian_DivisorConstruct" Arg='Hq,pts,ords'/>
 ##
 ##  <Returns>
-##  The Hermitian divisor over <A>Hq</A> with points from <A>pts</A>
+##  The Hermitian divisor over <A>Hq</A> with (projective) points from <A>pts</A>
 ##  and corresponding orders from <A>ords</A>. It checks the input.
 ##  </Returns>
 ##  </ManSection>

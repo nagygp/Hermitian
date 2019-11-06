@@ -17,11 +17,8 @@ p in Hq;
 [ infinity ] in Hq;
 [0,0] in Hq;
 Z(q)*[0,0] in Hq;
+Hermitian_Place(Hq,[0,1,0]);
 Size( AllRationalPlacesOfHermitian_Curve(Hq) );
-
-### automorphisms
-aut:=AutomorphismGroup(Hq);
-Random(aut);
 
 ### divisors
 p_infty:=Hermitian_Place(Hq,[infinity]);
@@ -38,6 +35,10 @@ fr:=FrobeniusAutomorphismOfHermitian_Curve(Hq);
 d^fr;
 Support(d^fr);
 Support(d);
+
+### automorphisms
+aut:=AutomorphismGroup(Hq);
+Random(aut);
 
 ### HERM_hermitianIntersection for private usage
 s1:=HERM_hermitianIntersection(Hq,Y[1],-1);

@@ -143,25 +143,28 @@ InstallOtherMethod( \in,
         [ IsList, IsHermitian_Curve ],
 function( pt, Hq )
 	local q;
-	if pt = [ infinity ] then 
-		return true;
-	fi;
-	if not ( Length( pt ) = 2 
+	if Length( pt ) = 1 then
+		return pt = [ infinity ];
+	elif not ( Length( pt ) in [2,3]
 			and ForAll( pt, IsRingElement ) 
 			and ForAll( pt, u->Characteristic(u) = Characteristic( Hq ) ) 
 			) then
-		#Error( "wrong format for 2nd argument\n" );
 		return false;
 	fi;
 	q := Sqrt( Hq!.fieldsize );
-	return pt[1]^(q+1)=pt[2]+pt[2]^q;
+	if Length( pt ) = 2 then
+		return IsZero( pt[1]^(q+1) - pt[2] - pt[2]^q );
+	else 
+		return IsZero( pt[1]^(q+1) - pt[2]*pt[3]^q - pt[2]^q*pt[3] );
+	fi;
 end );
 
 InstallOtherMethod( \in, 
         "for a place and a Hermitian curve",
         [ IsHermitian_Place, IsHermitian_Curve ],
 function( pt, Hq )
-	return pt!.points[1] in Hq;
+	#return pt!.points[1] in Hq;
+	return pt!.curve = Hq;
 end );
 
 InstallMethod( RandomPlaceOfGivenDegreeOfHermitian_Curve,
@@ -173,7 +176,7 @@ function( Hq, d )
 	q := Sqrt(qq);
 	a := Random( [ 0..qq^d ] );
 	if a=0 then 
-		return Hermitian_Place( Hq, [ infinity ] ); 
+		return Hermitian_Place( Hq, Z(q)^0*[ 0,1,0 ] ); 
 	fi;
 	while true do
 		a := Random( GF(qq^d) );
@@ -182,7 +185,7 @@ function( Hq, d )
 		if IsZero( c ) then break; fi;
 	od;
 	b := HERM_traceMapSolution( q, 2*d, a^(q+1) );
-	return Hermitian_Place( Hq, [ a, b ] );
+	return Hermitian_Place( Hq, [ a, b, Z(q)^0 ] );
 end );
 
 InstallMethod( RandomRationalPlaceOfHermitian_Curve,
@@ -202,14 +205,14 @@ function( Hq )
 	li := [ ];
 	for a in GF(qq) do
 		b := HERM_traceMapSolution( q, 2, a^(q+1) );
-		Add( li, [ a, b ] );
+		Add( li, [ a, b, Z(q)^0 ] );
 		if IsEvenInt(q) then
 			for i in [0..q-2] do
-				Add( li, [a,b+Z(qq)^((1+2*i)*(q+1))] );
+				Add( li, [a,b+Z(qq)^((1+2*i)*(q+1)),Z(q)^0] );
 			od;
 		else
 			for i in [0..q-2] do
-				Add( li, [a,b+Z(qq)^((1+2*i)*(q+1)/2)] );
+				Add( li, [a,b+Z(qq)^((1+2*i)*(q+1)/2),Z(q)^0] );
 			od;
 		fi;
 	od;
@@ -222,7 +225,7 @@ InstallMethod( AllRationalPlacesOfHermitian_Curve,
         [ IsHermitian_Curve ],
 function( Hq )
 	return Concatenation( 
-		[ Hermitian_Place( Hq, [ infinity ] ) ],
+		[ Hermitian_Place( Hq, [ 0,1,0 ] ) ],
 		AllRationalAffinePlacesOfHermitian_Curve( Hq )
 	);
 end );

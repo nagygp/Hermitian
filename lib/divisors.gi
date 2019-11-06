@@ -15,25 +15,34 @@
 #F  Hermitian_DivisorConstruct(<curve>,<pts>,<ords>)
 ##
 InstallGlobalFunction( Hermitian_DivisorConstruct, function(curve,pts,ords)
-	local perm,i,ret;
+	local perm,i,ret,one;
 	# input check
 	# same length and curve?
 	if not(IsHermitian_Curve(curve) and Length(pts)=Length(ords)) then
 		Error("wrong input for Hermitian divisor constructor\n");
 	fi;
+	one := One( UnderlyingField( curve) );
 	if pts<>[] then
+		# divisor points on the Hermitian curve?
+		if not ForAll(pts,u->IsList(u) and Length(u)=3 and u in curve) then
+			Error("wrong divisor (projective) points\n");
+		fi;
+		# make pts projective
+		for i in [1..Length(pts)] do
+			if IsZero( pts[i][3] ) then
+				pts[i] := one*[0,1,0];
+			else 
+				pts[i] := pts[i]/pts[i][3];
+			fi;
+		od;
 		# points in increasing order?
 		perm:=Sortex(pts);
 		ords:=Permuted(ords,perm);
-		# divisor points on the projective line?
-		if not ForAll(pts,u->u in curve) then
-			Error("wrong divisor points\n");
-		fi;
 		# orders integer?
 		if not ForAll(ords,IsInt) then
 			Error("orders must be integers\n");
 		fi;
-		# same point occur several times?
+		# same point occurs several times?
 		for i in [1..Length(pts)-1] do
 			if pts[i]=pts[i+1] then
 				ords[i+1]:=ords[i+1]+ords[i];
@@ -94,6 +103,23 @@ end);
 ##
 InstallMethod( Hermitian_Place, "for curve and a point", true, [IsHermitian_Curve,IsList], 0,
 function(curve,pt)
+	local one;
+	one := One( UnderlyingField( curve ) );
+	if pt = [ infinity ] then
+		pt := one*[0,1,0];
+	else
+		pt := one*pt;
+		if not pt in curve then
+			Error("<pt> must be a point of <curve>");
+		fi;
+		if Length(pt) = 2 then
+			Add(pt,one);
+		elif IsZero(pt[3]) then
+			pt := pt/pt[2];
+		else 
+			pt := pt/pt[3];
+		fi;
+	fi;
 	return Hermitian_DivisorConstruct(curve,[pt],[1]);
 end);
 
@@ -166,9 +192,6 @@ function( D1, D2 )
 	v1 := List( ps, p -> Valuation( D1, p ) );
 	v2 := List( ps, p -> Valuation( D2, p ) );
 	return v1 > v2;
-	# return not ( D1!.points = D2!.points and D1!.orders = D2!.orders ) and
-	# 	ForAll( D1!.points, p -> Valuation( D2, p) >= Valuation( D1, p ) ) and
-	# 	ForAll( D2!.points, p -> Valuation( D2, p) >= Valuation( D1, p ) );
 end );
 
 #############################################################################
@@ -255,7 +278,7 @@ function( D )
 end );
 
 # We do not check it pt is on the Hermitian curve; we simply return 0.
-InstallMethod( Valuation, "for a Hermitian divisor and a point",
+InstallMethod( Valuation, "for a Hermitian divisor and a projective point",
 	[ IsHermitian_Divisor, IsList ],
 function( D, pt )
 	local pos;
@@ -307,8 +330,9 @@ function( f, pt )
 	elif IndeterminatesOfHermitianRatFunc( f ) = [ ] then
 		return ExtRepPolynomialRatFun( fnum )[2];
     else
-        fnum := Value( fnum, IndeterminatesOfHermitianRatFunc( f ), pt!.points[1] );
-        fden := Value( fden, IndeterminatesOfHermitianRatFunc( f ), pt!.points[1] );
+		pt := pt!.points[1]{[1,2]};
+        fnum := Value( fnum, IndeterminatesOfHermitianRatFunc( f ), pt );
+        fden := Value( fden, IndeterminatesOfHermitianRatFunc( f ), pt );
     fi;
     if not IsZero( fden ) then 
     	return fnum/fden;
@@ -395,7 +419,7 @@ InstallMethod( IsInfiniteHermitian_Place,
 	"for a Hermitian place",
 	[ IsHermitian_Place ],
 function( pt )
-	return pt!.points[1] = [ infinity ];
+	return IsZero( pt!.points[1][3] );
 end );
 
 #############################################################################
@@ -448,10 +472,9 @@ HERM_normalizeHermitianDivisorAsList:=function( D )
 		if m2>0 then 
 			Add(ret,[li[i][1],m2]); 
 		fi;
-		if m1<>0 and li[i][1][1]<>[infinity] then 
-			u:=li[i][1][1][1];
-			v:=li[i][1][1][2];
-			Add(ellprod,[[u^q,-1,-v^q],Length(li[i][1]),m1]);
+		if m1<>0 and li[i][1][1]<>Z(q)^0*[0,1,0] then 
+			u:=li[i][1][1];
+			Add(ellprod,[[u[1]^q,-u[3]^q,-u[2]^q],Length(li[i][1]),m1]);
 		fi;
 	od;
 	return [mu,ret,ellprod];
