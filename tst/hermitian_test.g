@@ -103,8 +103,8 @@ sent_decoded:=Hermitian_DecodeToCodeword(agcode,received);
 sent=sent_decoded;
 
 ### automorphisms
-#aut:=AutomorphismGroup(Hq);
-#Random(aut);
+aut:=AutomorphismGroup(Hq);
+Random(aut);
 
 #######################
 #######################

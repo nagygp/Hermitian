@@ -151,17 +151,11 @@ end );
 HERM_OnPointNC:=function( x, m )
 	local ff, v;
 	ff := UnderlyingField( m!.curve );
-	if x = [ infinity ] then 
-		v := [0,1,0]*One(ff);
+	v := x*(m!.mat);
+	if IsZero(v[3]) then 
+		v := v/v[2];
 	else
-		v := Concatenation( x, [ One(ff) ]);
-		v := v/First(v,t->not IsZero(t));
-	fi;
-	v := OnLines( v, m!.mat );
-	if IsZero( v[3] ) then
-		v := [ infinity ];
-	else
-		v := [ v[1]/v[3], v[2]/v[3] ];
+		v := v/v[3];
 	fi;
 	return v;
 end;
