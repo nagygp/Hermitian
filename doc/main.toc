@@ -62,6 +62,6 @@
 \contentsline {subsection}{\numberline {3.6.2}\leavevmode {\color {Chapter }RestrictVectorSpace}}{20}{subsection.3.6.2}
 \contentsline {subsection}{\numberline {3.6.3}\leavevmode {\color {Chapter }UPolCoeffsToSmallFieldNC}}{20}{subsection.3.6.3}
 \contentsline {subsection}{\numberline {3.6.4}\leavevmode {\color {Chapter }RandomVectorOfGivenWeight}}{20}{subsection.3.6.4}
-\contentsline {chapter}{\numberline {4}\leavevmode {\color {Chapter }An example: BCH type codes as Hermitian AG codes (???)}}{21}{chapter.4}
-\contentsline {chapter}{References}{22}{chapter*.4}
-\contentsline {chapter}{Index}{23}{section*.5}
+\contentsline {chapter}{\numberline {4}\leavevmode {\color {Chapter }An example: Parameters of subfield subcodes of 1-point Hermitian codes}}{21}{chapter.4}
+\contentsline {chapter}{References}{23}{chapter*.4}
+\contentsline {chapter}{Index}{24}{section*.5}

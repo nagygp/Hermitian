@@ -168,8 +168,8 @@
   [1X3.3-3 Hermitian_DivisorConstruct[101X
   
   [33X[1;0Y[29X[2XHermitian_DivisorConstruct[102X( [3XHq[103X, [3Xpts[103X, [3Xords[103X ) [32X function[133X
-  [6XReturns:[106X  [33X[0;10YThe   Hermitian   divisor   over  [3XHq[103X  with  points  from  [3Xpts[103X  and
-            corresponding orders from [3Xords[103X. It checks the input.[133X
+  [6XReturns:[106X  [33X[0;10YThe  Hermitian  divisor  over [3XHq[103X with (projective) points from [3Xpts[103X
+            and corresponding orders from [3Xords[103X. It checks the input.[133X
   
   [1X3.3-4 IndeterminatesOfHermitian_Divisor[101X
   

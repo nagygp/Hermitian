@@ -161,7 +161,7 @@ for s in [q^3/r..q^3] do
     if kappa>1 then
         gamma:=(kappa+delta)/(n+1);
         Print(
-            "s=",s,"  ",gamma*1.0,"\t",
+            "s=",s,"  ",Int(gamma*100+1/2)*0.01,"\t",
             "[",n,",",Dimension(hcode),",",delta,"]_",q,"  --->  ",
             "[",n,",",kappa,",",delta,"]_",r,
             "\n");

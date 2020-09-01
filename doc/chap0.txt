@@ -112,7 +112,7 @@
       3.6-2 RestrictVectorSpace
       3.6-3 UPolCoeffsToSmallFieldNC
       3.6-4 RandomVectorOfGivenWeight
-  4 [33X[0;0YAn example: BCH type codes as Hermitian AG codes (???)[133X
+  4 [33X[0;0YAn example: Parameters of subfield subcodes of 1-point Hermitian codes[133X
   
   
   [32X

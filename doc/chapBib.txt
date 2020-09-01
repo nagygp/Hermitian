@@ -2,24 +2,23 @@
   
   [1XReferences[101X
   
-  [[20XGop88[120X]  [16XGoppa,  V.  D.[116X,  [17XGeometry  and  codes[117X, Kluwer Academic Publishers Group, Dordrecht, Mathematics and its Applications (Soviet Series), [19X24[119X (1988), x+157
-  pages, ((Translated from the Russian by N. G. Shartse)).
+  [[20XGop88[120X]  [16XGoppa,  V.  D.[116X,  [17XGeometry and codes[117X, Kluwer Academic Publishers Group, Dordrecht, Mathematics and its Applications (Soviet Series), [19X24[119X (1988), x+157 pages,
+  ((Translated from the Russian by N. G. Shartse)).
   
-  [[20XHir98[120X]  [16XHirschfeld,  J.  W.  P.[116X,  [17XProjective  geometries  over  finite  fields[117X, The Clarendon Press, Oxford University Press, New York, Second edition, Oxford
-  Mathematical Monographs (1998), xiv+555 pages.
+  [[20XHir98[120X]  [16XHirschfeld, J. W. P.[116X, [17XProjective geometries over finite fields[117X, The Clarendon Press, Oxford University Press, New York, Second edition, Oxford Mathematical
+  Monographs (1998), xiv+555 pages.
   
-  [[20XHKT08[120X]  [16XHirschfeld,  J.  W.  P.,  Korchm\'aros,  G. and Torres, F.[116X, [17XAlgebraic curves over a finite field[117X, Princeton University Press, Princeton, NJ, Princeton
-  Series in Applied Mathematics (2008), xx+696 pages.
+  [[20XHKT08[120X]  [16XHirschfeld, J. W. P., Korchm\'aros, G. and Torres, F.[116X, [17XAlgebraic curves over a finite field[117X, Princeton University Press, Princeton, NJ, Princeton Series in
+  Applied Mathematics (2008), xx+696 pages.
   
   [[20XHP73[120X] [16XHughes, D. R. and Piper, F. C.[116X, [17XProjective planes[117X, Springer-Verlag, New York-Berlin (1973), x+291 pages, ((Graduate Texts in Mathematics, Vol. 6)).
   
-  [[20XHP95[120X]  [16XH{\o}holdt, T. and Pellikaan, R.[116X, [17XOn the decoding of algebraic-geometric codes[117X, [18XIEEE Trans. Inform. Theory[118X, [19X41[119X, 6, part 1 (1995), 1589--1614, ((Special
-  issue on algebraic geometry codes)).
+  [[20XHP95[120X] [16XH{\o}holdt, T. and Pellikaan, R.[116X, [17XOn the decoding of algebraic-geometric codes[117X, [18XIEEE Trans. Inform. Theory[118X, [19X41[119X, 6, part 1 (1995), 1589--1614, ((Special issue
+  on algebraic geometry codes)).
   
   [[20XMM05[120X] [16XMatthews, G. L. and Michel, T. W.[116X, [17XOne-point codes using places of higher degree[117X, [18XIEEE Trans. Inform. Theory[118X, [19X51[119X, 4 (2005), 1590--1593.
   
-  [[20XSti09[120X]  [16XStichtenoth,  H.[116X,  [17XAlgebraic  function  fields  and codes[117X, Springer-Verlag, Berlin, Second edition, Graduate Texts in Mathematics, [19X254[119X (2009), xiv+355
-  pages.
+  [[20XSti09[120X] [16XStichtenoth, H.[116X, [17XAlgebraic function fields and codes[117X, Springer-Verlag, Berlin, Second edition, Graduate Texts in Mathematics, [19X254[119X (2009), xiv+355 pages.
   
   
   

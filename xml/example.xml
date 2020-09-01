@@ -5,14 +5,70 @@
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 <Chapter Label="HERmitian Example">
-<Heading>An example: BCH type codes as Hermitian AG codes (???)</Heading>
+<Heading>An example: Parameters of subfield subcodes of 1-point Hermitian codes</Heading>
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
-The following example constructs BCH type codes as Hermitian AG codes.
+The following example computes the parameters of subfield subcodes of 1-point Hermitian codes.
 
 <Example>
+gap&gt; q:=4; r:=2;
+4
+2
+gap&gt; Y:=HermitianIndeterminates(GF(q^2),"Y1","Y2");
+[ Y1, Y2 ]
+gap&gt; Hq:=Hermitian_Curve(Y[1]);
+&lt;Hermitian curve over GF(16) with indeterminates [ Y1, Y2 ]&gt;
+gap&gt; P_infty:=Hermitian_Place(Hq,[infinity]); 
+&lt;Hermitian place [ 0*Z(2), Z(2)^0, 0*Z(2) ] over indeterminates [ Y1, Y2 ]&gt;
 gap&gt; 
+gap&gt; for s in [q^3/r..q^3] do
+&gt;     hcode:=Hermitian_FunctionalCode(s*P_infty);
+&gt;     rcode:=RestrictVectorSpace(hcode,GF(r));
+&gt;     n:=Length(hcode);
+&gt;     delta:=DesignedMinimumDistance(hcode);
+&gt;     if delta&lt;=1 then break; fi;
+&gt;     kappa:=Dimension(rcode);
+&gt;     if kappa&gt;1 then
+&gt;         gamma:=(kappa+delta)/(n+1);
+&gt;         Print(
+&gt;             "s=",s,"  ",Int(gamma*100+1/2)*0.01,"\t",
+&gt;             "[",n,",",Dimension(hcode),",",delta,"]_",q,"  ---&gt;  ",
+&gt;             "[",n,",",kappa,",",delta,"]_",r,
+&gt;             "\n");
+&gt;     fi;
+&gt; od;
+s=32  0.57	[64,27,32]_4  ---&gt;  [64,5,32]_2
+s=33  0.55	[64,28,31]_4  ---&gt;  [64,5,31]_2
+s=34  0.54	[64,29,30]_4  ---&gt;  [64,5,30]_2
+s=35  0.52	[64,30,29]_4  ---&gt;  [64,5,29]_2
+s=36  0.51	[64,31,28]_4  ---&gt;  [64,5,28]_2
+s=37  0.49	[64,32,27]_4  ---&gt;  [64,5,27]_2
+s=38  0.48	[64,33,26]_4  ---&gt;  [64,5,26]_2
+s=39  0.46	[64,34,25]_4  ---&gt;  [64,5,25]_2
+s=40  0.51	[64,35,24]_4  ---&gt;  [64,9,24]_2
+s=41  0.49	[64,36,23]_4  ---&gt;  [64,9,23]_2
+s=42  0.54	[64,37,22]_4  ---&gt;  [64,13,22]_2
+s=43  0.52	[64,38,21]_4  ---&gt;  [64,13,21]_2
+s=44  0.51	[64,39,20]_4  ---&gt;  [64,13,20]_2
+s=45  0.49	[64,40,19]_4  ---&gt;  [64,13,19]_2
+s=46  0.48	[64,41,18]_4  ---&gt;  [64,13,18]_2
+s=47  0.46	[64,42,17]_4  ---&gt;  [64,13,17]_2
+s=48  0.51	[64,43,16]_4  ---&gt;  [64,17,16]_2
+s=49  0.49	[64,44,15]_4  ---&gt;  [64,17,15]_2
+s=50  0.51	[64,45,14]_4  ---&gt;  [64,19,14]_2
+s=51  0.49	[64,46,13]_4  ---&gt;  [64,19,13]_2
+s=52  0.54	[64,47,12]_4  ---&gt;  [64,23,12]_2
+s=53  0.58	[64,48,11]_4  ---&gt;  [64,27,11]_2
+s=54  0.57	[64,49,10]_4  ---&gt;  [64,27,10]_2
+s=55  0.55	[64,50,9]_4  ---&gt;  [64,27,9]_2
+s=56  0.60	[64,51,8]_4  ---&gt;  [64,31,8]_2
+s=57  0.58	[64,52,7]_4  ---&gt;  [64,31,7]_2
+s=58  0.63	[64,53,6]_4  ---&gt;  [64,35,6]_2
+s=59  0.62	[64,54,5]_4  ---&gt;  [64,35,5]_2
+s=60  0.66	[64,55,4]_4  ---&gt;  [64,39,4]_2
+s=61  0.71	[64,56,3]_4  ---&gt;  [64,43,3]_2
+s=62  0.75	[64,57,2]_4  ---&gt;  [64,47,2]_2
 </Example>
 
 </Chapter>
