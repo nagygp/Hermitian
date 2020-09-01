@@ -7,10 +7,10 @@
                                      Curves[101X
   
   
-                                  Version 0.1
+                                  Version 0.2
   
   
-                                 14 March 2019
+                                  31 Aug 2020
   
   
                                  Gábor P. Nagy

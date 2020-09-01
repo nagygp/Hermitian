@@ -8,15 +8,15 @@ SetPackageInfo( rec(
 
 PackageName := "HERmitian",
 Subtitle := "HERmitian/Computing with divisors, Riemann-Roch spaces and AG-odes of Hermitian curves",
-Version := "0.1",
-Date := "14/03/2019",
+Version := "0.2",
+Date := "31/08/2020",
 
 ##  Optional: if the package manual uses GAPDoc, you may duplicate the
 ##  version and the release date as shown below to read them while building
 ##  the manual using GAPDoc facilities to distibute documents across files.
 ##  <#GAPDoc Label="PKGVERSIONDATA">
-##  <!ENTITY VERSION "0.1">
-##  <!ENTITY RELEASEDATE "14 March 2019">
+##  <!ENTITY VERSION "0.2">
+##  <!ENTITY RELEASEDATE "31 Aug 2020">
 ##  <#/GAPDoc>
 
 PackageWWWHome := "http://www.math.u-szeged.hu/~nagyg/HERmitian/",
