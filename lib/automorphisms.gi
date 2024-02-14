@@ -175,9 +175,9 @@ function( C, m )
 		Error("curve automorphism must be rational");
 	fi;
 	if IsHermitian_FunctionalCode(C) then 
-		return Hermitian_FunctionalCode(C!.gendivs[1]^fr,C!.gendivs[2]^fr); 
+		return Hermitian_FunctionalCode(C!.gendivs[1]^m,C!.gendivs[2]^m); 
 	else
-		return Hermitian_DifferentialCode(C!.gendivs[1]^fr,C!.gendivs[2]^fr);
+		return Hermitian_DifferentialCode(C!.gendivs[1]^m,C!.gendivs[2]^m);
 	fi;	
 end );
 
