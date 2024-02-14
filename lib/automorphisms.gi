@@ -28,7 +28,7 @@ function( hc, m)
 end);
 
 InstallMethod( Characteristic,
-	"for a GZ curve automorphism",
+	"for a Hermitian curve automorphism",
 	[ IsHermitian_CurveAutomorphism ],
 function( x )
   return Characteristic( x!.curve );
@@ -39,32 +39,32 @@ end );
 ##  DISPLAYING AND COMPARING ELEMENTS
 ##  -------------------------------------------------------------------------
 
-InstallMethod( ViewObj, "for a GZ curve automorphism",
+InstallMethod( ViewObj, "for a Hermitian curve automorphism",
 	[ IsHermitian_CurveAutomorphism ], 10,
 function( obj )
 	Print( "Hermitian_CurveAut(", obj!.mat, ")" );
 end );
 
-InstallMethod( Display, "for a GZ curve automorphism",
+InstallMethod( Display, "for a Hermitian curve automorphism",
 	[ IsHermitian_CurveAutomorphism ], 10,
 function( obj )
 	Print( "Hermitian_CurveAut(", obj!.mat, ")" );
 end );
 
-InstallMethod( PrintObj, "for a GZ curve automorphism",
+InstallMethod( PrintObj, "for a Hermitian curve automorphism",
 	[ IsHermitian_CurveAutomorphism ], 10,
 function( obj )
 	Print( "Hermitian_CurveAut(", obj!.mat, ")" );
 end );
 
-InstallMethod( \=, "for two GZ curve automorphisms",
+InstallMethod( \=, "for two Hermitian curve automorphisms",
 	IsIdenticalObj,
 	[ IsHermitian_CurveAutomorphism, IsHermitian_CurveAutomorphism ],
 function( m1,m2 )
 	return m1!.curve = m2!.curve and m1!.mat = m2!.mat;
 end );
 
-InstallMethod( \<, "for two GZ curve automorphisms",
+InstallMethod( \<, "for two Hermitian curve automorphisms",
 	IsIdenticalObj,
 	[ IsHermitian_CurveAutomorphism, IsHermitian_CurveAutomorphism ],
 function( m1, m2 )
@@ -76,30 +76,30 @@ end );
 ##  MULTIPLICATION
 ##  -------------------------------------------------------------------------
 
-InstallMethod( \*, "for two GZ curve automorphisms",
+InstallMethod( \*, "for two Hermitian curve automorphisms",
 	IsIdenticalObj,
 	[ IsHermitian_CurveAutomorphism, IsHermitian_CurveAutomorphism ],
 function( m1, m2 )
 	if m1!.curve=m2!.curve then 
 		return Hermitian_CurveAutomorphism(m1!.curve, m1!.mat*m2!.mat);
 	else
-		Error("two GZ curve automorphisms must have the same characteristic\n");
+		Error("two Hermitian curve automorphisms must have the same characteristic\n");
 	fi;
 end );
 
-InstallMethod( InverseMutable, "for a GZ curve automorphism and a positive integer",
+InstallMethod( InverseMutable, "for a Hermitian curve automorphism and a positive integer",
 	[ IsHermitian_CurveAutomorphism ],
 function( m )
 	return Hermitian_CurveAutomorphism(m!.curve, m!.mat^(-1));
 end );
 
-InstallMethod( OneMutable, "for a GZ curve automorphism",
+InstallMethod( OneMutable, "for a Hermitian curve automorphism",
 	[ IsHermitian_CurveAutomorphism ],
 function( m )
 	return Hermitian_CurveAutomorphism(m!.curve, One(m!.mat)); 
 end );
 
-InstallMethod( \^, "for a GZ curve automorphism and a positive integer",
+InstallMethod( \^, "for a Hermitian curve automorphism and a positive integer",
 	[ IsHermitian_CurveAutomorphism, IsPosInt ],
 function( m, k )
 	return Hermitian_CurveAutomorphism(m!.curve, m!.mat^k);
@@ -136,7 +136,7 @@ function( D, fr )
 	return Hermitian_DivisorConstruct(D!.curve,pts,D!.orders);
 end );
 
-InstallOtherMethod( \^, "for a GZ curve automorphism and an AC-Frobenius automorphism",
+InstallOtherMethod( \^, "for a Hermitian curve automorphism and an AC-Frobenius automorphism",
 	[ IsHermitian_CurveAutomorphism, IsAC_FrobeniusAutomorphism ],
 function( m, fr )
 	return Hermitian_CurveAutomorphism(m!.curve, m!.mat^fr);
@@ -145,7 +145,7 @@ end );
 
 
 #############################################################################
-##  GZ CURVE AUTOMORPHISM ACTIONS
+## HERMITIAN CURVE AUTOMORPHISM ACTIONS
 ##  -------------------------------------------------------------------------
 
 HERM_OnPointNC:=function( x, m )
@@ -160,13 +160,13 @@ HERM_OnPointNC:=function( x, m )
 	return v;
 end;
 
-InstallOtherMethod( \^, "for a Hermitian divisor and a GZ curve automorphism", 
+InstallOtherMethod( \^, "for a Hermitian divisor and a curve automorphism", 
 	[ IsHermitian_Divisor, IsHermitian_CurveAutomorphism ],
 function( D, m )
 	return Hermitian_DivisorConstruct(D!.curve,List(D!.points,p->HERM_OnPointNC(p,m)),D!.orders);
 end );
 
-InstallOtherMethod( \^, "for a Hermitian AG-code and a GZ curve automorphism", 
+InstallOtherMethod( \^, "for a Hermitian AG-code and a curve automorphism", 
 	[ IsHermitian_Code, IsHermitian_CurveAutomorphism ],
 function( C, m )
 	local fr;
@@ -181,8 +181,21 @@ function( C, m )
 	fi;	
 end );
 
+InstallOtherMethod( \^, "for a Hermitian rational function and a curve automorphism", 
+	[ IsRationalFunction, IsHermitian_CurveAutomorphism ],
+function(f,a)
+    local y, b;
+	if not IsHermitianRationalFunction( f ) then 
+		TryNextMethod();
+	fi;
+    y := IndeterminatesOfHermitianRatFunc( f );
+    if y = [] then return f; fi;
+    b := [ y[1], y[2], 1 ] * (a!.mat^(-1));
+    return Value( f, y, [ b[1]/b[3], b[2]/b[3] ] );
+end );
+
 #############################################################################
-##  GZ CURVE AUTOMORPHISM GROUPS
+##  HERMITIAN CURVE AUTOMORPHISM GROUPS
 ##  -------------------------------------------------------------------------
 InstallGlobalFunction( UnitaryGroupToHermitian_CurveAutGroup, 
 function(matgr,C)
