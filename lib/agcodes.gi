@@ -20,9 +20,9 @@ InstallTrueMethod( IsHermitian_Code, IsHermitian_DifferentialCode );
 
 #############################################################################
 ##
-#F  GeneratorMatrixOfFunctionalHermitian_CodeNC(<G>,<pls>)
+#F  GeneratorMatrixOfAffineFunctionalHermitian_CodeNC(<G>,<pls>)
 ##
-InstallGlobalFunction( GeneratorMatrixOfFunctionalHermitian_CodeNC, function(G,pls) 
+InstallGlobalFunction( GeneratorMatrixOfAffineFunctionalHermitian_CodeNC, function(G,pls) 
 	local  i,j,cl,rr,crr,pts,cmat,row,r,deg,q,ellprod,denom;
 	rr:=HERM_normalizedRiemannRochSpaceOfHDiv_asmatrix(G);
 	ellprod:=rr[2];
@@ -81,10 +81,10 @@ function(G,D)
 	if not Intersection(Support(G),Support(D))=[] then 
 		Error("supports of divisors must be disjoint\n");
 	fi;
-	if [ infinity ] in Support( D ) then
+	if One( UnderlyingField( D ) ) * [0,1,0] in Support( D ) then
 		Error("support of the 2nd argument must be affine\n");
 	fi;
-	genmat:=GeneratorMatrixOfFunctionalHermitian_CodeNC(G,Support(D));
+	genmat:=GeneratorMatrixOfAffineFunctionalHermitian_CodeNC(G,Support(D));
 	ff:=UnderlyingField(G);
 	len:=Length(Support(D));
 	code:=Subspace(ff^len,Unpack(genmat));
@@ -124,10 +124,10 @@ function(G,D)
 	if not Intersection(Support(G),Support(D))=[] then 
 		Error("supports of divisors must be disjoint\n");
 	fi;
-	if [ infinity ] in Support( D ) then
+	if One( UnderlyingField( D ) ) * [0,1,0] in Support( D ) then
 		Error("support of the 2nd argument must be affine\n");
 	fi;
-	genmat:=GeneratorMatrixOfFunctionalHermitian_CodeNC(G,Support(D));
+	genmat:=GeneratorMatrixOfAffineFunctionalHermitian_CodeNC(G,Support(D));
 	genmat:=NullspaceMat(TransposedMat(genmat));
 	ff:=UnderlyingField(G);
 	len:=Length(Support(D));
@@ -208,12 +208,12 @@ function(agcode)
 	F:=(t+Genus(agcode!.curve))*Hermitian_Place(agcode!.curve,[infinity]);
 	pls:=Support(agcode!.gendivs[2]);;
 	if IsHermitian_DifferentialCode(agcode) then
-		mat1:=GeneratorMatrixOfFunctionalHermitian_CodeNC(agcode!.gendivs[1]-F,pls);
+		mat1:=GeneratorMatrixOfAffineFunctionalHermitian_CodeNC(agcode!.gendivs[1]-F,pls);
 	else
-		mat1:=GeneratorMatrixOfFunctionalHermitian_CodeNC(agcode!.gendivs[1]+F,pls);
+		mat1:=GeneratorMatrixOfAffineFunctionalHermitian_CodeNC(agcode!.gendivs[1]+F,pls);
 		mat1:=NullspaceMat(TransposedMat(mat1));
 	fi;
-	mat2:=GeneratorMatrixOfFunctionalHermitian_CodeNC(F,pls);
+	mat2:=GeneratorMatrixOfAffineFunctionalHermitian_CodeNC(F,pls);
 	mat2:=NullspaceMat(TransposedMat(mat2));
 	return [mat1,mat2];
 end);

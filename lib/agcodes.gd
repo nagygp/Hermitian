@@ -31,11 +31,11 @@ DeclareCategory( "IsHermitian_Code", IsVectorSpace );
 
 #############################################################################
 ##
-#C  GeneratorMatrixOfFunctionalHermitian_CodeNC(G,pls)
+#C  GeneratorMatrixOfAffineFunctionalHermitian_CodeNC(G,pls)
 ##  
-##  <#GAPDoc Label="GeneratorMatrixOfFunctionalHermitian_CodeNC">
+##  <#GAPDoc Label="GeneratorMatrixOfAffineFunctionalHermitian_CodeNC">
 ##  <ManSection>
-##  <Func Name="GeneratorMatrixOfFunctionalHermitian_CodeNC" Arg='G,pls'/>
+##  <Func Name="GeneratorMatrixOfAffineFunctionalHermitian_CodeNC" Arg='G,pls'/>
 ##  
 ##  <Returns>
 ##  The generator matrix of the functional AG code <M>C_L(D,G)</M>, where
@@ -45,7 +45,7 @@ DeclareCategory( "IsHermitian_Code", IsVectorSpace );
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareGlobalFunction( "GeneratorMatrixOfFunctionalHermitian_CodeNC" );
+DeclareGlobalFunction( "GeneratorMatrixOfAffineFunctionalHermitian_CodeNC" );
 
 #############################################################################
 ##

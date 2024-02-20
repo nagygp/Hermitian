@@ -296,23 +296,18 @@ function( D, pt )
 	return Valuation( D, pt!.points[1] );
 end );
 
-InstallGlobalFunction( HERM_polValueAtInfinitePlace ,
+InstallGlobalFunction( HERM_polValueAtInfinitePlace,
 function( f )
-    local tdeg, erep, i;
+    local Y; # d, num, den, tdeg_num, tdeg_den, erep_num, erep_den, i_num, i_den;
     if IsZero( f ) then 
-        return 0*Characteristic( f );
+        return 0*Z( Characteristic( f ) );
     fi;
-    tdeg := HERM_totalDegreeOfPolynomial( f );
-    erep:=ExtRepPolynomialRatFun( f );
-    if tdeg = 0 then
-        return erep[2];
-    fi;
-    i := Position( erep, [2,tdeg] );
-    if i = fail then
-        return 0*Z(Characteristic ( f ) );
-    else 
-        return erep[i+1];
-    fi;
+	Y := IndeterminatesOfHermitianRatFunc( f );
+	if Y = [] then
+		return ExtRepPolynomialRatFun( f )[2];
+	else 
+		return Value(Value(f,Y,[Y[1]/Y[2],1/Y[2]]),Y,[0,0]);
+	fi;
 end );
 
 InstallMethod( Value, "for a Hermitian rational function and a Hermitian place",
@@ -325,8 +320,7 @@ function( f, pt )
 	fnum := NumeratorOfRationalFunction( f );
 	fden := DenominatorOfRationalFunction( f );
     if IsInfiniteHermitian_Place( pt ) then 
-        fnum := HERM_polValueAtInfinitePlace( fnum );
-        fden := HERM_polValueAtInfinitePlace( fden );
+        return HERM_polValueAtInfinitePlace( f );
 	elif IndeterminatesOfHermitianRatFunc( f ) = [ ] then
 		return ExtRepPolynomialRatFun( fnum )[2];
     else
