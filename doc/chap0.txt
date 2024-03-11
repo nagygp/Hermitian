@@ -7,10 +7,10 @@
                                      Curves[101X
   
   
-                                  Version 0.2
+                                  Version 0.3
   
   
-                                  31 Aug 2020
+                                 11 March 2024
   
   
                                  Gábor P. Nagy
@@ -23,7 +23,8 @@
       Email:    [7Xmailto:nagyg@math.u-szeged.hu[107X
       Homepage: [7Xhttp://www.math.u-szeged.hu/~nagyg/[107X
   Sabira El Khalfaoui
-      Email:    [7Xmailto:sabira@math.u-szeged.hu[107X
+      Email:    [7Xmailto:sabiraelkhalfaoui@gmail.com[107X
+      Homepage: [7Xhttps://irmar.univ-rennes.fr/[107X
   
   -------------------------------------------------------
   [1XCopyright[101X
@@ -98,7 +99,7 @@
       3.4-1 Hermitian_RiemannRochSpaceBasis
     3.5 [33X[0;0YHermitian AG-codes[133X
       3.5-1 IsHermitian_Code
-      3.5-2 GeneratorMatrixOfFunctionalHermitian_CodeNC
+      3.5-2 GeneratorMatrixOfAffineFunctionalHermitian_CodeNC
       3.5-3 Hermitian_FunctionalCode
       3.5-4 Hermitian_DifferentialCode
       3.5-5 UnderlyingCurveOfHermitian_Code

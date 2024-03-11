@@ -10,7 +10,7 @@ Exec( Concatenation( "cp ", xml_path, "/*.xml", " ", doc_path ) );
 Exec( Concatenation( "cp ", xml_path, "/*.bib", " ", doc_path ) );
 
 opts:=GAPDoc2LaTeXProcs.DefaultOptions;
-Append(opts.FontPackages,"\\usepackage{amsmath}\n");
+Append(opts.FontPackages,"\\usepackage{amsmath}\n\\usepackage{mathrsfs}\n");
 SetGapDocLaTeXOptions(opts);
 
 MakeGAPDocDoc( doc_path,     # path to the directory containing the main file

@@ -7,7 +7,7 @@
   [2XAutomorphismGroup[102X 3.2-4 
   [2XDesignedMinimumDistance[102X 3.5-9 
   [2XFrobeniusAutomorphismOfHermitian_Curve[102X 3.2-1 
-  [2XGeneratorMatrixOfFunctionalHermitian_CodeNC[102X 3.5-2 
+  [2XGeneratorMatrixOfAffineFunctionalHermitian_CodeNC[102X 3.5-2 
   [2XGeneratorMatrixOfHermitian_Code[102X 3.5-8 
   [2XGenus[102X 3.1-4 
   HERmitian package 1. 

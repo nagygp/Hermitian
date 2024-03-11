@@ -345,9 +345,9 @@
   Hermitian  curve  of equation [22XX^q+1=Y^q+Y[122X. AG-codes are either of functional
   or of differential type.[133X
   
-  [1X3.5-2 GeneratorMatrixOfFunctionalHermitian_CodeNC[101X
+  [1X3.5-2 GeneratorMatrixOfAffineFunctionalHermitian_CodeNC[101X
   
-  [33X[1;0Y[29X[2XGeneratorMatrixOfFunctionalHermitian_CodeNC[102X( [3XG[103X, [3Xpls[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XGeneratorMatrixOfAffineFunctionalHermitian_CodeNC[102X( [3XG[103X, [3Xpls[103X ) [32X function[133X
   [6XReturns:[106X  [33X[0;10YThe  generator  matrix of the functional AG code [22XC_L(D,G)[122X, where [22XD[122X
             is  the  sum of the degree one places in the list [3Xpls[103X. The support
             of [3XG[103X must be disjoint from [3Xpls[103X.[133X
@@ -525,7 +525,7 @@
   
   [1X3.6-1 InfoHermitian[101X
   
-  [33X[1;0Y[29X[2XInfoHermitian[102X[32X info class[133X
+  [33X[1;0Y[29X[2XInfoHermitian[102X [32X info class[133X
   
   [33X[0;0YAn   infoclass   for   the   package.   Its   default   value   is  [22X0[122X.  With
   [10XSetInfoLevel(InfoHermitian,2)[110X one can get some additional messages about the

@@ -173,7 +173,7 @@ true
 The following functions are available:
 
 <#Include  Label="IsHermitian_Code">
-<#Include  Label="GeneratorMatrixOfFunctionalHermitian_CodeNC">
+<#Include  Label="GeneratorMatrixOfAffineFunctionalHermitian_CodeNC">
 <#Include  Label="Hermitian_FunctionalCode">
 <#Include  Label="Hermitian_DifferentialCode">
 <#Include  Label="UnderlyingCurveOfHermitian_Code">

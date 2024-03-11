@@ -8,18 +8,18 @@ SetPackageInfo( rec(
 
 PackageName := "HERmitian",
 Subtitle := "HERmitian/Computing with divisors, Riemann-Roch spaces and AG-odes of Hermitian curves",
-Version := "0.2",
-Date := "31/08/2020",
+Version := "0.3",
+Date := "11/03/2024",
 
 ##  Optional: if the package manual uses GAPDoc, you may duplicate the
 ##  version and the release date as shown below to read them while building
 ##  the manual using GAPDoc facilities to distibute documents across files.
 ##  <#GAPDoc Label="PKGVERSIONDATA">
-##  <!ENTITY VERSION "0.2">
-##  <!ENTITY RELEASEDATE "31 Aug 2020">
+##  <!ENTITY VERSION "0.3">
+##  <!ENTITY RELEASEDATE "11 March 2024">
 ##  <#/GAPDoc>
 
-PackageWWWHome := "http://www.math.u-szeged.hu/~nagyg/HERmitian/",
+PackageWWWHome := "https://github.com/nagygp/Hermitian",
 ArchiveURL := Concatenation( ~.PackageWWWHome, "HERmitian-", ~.Version ),
 ArchiveFormats := ".tar.gz",
 
@@ -48,14 +48,14 @@ Persons := [
     FirstNames    := "Sabira",
     IsAuthor      := true,
     IsMaintainer  := true,
-    Email         := "sabira@math.u-szeged.hu",
-    WWWHome       := "http://www.math.u-szeged.hu/",
+    Email         := "sabiraelkhalfaoui@gmail.com",
+    WWWHome       := "https://irmar.univ-rennes.fr/",
     PostalAddress := Concatenation( [
-                       "Bolyai Institute of the University of Szeged\n",
-                       "Aradi vértanúk tere 1\n",
-                       "H-6720 Szeged (Hungary)" ] ),
-    Place         := "Szeged",
-    Institution   := "University of Szeged"
+                       "Univ Rennes\n",
+                       "IRMAR - UMR 6625\n",
+                       "F-35000 Rennes (France)" ] ),
+    Place         := "Rennes",
+    Institution   := "Université de Rennes"
   ),
 # provide such a record for each author and/or maintainer ...
 ],
